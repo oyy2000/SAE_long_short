@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/home/youyang7/projects/SAE_long_short/scripts/4_8_build_adapter_recovery_mirror.py", line 116, in <module>
-    main()
-  File "/home/youyang7/projects/SAE_long_short/scripts/4_8_build_adapter_recovery_mirror.py", line 44, in main
-    shutil.copyfile(source / filename, temporary / filename)
-  File "/home/youyang7/.conda/envs/sft/lib/python3.10/shutil.py", line 256, in copyfile
-    with open(dst, 'wb') as fdst:
-OSError: [Errno 122] Disk quota exceeded

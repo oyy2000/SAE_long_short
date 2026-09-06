@@ -1,5 +1,0 @@
-status=complete
-phase1_entry_status=passed
-phase1_entry_decision_sha256=ed6062267eb23f25505eb46c771173d968f48e001d9f105ee7cf4fd6bb38cbef
-phase0_required_for_execution=false
-phase0_required_for_short_content_claim=true

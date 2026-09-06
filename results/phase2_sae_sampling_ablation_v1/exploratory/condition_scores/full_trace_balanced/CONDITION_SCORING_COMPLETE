@@ -1,6 +1,0 @@
-status=complete
-condition=full_trace_balanced
-config_hash=2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9
-summary_sha256=08c6c5a6fd68add1fca138cb05eb8791558131729ab3fc6aa95f9980f2de4223
-heldout_confirmed_count=14
-formal_claim_allowed=false

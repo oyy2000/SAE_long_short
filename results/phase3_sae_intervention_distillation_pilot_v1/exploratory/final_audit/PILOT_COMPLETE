@@ -1,6 +1,0 @@
-status=passed
-config_hash=c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151
-audit_sha256=4294ae9b7c38805ee46a13e0594ab9ec87beeccb0193559aec9f7cf5bd56f7e0
-training_run_count=24
-evaluation_count=25
-formal_claim_allowed=false

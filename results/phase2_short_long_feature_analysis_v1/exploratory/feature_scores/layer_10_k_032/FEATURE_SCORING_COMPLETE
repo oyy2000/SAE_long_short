@@ -1,7 +1,0 @@
-status=complete
-config_hash=59ea29a5d2179cf33bb7c45d2a0cf627f2f93b77d3ab0664e4df038e0fa89342
-summary_sha256=e3ea834611cb316367dfaa321743305e817b7f4cdbed6335a91a4533dd4eecc2
-layer_index=10
-k=32
-heldout_confirmed_count=16
-formal_claim_allowed=false

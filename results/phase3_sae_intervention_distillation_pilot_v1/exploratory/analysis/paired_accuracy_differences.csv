@@ -1,7 +1,0 @@
-budget_regime,condition,comparison,paired_accuracy_delta,bootstrap_95_low,bootstrap_95_high,bootstrap_probability_positive,question_count,seed_count
-equal_examples,short_feature_enhance,short_feature_enhance - no_steering,-0.0028894142369319674,-0.018912529550827423,0.013396375098502758,0.3529,1269,3
-equal_examples,long_feature_suppress,long_feature_suppress - no_steering,0.002364066193853428,-0.02206461780929866,0.024435250853690475,0.5889,1269,3
-equal_examples,random_feature_enhance,random_feature_enhance - no_steering,-0.0010506960861570791,-0.014709745206199106,0.01260835303388495,0.4252,1269,3
-equal_target_tokens,short_feature_enhance,short_feature_enhance - no_steering,-0.004465458366167586,-0.019175203572366694,0.009456264775413711,0.2481,1269,3
-equal_target_tokens,long_feature_suppress,long_feature_suppress - no_steering,-0.006041502495403204,-0.019700551615445233,0.007880220646178092,0.1805,1269,3
-equal_target_tokens,random_feature_enhance,random_feature_enhance - no_steering,-0.0005253480430785396,-0.014972419227738377,0.013659049120042028,0.4637,1269,3

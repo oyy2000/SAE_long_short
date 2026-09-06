@@ -1,3 +1,0 @@
-2026-09-04 00:55:44,153 INFO Note: NumExpr detected 64 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
-2026-09-04 00:55:44,153 INFO NumExpr defaulting to 16 threads.
-2026-09-04 00:56:04,994 INFO phase0_data_complete stage=formal problems=881 runs=108 output=/home/youyang7/projects/SAE_long_short/results/trace_length_observation_gate0_v1/formal/data
