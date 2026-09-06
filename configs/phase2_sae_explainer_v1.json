@@ -1,0 +1,32 @@
+{
+  "experiment_name": "phase2_sae_explainer_v1",
+  "scope": "Pedagogical visualization of the completed SAE pilot and short-long feature analysis",
+  "formal_claim_allowed": false,
+  "sources": {
+    "sae_protocol": "results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+    "sae_completion_marker": "results/phase2_sae_pilot_v1/SAE_PILOT_COMPLETE",
+    "sae_metrics": "results/phase2_sae_pilot_v1/formal/audit/sae_metrics.csv",
+    "primary_training_metrics": "results/phase2_sae_pilot_v1/formal/sae_training/layer_17_k_064/training_metrics.json",
+    "feature_analysis_marker": "results/phase2_short_long_feature_analysis_v1/exploratory/SHORT_LONG_FEATURE_ANALYSIS_COMPLETE",
+    "confirmed_features": "results/phase2_short_long_feature_analysis_v1/exploratory/supplementary_token_analysis_v1/confirmed_feature_token_summary.csv",
+    "position_profiles": "results/phase2_short_long_feature_analysis_v1/exploratory/supplementary_token_analysis_v1/confirmed_feature_position_profiles.csv"
+  },
+  "visualization": {
+    "language": "zh-CN",
+    "chinese_font_path": "/usr/share/fonts/google-droid/DroidSansFallback.ttf",
+    "primary_sae": {"layer_index": 17, "k": 64},
+    "short_color": "#2166AC",
+    "long_color": "#B2182B",
+    "neutral_color": "#4D4D4D",
+    "output_dpi": 300
+  },
+  "outputs": {
+    "result_root": "results/phase2_sae_explainer_v1/exploratory",
+    "figure_root": "figures/phase2_sae_explainer_v1",
+    "required_figures": [
+      "01_sae_feature_anatomy_zh.png",
+      "02_sae_training_and_identification_zh.png",
+      "03_observed_short_long_features_zh.png"
+    ]
+  }
+}

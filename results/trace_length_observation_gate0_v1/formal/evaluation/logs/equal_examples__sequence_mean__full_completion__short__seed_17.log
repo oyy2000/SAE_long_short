@@ -1,0 +1,15 @@
+2026-09-04 02:56:05,731 INFO PyTorch version 2.10.0 available.
+2026-09-04 02:56:07,490 INFO loaded_eval_examples=1269 split=test start_index=50
+2026-09-04 02:56:15,989 INFO We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:650: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+2026-09-04 02:56:40,258 INFO evaluated=32
+2026-09-04 02:56:56,090 INFO evaluated=64
+2026-09-04 02:57:16,627 INFO evaluated=96
+2026-09-04 02:57:34,492 INFO evaluated=128
+2026-09-04 02:57:55,151 INFO evaluated=160
+2026-09-04 02:58:13,062 INFO evaluated=192

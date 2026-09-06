@@ -1,0 +1,68 @@
+{
+  "experiment_name": "phase2_short_long_feature_analysis_v1",
+  "protocol_variant": "dev_discovery_test_confirmation_question_paired_v1",
+  "scope": "Exploratory interpretation of short-associated and long-associated SAE features on GSM8K",
+  "formal_claim_allowed": false,
+  "claim_boundary": "The analysis can identify reproducible short-associated and long-associated SAE features. It cannot establish student utility, semantic identity, or causal effects.",
+  "parent_sae": {
+    "config_path": "results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+    "completion_marker_path": "results/phase2_sae_pilot_v1/SAE_PILOT_COMPLETE",
+    "corpus_path": "results/phase2_sae_pilot_v1/formal/corpus/mixed_trajectories.jsonl",
+    "activation_root": "results/phase2_sae_pilot_v1/formal/activations",
+    "training_root": "results/phase2_sae_pilot_v1/formal/sae_training",
+    "checkpoint_root": "checkpoints/phase2_sae_pilot_v1"
+  },
+  "comparison": {
+    "eligible_labels": ["short", "long"],
+    "require_correct": true,
+    "pairing_unit": "problem_id",
+    "within_question_contrast": "mean(short traces) - mean(long traces)",
+    "discovery_split": "dev",
+    "confirmation_split": "test",
+    "primary_sae": {"layer_index": 17, "k": 64},
+    "primary_metric": "token_mean_activation",
+    "position_control_metric": "first_64_token_mean_activation",
+    "metrics": [
+      "token_mean_activation",
+      "token_activation_frequency",
+      "maximum_activation",
+      "first_64_token_mean_activation"
+    ]
+  },
+  "feature_discovery": {
+    "minimum_trace_prevalence": 0.05,
+    "maximum_dev_bh_q_value": 0.05,
+    "minimum_dev_absolute_paired_d": 0.2,
+    "candidates_per_direction": 12,
+    "require_primary_and_first_64_direction_agreement": true,
+    "confirmation_holm_alpha": 0.05,
+    "minimum_test_absolute_paired_d": 0.15
+  },
+  "token_analysis": {
+    "first_n_tokens": 64,
+    "relative_position_bins": 5,
+    "minimum_token_occurrences_for_lexical_rate": 8,
+    "top_contexts_per_feature_and_label": 12,
+    "context_window_tokens": 10,
+    "maximum_features_per_direction_in_figures": 8
+  },
+  "runtime": {
+    "encode_batch_size": 512,
+    "autocast_dtype": "bfloat16",
+    "matrix_shard_count": 6,
+    "gpu_admission_policy": "memory_fit",
+    "minimum_free_gpu_memory_mib": 6000
+  },
+  "outputs": {
+    "result_root": "results/phase2_short_long_feature_analysis_v1/exploratory",
+    "figure_root": "figures/phase2_short_long_feature_analysis_v1",
+    "required_figures": [
+      "01_sae_feature_difference_overview.png",
+      "02_primary_sae_discovery_volcano.png",
+      "03_heldout_feature_validation.png",
+      "04_same_question_token_heatmap.png",
+      "05_token_and_position_diagnostics.png",
+      "06_short_long_feature_story.png"
+    ]
+  }
+}

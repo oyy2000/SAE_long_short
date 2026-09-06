@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/youyang7/projects/SAE_long_short/scripts/4_8_build_adapter_recovery_mirror.py", line 116, in <module>
+    main()
+  File "/home/youyang7/projects/SAE_long_short/scripts/4_8_build_adapter_recovery_mirror.py", line 35, in main
+    run = json.loads(run_config_path.read_text(encoding="utf-8"))
+  File "/home/youyang7/.conda/envs/sft/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/home/youyang7/.conda/envs/sft/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/beegfs/youyang7/projects/SAE_long_short/phase3_sae_intervention_distillation_pilot_v1/results/training/run_configs/equal_examples__long_feature_suppress__seed_17.json'

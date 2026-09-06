@@ -1,0 +1,192 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  5.86it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  7.32it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  6.47it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  6.12it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  6.28it/s]
+{"event": "generation_progress", "stage": "calibration", "shard_index": 6, "candidate_index": 0, "processed_pairs": 2, "total_pairs": 8}
+{"event": "generation_progress", "stage": "calibration", "shard_index": 6, "candidate_index": 0, "processed_pairs": 4, "total_pairs": 8}
+{"event": "generation_progress", "stage": "calibration", "shard_index": 6, "candidate_index": 0, "processed_pairs": 6, "total_pairs": 8}
+{"event": "generation_progress", "stage": "calibration", "shard_index": 6, "candidate_index": 0, "processed_pairs": 8, "total_pairs": 8}
+{
+  "status": "complete",
+  "experiment_name": "phase3_sae_intervention_strength_sweep_v2",
+  "stage": "calibration",
+  "config_hash": "41a694298a7b629eabd1ee1594b126962cb2a2df26495159c26612fd9c235b1c",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_strength_sweep_v2/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "6c8c7b10c854a3e37d28d0b7730aaee356867980b5f7e3ff6661764fa8dbc55d",
+  "shard_index": 6,
+  "shard_count": 8,
+  "problem_ids": [
+    "hf-000446",
+    "hf-000283",
+    "hf-000791",
+    "hf-001659",
+    "hf-000628",
+    "hf-001173",
+    "hf-001906",
+    "hf-001332"
+  ],
+  "problem_ids_sha256": "8b3833b0404aa28b588d75a63ce215cc538561fe80edb51db283f3aa650e5b94",
+  "problem_count": 8,
+  "candidate_count_per_problem": 1,
+  "pair_count": 8,
+  "conditions": [
+    {
+      "name": "no_steering",
+      "mode": "none",
+      "strength": 0.0
+    },
+    {
+      "name": "short_feature_enhance__a_1p0",
+      "mode": "short_enhance",
+      "strength": 1.0
+    },
+    {
+      "name": "short_feature_enhance__a_4p0",
+      "mode": "short_enhance",
+      "strength": 4.0
+    },
+    {
+      "name": "short_feature_enhance__a_8p0",
+      "mode": "short_enhance",
+      "strength": 8.0
+    },
+    {
+      "name": "short_feature_enhance__a_12p0",
+      "mode": "short_enhance",
+      "strength": 12.0
+    },
+    {
+      "name": "long_feature_suppress__a_0p25",
+      "mode": "long_suppress",
+      "strength": 0.25
+    },
+    {
+      "name": "long_feature_suppress__a_1p0",
+      "mode": "long_suppress",
+      "strength": 1.0
+    },
+    {
+      "name": "long_feature_suppress__a_2p0",
+      "mode": "long_suppress",
+      "strength": 2.0
+    },
+    {
+      "name": "random_feature_enhance__a_1p0",
+      "mode": "random_enhance",
+      "strength": 1.0
+    },
+    {
+      "name": "random_feature_enhance__a_4p0",
+      "mode": "random_enhance",
+      "strength": 4.0
+    },
+    {
+      "name": "random_feature_enhance__a_8p0",
+      "mode": "random_enhance",
+      "strength": 8.0
+    },
+    {
+      "name": "random_feature_enhance__a_12p0",
+      "mode": "random_enhance",
+      "strength": 12.0
+    }
+  ],
+  "condition_counts": {
+    "no_steering": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1773
+    },
+    "short_feature_enhance__a_1p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1795
+    },
+    "short_feature_enhance__a_4p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1790
+    },
+    "short_feature_enhance__a_8p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1754
+    },
+    "short_feature_enhance__a_12p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1797
+    },
+    "long_feature_suppress__a_0p25": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1810
+    },
+    "long_feature_suppress__a_1p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1809
+    },
+    "long_feature_suppress__a_2p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1913
+    },
+    "random_feature_enhance__a_1p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1769
+    },
+    "random_feature_enhance__a_4p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1815
+    },
+    "random_feature_enhance__a_8p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1802
+    },
+    "random_feature_enhance__a_12p0": {
+      "records": 8,
+      "correct": 8,
+      "tokens": 1793
+    }
+  },
+  "common_prefix_audit": "passed",
+  "strength_evidence": null,
+  "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_strength_sweep_v2/exploratory/calibration_shards/shard_06_of_08/generations.jsonl",
+  "records_sha256": "ba6b2fa53a88d63e1af191dc36899b46c95f571754dd04cc2bb86fcb68617127",
+  "elapsed_seconds": 332.28391098976135,
+  "runtime": {
+    "hostname": "c32",
+    "platform": "Linux-5.19.9-1.el8.x86_64-x86_64-with-glibc2.28",
+    "cuda_visible_devices": "2",
+    "packages": {
+      "python": "3.10.19",
+      "torch": "2.10.0",
+      "transformers": "4.48.3",
+      "safetensors": "0.7.0"
+    },
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      }
+    ]
+  },
+  "source_code_sha256": "0c6c32acdb3bcf40b4c1ed3f074875c844e7841199386f45d40bc6db09bca9e6",
+  "library_code_sha256": "86415ead2d77cd27190c5a7f3424375962330baa6fba64488a69b2bc7f7f1397",
+  "formal_claim_allowed": false
+}

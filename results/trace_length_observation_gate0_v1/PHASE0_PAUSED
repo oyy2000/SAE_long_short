@@ -1,0 +1,4 @@
+status=paused
+pause_manifest_sha256=3840c75efc0244520dd2edac1f279d60082524cda4cac68d8209f3859174736b
+gate0_status=not_evaluated
+resume_requires_new_attempt=true

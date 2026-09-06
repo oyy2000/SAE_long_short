@@ -1,0 +1,6 @@
+status=complete
+condition=full_token_uniform
+config_hash=2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9
+summary_sha256=5575f1e002473dabbe68a4ffdfedf9c0974aa33edc5e22fcc6b69446e87e26dd
+heldout_confirmed_count=13
+formal_claim_allowed=false

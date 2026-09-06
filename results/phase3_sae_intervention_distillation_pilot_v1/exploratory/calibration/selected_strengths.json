@@ -1,0 +1,217 @@
+{
+  "status": "complete",
+  "experiment_name": "phase3_sae_intervention_distillation_pilot_v1",
+  "config_hash": "c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "c7605ccf8c1d700c76eb252ddd48abac396d972481f35912389ea3893898e5bf",
+  "selection_metric": "correct_usable_traces_per_generated_million_tokens",
+  "baseline": {
+    "condition": "no_steering",
+    "mode": "none",
+    "strength": 0.0,
+    "n": 24,
+    "correct": 23,
+    "accuracy": 0.9583333333333334,
+    "total_generated_tokens": 6231,
+    "mean_output_tokens": 259.625,
+    "mean_correct_output_tokens": 248.65217391304347,
+    "correct_usable_per_million_tokens": 3691.221312790884,
+    "mean_modified_token_fraction": 0.0,
+    "mean_delta_to_hidden_norm_fraction": 0.0,
+    "maximum_delta_to_hidden_norm_fraction": 0.0
+  },
+  "selected": {
+    "short_feature_enhance": {
+      "condition": "short_feature_enhance__a_1p0",
+      "mode": "short_enhance",
+      "strength": 1.0,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6283,
+      "mean_output_tokens": 261.7916666666667,
+      "mean_correct_output_tokens": 250.91304347826087,
+      "correct_usable_per_million_tokens": 3660.6716536686295,
+      "mean_modified_token_fraction": 1.0,
+      "mean_delta_to_hidden_norm_fraction": 0.013056230938621918,
+      "maximum_delta_to_hidden_norm_fraction": 0.017519613727927208,
+      "passed_accuracy_guard": true,
+      "accuracy_guard": 0.9083333333333333
+    },
+    "long_feature_suppress": {
+      "condition": "long_feature_suppress__a_0p25",
+      "mode": "long_suppress",
+      "strength": 0.25,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6237,
+      "mean_output_tokens": 259.875,
+      "mean_correct_output_tokens": 248.91304347826087,
+      "correct_usable_per_million_tokens": 3687.6703543370213,
+      "mean_modified_token_fraction": 0.5545884382106915,
+      "mean_delta_to_hidden_norm_fraction": 0.008642751552066372,
+      "maximum_delta_to_hidden_norm_fraction": 0.053910933434963226,
+      "passed_accuracy_guard": true,
+      "accuracy_guard": 0.9083333333333333
+    }
+  },
+  "condition_metrics": [
+    {
+      "condition": "long_feature_suppress__a_0p25",
+      "mode": "long_suppress",
+      "strength": 0.25,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6237,
+      "mean_output_tokens": 259.875,
+      "mean_correct_output_tokens": 248.91304347826087,
+      "correct_usable_per_million_tokens": 3687.6703543370213,
+      "mean_modified_token_fraction": 0.5545884382106915,
+      "mean_delta_to_hidden_norm_fraction": 0.008642751552066372,
+      "maximum_delta_to_hidden_norm_fraction": 0.053910933434963226
+    },
+    {
+      "condition": "long_feature_suppress__a_0p5",
+      "mode": "long_suppress",
+      "strength": 0.5,
+      "n": 24,
+      "correct": 22,
+      "accuracy": 0.9166666666666666,
+      "total_generated_tokens": 6458,
+      "mean_output_tokens": 269.0833333333333,
+      "mean_correct_output_tokens": 247.0,
+      "correct_usable_per_million_tokens": 3406.6274388355528,
+      "mean_modified_token_fraction": 0.5701722443189329,
+      "mean_delta_to_hidden_norm_fraction": 0.017984564779943275,
+      "maximum_delta_to_hidden_norm_fraction": 0.11006306111812592
+    },
+    {
+      "condition": "long_feature_suppress__a_1p0",
+      "mode": "long_suppress",
+      "strength": 1.0,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6468,
+      "mean_output_tokens": 269.5,
+      "mean_correct_output_tokens": 258.95652173913044,
+      "correct_usable_per_million_tokens": 3555.9678416821275,
+      "mean_modified_token_fraction": 0.5680883671528665,
+      "mean_delta_to_hidden_norm_fraction": 0.0355507371248989,
+      "maximum_delta_to_hidden_norm_fraction": 0.1503625512123108
+    },
+    {
+      "condition": "no_steering",
+      "mode": "none",
+      "strength": 0.0,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6231,
+      "mean_output_tokens": 259.625,
+      "mean_correct_output_tokens": 248.65217391304347,
+      "correct_usable_per_million_tokens": 3691.221312790884,
+      "mean_modified_token_fraction": 0.0,
+      "mean_delta_to_hidden_norm_fraction": 0.0,
+      "maximum_delta_to_hidden_norm_fraction": 0.0
+    },
+    {
+      "condition": "short_feature_enhance__a_1p0",
+      "mode": "short_enhance",
+      "strength": 1.0,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6283,
+      "mean_output_tokens": 261.7916666666667,
+      "mean_correct_output_tokens": 250.91304347826087,
+      "correct_usable_per_million_tokens": 3660.6716536686295,
+      "mean_modified_token_fraction": 1.0,
+      "mean_delta_to_hidden_norm_fraction": 0.013056230938621918,
+      "maximum_delta_to_hidden_norm_fraction": 0.017519613727927208
+    },
+    {
+      "condition": "short_feature_enhance__a_2p0",
+      "mode": "short_enhance",
+      "strength": 2.0,
+      "n": 24,
+      "correct": 22,
+      "accuracy": 0.9166666666666666,
+      "total_generated_tokens": 6444,
+      "mean_output_tokens": 268.5,
+      "mean_correct_output_tokens": 246.36363636363637,
+      "correct_usable_per_million_tokens": 3414.028553693358,
+      "mean_modified_token_fraction": 1.0,
+      "mean_delta_to_hidden_norm_fraction": 0.02624052717826511,
+      "maximum_delta_to_hidden_norm_fraction": 0.03505736589431763
+    },
+    {
+      "condition": "short_feature_enhance__a_4p0",
+      "mode": "short_enhance",
+      "strength": 4.0,
+      "n": 24,
+      "correct": 23,
+      "accuracy": 0.9583333333333334,
+      "total_generated_tokens": 6387,
+      "mean_output_tokens": 266.125,
+      "mean_correct_output_tokens": 255.43478260869566,
+      "correct_usable_per_million_tokens": 3601.064662595898,
+      "mean_modified_token_fraction": 1.0,
+      "mean_delta_to_hidden_norm_fraction": 0.05241579667486313,
+      "maximum_delta_to_hidden_norm_fraction": 0.06987650692462921
+    }
+  ],
+  "input_shards": [
+    {
+      "shard_index": 0,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_00_of_04/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "8e043bfd37619287cc1081ffa92b153a485150fe2c992a2230484b3e74e02d43",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_00_of_04/generation_manifest.json",
+      "manifest_sha256": "038e6b79483cfab533ed21635cfd705a8c4c8c2c006d6448d222461757f9e17d",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_00_of_04/generations.jsonl",
+      "records_sha256": "18fef967e78fa87c3502fa6d8583caf7e233dd109acac0c53dde9be352c2106e"
+    },
+    {
+      "shard_index": 1,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_01_of_04/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "40c0048a859c0b6021e6b644f4b753f2971607d9aa894e84849d815850b5fcb0",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_01_of_04/generation_manifest.json",
+      "manifest_sha256": "ed087f3fcb1ae2c68c77be2b99f0e48caab16beeaa929d1a4d6bf13170801dd7",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_01_of_04/generations.jsonl",
+      "records_sha256": "5169dec0178b47be9a31a1b4dc7f8d773e5b3832255e6f7209dc2c022e5a04bf"
+    },
+    {
+      "shard_index": 2,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_02_of_04/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "a7b29116192521a62ec2b11c5c5e83bc47188772ea67d04dc944f44bd9b7f9fe",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_02_of_04/generation_manifest.json",
+      "manifest_sha256": "1e59dfdce8f81689c3eaf71ef9bdcc009a4753ccbe93b3801610519b8be1f438",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_02_of_04/generations.jsonl",
+      "records_sha256": "01373f430d917c43530a631d7452a8cde2081b8e072d83c127cfd39d71e80517"
+    },
+    {
+      "shard_index": 3,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_03_of_04/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "2194881b007f68a6095a19d5fa36ab4bd3077ba24f737db9be63014060a5dddb",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_03_of_04/generation_manifest.json",
+      "manifest_sha256": "ae78f5a6e1b30b173966280ef8398501f8dd2b09fc0786186d3075e2bd2ba2a1",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration_shards/shard_03_of_04/generations.jsonl",
+      "records_sha256": "a93265f7ef154438403be6b9dbe06174dbb14acd5c671cf5ca455b4517a80ff1"
+    }
+  ],
+  "artifacts": {
+    "calibration_generations.jsonl": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration/calibration_generations.jsonl",
+      "sha256": "acb963594156ef44a49de2f8b906ba9d1928b391c4abf154a0c0390ce0560679"
+    },
+    "calibration_metrics.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration/calibration_metrics.csv",
+      "sha256": "3f1be6f94d8dfeb43a654c024a1415fb77b3cb6093b36b54755ac2c530aaef61"
+    }
+  },
+  "source_code_sha256": "3f3c5e47e8c659e35d516cadfe89f2a56e26507eebc6140468a32b0f1dd5d5c2",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This experiment tests length-associated SAE features, not student-utility features. It may establish an exploratory intervention-to-data-to-student association, but not a semantic reasoning mechanism or utility-specific causal effect."
+}

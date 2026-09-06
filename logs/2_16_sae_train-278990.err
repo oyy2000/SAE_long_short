@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/youyang7/projects/SAE_long_short/scripts/2_4_train_topk_sae.py", line 310, in <module>
+    main()
+  File "/home/youyang7/projects/SAE_long_short/scripts/2_4_train_topk_sae.py", line 50, in main
+    raise FileExistsError(f"Refusing to overwrite {output_dir} or {checkpoint_dir}")
+FileExistsError: Refusing to overwrite /home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/sae_training/full_trace_balanced or /home/youyang7/projects/SAE_long_short/checkpoints/phase2_sae_sampling_ablation_v1/full_trace_balanced

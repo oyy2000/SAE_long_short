@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "experiment_name": "phase2_short_long_feature_analysis_v1",
+  "config_hash": "59ea29a5d2179cf33bb7c45d2a0cf627f2f93b77d3ab0664e4df038e0fa89342",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "edebe5e825da81ad77d3495574c775c3b69b124fb0dbd7b52e0d59c6032c96b6",
+  "expected_sae_count": 6,
+  "validated_sae_count": 6,
+  "score_runs": [
+    {
+      "layer_index": 10,
+      "k": 32,
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/feature_scores/layer_10_k_032/scoring_summary.json",
+      "summary_sha256": "e3ea834611cb316367dfaa321743305e817b7f4cdbed6335a91a4533dd4eecc2",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 16
+    },
+    {
+      "layer_index": 10,
+      "k": 64,
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/feature_scores/layer_10_k_064/scoring_summary.json",
+      "summary_sha256": "e8064f60c55959826cc08d0ff40e939624d99162c387572a6f317a1c522c5d89",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 12
+    },
+    {
+      "layer_index": 17,
+      "k": 32,
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/feature_scores/layer_17_k_032/scoring_summary.json",
+      "summary_sha256": "5f293e78426a1b8b552bb8372dca3a0545c963f222cff4d099d586891a9a66b1",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 9
+    },
+    {
+      "layer_index": 17,
+      "k": 64,
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/feature_scores/layer_17_k_064/scoring_summary.json",
+      "summary_sha256": "1d9c09abaf71a8527e473900f57933ec77484ae4a7501ebbd85046090e9642c5",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 13
+    },
+    {
+      "layer_index": 23,
+      "k": 32,
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/feature_scores/layer_23_k_032/scoring_summary.json",
+      "summary_sha256": "315ebddada7e4156a8a4b81b5fdb28947c54e0f7fb29a8785e216d6f8a3f20c1",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 4
+    },
+    {
+      "layer_index": 23,
+      "k": 64,
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/feature_scores/layer_23_k_064/scoring_summary.json",
+      "summary_sha256": "46c8605d892483a2d196ab40e64448bc5f6fb3efd8e08e263bbdb1472f5a8e35",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 12
+    }
+  ],
+  "analysis_evidence": {
+    "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/analysis/analysis_summary.json",
+    "summary_sha256": "a0298ca7d25c62e93c5c0170f9c9ff12bbd0384adf4c305e0da7bf0e47be582a",
+    "report_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/analysis/analysis_report.md",
+    "required_figure_count": 6
+  },
+  "errors": [],
+  "formal_claim_allowed": false,
+  "claim_boundary": "The analysis can identify reproducible short-associated and long-associated SAE features. It cannot establish student utility, semantic identity, or causal effects.",
+  "source_code_sha256": "c008f0ba4c363c657312749c47c4e1779a13a9c8fc2c2daa9bd5cd33d9ee0eed"
+}

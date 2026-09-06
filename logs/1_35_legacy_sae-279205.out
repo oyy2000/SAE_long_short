@@ -1,0 +1,18 @@
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+Waiting for memory capacity without interference: eligible=3/1.
+0, 4 MiB, 32225 MiB, 0 %
+1, 4 MiB, 32225 MiB, 0 %
+2, 4 MiB, 32225 MiB, 0 %
+Selected stable memory-fit GPUs by descending free memory on c49: 0 1 2
+index, memory.used [MiB], memory.free [MiB]
+0, 4 MiB, 32225 MiB
+indexindex, memory.used [MiB], memory.used [MiB], memory.free [MiB], memory.free [MiB]
+
+1, 4 MiB, 32225 MiB
+2, 4 MiB, 32225 MiB
+index, memory.used [MiB], memory.free [MiB]
+1, 4 MiB, 32225 MiB
+index, memory.used [MiB], memory.free [MiB]
+0, 4 MiB, 32225 MiB
+index, memory.used [MiB], memory.free [MiB]
+2, 4 MiB, 32225 MiB

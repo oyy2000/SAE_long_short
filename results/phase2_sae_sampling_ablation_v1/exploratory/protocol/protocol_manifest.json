@@ -1,0 +1,15 @@
+{
+  "status": "frozen",
+  "experiment_name": "phase2_sae_sampling_ablation_v1",
+  "config_hash": "2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "8eaec56bc2e09dfb96d44d0e49408f59571aec70846dd570ea992027fb39ddd4",
+  "overlay_path": "/home/youyang7/projects/SAE_long_short/configs/phase2_sae_sampling_ablation_v1.json",
+  "overlay_sha256": "7de5f6d18e09848faeb1f25f6f2485560b7ca5fd580d97fb7d03e33e12e48c0e",
+  "parent_protocol_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+  "parent_protocol_sha256": "67ff12df5293fc91d731728be66db15392a544845cc8d9d117de01b62a289786",
+  "parent_completion_marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/SAE_PILOT_COMPLETE",
+  "parent_completion_marker_sha256": "d9981eb3cdae01145210e61ef70a61c8c410b8c998a528abee0ab03fdae74bc6",
+  "source_code_sha256": "909c3b548e7459b2f01864759db95cd0b2b4c11c8aad3dc6a04805629d662c31",
+  "formal_claim_allowed": false
+}

@@ -1,0 +1,131 @@
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=1/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=2/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=3/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=4/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=5/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=6/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=7/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=8/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=9/10
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+OSError: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/mnt/beegfs/youyang7/miniconda3/bin/conda", line 12, in <module>
+    from conda.cli import main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+OSError: [Errno 121] Remote I/O error
+Transient BeeGFS error during environment activation; retry=10/10
+Unable to activate the SFT environment after bounded retries.

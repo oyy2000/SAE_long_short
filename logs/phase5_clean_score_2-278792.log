@@ -1,0 +1,7 @@
+{"event": "score_progress", "shard": 2, "chunks": 6, "total_chunks": 36, "tokens": 7744}
+{"event": "score_progress", "shard": 2, "chunks": 12, "total_chunks": 36, "tokens": 14528}
+{"event": "score_progress", "shard": 2, "chunks": 18, "total_chunks": 36, "tokens": 23040}
+{"event": "score_progress", "shard": 2, "chunks": 24, "total_chunks": 36, "tokens": 30528}
+{"event": "score_progress", "shard": 2, "chunks": 30, "total_chunks": 36, "tokens": 37440}
+{"event": "score_progress", "shard": 2, "chunks": 36, "total_chunks": 36, "tokens": 44864}
+{"status": "complete", "shard": 2, "config_hash": "9f88add657ba752dae86290a5f68c8dbffb7c5483463af19cf0df155e31f631b", "data_path": "/home/youyang7/projects/SAE_long_short/results/phase5_sae_clean_feature_causal_v1/exploratory/score_shards/shard_02/clean_codes.npz", "data_sha256": "23498c218614ed96c408f67952a2fc4fdf8f7808082153db4d9df0aa8e3e7e9a", "trace_count": 701, "token_count": 44864, "source_sha256": "cefb98db970c20b548936cfe8ca5f9978207a78f948b378b34f58b9fd3804f9f"}

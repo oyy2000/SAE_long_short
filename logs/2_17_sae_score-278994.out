@@ -1,0 +1,199 @@
+Waiting for memory capacity without interference: eligible=4/1.
+0, 17055 MiB, 31485 MiB, 100 %
+1, 17055 MiB, 31485 MiB, 100 %
+2, 1296 MiB, 47245 MiB, 47 %
+3, 1296 MiB, 47245 MiB, 57 %
+Selected stable memory-fit GPUs by descending free memory on c31: 2 3 0 1
+{"event": "condition_scoring_start", "condition": "full_trace_balanced", "dev_traces": 1026, "test_traces": 1040, "chunks": 108}
+full_trace_balanced/dev chunks=25/108 tokens=67804
+full_trace_balanced/dev chunks=50/108 tokens=122167
+full_trace_balanced/dev chunks=75/108 tokens=187181
+full_trace_balanced/dev chunks=100/108 tokens=249919
+full_trace_balanced/test chunks=25/108 tokens=56719
+full_trace_balanced/test chunks=50/108 tokens=116207
+full_trace_balanced/test chunks=75/108 tokens=175057
+full_trace_balanced/test chunks=100/108 tokens=241168
+{
+  "status": "complete",
+  "experiment_name": "phase2_sae_sampling_ablation_v1",
+  "condition": "full_trace_balanced",
+  "condition_definition": {
+    "name": "full_trace_balanced",
+    "role": "length_control",
+    "sampling_unit": "trace_then_position",
+    "position_limit": null,
+    "train_new_sae": true
+  },
+  "config_hash": "2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "8eaec56bc2e09dfb96d44d0e49408f59571aec70846dd570ea992027fb39ddd4",
+  "candidate_count": 24,
+  "heldout_confirmed_count": 14,
+  "short_confirmed_count": 4,
+  "long_confirmed_count": 10,
+  "dev_trace_count": 1026,
+  "test_trace_count": 1040,
+  "dev_question_count": 132,
+  "test_question_count": 132,
+  "common_set_reconstruction": {
+    "dev": {
+      "full": {
+        "token_count": 267509,
+        "mse": 0.224794246412181,
+        "explained_variance": 0.7755715941289524
+      },
+      "first_64": {
+        "token_count": 65664,
+        "mse": 0.2232176704838909,
+        "explained_variance": 0.7755215919769511
+      },
+      "sequence_normalized_mse": 0.22126131148016848,
+      "sequence_normalized_mse_short": 0.21827268734622365,
+      "sequence_normalized_mse_long": 0.22424993561411324
+    },
+    "test": {
+      "full": {
+        "token_count": 259753,
+        "mse": 0.224227647547816,
+        "explained_variance": 0.7762565103908365
+      },
+      "first_64": {
+        "token_count": 66560,
+        "mse": 0.22425838733509437,
+        "explained_variance": 0.7748262488373924
+      },
+      "sequence_normalized_mse": 0.22022063177156437,
+      "sequence_normalized_mse_short": 0.21993707869562534,
+      "sequence_normalized_mse_long": 0.2205041848475034
+    }
+  },
+  "training_sample_contribution": {
+    "condition": "full_trace_balanced",
+    "train_trace_count": 9872,
+    "sampled_token_count": 250000,
+    "sampled_count_min": 25,
+    "sampled_count_max": 26,
+    "sampled_count_mean": 25.32414910858995,
+    "length_sample_count_pearson_r": 0.005256283938511927,
+    "length_sample_count_spearman_r": 0.005782581727556697,
+    "mean_sampled_count_by_label": {
+      "incorrect": 25.38095238095238,
+      "long": 25.339521452145213,
+      "medium": 25.32090761750405,
+      "other_correct": 25.316678232708767,
+      "short": 25.32095709570957
+    }
+  },
+  "elapsed_seconds": 441.2683780193329,
+  "input_evidence": {
+    "protocol_marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/PROTOCOL_FROZEN",
+    "protocol_marker_sha256": "8ca29525cf185f5f1d0d608963e45583925feb8036b8f6e6bd5955c7b589eac1",
+    "protocol_manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/protocol_manifest.json",
+    "protocol_manifest_sha256": "47cd61a62c5f1ea6579033085fb9fc0deb0cbb74af538946aa7c0de494662584",
+    "sample_manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/token_samples/full_trace_balanced/sample_manifest.json",
+    "sample_manifest_sha256": "183f1a72b379b574468b2e23473df9e977a383342375de42884b4d6687e6479e",
+    "training_marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/sae_training/full_trace_balanced/SAE_TRAINING_COMPLETE",
+    "training_marker_sha256": "d0871476229cb1d4e80f4602f7421470769a4b11100fd595ad8018a53b66f1b8",
+    "training_metrics_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/sae_training/full_trace_balanced/training_metrics.json",
+    "training_metrics_sha256": "54545439d3c0a150860cb4f5d19f6e2ceeafb274547a9c649f52d21eb4b8649d",
+    "checkpoint_path": "/home/youyang7/projects/SAE_long_short/checkpoints/phase2_sae_sampling_ablation_v1/full_trace_balanced/sae_model.safetensors",
+    "checkpoint_sha256": "f26ccf37289e025ab53199b6a5d09c59e1145d1028c5d66159f316b475cb356c",
+    "activation_chunk_count": 108,
+    "activation_manifests": [
+      {
+        "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_00_of_03/activation_manifest.json",
+        "sha256": "fe3f3f029716b87b1ac12ca6180bb9d6fad34594322758e216eca7fde1dd223d",
+        "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_00_of_03/ACTIVATIONS_COMPLETE",
+        "marker_sha256": "9cc0bc4eab6d35f69488ca5c68dee8ababb51e6d8e4ed556e45d9ecbd9bceecb"
+      },
+      {
+        "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_01_of_03/activation_manifest.json",
+        "sha256": "0fa693411fb61083a94a111daffdffbf4c6e3e8fdca1f2da241490105c2250d5",
+        "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_01_of_03/ACTIVATIONS_COMPLETE",
+        "marker_sha256": "ab3e7a6f0628230a00d808ffa92577781d72e3d17305b3bf8622f043e1cf2db7"
+      },
+      {
+        "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_02_of_03/activation_manifest.json",
+        "sha256": "05572eaf94434f7609bbcc569d854f18a80912a589802cda48ab82119d4f364a",
+        "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_02_of_03/ACTIVATIONS_COMPLETE",
+        "marker_sha256": "03ff65bcdc896e0bddf96fe6f7fb65d2c40bd40616d6128f56d63d2dba339b10"
+      }
+    ]
+  },
+  "artifacts": {
+    "feature_statistics.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/feature_statistics.csv",
+      "sha256": "5b0e058fa8912d6a8c8e42fa5e0f4906c25a9560d17fa882fc776e72d4ff47b2"
+    },
+    "discovered_features.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/discovered_features.json",
+      "sha256": "298fc7f59096492f6f59532cfd554a4b8c338a920818886ac17ce032987fafae"
+    },
+    "selected_trace_metrics.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/selected_trace_metrics.csv",
+      "sha256": "aba640024ef72e7cec27daa813a409c16ad26f08dea26b02c44e2ce0d3d89931"
+    },
+    "common_set_reconstruction.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/common_set_reconstruction.json",
+      "sha256": "c5138225e7542f6fc03b4f9dce379a9e128cdc59e0c94db3e1af8ba222e318d2"
+    },
+    "test_token_associations.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/test_token_associations.csv",
+      "sha256": "b2b2769391bfcbeeb5ca44d5ea0dba9fcd14f065759a70f8d1d7aef9e8760a6d"
+    },
+    "test_relative_position_profiles.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/test_relative_position_profiles.csv",
+      "sha256": "f76a305f1184dbd9adb1737089a03507a531e9c85e5442b7555bf1ed280fd910"
+    },
+    "training_sample_contributions.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/training_sample_contributions.csv",
+      "sha256": "9712ec3b2c0d26b65da25b534839775f9b00dd9c4376b33d3a3162d28d9d3b10"
+    },
+    "training_sample_contribution_summary.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/training_sample_contribution_summary.json",
+      "sha256": "dd3a70278af393bdd74a91f40dadfd79c8a74d6c1dabc5d108d588fdd05c4af0"
+    }
+  },
+  "runtime": {
+    "hostname": "c31",
+    "platform": "Linux-5.19.9-1.el8.x86_64-x86_64-with-glibc2.28",
+    "cuda_visible_devices": "2",
+    "packages": {
+      "python": "3.10.19",
+      "torch": "2.10.0",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "safetensors": "0.7.0"
+    },
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA RTX A6000",
+        "memory_total_mib": "49140",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA RTX A6000",
+        "memory_total_mib": "49140",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA RTX A6000",
+        "memory_total_mib": "49140",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "3",
+        "name": "NVIDIA RTX A6000",
+        "memory_total_mib": "49140",
+        "driver_version": "580.82.07"
+      }
+    ]
+  },
+  "source_code_sha256": "1bd99db78e1c71b585084187254f52587ddcfbacac312379164f1655d94f744a",
+  "library_code_sha256": "7b847dc5fd5a1e350a0ef45fe0b643b75bb56963b9839a647d99110bcb59b160",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This single-SAE-seed ablation can diagnose sampling and position artifacts. It cannot establish semantic identity, student utility, or causal effects."
+}

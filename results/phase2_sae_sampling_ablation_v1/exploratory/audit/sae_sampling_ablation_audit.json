@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "experiment_name": "phase2_sae_sampling_ablation_v1",
+  "config_hash": "2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "8eaec56bc2e09dfb96d44d0e49408f59571aec70846dd570ea992027fb39ddd4",
+  "expected_condition_count": 3,
+  "validated_condition_count": 3,
+  "conditions": [
+    {
+      "condition": "full_token_uniform",
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_token_uniform/scoring_summary.json",
+      "summary_sha256": "5575f1e002473dabbe68a4ffdfedf9c0974aa33edc5e22fcc6b69446e87e26dd",
+      "checkpoint_path": "/home/youyang7/projects/SAE_long_short/checkpoints/phase2_sae_pilot_v1/layer_17_k_064/sae_model.safetensors",
+      "checkpoint_sha256": "4ac3a3386f7998976e15c782b3280cb0e457e9d638737c6c8f3241c5322fb1ae",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 13
+    },
+    {
+      "condition": "full_trace_balanced",
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/scoring_summary.json",
+      "summary_sha256": "08c6c5a6fd68add1fca138cb05eb8791558131729ab3fc6aa95f9980f2de4223",
+      "checkpoint_path": "/home/youyang7/projects/SAE_long_short/checkpoints/phase2_sae_sampling_ablation_v1/full_trace_balanced/sae_model.safetensors",
+      "checkpoint_sha256": "f26ccf37289e025ab53199b6a5d09c59e1145d1028c5d66159f316b475cb356c",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 14
+    },
+    {
+      "condition": "prefix64_trace_balanced",
+      "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/scoring_summary.json",
+      "summary_sha256": "56467f098953be0b288bba731abafbf7416b9b9628d4ffa6fdc719af02707bf5",
+      "checkpoint_path": "/home/youyang7/projects/SAE_long_short/checkpoints/phase2_sae_sampling_ablation_v1/prefix64_trace_balanced/sae_model.safetensors",
+      "checkpoint_sha256": "2458c33a7ead1325427fc76509556f5c30f0b0dc2660923b42613db1ce1b9ca2",
+      "candidate_count": 24,
+      "heldout_confirmed_count": 20
+    }
+  ],
+  "analysis_evidence": {
+    "summary_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/analysis/analysis_summary.json",
+    "summary_sha256": "3827b2d60bb22f21524ec79c8b49def1ba1f96ea1d416afc1315582d75ee3981",
+    "report_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/analysis/analysis_report.md",
+    "required_figure_count": 12
+  },
+  "execution_history": {
+    "failed_training_job": "278985",
+    "failed_reason": "home quota exhaustion while writing the step-1000 checkpoint; no final model was accepted",
+    "retry_training_job": "278993",
+    "retry_policy": "from scratch under the identical frozen config and seed, with checkpoint output relocated to BeeGFS"
+  },
+  "errors": [],
+  "source_code_sha256": "85cd200f55efa9bb1407f223ae639bb1af1eaa92a34544acdb7a8c7d7d694db3",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This single-SAE-seed ablation can diagnose sampling and position artifacts. It cannot establish semantic identity, student utility, or causal effects."
+}

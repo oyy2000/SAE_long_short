@@ -1,0 +1,6 @@
+status=complete
+config_hash=c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151
+selection_sha256=79dcc52d00bf038641adad25ecfc800f575e6afd7e2c56e2d7dc3a3bd9d58093
+short_strength=1.0
+long_strength=0.25
+formal_claim_allowed=false

@@ -1,0 +1,81 @@
+{
+  "experiment_name": "phase2_sae_sampling_ablation_v1",
+  "protocol_variant": "full_token_vs_trace_balanced_vs_prefix64_v1",
+  "scope": "Exploratory SAE training-distribution falsification on GSM8K",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This single-SAE-seed ablation can diagnose sampling and position artifacts. It cannot establish semantic identity, student utility, or causal effects.",
+  "parent_sae": {
+    "protocol_path": "results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+    "completion_marker_path": "results/phase2_sae_pilot_v1/SAE_PILOT_COMPLETE",
+    "corpus_path": "results/phase2_sae_pilot_v1/formal/corpus/mixed_trajectories.jsonl",
+    "activation_root": "results/phase2_sae_pilot_v1/formal/activations",
+    "baseline_sample_root": "results/phase2_sae_pilot_v1/formal/token_samples",
+    "baseline_training_dir": "results/phase2_sae_pilot_v1/formal/sae_training/layer_17_k_064",
+    "baseline_checkpoint_dir": "checkpoints/phase2_sae_pilot_v1/layer_17_k_064"
+  },
+  "primary_sae": {
+    "layer_index": 17,
+    "k": 64,
+    "feature_count": 28672,
+    "training_seed": 17
+  },
+  "conditions": [
+    {
+      "name": "full_token_uniform",
+      "role": "frozen_baseline",
+      "sampling_unit": "token",
+      "position_limit": null,
+      "train_new_sae": false
+    },
+    {
+      "name": "full_trace_balanced",
+      "role": "length_control",
+      "sampling_unit": "trace_then_position",
+      "position_limit": null,
+      "train_new_sae": true
+    },
+    {
+      "name": "prefix64_trace_balanced",
+      "role": "early_state_falsification",
+      "sampling_unit": "trace_then_position",
+      "position_limit": 64,
+      "train_new_sae": true
+    }
+  ],
+  "token_budget": {
+    "train": 250000,
+    "dev": 50000,
+    "test": 50000,
+    "equal_across_conditions": true,
+    "sample_without_replacement_within_trace": true,
+    "trace_quota_rule": "maximally_equal integer quotas with deterministic hash-ranked remainder"
+  },
+  "evaluation": {
+    "discovery_split": "dev",
+    "confirmation_split": "test",
+    "eligible_labels": ["short", "long"],
+    "pairing_unit": "problem_id",
+    "primary_metric": "token_mean_activation",
+    "early_metric": "first_64_token_mean_activation",
+    "candidate_features_per_direction": 12,
+    "minimum_trace_prevalence": 0.05,
+    "maximum_dev_bh_q_value": 0.05,
+    "minimum_dev_absolute_paired_d": 0.2,
+    "confirmation_holm_alpha": 0.05,
+    "minimum_test_absolute_paired_d": 0.15,
+    "relative_position_bins": 5,
+    "common_eval_encode_batch_size": 512
+  },
+  "feature_matching": {
+    "candidate_set_only": true,
+    "method": "mutual_nearest_neighbor_decoder_cosine_plus_shared_trace_activation_correlation",
+    "minimum_decoder_cosine": 0.5,
+    "minimum_test_trace_activation_correlation": 0.5,
+    "require_same_short_long_direction": true
+  },
+  "outputs": {
+    "result_root": "results/phase2_sae_sampling_ablation_v1/exploratory",
+    "checkpoint_root": "checkpoints/phase2_sae_sampling_ablation_v1",
+    "figure_root": "figures/phase2_sae_sampling_ablation_v1"
+  }
+}

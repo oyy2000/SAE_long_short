@@ -1,0 +1,6 @@
+status=passed
+config_hash=2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9
+audit_sha256=9a339c8139415fdc1ac9e553673acdca8226ecc9ca2c7ad2e97d6633960090f2
+validated_condition_count=3
+required_figure_count=12
+formal_claim_allowed=false

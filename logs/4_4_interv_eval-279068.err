@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/youyang7/projects/SAE_long_short/scripts/4_4_launch_intervention_evaluation.py", line 186, in <module>
+    main()
+  File "/home/youyang7/projects/SAE_long_short/scripts/4_4_launch_intervention_evaluation.py", line 83, in main
+    failures = _run(entries, gpu_ids, config_path, manifest, manifest_path, args.skip_complete)
+  File "/home/youyang7/projects/SAE_long_short/scripts/4_4_launch_intervention_evaluation.py", line 111, in _run
+    log = Path(entry["log_path"]).open("w", encoding="utf-8")
+  File "/home/youyang7/.conda/envs/sft/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+OSError: [Errno 121] Remote I/O error: '/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/evaluation/logs/equal_examples__no_steering__seed_42.log'

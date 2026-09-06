@@ -1,0 +1,94 @@
+{
+  "status": "submitted",
+  "experiment_name": "trace_length_observation_gate0_v1",
+  "submitted_at_utc": "2026-09-04T04:56:01.405432+00:00",
+  "jobs": [
+    {
+      "stage": "data",
+      "job_id": "278951",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=a6000",
+        "--nodelist=c31",
+        "--export=ALL,RESULT_ROOT=results/trace_length_observation_gate0_v1,CHECKPOINT_ROOT=checkpoints/trace_length_observation_gate0_v1_formal,SFT_ENV=/mnt/beegfs/youyang7/.conda/envs/sft,FACT_ENV=/mnt/beegfs/youyang7/.conda/envs/fact",
+        "scripts/slurm/24_1_build_trace_observation_data.sh"
+      ],
+      "submission_status": "reused_existing"
+    },
+    {
+      "stage": "training",
+      "shard": 0,
+      "node": "c30",
+      "job_id": "278952",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=a6000",
+        "--nodelist=c30",
+        "--dependency=afterok:278951",
+        "--export=ALL,RESULT_ROOT=results/trace_length_observation_gate0_v1,CHECKPOINT_ROOT=checkpoints/trace_length_observation_gate0_v1_formal,SFT_ENV=/mnt/beegfs/youyang7/.conda/envs/sft,FACT_ENV=/mnt/beegfs/youyang7/.conda/envs/fact,LAUNCHER_SHARDS=3,LAUNCHER_SHARD_INDEX=0",
+        "scripts/slurm/24_3_train_trace_observation.sh"
+      ],
+      "submission_status": "reused_existing"
+    },
+    {
+      "stage": "training",
+      "shard": 1,
+      "node": "c32",
+      "job_id": "278954",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=a5000ada",
+        "--nodelist=c32",
+        "--dependency=afterok:278951",
+        "--export=ALL,RESULT_ROOT=results/trace_length_observation_gate0_v1,CHECKPOINT_ROOT=checkpoints/trace_length_observation_gate0_v1_formal,SFT_ENV=/mnt/beegfs/youyang7/.conda/envs/sft,FACT_ENV=/mnt/beegfs/youyang7/.conda/envs/fact,LAUNCHER_SHARDS=3,LAUNCHER_SHARD_INDEX=1",
+        "scripts/slurm/24_3_train_trace_observation.sh"
+      ],
+      "submission_status": "submitted"
+    },
+    {
+      "stage": "training",
+      "shard": 2,
+      "node": "c49",
+      "job_id": "278955",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=a5000ada",
+        "--nodelist=c49",
+        "--dependency=afterok:278951",
+        "--export=ALL,RESULT_ROOT=results/trace_length_observation_gate0_v1,CHECKPOINT_ROOT=checkpoints/trace_length_observation_gate0_v1_formal,SFT_ENV=/mnt/beegfs/youyang7/.conda/envs/sft,FACT_ENV=/mnt/beegfs/youyang7/.conda/envs/fact,LAUNCHER_SHARDS=3,LAUNCHER_SHARD_INDEX=2",
+        "scripts/slurm/24_3_train_trace_observation.sh"
+      ],
+      "submission_status": "submitted"
+    },
+    {
+      "stage": "training_audit",
+      "job_id": "278956",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=a6000",
+        "--nodelist=c31",
+        "--dependency=afterok:278952:278954:278955",
+        "--export=ALL,RESULT_ROOT=results/trace_length_observation_gate0_v1,CHECKPOINT_ROOT=checkpoints/trace_length_observation_gate0_v1_formal,SFT_ENV=/mnt/beegfs/youyang7/.conda/envs/sft,FACT_ENV=/mnt/beegfs/youyang7/.conda/envs/fact",
+        "scripts/slurm/24_4_audit_trace_observation_training.sh"
+      ]
+    },
+    {
+      "stage": "evaluation_analysis_audit",
+      "job_id": "278957",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=a5000ada",
+        "--nodelist=c32",
+        "--dependency=afterok:278956",
+        "--export=ALL,RESULT_ROOT=results/trace_length_observation_gate0_v1,CHECKPOINT_ROOT=checkpoints/trace_length_observation_gate0_v1_formal,SFT_ENV=/mnt/beegfs/youyang7/.conda/envs/sft,FACT_ENV=/mnt/beegfs/youyang7/.conda/envs/fact",
+        "scripts/slurm/24_5_eval_analyze_trace_observation.sh"
+      ]
+    }
+  ]
+}

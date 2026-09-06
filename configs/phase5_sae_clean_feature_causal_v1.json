@@ -1,0 +1,99 @@
+{
+  "experiment_name": "phase5_sae_clean_feature_causal_v1",
+  "formal_claim_allowed": false,
+  "scope": "Exploratory fixed-support feature falsification, target engagement, and conditional independent teacher intervention",
+  "parent_protocol": "results/phase3_sae_intervention_strength_sweep_v2/exploratory/protocol/frozen_protocol.json",
+  "activation_root": "results/phase2_sae_pilot_v1/formal/activations",
+  "clean_tokens": {
+    "count": 64,
+    "early_count": 32,
+    "maximum_native_position": 128,
+    "exclude_last_tokens": 32,
+    "exclude_words": [
+      "answer",
+      "final",
+      "text",
+      "frac",
+      "boxed",
+      "begin",
+      "end",
+      "times",
+      "cdot"
+    ],
+    "require_alphanumeric": true
+  },
+  "feature_gate": {
+    "discovery_split": "dev",
+    "confirmation_split": "test",
+    "max_dev_bh_q": 0.05,
+    "min_dev_abs_paired_d": 0.2,
+    "max_confirmation_holm_p": 0.05,
+    "min_confirmation_abs_paired_d": 0.15,
+    "max_early_p": 0.05,
+    "minimum_prevalence": 0.05,
+    "maximum_top_token_mass_share": 0.3,
+    "candidate_count_per_direction": 8,
+    "max_selected_features": 1,
+    "nuisance_columns": [
+      "digit_fraction",
+      "mean_native_position",
+      "native_window_span"
+    ],
+    "residualization": "Fit intercept and nuisance slopes on dev only, apply frozen slopes to confirmation; require replicated corrected association."
+  },
+  "scoring": {
+    "shards": 3,
+    "batch_size": 256,
+    "peak_plus_margin_mib": 10000,
+    "readback_positions": [
+      0,
+      16,
+      32,
+      48
+    ]
+  },
+  "engagement": {
+    "signed_strengths": [
+      -1.0,
+      1.0
+    ],
+    "maximum_delta_fraction": 0.05,
+    "minimum_target_change_fraction": 0.25,
+    "minimum_engaged_state_fraction": 0.05,
+    "control_seeds": [
+      51017,
+      51042
+    ],
+    "maximum_nontarget_change_ratio": 2.0
+  },
+  "generation": {
+    "independent_train_questions": 64,
+    "candidates_per_question": 2,
+    "prefix_tokens": [
+      0,
+      64
+    ],
+    "max_new_tokens": 512,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "seed": 51073,
+    "shards": 6,
+    "batch_size": 1,
+    "exclude_all_parent_corpus_questions": true,
+    "require_engagement_gate": true
+  },
+  "outcome_gate": {
+    "minimum_length_reduction_fraction": 0.05,
+    "maximum_accuracy_drop": 0.05,
+    "bootstrap_samples": 10000,
+    "seed": 51117,
+    "holm_correct_conditions": true,
+    "require_better_than_matched_random": true,
+    "student_sft_requires_teacher_gate": true
+  },
+  "outputs": {
+    "result_root": "results/phase5_sae_clean_feature_causal_v1/exploratory",
+    "figure_root": "figures/phase5_sae_clean_feature_causal_v1/exploratory",
+    "beegfs_root": "/mnt/beegfs/youyang7/projects/SAE_long_short/phase5_sae_clean_feature_causal_v1"
+  }
+}

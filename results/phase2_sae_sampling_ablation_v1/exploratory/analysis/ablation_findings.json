@@ -1,0 +1,46 @@
+{
+  "length_exposure_spearman_r": {
+    "full_token_uniform": 0.7682929046882481,
+    "full_trace_balanced": 0.005782581727556697,
+    "prefix64_trace_balanced": 0.005782581727556697
+  },
+  "test_explained_variance": {
+    "full_token_uniform": {
+      "full": 0.7765239634739028,
+      "first64": 0.7743201929126321
+    },
+    "full_trace_balanced": {
+      "full": 0.7762565103908365,
+      "first64": 0.7748262488373924
+    },
+    "prefix64_trace_balanced": {
+      "full": 0.6795848760973409,
+      "first64": 0.7942938111581023
+    }
+  },
+  "heldout_confirmed_features": {
+    "full_token_uniform": {
+      "short": 5,
+      "long": 8
+    },
+    "full_trace_balanced": {
+      "short": 4,
+      "long": 10
+    },
+    "prefix64_trace_balanced": {
+      "short": 9,
+      "long": 11
+    }
+  },
+  "pairwise_stable_match_counts": {
+    "full_token_uniform__full_trace_balanced": 9,
+    "full_token_uniform__prefix64_trace_balanced": 0,
+    "full_trace_balanced__prefix64_trace_balanced": 1
+  },
+  "stable_three_dictionary_feature_count": 0,
+  "decision": {
+    "compare_full_and_prefix64_training": true,
+    "add_explicit_length_penalty": false,
+    "reason": "Trace-balanced sampling directly controls representation weight without forcing length into the SAE objective; explicit length supervision would confound discovery with the label being explained."
+  }
+}

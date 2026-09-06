@@ -1,0 +1,95 @@
+{
+  "experiment_name": "phase1_5_credit_allocation_v1",
+  "protocol_variant": "fixed_long_context_loss_allocation_v1",
+  "scope": "GSM8K only",
+  "formal_claim_allowed": false,
+  "gate_dependency": {
+    "gate_name": "gate1",
+    "decision_path": "results/phase1_teaching_utility_v1/formal/analysis/gate1_decision.json",
+    "completion_marker_path": "results/phase1_teaching_utility_v1/PHASE1_COMPLETE",
+    "required_status": "passed"
+  },
+  "pilot_gate_dependency": {
+    "gate_name": "pilot",
+    "decision_path": "results/phase1_5_credit_allocation_v1/formal/pilot_analysis/pilot_decision.json",
+    "completion_marker_path": "results/phase1_5_credit_allocation_v1/formal/pilot_analysis/PILOT_ANALYSIS_COMPLETE",
+    "required_status": "passed"
+  },
+  "source": {
+    "utility_protocol": "configs/phase1_teaching_utility_v1.json",
+    "trace_role": "quantile_long_correct_trace",
+    "paired_short_budget_role": "quantile_short_correct_trace"
+  },
+  "segmentation": {
+    "version": "newline_blankline_then_long_sentence_v1",
+    "minimum_step_tokens": 8,
+    "merge_short_steps": true,
+    "manual_audit_questions": 100,
+    "manual_audit_required_before_training": true,
+    "approval_marker_path": "results/phase1_5_credit_allocation_v1/formal/data/STEP_AUDIT_APPROVED"
+  },
+  "mask_budget": {
+    "basis": "paired_quantile_short_reasoning_tokens",
+    "selection": "whole_step_knapsack",
+    "maximum_relative_gap": 0.05,
+    "gap_policy": "drop_question_from_all_conditions",
+    "answer_always_supervised": true
+  },
+  "pilot": {
+    "seed": 17,
+    "conditions": [
+      "long_full",
+      "long_step_balanced",
+      "long_random_mask",
+      "long_high_nll_mask",
+      "long_ctv_mask",
+      "long_answer_only",
+      "same_source_pruned_ctv",
+      "short_band_full",
+      "answer_only_pruned"
+    ],
+    "masked_conditions_keep_identical_long_context": true,
+    "random_mask_stratification": ["trace_length", "supervision_budget"]
+  },
+  "confirmation": {
+    "conditions": ["long_full", "long_random_mask", "long_ctv_mask", "same_source_pruned_ctv", "short_band_full"],
+    "seeds": [17, 42, 73],
+    "reuse_pilot_seed17": true,
+    "unique_adapter_count": 19
+  },
+  "training": {
+    "learning_rate": 2e-5,
+    "per_device_train_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "num_train_epochs": 1,
+    "max_length": 2048,
+    "weight_decay": 0.0,
+    "warmup_ratio": 0.03,
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": true,
+    "completion_separator": "",
+    "loss_normalization": "token_mean"
+  },
+  "evaluation": {
+    "batch_size": 16,
+    "max_new_tokens": 512,
+    "temperature": 0.0
+  },
+  "analysis": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260904
+  },
+  "gate1_5": {
+    "pilot_required_ci_lower_above": ["long_random_mask", "long_full"],
+    "pilot_contrast": "long_ctv_mask",
+    "confirmation_required_ci_lower_above": ["long_random_mask", "long_full"],
+    "confirmation_contrast": "long_ctv_mask",
+    "pass_action": "allow_phase2_sae",
+    "fail_action": "stop_before_sae"
+  },
+  "outputs": {
+    "result_root": "results/phase1_5_credit_allocation_v1",
+    "figure_root": "figures/phase1_5_credit_allocation_v1",
+    "checkpoint_root": "checkpoints/phase1_5_credit_allocation_v1"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "experiment_name": "phase1_teaching_utility_v1",
+  "protocol_variant": "student_specific_counterfactual_teaching_value_v1",
+  "scope": "GSM8K only",
+  "formal_claim_allowed": false,
+  "gate_dependency": {
+    "gate_name": "phase1_entry",
+    "decision_path": "results/phase1_teaching_utility_v1/entry_authorization/phase1_entry_decision.json",
+    "completion_marker_path": "results/phase1_teaching_utility_v1/entry_authorization/PHASE1_ENTRY_AUTHORIZED",
+    "required_status": "passed"
+  },
+  "phase0_robustness_audit": {
+    "gate_name": "gate0",
+    "decision_path": "results/trace_length_observation_gate0_v1/formal/analysis/gate0_decision.json",
+    "completion_marker_path": "results/trace_length_observation_gate0_v1/PHASE0_COMPLETE",
+    "required_status": "passed",
+    "required_for_phase1_execution": false,
+    "claim_role": "required only for attributing the observed short-trace advantage beyond token-budget, update-budget, and loss-normalization effects"
+  },
+  "source_pool": {
+    "parent_config_path": "/home/youyang7/projects/small_language_model/configs/capacity_length_ranked_sampling_7b_v1.json",
+    "parent_generation_audit_path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/datasets/generation_audit.json",
+    "parent_generation_audit_sha256": "81806fa0930460776e08acbf4ae7cc273063607e529178d0e445ecf351460e45",
+    "existing_problem_count": 881,
+    "target_problem_count": 2000,
+    "extension_problem_count": 1119,
+    "reuse_status": "extension_of_existing_pool_not_independent_replication"
+  },
+  "dataset": {
+    "source": "hf_dataset",
+    "dataset_name": "openai/gsm8k",
+    "dataset_config": "main",
+    "split": "train",
+    "question_field": "question",
+    "answer_field": "answer",
+    "answer_format": "gsm8k",
+    "pool_index_start": 0,
+    "pool_index_stop": 2000,
+    "probe_index_start": 2000,
+    "probe_index_stop": 2256,
+    "question_split": {"train": 1400, "dev": 300, "test": 300, "seed": 20260904}
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "cache_dir": "/mnt/beegfs/youyang7/.cache/huggingface/hub",
+    "num_rollouts": 16,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_new_tokens": 512,
+    "generation_shards": 3,
+    "base_seed": 20260904
+  },
+  "student": {
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "cache_dir": "/mnt/beegfs/youyang7/.cache/huggingface/hub",
+    "torch_dtype": "bfloat16",
+    "lora": {"r": 4, "alpha": 16, "dropout": 0.0, "target_modules": "all-linear", "seed": 17}
+  },
+  "anchors": {
+    "primary": "base_student_zero_lora_seed17",
+    "sensitivity": "random_correct_mid_sft_50_percent",
+    "full_sensitivity_sample_questions": 100,
+    "candidates_per_question": 4
+  },
+  "utility": {
+    "name": "counterfactual_teaching_value",
+    "abbreviation": "CTV",
+    "probe_target_primary": "official_rationale",
+    "probe_target_secondary": "answer_only",
+    "global_probe_questions": 256,
+    "local_probe_questions": 32,
+    "local_difficulty_features": ["official_solution_tokens", "operation_count", "base_student_official_rationale_nll"],
+    "candidate_loss_reductions": ["token_sum", "token_mean"],
+    "primary_gradient_score": "global_token_mean_ctv_gradient",
+    "same_eta_across_reductions": true,
+    "norm_matched_update_sanity_only": true,
+    "max_length": 2048
+  },
+  "calibration": {
+    "split": "train",
+    "question_count": 32,
+    "candidates_per_question": 4,
+    "candidate_roles": ["quantile_short", "median", "quantile_long", "deterministic_random"],
+    "relative_update_grid": [1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5, 1e-4],
+    "minimum_sign_agreement": 0.9,
+    "minimum_adjacent_spearman": 0.9,
+    "maximum_median_linearization_error": 0.1,
+    "choose_largest_passing": true,
+    "no_update_repeat_forwards": 10,
+    "no_update_max_absolute_range": 1e-8
+  },
+  "exact_utility": {
+    "split": "dev",
+    "question_count": 300,
+    "candidates_per_question": 4,
+    "candidate_count": 1200,
+    "micro_update_count": 2400,
+    "report_local_and_global": true
+  },
+  "baselines": {
+    "length": {"version": "log_completion_tokens_v1"},
+    "student_nll": {"version": "completion_token_mean_nll_v1"},
+    "rsr": {"version": "arxiv_2601.14249_rank_clip_100", "official_commit": "59a7c4cdbbb7c26b93f91472da5d79498e29b5c0", "direction": "lower_is_better"},
+    "scas": {"version": "arxiv_2605.26872v5_lambda_0.5_group_5", "official_commit": "4cec3a689acebd72ad40580641f8e73bf305b0e4", "lambda": 0.5, "groups": 5, "target_layer": "model.layers.27.mlp.up_proj", "direction": "sample_deterministically_from_lowest_group"},
+    "lark_style": {"version": "arxiv_2605.30651_top50_brier_budget_1", "official_commit": "38cfd4f54707b19e5b4abd3e8a00051636fef19e", "budget": 1, "direction": "higher_is_better"},
+    "absolute_shortest": {"version": "within_question_v1"},
+    "quantile_short": {"version": "within_question_bottom20_band_median_v1"},
+    "deterministic_random": {"version": "sha256_seed_20260904"}
+  },
+  "policy_sft": {
+    "screen_seed": 17,
+    "screen_policies": ["ctv", "rsr", "scas", "lark_style", "low_nll", "absolute_shortest", "quantile_short", "random"],
+    "screen_train_questions": 1400,
+    "screen_dev_questions": 300,
+    "confirm_policies": ["ctv", "strongest_non_ctv", "quantile_short", "random"],
+    "confirm_seeds": [17, 42, 73],
+    "minimum_unique_adapter_count": 14,
+    "maximum_unique_adapter_count": 16,
+    "locked_test_only_for_confirm": true,
+    "training": {
+      "learning_rate": 2e-5,
+      "per_device_train_batch_size": 4,
+      "gradient_accumulation_steps": 1,
+      "num_train_epochs": 1,
+      "max_length": 2048
+    },
+    "evaluation": {
+      "batch_size": 16,
+      "max_new_tokens": 512,
+      "temperature": 0.0
+    }
+  },
+  "gate1": {
+    "gradient_metric": "within_question_spearman_with_exact_global_ctv",
+    "primary_loss_reduction": "token_mean",
+    "surface_baselines": ["length", "student_nll", "rsr", "scas", "lark_style"],
+    "require_holm_paired_ci_lower_above_each_surface_baseline": true,
+    "require_dev_exact_ctv_first": true,
+    "require_test_accuracy_ci_lower_above_random": true,
+    "require_test_accuracy_ci_lower_above_strongest_baseline": true,
+    "taylor_agreement_alone_is_sufficient": false,
+    "pass_action": "allow_phase1_5_credit_allocation",
+    "fail_action": "stop_before_phase1_5_and_sae"
+  },
+  "analysis": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260904
+  },
+  "outputs": {
+    "result_root": "results/phase1_teaching_utility_v1",
+    "figure_root": "figures/phase1_teaching_utility_v1",
+    "checkpoint_root": "checkpoints/phase1_teaching_utility_v1"
+  }
+}

@@ -1,0 +1,25 @@
+Waiting for memory capacity without interference: eligible=3/1.
+0, 4 MiB, 32225 MiB, 0 %
+1, 4 MiB, 32225 MiB, 0 %
+2, 4 MiB, 32225 MiB, 0 %
+Selected stable memory-fit GPUs by descending free memory on c49: 0 1 2
+{
+  "n": 1269,
+  "correct": 852,
+  "accuracy": 0.6713947990543735,
+  "mean_output_tokens": 242.56737588652481,
+  "status": "complete",
+  "model_id": "base_student",
+  "adapter_path": null,
+  "config_hash": "c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151",
+  "dataset": {
+    "dataset_name": "openai/gsm8k",
+    "dataset_config": "main",
+    "split": "test",
+    "start_index": 50,
+    "limit": 1269,
+    "problem_ids_sha256": "ab507f3dc6223ab0d353aa08f64e639251cda00a9d7e05e3e255307b1ccfd761",
+    "dataset_fingerprint": "59ec1b7f9357c7a2"
+  },
+  "formal_claim_allowed": false
+}

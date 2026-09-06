@@ -1,0 +1,138 @@
+{
+  "experiment_name": "trace_length_observation_gate0_v1",
+  "protocol_variant": "phase0_controlled_trace_length_observation_v1",
+  "scope": "GSM8K only",
+  "evidence_level": "registered_comparative_gate0_on_previously_observed_eval_cohort",
+  "formal_claim_allowed": false,
+  "parent_generation": {
+    "config_path": "/home/youyang7/projects/small_language_model/configs/capacity_length_ranked_sampling_7b_v1.json",
+    "canonical_config_sha256": "4950b6a9c48bd220c268330aa983a55cab79391ab2137534d6ef6170746ee447",
+    "config_file_sha256": "fb058fe2e790a6c045a3b72a0e5a21d2237eb9ebd2c296edf744431641f157c3",
+    "completion_marker_path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/datasets/GENERATION_COMPLETE",
+    "completion_marker_sha256": "a6a968283ac0ded659982fbd732cda449276940dbbd905350c3fb297e754600e",
+    "dataset_manifest_path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/datasets/dataset_manifest.json",
+    "dataset_manifest_sha256": "5ec60e2112a9d83f59fcea2bcbae4f153deba0848c5f736d48f0384a3242233a",
+    "generation_audit_path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/datasets/generation_audit.json",
+    "generation_audit_sha256": "81806fa0930460776e08acbf4ae7cc273063607e529178d0e445ecf351460e45"
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "student": {
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "tokenizer_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "cache_dir": "/mnt/beegfs/youyang7/.cache/huggingface/hub",
+    "trust_remote_code": false,
+    "torch_dtype": "bfloat16",
+    "lora": {
+      "r": 4,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": "all-linear"
+    }
+  },
+  "dataset": {
+    "source": "hf_dataset",
+    "dataset_name": "openai/gsm8k",
+    "dataset_config": "main",
+    "split": "train",
+    "question_field": "question",
+    "answer_field": "answer",
+    "answer_format": "gsm8k",
+    "verifier": "gsm8k_numeric",
+    "expected_parent_problem_count": 881
+  },
+  "candidate_pool": {
+    "candidates_per_problem": 16,
+    "minimum_unique_correct": 4,
+    "deduplication": "whitespace_normalized_exact_text",
+    "tail_fraction": 0.2,
+    "selection_method": "within_quantile_band_median_v1",
+    "short_definition": "median_length_representative_of_bottom_20_percent",
+    "medium_definition": "closest_to_global_median_length",
+    "long_definition": "median_length_representative_of_top_20_percent",
+    "insufficient_candidate_policy": "drop_problem_from_all_ranks",
+    "extreme_trace_policy": "avoid_when_quantile_band_has_multiple_members"
+  },
+  "training": {
+    "seeds": [17, 42, 73],
+    "budget_regimes": [
+      "equal_examples",
+      "equal_target_tokens",
+      "equal_processed_tokens"
+    ],
+    "budget_count_basis": "completion_tokens_excluding_terminal_eos",
+    "optimizer_budget_count_basis": "nonpadding_model_input_tokens_including_prompt_completion_terminal_eos",
+    "flops_proxy_definition": "6_times_total_parameter_count_times_token_updates",
+    "equal_target_token_policy": "complete_question_cohort_then_deterministic_repetition_to_largest_completion_token_total",
+    "equal_processed_token_policy": "complete_question_cohort_then_deterministic_repetition_to_largest_model_input_token_total",
+    "maximum_token_budget_gap": 512,
+    "budget_schedule_seed": 20260903,
+    "loss_normalizations": ["token_mean", "sequence_mean"],
+    "loss_masks": ["full_completion", "answer_only"],
+    "num_train_epochs": 1,
+    "per_device_train_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.00002,
+    "weight_decay": 0.0,
+    "warmup_ratio": 0.03,
+    "max_grad_norm": 1.0,
+    "max_length": 2048,
+    "completion_separator": "",
+    "gradient_checkpointing": true,
+    "packing": false,
+    "launcher_shards": 3,
+    "max_parallel_per_node": 4,
+    "expected_run_count": 108
+  },
+  "evaluation": {
+    "dataset_split": "test",
+    "start_index": 50,
+    "limit": 1269,
+    "max_new_tokens": 512,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "batch_size": 32,
+    "include_base_model": true,
+    "expected_adapter_count": 108,
+    "expected_run_count": 109,
+    "max_parallel": 4,
+    "cohort_status": "locked_but_previously_observed"
+  },
+  "analysis": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 24017,
+    "familywise_alpha": 0.05,
+    "rank_contrasts": [
+      ["short", "medium"],
+      ["medium", "long"],
+      ["short", "long"]
+    ],
+    "primary_loss_mask": "full_completion",
+    "report_arm_accuracy_intervals": true,
+    "report_paired_question_effects": true,
+    "report_training_accounting": true
+  },
+  "gate0": {
+    "primary_contrast": ["short", "long"],
+    "primary_loss_mask": "full_completion",
+    "required_short_vs_long_cells": [
+      {"budget_regime": "equal_target_tokens", "loss_normalization": "token_mean"},
+      {"budget_regime": "equal_target_tokens", "loss_normalization": "sequence_mean"},
+      {"budget_regime": "equal_processed_tokens", "loss_normalization": "token_mean"},
+      {"budget_regime": "equal_processed_tokens", "loss_normalization": "sequence_mean"}
+    ],
+    "minimum_accuracy_effect": 0.0,
+    "minimum_ci_lower_bound": 0.0,
+    "require_all_cells": true,
+    "pass_action": "allow_phase1_utility_validation",
+    "fail_action": "attribute_observation_to_budget_or_loss_normalization_and_stop_sae_story"
+  },
+  "outputs": {
+    "result_root": "results/trace_length_observation_gate0_v1",
+    "figure_root": "figures/trace_length_observation_gate0_v1",
+    "checkpoint_root": "checkpoints/trace_length_observation_gate0_v1"
+  }
+}

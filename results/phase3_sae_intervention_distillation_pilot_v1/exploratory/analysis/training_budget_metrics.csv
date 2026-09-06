@@ -1,0 +1,9 @@
+budget_regime,condition,completion_token_updates,model_input_token_updates,optimizer_steps,mean_training_seconds
+equal_examples,no_steering,153612,216502,154,63.109370279475115
+equal_examples,short_feature_enhance,153583,216473,154,87.95796604594216
+equal_examples,long_feature_suppress,153984,216874,154,64.09895560642083
+equal_examples,random_feature_enhance,154002,216892,154,88.60555300388175
+equal_target_tokens,no_steering,154021,217114,154,64.50437685975339
+equal_target_tokens,short_feature_enhance,154091,217288,154,107.41998489119578
+equal_target_tokens,long_feature_suppress,154096,217066,154,63.30018391549432
+equal_target_tokens,random_feature_enhance,154002,216892,154,109.56048123821772

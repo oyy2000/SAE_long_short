@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "experiment_name": "phase2_sae_pilot_v1",
+  "config_hash": "501ba5f56aafcddceebdda328d448a40206413c06208a77be7ed5c45a50485e2",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+  "config_sha256": "67ff12df5293fc91d731728be66db15392a544845cc8d9d117de01b62a289786",
+  "generation_audit_path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/datasets/generation_audit.json",
+  "generation_audit_sha256": "81806fa0930460776e08acbf4ae7cc273063607e529178d0e445ecf351460e45",
+  "raw_shards": [
+    {
+      "path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/generation/raw/shard_00000_of_00003.jsonl",
+      "sha256": "1ab6668a199e52954c1003d60b0690d8766ebf4a3aedc5c629a14cad834001e0",
+      "records": 4704
+    },
+    {
+      "path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/generation/raw/shard_00001_of_00003.jsonl",
+      "sha256": "8c778bc9c4892d8ac7f588de32ccc45bba738e828e7de6ac2c5da92db43acf62",
+      "records": 4704
+    },
+    {
+      "path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/generation/raw/shard_00002_of_00003.jsonl",
+      "sha256": "f1fc3cdc24b474aa81984a462c29b445909483ba53d80e5d3bc65d981ca50b30",
+      "records": 4688
+    }
+  ],
+  "corpus_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/corpus/mixed_trajectories.jsonl",
+  "corpus_sha256": "a4643aa73cf13e26aa43f4bcbf41d5798cfd161cd5433338f0d48c1bff7ef6c8",
+  "question_split_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/corpus/question_split.json",
+  "question_split_sha256": "1883b9e95ff2d4a8fa76f25884d05be5b371defbc39b100cf5406334417484f7",
+  "trajectory_count": 14096,
+  "question_count": 881,
+  "split_trajectory_counts": {
+    "dev": 2112,
+    "test": 2112,
+    "train": 9872
+  },
+  "analysis_label_counts": {
+    "incorrect": 134,
+    "long": 3457,
+    "medium": 881,
+    "other_correct": 6167,
+    "short": 3457
+  },
+  "all_trajectories_mixed_for_training": true,
+  "source_code_sha256": "3dc7b69130747798a9f11a7911b4fe47b0e408c21c07cc347d6e892317bfc14d",
+  "formal_claim_allowed": false
+}

@@ -1,0 +1,117 @@
+{
+  "experiment_name": "phase3_sae_intervention_distillation_pilot_v1",
+  "protocol_variant": "common_prefix_length_feature_intervention_and_student_sft_v1",
+  "scope": "Exploratory GSM8K causal intervention and downstream SFT",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This experiment tests length-associated SAE features, not student-utility features. It may establish an exploratory intervention-to-data-to-student association, but not a semantic reasoning mechanism or utility-specific causal effect.",
+  "parent_sae": {
+    "protocol_path": "results/phase2_sae_sampling_ablation_v1/exploratory/protocol/frozen_protocol.json",
+    "completion_marker_path": "results/phase2_sae_sampling_ablation_v1/exploratory/SAE_SAMPLING_ABLATION_COMPLETE",
+    "feature_path": "results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/discovered_features.json",
+    "feature_scoring_marker_path": "results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/full_trace_balanced/CONDITION_SCORING_COMPLETE",
+    "checkpoint_path": "checkpoints/phase2_sae_sampling_ablation_v1/full_trace_balanced/sae_model.safetensors",
+    "training_marker_path": "results/phase2_sae_sampling_ablation_v1/exploratory/sae_training/full_trace_balanced/SAE_TRAINING_COMPLETE",
+    "corpus_path": "results/phase2_sae_pilot_v1/formal/corpus/mixed_trajectories.jsonl",
+    "layer_index": 17,
+    "k": 64,
+    "feature_count": 28672,
+    "feature_selector": "heldout_confirmed_from_full_trace_balanced_sae"
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/mnt/beegfs/youyang7/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "torch_dtype": "bfloat16",
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_new_tokens": 512,
+    "common_prefix_tokens": 64,
+    "prompt_source": "parent_sae_corpus_exact_prompt",
+    "base_seed": 2026090403
+  },
+  "intervention": {
+    "hook_location": "model.model.layers[17] output residual",
+    "start_after_common_prefix": true,
+    "short_mode": "constant_decoder_direction_enhancement",
+    "long_mode": "topk_activation_gated_decoder_component_suppression",
+    "respect_full_sae_topk": true,
+    "maximum_delta_to_hidden_norm_fraction": 0.15,
+    "short_strength_grid": [1.0, 2.0, 4.0],
+    "long_suppression_grid": [0.25, 0.5, 1.0],
+    "random_control": "same_feature_count_unit_norm_decoder_sum_with_short_selected_strength",
+    "random_seed": 24017
+  },
+  "calibration": {
+    "question_split": "dev",
+    "question_count": 24,
+    "candidates_per_question": 1,
+    "selection_metric": "correct_usable_traces_per_generated_million_tokens",
+    "maximum_accuracy_drop_from_no_steering": 0.05,
+    "tie_breakers": ["higher_accuracy", "shorter_mean_correct_length", "weaker_intervention"],
+    "generation_shards": 4
+  },
+  "main_generation": {
+    "question_split": "train",
+    "question_count": 617,
+    "candidates_per_question": 2,
+    "conditions": [
+      "no_steering",
+      "short_feature_enhance",
+      "long_feature_suppress",
+      "random_feature_enhance"
+    ],
+    "generation_shards": 12,
+    "batch_size": 2,
+    "selection": "lowest_candidate_index_correct_trace",
+    "primary_support": "all_condition_correct_question_intersection"
+  },
+  "student": {
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "tokenizer_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "cache_dir": "/mnt/beegfs/youyang7/.cache/huggingface/hub",
+    "torch_dtype": "bfloat16",
+    "lora": {
+      "r": 4,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": "all-linear"
+    }
+  },
+  "student_sft": {
+    "seeds": [17, 42, 73],
+    "budget_regimes": ["equal_examples", "equal_target_tokens"],
+    "loss_normalization": "token_mean",
+    "loss_mask": "full_completion",
+    "learning_rate": 0.00002,
+    "num_train_epochs": 1,
+    "per_device_train_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "weight_decay": 0.0,
+    "warmup_ratio": 0.03,
+    "max_grad_norm": 1.0,
+    "max_length": 1024,
+    "completion_separator": "",
+    "gradient_checkpointing": true,
+    "maximum_equal_token_gap": 512
+  },
+  "evaluation": {
+    "dataset_name": "openai/gsm8k",
+    "dataset_config": "main",
+    "split": "test",
+    "start_index": 50,
+    "limit": 1269,
+    "batch_size": 32,
+    "max_new_tokens": 512,
+    "temperature": 0.0,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 34017,
+    "include_base_student": true
+  },
+  "outputs": {
+    "result_root": "results/phase3_sae_intervention_distillation_pilot_v1/exploratory",
+    "checkpoint_root": "checkpoints/phase3_sae_intervention_distillation_pilot_v1",
+    "figure_root": "figures/phase3_sae_intervention_distillation_pilot_v1",
+    "beegfs_root": "/mnt/beegfs/youyang7/projects/SAE_long_short/phase3_sae_intervention_distillation_pilot_v1"
+  }
+}

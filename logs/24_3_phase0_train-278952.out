@@ -1,0 +1,65 @@
+host=c30 shard=0/3 min_free_mib=18000 min_gpus=3
+Fri Sep  4 00:56:10 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000               On  |   00000000:01:00.0 Off |                  Off |
+| 43%   71C    P2            191W /  200W |   47634MiB /  49140MiB |     88%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA RTX A6000               On  |   00000000:41:00.0 Off |                  Off |
+| 38%   66C    P2            191W /  200W |   47638MiB /  49140MiB |     79%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA RTX A6000               On  |   00000000:81:00.0 Off |                  Off |
+| 40%   68C    P2            192W /  200W |   47638MiB /  49140MiB |     80%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA RTX A6000               On  |   00000000:C1:00.0 Off |                  Off |
+| 35%   65C    P2            191W /  200W |   47560MiB /  49140MiB |     79%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1814222      C   .../dhettik/Python38/bin/python3      47622MiB |
+|    1   N/A  N/A         1814222      C   .../dhettik/Python38/bin/python3      47626MiB |
+|    2   N/A  N/A         1814222      C   .../dhettik/Python38/bin/python3      47626MiB |
+|    3   N/A  N/A         1814222      C   .../dhettik/Python38/bin/python3      47548MiB |
++-----------------------------------------------------------------------------------------+
+GPU-0ff7ad2e-42de-2b31-acd3-2981e765e4e6, 1814222, /home/dhettik/Python38/bin/python3, 47622
+GPU-3106ac01-69b7-7e45-1a10-4776873ce0d2, 1814222, /home/dhettik/Python38/bin/python3, 47626
+GPU-bf19bb32-e5eb-a634-be37-bf29cd48319a, 1814222, /home/dhettik/Python38/bin/python3, 47626
+GPU-2ed57fc7-3f30-3e02-d267-928e2b32bcda, 1814222, /home/dhettik/Python38/bin/python3, 47548
+Waiting without interference: idle=0/4, required>=3, stable_checks=0/2.
+0, 47634 MiB, 907 MiB, 86 %
+1, 47638 MiB, 903 MiB, 79 %
+2, 47638 MiB, 903 MiB, 79 %
+3, 47560 MiB, 981 MiB, 79 %
+Waiting without interference: idle=0/4, required>=3, stable_checks=0/2.
+0, 47634 MiB, 907 MiB, 88 %
+1, 47638 MiB, 903 MiB, 75 %
+2, 47638 MiB, 903 MiB, 73 %
+3, 47560 MiB, 981 MiB, 74 %
+Waiting without interference: idle=0/4, required>=3, stable_checks=0/2.
+0, 47634 MiB, 907 MiB, 82 %
+1, 47638 MiB, 903 MiB, 80 %
+2, 47638 MiB, 903 MiB, 78 %
+3, 47560 MiB, 981 MiB, 79 %
+Waiting without interference: idle=0/4, required>=3, stable_checks=0/2.
+0, 47634 MiB, 907 MiB, 81 %
+1, 47638 MiB, 903 MiB, 71 %
+2, 47638 MiB, 903 MiB, 79 %
+3, 47560 MiB, 981 MiB, 71 %
+Waiting without interference: idle=0/4, required>=3, stable_checks=0/2.
+0, 47634 MiB, 907 MiB, 85 %
+1, 47638 MiB, 903 MiB, 68 %
+2, 47638 MiB, 903 MiB, 79 %
+3, 47560 MiB, 981 MiB, 69 %

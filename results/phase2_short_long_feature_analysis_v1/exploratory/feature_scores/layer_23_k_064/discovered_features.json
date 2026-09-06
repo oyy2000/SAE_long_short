@@ -1,0 +1,2434 @@
+{
+  "layer_index": 23,
+  "k": 64,
+  "selection_split": "dev",
+  "confirmation_split": "test",
+  "positive_effect_means": "short-associated",
+  "negative_effect_means": "long-associated",
+  "candidates": [
+    {
+      "feature_id": 17723,
+      "direction": "short",
+      "discovery_rank": 1,
+      "discovery_score": 2.5828209335821954,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.6909971963713375e-60,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.008846245205142735,
+            "ci_low": 0.008241563138208775,
+            "ci_high": 0.009450927272076696,
+            "paired_d": 2.5189733745503444,
+            "t_statistic": 28.94080071013151,
+            "p_value": 9.1877972225739e-59,
+            "bh_q_value": 1.3171626098281942e-54,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.008851702872433257,
+            "ci_low": 0.008283440023844157,
+            "ci_high": 0.009419965721022357,
+            "paired_d": 2.6820647365274346,
+            "t_statistic": 30.814577802104722,
+            "p_value": 7.04582165154724e-62,
+            "bh_q_value": 2.0201779839316246e-57,
+            "prevalence": 1.0
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0014617349085223985,
+            "ci_low": 0.0013125536657141456,
+            "ci_high": 0.0016109161513306513,
+            "paired_d": 1.687120453673579,
+            "t_statistic": 19.38353827676707,
+            "p_value": 2.6617757742828116e-40,
+            "bh_q_value": 9.539804375029596e-37,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0013685448392414291,
+            "ci_low": 0.0012567509965702086,
+            "ci_high": 0.0014803386819126497,
+            "paired_d": 2.1078166933496134,
+            "t_statistic": 24.216970084730985,
+            "p_value": 3.2507582554606143e-50,
+            "bh_q_value": 3.1068580233522243e-46,
+            "prevalence": 1.0
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.05614741161616161,
+            "ci_low": -0.08861477952794,
+            "ci_high": -0.02368004370438321,
+            "paired_d": -0.29776548141696185,
+            "t_statistic": -3.421064923952585,
+            "p_value": 0.0008323523301713767,
+            "bh_q_value": 0.008773972798041806,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.05877130681818182,
+            "ci_low": -0.0923822239534277,
+            "ci_high": -0.02516038968293595,
+            "paired_d": -0.30107637417606037,
+            "t_statistic": -3.459104185693806,
+            "p_value": 0.0007317585127170956,
+            "bh_q_value": 0.006915286775420094,
+            "prevalence": 1.0
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.00027978299844144574,
+            "ci_low": -9.747522822026644e-05,
+            "ci_high": 0.0006570412251031579,
+            "paired_d": 0.12769511806370173,
+            "t_statistic": 1.467105210748009,
+            "p_value": 0.14474409650246825,
+            "bh_q_value": 0.6750045656557426,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -7.398200757575758e-05,
+            "ci_low": -0.00027882868127212504,
+            "ci_high": 0.0001308646661206099,
+            "paired_d": -0.062185465353249786,
+            "t_statistic": -0.714456602851727,
+            "p_value": 0.4762160620482647,
+            "bh_q_value": 0.8026159308447219,
+            "prevalence": 1.0
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 8970,
+      "direction": "short",
+      "discovery_rank": 2,
+      "discovery_score": 2.5536500660827204,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 9.784978856978015e-55,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.007611081332222305,
+            "ci_low": 0.007077872756332952,
+            "ci_high": 0.008144289908111658,
+            "paired_d": 2.4577682510679377,
+            "t_statistic": 28.23760737786395,
+            "p_value": 1.4816318992975964e-57,
+            "bh_q_value": 1.0620337454165172e-53,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.00794265472102026,
+            "ci_low": 0.007368844088298583,
+            "ci_high": 0.008516465353741936,
+            "paired_d": 2.3833552723019595,
+            "t_statistic": 27.38266734139062,
+            "p_value": 4.659513741418102e-56,
+            "bh_q_value": 9.542684142424273e-53,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.001557276406792237,
+            "ci_low": 0.0014003672369363352,
+            "ci_high": 0.001714185576648139,
+            "paired_d": 1.7088701824516361,
+            "t_statistic": 19.63342363578859,
+            "p_value": 7.614524098982615e-41,
+            "bh_q_value": 3.118909070943279e-37,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.001616336138933107,
+            "ci_low": 0.0014349927437145252,
+            "ci_high": 0.001797679534151689,
+            "paired_d": 1.5346934281688562,
+            "t_statistic": 17.63228508269241,
+            "p_value": 2.1388118606505336e-36,
+            "bh_q_value": 2.920191127074862e-33,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": 0.07873658459595959,
+            "ci_low": 0.0487049028503853,
+            "ci_high": 0.10876826634153387,
+            "paired_d": 0.4514281238383098,
+            "t_statistic": 5.186514275596596,
+            "p_value": 7.931761173940531e-07,
+            "bh_q_value": 2.4639161037835633e-05,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.08762428977272728,
+            "ci_low": 0.04727867796148902,
+            "ci_high": 0.12796990158396554,
+            "paired_d": 0.37395547672076856,
+            "t_statistic": 4.2964213260768975,
+            "p_value": 3.3569499066735376e-05,
+            "bh_q_value": 0.0005311835967116097,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.0006057276870265151,
+            "ci_low": 6.184795395480216e-05,
+            "ci_high": 0.001149607420098228,
+            "paired_d": 0.19176363002956537,
+            "t_statistic": 2.203196372064759,
+            "p_value": 0.029328917042879894,
+            "bh_q_value": 0.4751171100391109,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.0002783573035037879,
+            "ci_low": -0.00014464783893652905,
+            "ci_high": 0.0007013624459441049,
+            "paired_d": 0.11330489336879165,
+            "t_statistic": 1.3017741162326697,
+            "p_value": 0.1952780973427645,
+            "bh_q_value": 0.6921415968433583,
+            "prevalence": 0.9980769230769231
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 3803,
+      "direction": "short",
+      "discovery_rank": 3,
+      "discovery_score": 2.431014901401648,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 4.069365517678237e-54,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.006727602417496118,
+            "ci_low": 0.0062448941902211496,
+            "ci_high": 0.007210310644771086,
+            "paired_d": 2.3997572350845906,
+            "t_statistic": 27.571111546852638,
+            "p_value": 2.1647841902929583e-56,
+            "bh_q_value": 7.758586538009962e-53,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.006787952109747988,
+            "ci_low": 0.006290561775473078,
+            "ci_high": 0.0072853424440228985,
+            "paired_d": 2.3498120196380583,
+            "t_statistic": 26.99728470879775,
+            "p_value": 2.260758620932354e-55,
+            "bh_q_value": 3.8129688929042626e-52,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0014335994698069614,
+            "ci_low": 0.0012714920922738543,
+            "ci_high": 0.0015957068473400685,
+            "paired_d": 1.5227084028642675,
+            "t_statistic": 17.494587625327302,
+            "p_value": 4.4080601049797835e-36,
+            "bh_q_value": 7.021549962776687e-33,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0014500880388735862,
+            "ci_low": 0.0012800113790858625,
+            "ci_high": 0.00162016469866131,
+            "paired_d": 1.468051682302035,
+            "t_statistic": 16.866629714679167,
+            "p_value": 1.228148341789151e-34,
+            "bh_q_value": 1.1737823085259512e-31,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.020892518939393947,
+            "ci_low": -0.04145491619161605,
+            "ci_high": -0.0003301216871718464,
+            "paired_d": -0.17494790738602453,
+            "t_statistic": -2.009998427719502,
+            "p_value": 0.046485141682137576,
+            "bh_q_value": 0.14491921086335202,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.015220565025252522,
+            "ci_low": -0.041063916770916836,
+            "ci_high": 0.01062278672041179,
+            "paired_d": -0.10140832956258222,
+            "t_statistic": -1.1650930041060559,
+            "p_value": 0.2460985122497299,
+            "bh_q_value": 0.4333234359894846,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.00015998609138257575,
+            "ci_low": -0.00028065741526046026,
+            "ci_high": 0.0006006295980256118,
+            "paired_d": 0.06251533263411523,
+            "t_statistic": 0.7182464893716762,
+            "p_value": 0.4738843501291512,
+            "bh_q_value": 0.8012798524749115,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -8.484811493844697e-05,
+            "ci_low": -0.00048812883696463356,
+            "ci_high": 0.0003184326070877397,
+            "paired_d": -0.03622650432693013,
+            "t_statistic": -0.41621084714226214,
+            "p_value": 0.6779368175187332,
+            "bh_q_value": 0.8948441410504152,
+            "prevalence": 0.9990384615384615
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 4840,
+      "direction": "short",
+      "discovery_rank": 4,
+      "discovery_score": 2.3318878262972573,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 7.790502901596655e-54,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.009807581005552126,
+            "ci_low": 0.00908285563137655,
+            "ci_high": 0.0105323063797277,
+            "paired_d": 2.330129882409479,
+            "t_statistic": 26.771154168143084,
+            "p_value": 5.753316561183607e-55,
+            "bh_q_value": 1.4996281131114218e-51,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.010447808286772496,
+            "ci_low": 0.009677355217213156,
+            "ci_high": 0.011218261356331836,
+            "paired_d": 2.334912971313121,
+            "t_statistic": 26.82610767584495,
+            "p_value": 4.582648765645091e-55,
+            "bh_q_value": 6.91545817939874e-52,
+            "prevalence": 1.0
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.001394887216097553,
+            "ci_low": 0.0012607323993668595,
+            "ci_high": 0.0015290420328282466,
+            "paired_d": 1.7902946608863006,
+            "t_statistic": 20.56891967044782,
+            "p_value": 7.538667168804715e-43,
+            "bh_q_value": 7.204955502132293e-39,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.001468920069094042,
+            "ci_low": 0.0012901082411013115,
+            "ci_high": 0.0016477318970867724,
+            "paired_d": 1.4144695876105429,
+            "t_statistic": 16.25101831530315,
+            "p_value": 3.354420133923739e-33,
+            "bh_q_value": 2.599403623780039e-30,
+            "prevalence": 1.0
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.029750631313131305,
+            "ci_low": -0.06517695877537497,
+            "ci_high": 0.005675696149112362,
+            "paired_d": -0.14459782018423398,
+            "t_statistic": -1.661302473202346,
+            "p_value": 0.09904413529461452,
+            "bh_q_value": 0.23551481595383753,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.00019728535353534906,
+            "ci_low": -0.03498818953076755,
+            "ci_high": 0.035382760237838255,
+            "paired_d": 0.0009654351800383842,
+            "t_statistic": 0.011092005745804438,
+            "p_value": 0.9911669156871985,
+            "bh_q_value": 0.995119023705916,
+            "prevalence": 1.0
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 5.317456794507576e-06,
+            "ci_low": -0.0002550943425240598,
+            "ci_high": 0.00026572925611307495,
+            "paired_d": 0.0035158877755559806,
+            "t_statistic": 0.04039447516975713,
+            "p_value": 0.9678401334689002,
+            "bh_q_value": 0.999018609076828,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 9.941332267992424e-06,
+            "ci_low": -0.000384561823241031,
+            "ci_high": 0.0004044444877770159,
+            "paired_d": 0.0043389615420012925,
+            "t_statistic": 0.04985087279789135,
+            "p_value": 0.9603171541806537,
+            "bh_q_value": 0.9949488127725555,
+            "prevalence": 1.0
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 9915,
+      "direction": "short",
+      "discovery_rank": 5,
+      "discovery_score": 2.321124579286052,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.914707353199129e-52,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.005867583075693498,
+            "ci_low": 0.005420974535385336,
+            "ci_high": 0.0063141916160016605,
+            "paired_d": 2.262163112319079,
+            "t_statistic": 25.990275430808786,
+            "p_value": 1.5108273792046047e-53,
+            "bh_q_value": 3.0555921631672803e-50,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.006194630397290856,
+            "ci_low": 0.005724127612130633,
+            "ci_high": 0.006665133182451079,
+            "paired_d": 2.266965409289962,
+            "t_statistic": 26.045449622401815,
+            "p_value": 1.1966920957494556e-53,
+            "bh_q_value": 1.5596161713331087e-50,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0014041097944360135,
+            "ci_low": 0.001242441708878987,
+            "ci_high": 0.00156577787999304,
+            "paired_d": 1.4954381855820822,
+            "t_statistic": 17.181276682202867,
+            "p_value": 2.3047608317314464e-35,
+            "bh_q_value": 3.1467667889240015e-32,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.0015031444551152733,
+            "ci_low": 0.0013477053013587344,
+            "ci_high": 0.001658583608871812,
+            "paired_d": 1.6650680546294865,
+            "t_statistic": 19.13017550113658,
+            "p_value": 9.544798044715592e-40,
+            "bh_q_value": 2.0949018024170672e-36,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": 0.02356573547979798,
+            "ci_low": 0.001365732081902448,
+            "ci_high": 0.045765738877693515,
+            "paired_d": 0.18277620270727016,
+            "t_statistic": 2.0999386934964943,
+            "p_value": 0.037652097672162356,
+            "bh_q_value": 0.12694223303120986,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.02392084911616162,
+            "ci_low": -0.005436196487935193,
+            "ci_high": 0.05327789472025843,
+            "paired_d": 0.14029943980754164,
+            "t_statistic": 1.6119178424972285,
+            "p_value": 0.10938651161858941,
+            "bh_q_value": 0.2591579954658896,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.00017732562440814394,
+            "ci_low": -8.15939679494737e-05,
+            "ci_high": 0.00043624521676576157,
+            "paired_d": 0.11792293393394594,
+            "t_statistic": 1.3548313628942352,
+            "p_value": 0.17780316404311935,
+            "bh_q_value": 0.6766005450048396,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.0001248446377840909,
+            "ci_low": -0.00013510131861612097,
+            "ci_high": 0.00038479059418430276,
+            "paired_d": 0.08269486075815997,
+            "t_statistic": 0.9500916163439784,
+            "p_value": 0.3438152435957187,
+            "bh_q_value": 0.7270130507038554,
+            "prevalence": 0.9980769230769231
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 26651,
+      "direction": "short",
+      "discovery_rank": 6,
+      "discovery_score": 2.3129944624293177,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 4.370222706134544e-48,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.010147462236210518,
+            "ci_low": 0.009382101386067982,
+            "ci_high": 0.010912823086353053,
+            "paired_d": 2.2828790003873274,
+            "t_statistic": 26.228282864382233,
+            "p_value": 5.540674557008592e-54,
+            "bh_q_value": 1.2220170838350027e-50,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.010402272344858505,
+            "ci_low": 0.009533743981208166,
+            "ci_high": 0.011270800708508845,
+            "paired_d": 2.062224332673928,
+            "t_statistic": 23.693153740520916,
+            "p_value": 3.3617097739496493e-49,
+            "bh_q_value": 2.536498490491693e-46,
+            "prevalence": 1.0
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0015214021140392024,
+            "ci_low": 0.0013146845774550482,
+            "ci_high": 0.0017281196506233566,
+            "paired_d": 1.2672385829939044,
+            "t_statistic": 14.559462856237129,
+            "p_value": 3.6838417648422676e-29,
+            "bh_q_value": 2.456351420501337e-26,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0014920931908000978,
+            "ci_low": 0.0012671929630693776,
+            "ci_high": 0.001716993418530818,
+            "paired_d": 1.1423462122534027,
+            "t_statistic": 13.124558760650201,
+            "p_value": 1.2183791187362542e-25,
+            "bh_q_value": 6.022994153863082e-23,
+            "prevalence": 1.0
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": 0.044744318181818184,
+            "ci_low": 0.022946812233770607,
+            "ci_high": 0.06654182412986576,
+            "paired_d": 0.35344576520773124,
+            "t_statistic": 4.060782680778766,
+            "p_value": 8.368611042538215e-05,
+            "bh_q_value": 0.0013191028906633078,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.05963936237373737,
+            "ci_low": 0.040827834397844855,
+            "ci_high": 0.07845089034962988,
+            "paired_d": 0.5458843096744859,
+            "t_statistic": 6.271733229374499,
+            "p_value": 4.801642579084755e-09,
+            "bh_q_value": 1.998221201173411e-07,
+            "prevalence": 1.0
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.00030756478357796713,
+            "ci_low": -0.0005716779206667383,
+            "ci_high": 0.0011868074878226727,
+            "paired_d": 0.060230924083981105,
+            "t_statistic": 0.6920006333186112,
+            "p_value": 0.4901616422109494,
+            "bh_q_value": 0.8096968367413534,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -6.334709398674242e-05,
+            "ci_low": -0.0006026701611278575,
+            "ci_high": 0.0004759759731543727,
+            "paired_d": -0.02022410883336206,
+            "t_statistic": -0.23235732032730294,
+            "p_value": 0.8166231076490021,
+            "bh_q_value": 0.9508802972094652,
+            "prevalence": 1.0
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 2601,
+      "direction": "short",
+      "discovery_rank": 7,
+      "discovery_score": 2.2770618710175574,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 4.596435401045649e-50,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.006576717363181289,
+            "ci_low": 0.006066645756081462,
+            "ci_high": 0.007086788970281116,
+            "paired_d": 2.2200856089272962,
+            "t_statistic": 25.50684172232076,
+            "p_value": 1.1816121958652754e-52,
+            "bh_q_value": 1.7831149936762726e-49,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.007036185859834229,
+            "ci_low": 0.006473522664979423,
+            "ci_high": 0.007598849054689036,
+            "paired_d": 2.1531807461070582,
+            "t_statistic": 24.73816337066298,
+            "p_value": 3.283168143604035e-51,
+            "bh_q_value": 2.6895713432404253e-48,
+            "prevalence": 1.0
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0013370304837331383,
+            "ci_low": 0.001197140367874497,
+            "ci_high": 0.0014769205995917795,
+            "paired_d": 1.6456822008988425,
+            "t_statistic": 18.907448998711967,
+            "p_value": 2.952642466912763e-39,
+            "bh_q_value": 7.696196801029339e-36,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0015129300962952485,
+            "ci_low": 0.0012973770396669199,
+            "ci_high": 0.001728483152923577,
+            "paired_d": 1.2085270327730775,
+            "t_statistic": 13.884918499599323,
+            "p_value": 1.6285594470203028e-27,
+            "bh_q_value": 8.33822436874395e-25,
+            "prevalence": 1.0
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.07111150568181818,
+            "ci_low": -0.11673779613980825,
+            "ci_high": -0.025485215223828107,
+            "paired_d": -0.2683591490925295,
+            "t_statistic": -3.0832118874673498,
+            "p_value": 0.0024975975079970084,
+            "bh_q_value": 0.020257741371793557,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.06646543560606061,
+            "ci_low": -0.1125597427967633,
+            "ci_high": -0.020371128415357917,
+            "paired_d": -0.24827915370050424,
+            "t_statistic": -2.8525103045239812,
+            "p_value": 0.005042335136029137,
+            "bh_q_value": 0.03141125609245025,
+            "prevalence": 1.0
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.00032991351503314394,
+            "ci_low": -0.0001685895695643105,
+            "ci_high": 0.0008284165996305984,
+            "paired_d": 0.11395252418052258,
+            "t_statistic": 1.309214827772303,
+            "p_value": 0.1927533446428749,
+            "bh_q_value": 0.6823788175674904,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0005745165275804924,
+            "ci_low": -0.00023747862141528854,
+            "ci_high": 0.0013865116765762733,
+            "paired_d": 0.12182622441573993,
+            "t_statistic": 1.3996767562948373,
+            "p_value": 0.16397378031082355,
+            "bh_q_value": 0.6857300144662274,
+            "prevalence": 1.0
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 14738,
+      "direction": "short",
+      "discovery_rank": 8,
+      "discovery_score": 2.270277812449909,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 2.765154218896407e-59,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.005344465699498401,
+            "ci_low": 0.004937464974226235,
+            "ci_high": 0.005751466424770566,
+            "paired_d": 2.2610012567865687,
+            "t_statistic": 25.976926727023322,
+            "p_value": 1.5985589581302038e-53,
+            "bh_q_value": 3.0555921631672803e-50,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.00540002119213559,
+            "ci_low": 0.005044545271835019,
+            "ci_high": 0.005755497112436161,
+            "paired_d": 2.615633973981897,
+            "t_statistic": 30.051346447904457,
+            "p_value": 1.2568882813165487e-60,
+            "bh_q_value": 9.15083667673958e-57,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0013826119866647822,
+            "ci_low": 0.0012348011200245758,
+            "ci_high": 0.0015304228533049885,
+            "paired_d": 1.6105924062608359,
+            "t_statistic": 18.5042979516076,
+            "p_value": 2.3166295804117795e-38,
+            "bh_q_value": 4.744457380683325e-35,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.0013970588264819895,
+            "ci_low": 0.001286912847489705,
+            "ci_high": 0.001507204805474274,
+            "paired_d": 2.1839250959621035,
+            "t_statistic": 25.091389058201756,
+            "p_value": 7.066539987887108e-52,
+            "bh_q_value": 1.0130591726634957e-47,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.0863320707070707,
+            "ci_low": -0.1164695403464541,
+            "ci_high": -0.05619460106768731,
+            "paired_d": -0.4932386093541,
+            "t_statistic": -5.666880182251851,
+            "p_value": 8.833088901310701e-08,
+            "bh_q_value": 3.532249999698472e-06,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": -0.09826290246212123,
+            "ci_low": -0.13404765502068838,
+            "ci_high": -0.06247814990355406,
+            "paired_d": -0.4728063081818889,
+            "t_statistic": -5.432130914058454,
+            "p_value": 2.618296411808771e-07,
+            "bh_q_value": 7.836304250457315e-06,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 6.00333165640783e-05,
+            "ci_low": -0.0004971104539629424,
+            "ci_high": 0.0006171770870910989,
+            "paired_d": 0.018553111326679785,
+            "t_statistic": 0.21315902060861258,
+            "p_value": 0.8315342992105282,
+            "bh_q_value": 0.9564629288307565,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": -0.00011444091796875,
+            "ci_low": -0.00048625216707063235,
+            "ci_high": 0.00025737033113313235,
+            "paired_d": -0.05299690410388653,
+            "t_statistic": -0.608888071394689,
+            "p_value": 0.5436530735152493,
+            "bh_q_value": 0.8344997550098627,
+            "prevalence": 0.9980769230769231
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 287,
+      "direction": "short",
+      "discovery_rank": 9,
+      "discovery_score": 2.241139049442174,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 2.0115034176490007e-54,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.0076240161445575065,
+            "ci_low": 0.007037035378269724,
+            "ci_high": 0.008210996910845288,
+            "paired_d": 2.2364110487068847,
+            "t_statistic": 25.694406745413016,
+            "p_value": 5.303500985266311e-53,
+            "bh_q_value": 8.944822367620922e-50,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.007812354836855177,
+            "ci_low": 0.007243789559514434,
+            "ci_high": 0.00838092011419592,
+            "paired_d": 2.3658833065897977,
+            "t_statistic": 27.18192973820726,
+            "p_value": 1.0586860092889478e-55,
+            "bh_q_value": 1.8971653286457943e-52,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0014555657542936241,
+            "ci_low": 0.0012824672851061514,
+            "ci_high": 0.0016286642234810968,
+            "paired_d": 1.4478724177125362,
+            "t_statistic": 16.634787615488282,
+            "p_value": 4.245516942907454e-34,
+            "bh_q_value": 4.508424510631204e-31,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0014395530757757675,
+            "ci_low": 0.0012719866174567252,
+            "ci_high": 0.0016071195340948098,
+            "paired_d": 1.4792183442695026,
+            "t_statistic": 16.99492489312883,
+            "p_value": 6.199431880589763e-35,
+            "bh_q_value": 6.129314168285162e-32,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": 0.0534939236111111,
+            "ci_low": 0.038304504020641145,
+            "ci_high": 0.06868334320158105,
+            "paired_d": 0.6063940995388528,
+            "t_statistic": 6.966937786583914,
+            "p_value": 1.4193595843570724e-10,
+            "bh_q_value": 1.0777187521407052e-08,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.06319049873737374,
+            "ci_low": 0.034072444191644624,
+            "ci_high": 0.09230855328310286,
+            "paired_d": 0.3736638813210888,
+            "t_statistic": 4.293071149995091,
+            "p_value": 3.4016537827153345e-05,
+            "bh_q_value": 0.0005370716809362008,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 3.498732441603534e-05,
+            "ci_low": -0.000602094028468336,
+            "ci_high": 0.0006720686773004068,
+            "paired_d": 0.009456001470578682,
+            "t_statistic": 0.10864118566698994,
+            "p_value": 0.9136533245272352,
+            "bh_q_value": 0.9822004469590525,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.0002011385830965909,
+            "ci_low": -0.0007279159204440011,
+            "ci_high": 0.0003256387542508193,
+            "paired_d": -0.06574458622781335,
+            "t_statistic": -0.75534778851279,
+            "p_value": 0.4513962868836783,
+            "bh_q_value": 0.7877828514985241,
+            "prevalence": 0.9990384615384615
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 21350,
+      "direction": "short",
+      "discovery_rank": 10,
+      "discovery_score": 2.2328617999721674,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 7.441045710099688e-60,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.00869061827725458,
+            "ci_low": 0.008014274981945355,
+            "ci_high": 0.009366961572563804,
+            "paired_d": 2.2124587291219737,
+            "t_statistic": 25.419215544642178,
+            "p_value": 1.7202759493135424e-52,
+            "bh_q_value": 2.4661876009358945e-49,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.00891954043169854,
+            "ci_low": 0.008339285838297662,
+            "ci_high": 0.009499795025099417,
+            "paired_d": 2.6467662254935655,
+            "t_statistic": 30.409028786177572,
+            "p_value": 3.235237265260734e-61,
+            "bh_q_value": 4.638036143477788e-57,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0013292102483301092,
+            "ci_low": 0.0011593979893458387,
+            "ci_high": 0.0014990225073143798,
+            "paired_d": 1.3477717045687834,
+            "t_statistic": 15.484717980253441,
+            "p_value": 2.186671163940379e-31,
+            "bh_q_value": 1.844006929779369e-28,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0013040015206441772,
+            "ci_low": 0.0011890161610748637,
+            "ci_high": 0.0014189868802134908,
+            "paired_d": 1.9526627564952719,
+            "t_statistic": 22.434387064497443,
+            "p_value": 1.0537861440048046e-46,
+            "bh_q_value": 7.55353908022644e-43,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.04304766414141413,
+            "ci_low": -0.07398957392019703,
+            "ci_high": -0.012105754362631234,
+            "paired_d": -0.23954889284517178,
+            "t_statistic": -2.7522072437158296,
+            "p_value": 0.00675935940489895,
+            "bh_q_value": 0.040807565760155096,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.014204545454545454,
+            "ci_low": -0.06097720766730316,
+            "ci_high": 0.03256811675821225,
+            "paired_d": -0.0522909995802779,
+            "t_statistic": -0.6007778458780003,
+            "p_value": 0.5490260033804649,
+            "bh_q_value": 0.7090843949966077,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.00011682992029671721,
+            "ci_low": -0.0003761397948046448,
+            "ci_high": 0.0006097996353980793,
+            "paired_d": 0.04080614170038766,
+            "t_statistic": 0.46882687472276946,
+            "p_value": 0.6399726412638131,
+            "bh_q_value": 0.8832392572955982,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 8.030130405618686e-05,
+            "ci_low": -0.00030226778080455306,
+            "ci_high": 0.0004628703889169268,
+            "paired_d": 0.03614135398403585,
+            "t_statistic": 0.4152325441840014,
+            "p_value": 0.6786509761546149,
+            "bh_q_value": 0.8950309356596201,
+            "prevalence": 0.9990384615384615
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 5687,
+      "direction": "short",
+      "discovery_rank": 11,
+      "discovery_score": 2.1984273681361963,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.6572655628230908e-50,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.0061967740466846435,
+            "ci_low": 0.0056987342847878006,
+            "ci_high": 0.0066948138085814865,
+            "paired_d": 2.1423643687834977,
+            "t_statistic": 24.61389265637541,
+            "p_value": 5.65538416687139e-51,
+            "bh_q_value": 6.823481239512547e-48,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.006216316818461913,
+            "ci_low": 0.005724191745417304,
+            "ci_high": 0.006708441891506522,
+            "paired_d": 2.1749503182122005,
+            "t_statistic": 24.98827671215561,
+            "p_value": 1.1048437085487272e-51,
+            "bh_q_value": 1.0218735100486808e-48,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0013661849203124418,
+            "ci_low": 0.001205327524173687,
+            "ci_high": 0.0015270423164511966,
+            "paired_d": 1.4623796865482452,
+            "t_statistic": 16.80146344480208,
+            "p_value": 1.7393377077260663e-34,
+            "bh_q_value": 2.0779287814967404e-31,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": 0.0013670872491513936,
+            "ci_low": 0.0012063366358623566,
+            "ci_high": 0.0015278378624404307,
+            "paired_d": 1.4643176154882196,
+            "t_statistic": 16.823728553202525,
+            "p_value": 1.5442663614719864e-34,
+            "bh_q_value": 1.428296939229832e-31,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.031605113636363646,
+            "ci_low": -0.06946416005317352,
+            "ci_high": 0.006253932780446232,
+            "paired_d": -0.14374057507655238,
+            "t_statistic": -1.6514534767533158,
+            "p_value": 0.10104121668924658,
+            "bh_q_value": 0.23805857395124463,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.029809816919191916,
+            "ci_low": -0.0749492916131055,
+            "ci_high": 0.015329657774721669,
+            "paired_d": -0.1137089111373571,
+            "t_statistic": -1.3064159269963471,
+            "p_value": 0.19370019474978784,
+            "bh_q_value": 0.37188777178692356,
+            "prevalence": 0.9990384615384615
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.0002550067323626894,
+            "ci_low": -0.00013658815648663137,
+            "ci_high": 0.0006466016212120101,
+            "paired_d": 0.1121259987053974,
+            "t_statistic": 1.2882296477375945,
+            "p_value": 0.1999367694401591,
+            "bh_q_value": 0.6830120723436539,
+            "prevalence": 1.0
+          },
+          "test": {
+            "effect": -0.0003129593049636995,
+            "ci_low": -0.0006598519397503363,
+            "ci_high": 3.393332982293729e-05,
+            "paired_d": -0.15534042261146405,
+            "t_statistic": -1.7847255784624956,
+            "p_value": 0.07662027709470769,
+            "bh_q_value": 0.6219865755547732,
+            "prevalence": 0.9990384615384615
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 11254,
+      "direction": "short",
+      "discovery_rank": 12,
+      "discovery_score": 2.164314607210471,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.4777062170957766e-54,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": 0.005490796790150173,
+            "ci_low": 0.005038262235900047,
+            "ci_high": 0.005943331344400299,
+            "paired_d": 2.0891773924751704,
+            "t_statistic": 24.002820821609166,
+            "p_value": 8.415421716997065e-50,
+            "bh_q_value": 8.936554498879252e-47,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.005577817164135703,
+            "ci_low": 0.005173184135359108,
+            "ci_high": 0.0059824501929122975,
+            "paired_d": 2.3735295190382764,
+            "t_statistic": 27.26977803104531,
+            "p_value": 7.388531085478883e-56,
+            "bh_q_value": 1.412293088552337e-52,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": 0.0014259490265917843,
+            "ci_low": 0.0012695649168274923,
+            "ci_high": 0.0015823331363560762,
+            "paired_d": 1.570012360768044,
+            "t_statistic": 18.03806872454219,
+            "p_value": 2.5734794742262297e-37,
+            "bh_q_value": 4.340400205000851e-34,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.0014983069035812576,
+            "ci_low": 0.0013276995955289468,
+            "ci_high": 0.0016689142116335684,
+            "paired_d": 1.512149892288376,
+            "t_statistic": 17.373279574412617,
+            "p_value": 8.351694165113116e-36,
+            "bh_q_value": 8.8688805593379e-33,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": 0.03958530618686869,
+            "ci_low": 0.005361643825678858,
+            "ci_high": 0.07380896854805852,
+            "paired_d": 0.19915867056922357,
+            "t_statistic": 2.2881589193722687,
+            "p_value": 0.023730009992332612,
+            "bh_q_value": 0.09469545532361318,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 0.023585464015151523,
+            "ci_low": -0.017308961546221583,
+            "ci_high": 0.06447988957652463,
+            "paired_d": 0.09930520345833295,
+            "t_statistic": 1.1409299247871971,
+            "p_value": 0.2559805467895889,
+            "bh_q_value": 0.44435879624333074,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": 0.000420541474313447,
+            "ci_low": -6.131249163302335e-05,
+            "ci_high": 0.0009023954402599173,
+            "paired_d": 0.15027442947060068,
+            "t_statistic": 1.7265217485332525,
+            "p_value": 0.08661098753523656,
+            "bh_q_value": 0.6359231699204281,
+            "prevalence": 0.9990253411306043
+          },
+          "test": {
+            "effect": 9.062795928030303e-05,
+            "ci_low": -0.0001435429530685442,
+            "ci_high": 0.00032479887162915026,
+            "paired_d": 0.06663784524975129,
+            "t_statistic": 0.7656105533350057,
+            "p_value": 0.4452852872332539,
+            "bh_q_value": 0.7852461262193501,
+            "prevalence": 0.9980769230769231
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 17934,
+      "direction": "long",
+      "discovery_rank": 1,
+      "discovery_score": 0.991282583194224,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 4.858076127521343e-23,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.05960923481663227,
+            "ci_low": -0.07103776327889504,
+            "ci_high": -0.04818070635436951,
+            "paired_d": -0.8980797945053952,
+            "t_statistic": -10.318151282252485,
+            "p_value": 1.2368820656296417e-18,
+            "bh_q_value": 3.138396689002928e-16,
+            "prevalence": 0.9824561403508771
+          },
+          "test": {
+            "effect": -0.06670974778873386,
+            "ci_low": -0.07725702528669667,
+            "ci_high": -0.05616247029077103,
+            "paired_d": -1.089031944429021,
+            "t_statistic": -12.512024457707264,
+            "p_value": 4.048396772934452e-24,
+            "bh_q_value": 1.3042205873435575e-21,
+            "prevalence": 0.9634615384615385
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.017595604262867416,
+            "ci_low": -0.02096987978471687,
+            "ci_high": -0.014221328741017962,
+            "paired_d": -0.8978738788741711,
+            "t_statistic": -10.31578549176555,
+            "p_value": 1.2538043808102158e-18,
+            "bh_q_value": 4.3840340495842083e-16,
+            "prevalence": 0.9824561403508771
+          },
+          "test": {
+            "effect": -0.01970806082777063,
+            "ci_low": -0.022804857830237103,
+            "ci_high": -0.016611263825304156,
+            "paired_d": -1.0957786863162362,
+            "t_statistic": -12.589538620569526,
+            "p_value": 2.5957498967065177e-24,
+            "bh_q_value": 1.2200875580060539e-21,
+            "prevalence": 0.9634615384615385
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -0.8773427635732324,
+            "ci_low": -1.058673908136937,
+            "ci_high": -0.6960116190095277,
+            "paired_d": -0.8330836060693344,
+            "t_statistic": -9.571401929738201,
+            "p_value": 8.863279774769028e-17,
+            "bh_q_value": 3.176599471277219e-14,
+            "prevalence": 0.9824561403508771
+          },
+          "test": {
+            "effect": -1.107357757260101,
+            "ci_low": -1.2915794845816133,
+            "ci_high": -0.9231360299385887,
+            "paired_d": -1.0349962946531646,
+            "t_statistic": -11.891202107139673,
+            "p_value": 1.4355280098244108e-22,
+            "bh_q_value": 6.431165484013361e-20,
+            "prevalence": 0.9634615384615385
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.006794129959260576,
+            "ci_low": -0.013069894485915726,
+            "ci_high": -0.0005183654326054261,
+            "paired_d": -0.18640557737765756,
+            "t_statistic": -2.141637033820092,
+            "p_value": 0.03407339540076645,
+            "bh_q_value": 0.5041034019250648,
+            "prevalence": 0.9824561403508771
+          },
+          "test": {
+            "effect": 0.00021508727410827024,
+            "ci_low": -0.005351614591162854,
+            "ci_high": 0.005781789139379394,
+            "paired_d": 0.006652860940777356,
+            "t_statistic": 0.0764355529060029,
+            "p_value": 0.9391891977487707,
+            "bh_q_value": 0.9899067263850587,
+            "prevalence": 0.9634615384615385
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 12670,
+      "direction": "long",
+      "discovery_rank": 2,
+      "discovery_score": 0.9651670511775391,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 3.0721633083548945e-16,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.06868009474875189,
+            "ci_low": -0.08151533142330335,
+            "ci_high": -0.05584485807420043,
+            "paired_d": -0.9213373920254821,
+            "t_statistic": -10.585360734176698,
+            "p_value": 2.6613483793067644e-19,
+            "bh_q_value": 7.267255307760339e-17,
+            "prevalence": 0.9736842105263158
+          },
+          "test": {
+            "effect": -0.05689007631971059,
+            "ci_low": -0.06856973416066374,
+            "ci_high": -0.04521041847875744,
+            "paired_d": -0.8386834807519324,
+            "t_statistic": -9.635739591592094,
+            "p_value": 6.144326616709789e-17,
+            "bh_q_value": 7.726760208522064e-15,
+            "prevalence": 0.9586538461538462
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.018013510991662807,
+            "ci_low": -0.021618105873509534,
+            "ci_high": -0.01440891610981608,
+            "paired_d": -0.860465772939105,
+            "t_statistic": -9.88599907570091,
+            "p_value": 1.4725855682992325e-17,
+            "bh_q_value": 4.491699299391021e-15,
+            "prevalence": 0.9736842105263158
+          },
+          "test": {
+            "effect": -0.015513264920857658,
+            "ci_low": -0.01850687016453951,
+            "ci_high": -0.01251965967717581,
+            "paired_d": -0.8922783816089412,
+            "t_statistic": -10.251498122608256,
+            "p_value": 1.8136346030049952e-18,
+            "bh_q_value": 3.851891210174757e-16,
+            "prevalence": 0.9586538461538462
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.508194740372475,
+            "ci_low": -2.897559175136017,
+            "ci_high": -2.118830305608933,
+            "paired_d": -1.109166299815877,
+            "t_statistic": -12.743350589442175,
+            "p_value": 1.0755578289218377e-24,
+            "bh_q_value": 1.027946469028231e-20,
+            "prevalence": 0.9736842105263158
+          },
+          "test": {
+            "effect": -2.7163554490214645,
+            "ci_low": -3.1011311900892053,
+            "ci_high": -2.3315797079537237,
+            "paired_d": -1.2155437886251572,
+            "t_statistic": -13.96553488673479,
+            "p_value": 1.0333460864986233e-27,
+            "bh_q_value": 3.703512374011066e-24,
+            "prevalence": 0.9586538461538462
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.0019039577907986108,
+            "ci_low": -0.005643779686553731,
+            "ci_high": 0.0018358641049565098,
+            "paired_d": -0.0876593183041139,
+            "t_statistic": -1.0071288911016,
+            "p_value": 0.3157294931610314,
+            "bh_q_value": 0.7086898668612038,
+            "prevalence": 0.9736842105263158
+          },
+          "test": {
+            "effect": 0.0002434855759745896,
+            "ci_low": -0.0023461922458629064,
+            "ci_high": 0.0028331633978120854,
+            "paired_d": 0.01618896909852034,
+            "t_statistic": 0.1859970943386367,
+            "p_value": 0.8527347428872891,
+            "bh_q_value": 0.9649568323908164,
+            "prevalence": 0.9586538461538462
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 9143,
+      "direction": "long",
+      "discovery_rank": 3,
+      "discovery_score": 0.9582164068610987,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 3.176290545668926e-19,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.09720158038382781,
+            "ci_low": -0.11595615170332174,
+            "ci_high": -0.07844700906433388,
+            "paired_d": -0.8923965386039786,
+            "t_statistic": -10.252855643128495,
+            "p_value": 1.7995558746874418e-18,
+            "bh_q_value": 4.526040880617397e-16,
+            "prevalence": 0.9376218323586745
+          },
+          "test": {
+            "effect": -0.08765002185122506,
+            "ci_low": -0.10353470848897761,
+            "ci_high": -0.0717653352134725,
+            "paired_d": -0.9500907058233666,
+            "t_statistic": -10.915711158991726,
+            "p_value": 3.9703631820861574e-20,
+            "bh_q_value": 8.495392026624947e-18,
+            "prevalence": 0.9259615384615385
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.0260864152439877,
+            "ci_low": -0.03067211323209595,
+            "ci_high": -0.02150071725587945,
+            "paired_d": -0.9794914445056533,
+            "t_statistic": -11.253499929421505,
+            "p_value": 5.6642228597942865e-21,
+            "bh_q_value": 2.4239492214331608e-18,
+            "prevalence": 0.9376218323586745
+          },
+          "test": {
+            "effect": -0.024226844964714746,
+            "ci_low": -0.028289342432481913,
+            "ci_high": -0.02016434749694758,
+            "paired_d": -1.0268226728762964,
+            "t_statistic": -11.79729434244702,
+            "p_value": 2.46538784451083e-22,
+            "bh_q_value": 1.02445797504079e-19,
+            "prevalence": 0.9259615384615385
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.9702740293560606,
+            "ci_low": -3.536453919428501,
+            "ci_high": -2.40409413928362,
+            "paired_d": -0.9033036622141072,
+            "t_statistic": -10.37816895287233,
+            "p_value": 8.761443652169796e-19,
+            "bh_q_value": 6.610739799868748e-16,
+            "prevalence": 0.9376218323586745
+          },
+          "test": {
+            "effect": -3.1695618292297985,
+            "ci_low": -3.6202222148678,
+            "ci_high": -2.718901443591797,
+            "paired_d": -1.2109927324287744,
+            "t_statistic": -13.913247231878719,
+            "p_value": 1.3878897512178788e-27,
+            "bh_q_value": 4.4215083274354464e-24,
+            "prevalence": 0.9259615384615385
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.009583868161596435,
+            "ci_low": -0.022119479519059636,
+            "ci_high": 0.002951743195866767,
+            "paired_d": -0.13163973651424007,
+            "t_statistic": -1.5124254263596233,
+            "p_value": 0.13283439900551683,
+            "bh_q_value": 0.6750045656557426,
+            "prevalence": 0.9376218323586745
+          },
+          "test": {
+            "effect": -0.0002397864755958012,
+            "ci_low": -0.010039806929869884,
+            "ci_high": 0.009560233978678282,
+            "paired_d": -0.0042129799768275255,
+            "t_statistic": -0.0484034548109921,
+            "p_value": 0.9614684239862017,
+            "bh_q_value": 0.9953581976697691,
+            "prevalence": 0.9259615384615385
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 532,
+      "direction": "long",
+      "discovery_rank": 4,
+      "discovery_score": 0.9481680285253807,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.960365078919935e-20,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.0811815852375179,
+            "ci_low": -0.09673706491179526,
+            "ci_high": -0.06562610556324053,
+            "paired_d": -0.8985987551038104,
+            "t_statistic": -10.324113685589847,
+            "p_value": 1.1952382922464281e-18,
+            "bh_q_value": 3.059810028150856e-16,
+            "prevalence": 0.6978557504873294
+          },
+          "test": {
+            "effect": -0.09271538791257293,
+            "ci_low": -0.10872832591540843,
+            "ci_high": -0.07670244990973743,
+            "paired_d": -0.9969479628028379,
+            "t_statistic": -11.454060055318735,
+            "p_value": 1.7821500717453954e-21,
+            "bh_q_value": 4.775495967951774e-19,
+            "prevalence": 0.6567307692307692
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.015444183502389788,
+            "ci_low": -0.018359641697186825,
+            "ci_high": -0.012528725307592749,
+            "paired_d": -0.9121154821983659,
+            "t_statistic": -10.47940905673151,
+            "p_value": 4.895676387738969e-19,
+            "bh_q_value": 1.7996004280673297e-16,
+            "prevalence": 0.6978557504873294
+          },
+          "test": {
+            "effect": -0.017851769970906338,
+            "ci_low": -0.021049234520123562,
+            "ci_high": -0.014654305421689114,
+            "paired_d": -0.9613183597323125,
+            "t_statistic": -11.0447070814989,
+            "p_value": 1.887685113824422e-20,
+            "bh_q_value": 6.3674950098322155e-18,
+            "prevalence": 0.6567307692307692
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.6318581321022725,
+            "ci_low": -3.056656536064167,
+            "ci_high": -2.207059728140378,
+            "paired_d": -1.0667712229467408,
+            "t_statistic": -12.256268239483077,
+            "p_value": 1.7578068734995872e-23,
+            "bh_q_value": 1.0300231070529641e-19,
+            "prevalence": 0.6978557504873294
+          },
+          "test": {
+            "effect": -3.0889855587121207,
+            "ci_low": -3.5082751753872325,
+            "ci_high": -2.6696959420370088,
+            "paired_d": -1.2685087376935815,
+            "t_statistic": -14.574055822723308,
+            "p_value": 3.3954674697527976e-29,
+            "bh_q_value": 2.4338710823188054e-25,
+            "prevalence": 0.6567307692307692
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.0038061816282946655,
+            "ci_low": -0.010416747735330915,
+            "ci_high": 0.0028043844787415833,
+            "paired_d": -0.09913854684314077,
+            "t_statistic": -1.139015186054334,
+            "p_value": 0.2567753814965039,
+            "bh_q_value": 0.7086898668612038,
+            "prevalence": 0.6978557504873294
+          },
+          "test": {
+            "effect": -0.0012450170035314078,
+            "ci_low": -0.008524391350623826,
+            "ci_high": 0.006034357343561011,
+            "paired_d": -0.02944916068049787,
+            "t_statistic": -0.33834509683416897,
+            "p_value": 0.7356447997298974,
+            "bh_q_value": 0.9198041416384478,
+            "prevalence": 0.6567307692307692
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 21963,
+      "direction": "long",
+      "discovery_rank": 5,
+      "discovery_score": 0.8892643035361397,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.0669323316101165e-08,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.07960631528480043,
+            "ci_low": -0.09642570862062538,
+            "ci_high": -0.06278692194897548,
+            "paired_d": -0.8149461043025864,
+            "t_statistic": -9.363017899436644,
+            "p_value": 2.895894111647135e-16,
+            "bh_q_value": 5.572555434170916e-14,
+            "prevalence": 0.9980506822612085
+          },
+          "test": {
+            "effect": -0.05634580601907495,
+            "ci_low": -0.07417913191617093,
+            "ci_high": -0.03851248012197896,
+            "paired_d": -0.5440276114466287,
+            "t_statistic": -6.250401390803216,
+            "p_value": 5.3346616580505824e-09,
+            "bh_q_value": 1.933696827555326e-07,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.016981231312107554,
+            "ci_low": -0.020415776762250752,
+            "ci_high": -0.013546685861964357,
+            "paired_d": -0.8513175817304467,
+            "t_statistic": -9.780894360699618,
+            "p_value": 2.684736857592434e-17,
+            "bh_q_value": 7.697677518089027e-15,
+            "prevalence": 0.9980506822612085
+          },
+          "test": {
+            "effect": -0.012672647818978266,
+            "ci_low": -0.01599847489594112,
+            "ci_high": -0.009346820742015413,
+            "paired_d": -0.6560839199390072,
+            "t_statistic": -7.537830358951735,
+            "p_value": 7.018030618946795e-12,
+            "bh_q_value": 4.723497040057335e-10,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -1.397066366792929,
+            "ci_low": -1.9701504984034655,
+            "ci_high": -0.8239822351823927,
+            "paired_d": -0.4197496541775691,
+            "t_statistic": -4.822556368571438,
+            "p_value": 3.870417250037447e-06,
+            "bh_q_value": 9.501079057626172e-05,
+            "prevalence": 0.9980506822612085
+          },
+          "test": {
+            "effect": -1.3193211410984846,
+            "ci_low": -1.825945130483159,
+            "ci_high": -0.8126971517138102,
+            "paired_d": -0.44839056337767935,
+            "t_statistic": -5.151615362879119,
+            "p_value": 9.261731305905978e-07,
+            "bh_q_value": 2.431798168525057e-05,
+            "prevalence": 0.9980769230769231
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.00967958238389757,
+            "ci_low": -0.02089261640007921,
+            "ci_high": 0.0015334516322840688,
+            "paired_d": -0.14863639846710663,
+            "t_statistic": -1.7077022051001662,
+            "p_value": 0.09006040240490408,
+            "bh_q_value": 0.6359231699204281,
+            "prevalence": 0.9980506822612085
+          },
+          "test": {
+            "effect": -0.001406043466895518,
+            "ci_low": -0.011633394777170186,
+            "ci_high": 0.00882130784337915,
+            "paired_d": -0.023671581018658277,
+            "t_statistic": -0.2719657602085659,
+            "p_value": 0.786076510353876,
+            "bh_q_value": 0.9396475320964869,
+            "prevalence": 0.9980769230769231
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 13518,
+      "direction": "long",
+      "discovery_rank": 6,
+      "discovery_score": 0.8865246387632454,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 2.7304524188895158e-11,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.013290203663707484,
+            "ci_low": -0.0165774993362295,
+            "ci_high": -0.010002907991185465,
+            "paired_d": -0.6961207204700803,
+            "t_statistic": -7.997818176587129,
+            "p_value": 5.849599684170579e-13,
+            "bh_q_value": 6.329046118661843e-11,
+            "prevalence": 0.8070175438596491
+          },
+          "test": {
+            "effect": -0.015938445000122585,
+            "ci_low": -0.020148544954241846,
+            "ci_high": -0.011728345046003324,
+            "paired_d": -0.651846344093622,
+            "t_statistic": -7.489144319125191,
+            "p_value": 9.101508062965052e-12,
+            "bh_q_value": 4.850528609318475e-10,
+            "prevalence": 0.7451923076923077
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.003286265717399532,
+            "ci_low": -0.004138116353903557,
+            "ci_high": -0.002434415080895507,
+            "paired_d": -0.6642490114358554,
+            "t_statistic": -7.631640118188454,
+            "p_value": 4.245577449313997e-12,
+            "bh_q_value": 4.699968981727062e-10,
+            "prevalence": 0.8070175438596491
+          },
+          "test": {
+            "effect": -0.0041732368580679495,
+            "ci_low": -0.0051866261826078175,
+            "ci_high": -0.0031598475335280814,
+            "paired_d": -0.7090688424252265,
+            "t_statistic": -8.14658077203983,
+            "p_value": 2.59257323949259e-13,
+            "bh_q_value": 2.429224180481423e-11,
+            "prevalence": 0.7451923076923077
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -1.5133290916982327,
+            "ci_low": -1.8184691617219682,
+            "ci_high": -1.2081890216744973,
+            "paired_d": -0.8539370013332023,
+            "t_statistic": -9.810989200710818,
+            "p_value": 2.260777862627956e-17,
+            "bh_q_value": 9.972465058041347e-15,
+            "prevalence": 0.8070175438596491
+          },
+          "test": {
+            "effect": -1.6120482165404042,
+            "ci_low": -1.937221189004565,
+            "ci_high": -1.2868752440762434,
+            "paired_d": -0.8536017154839564,
+            "t_statistic": -9.807137059579835,
+            "p_value": 2.3110749322141076e-17,
+            "bh_q_value": 3.505986267536661e-15,
+            "prevalence": 0.7451923076923077
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.010464793503886523,
+            "ci_low": -0.015196485627848796,
+            "ci_high": -0.005733101379924248,
+            "paired_d": -0.38080783658633005,
+            "t_statistic": -4.375148947125578,
+            "p_value": 2.4551483617283162e-05,
+            "bh_q_value": 0.004208643761086252,
+            "prevalence": 0.8070175438596491
+          },
+          "test": {
+            "effect": -0.010828653971354166,
+            "ci_low": -0.01697098455324751,
+            "ci_high": -0.004686323389460824,
+            "paired_d": -0.3035519186594734,
+            "t_statistic": -3.4875460264323217,
+            "p_value": 0.0006641327580902145,
+            "bh_q_value": 0.028127052348541553,
+            "prevalence": 0.7451923076923077
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 6766,
+      "direction": "long",
+      "discovery_rank": 7,
+      "discovery_score": 0.882802049912358,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 7.367795249862485e-20,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.17597471823624214,
+            "ci_low": -0.2112002674986787,
+            "ci_high": -0.14074916897380557,
+            "paired_d": -0.8601698136446547,
+            "t_statistic": -9.88259876228532,
+            "p_value": 1.501496043107217e-17,
+            "bh_q_value": 3.363351136560166e-15,
+            "prevalence": 0.8869395711500975
+          },
+          "test": {
+            "effect": -0.22023142608469984,
+            "ci_low": -0.2591031596173841,
+            "ci_high": -0.18135969255201556,
+            "paired_d": -0.9755220151719012,
+            "t_statistic": -11.207894658464015,
+            "p_value": 7.367795249862485e-21,
+            "bh_q_value": 1.821115736241872e-18,
+            "prevalence": 0.8355769230769231
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.01947776175890767,
+            "ci_low": -0.023328076799077536,
+            "ci_high": -0.0156274467187378,
+            "paired_d": -0.8710327341318055,
+            "t_statistic": -10.007404216810919,
+            "p_value": 7.35148778466977e-18,
+            "bh_q_value": 2.395248383659678e-15,
+            "prevalence": 0.8869395711500975
+          },
+          "test": {
+            "effect": -0.024261688144179068,
+            "ci_low": -0.02851418052468242,
+            "ci_high": -0.020009195763675717,
+            "paired_d": -0.9823565940709911,
+            "t_statistic": -11.286417991761072,
+            "p_value": 4.6850224567272325e-21,
+            "bh_q_value": 1.7674863668326738e-18,
+            "prevalence": 0.8355769230769231
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.7308189315025255,
+            "ci_low": -3.4143764246411825,
+            "ci_high": -2.0472614383638685,
+            "paired_d": -0.6878750372111653,
+            "t_statistic": -7.903082488498432,
+            "p_value": 9.797341751166804e-13,
+            "bh_q_value": 1.2213451421280636e-10,
+            "prevalence": 0.8869395711500975
+          },
+          "test": {
+            "effect": -4.247457485006313,
+            "ci_low": -5.102513011157317,
+            "ci_high": -3.39240195885531,
+            "paired_d": -0.8553156432212299,
+            "t_statistic": -9.82682859009665,
+            "p_value": 2.0651868347782066e-17,
+            "bh_q_value": 3.183496608965631e-15,
+            "prevalence": 0.8355769230769231
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.004567348595821496,
+            "ci_low": -0.021941291443581142,
+            "ci_high": 0.012806594251938152,
+            "paired_d": -0.04526447253540648,
+            "t_statistic": -0.5200491962842851,
+            "p_value": 0.6039070096417145,
+            "bh_q_value": 0.8647922932101405,
+            "prevalence": 0.8869395711500975
+          },
+          "test": {
+            "effect": 0.011533833513356219,
+            "ci_low": -0.007277821039332319,
+            "ci_high": 0.030345488066044757,
+            "paired_d": 0.10556947845034192,
+            "t_statistic": 1.212900965040671,
+            "p_value": 0.22735033883159297,
+            "bh_q_value": 0.71000689268201,
+            "prevalence": 0.8355769230769231
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 1829,
+      "direction": "long",
+      "discovery_rank": 8,
+      "discovery_score": 0.8826647396261961,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 8.602998867325239e-19,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.029716168526610635,
+            "ci_low": -0.0359451015486097,
+            "ci_high": -0.02348723550461157,
+            "paired_d": -0.8214305378942225,
+            "t_statistic": -9.43751836942558,
+            "p_value": 1.8974512801971038e-16,
+            "bh_q_value": 3.858420078426338e-14,
+            "prevalence": 0.6929824561403509
+          },
+          "test": {
+            "effect": -0.03524351597474323,
+            "ci_low": -0.041747513225581456,
+            "ci_high": -0.028739518723904997,
+            "paired_d": -0.9330191805652568,
+            "t_statistic": -10.71957426635739,
+            "p_value": 1.22899983818932e-19,
+            "bh_q_value": 2.3649586148029652e-17,
+            "prevalence": 0.6153846153846154
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.009724278464228988,
+            "ci_low": -0.011745552292413634,
+            "ci_high": -0.0077030046360443425,
+            "paired_d": -0.8283691695363261,
+            "t_statistic": -9.517237177724212,
+            "p_value": 1.2062172679227845e-16,
+            "bh_q_value": 3.232211355689914e-14,
+            "prevalence": 0.6929824561403509
+          },
+          "test": {
+            "effect": -0.011296267033409978,
+            "ci_low": -0.01334678749679028,
+            "ci_high": -0.009245746570029677,
+            "paired_d": -0.9485550383268962,
+            "t_statistic": -10.898067682716272,
+            "p_value": 4.39528245980669e-20,
+            "bh_q_value": 1.3127243613289315e-17,
+            "prevalence": 0.6153846153846154
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -1.757003630050505,
+            "ci_low": -2.115591039835783,
+            "ci_high": -1.3984162202652268,
+            "paired_d": -0.8436636049556531,
+            "t_statistic": -9.69295686254372,
+            "p_value": 4.434349190140808e-17,
+            "bh_q_value": 1.765856388607184e-14,
+            "prevalence": 0.6929824561403509
+          },
+          "test": {
+            "effect": -2.1194612136994953,
+            "ci_low": -2.4416711107422646,
+            "ci_high": -1.7972513166567259,
+            "paired_d": -1.1326045186715579,
+            "t_statistic": -13.01263522252163,
+            "p_value": 2.3072628140333776e-25,
+            "bh_q_value": 2.2811668759987933e-22,
+            "prevalence": 0.6153846153846154
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.001550346913963857,
+            "ci_low": -0.003730045917121603,
+            "ci_high": 0.0006293520891938889,
+            "paired_d": -0.12246840346394708,
+            "t_statistic": -1.4070548318402776,
+            "p_value": 0.16177925611381833,
+            "bh_q_value": 0.6750045656557426,
+            "prevalence": 0.6929824561403509
+          },
+          "test": {
+            "effect": -0.0009616505015980114,
+            "ci_low": -0.003046762983628894,
+            "ci_high": 0.0011234619804328713,
+            "paired_d": -0.0794107809681011,
+            "t_statistic": -0.9123604121635331,
+            "p_value": 0.3632549868387136,
+            "bh_q_value": 0.7404416361684034,
+            "prevalence": 0.6153846153846154
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    },
+    {
+      "feature_id": 11975,
+      "direction": "long",
+      "discovery_rank": 9,
+      "discovery_score": 0.8806181152524306,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 6.66186527109099e-08,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.05440301260225371,
+            "ci_low": -0.06622194713570959,
+            "ci_high": -0.04258407806879785,
+            "paired_d": -0.7925676016712266,
+            "t_statistic": -9.10590847883352,
+            "p_value": 1.2398989611167053e-15,
+            "bh_q_value": 2.167706281288913e-13,
+            "prevalence": 0.9093567251461988
+          },
+          "test": {
+            "effect": -0.03458526338458843,
+            "ci_low": -0.04653194045213032,
+            "ci_high": -0.022638586317046537,
+            "paired_d": -0.498466132028198,
+            "t_statistic": -5.726939845226958,
+            "p_value": 6.66186527109099e-08,
+            "bh_q_value": 2.1105966967151474e-06,
+            "prevalence": 0.9192307692307692
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.01357378511977114,
+            "ci_low": -0.016377588167333014,
+            "ci_high": -0.010769982072209265,
+            "paired_d": -0.8335759174494813,
+            "t_statistic": -9.577058156867917,
+            "p_value": 8.582465201897828e-17,
+            "bh_q_value": 2.3435851644649e-14,
+            "prevalence": 0.9093567251461988
+          },
+          "test": {
+            "effect": -0.008389409660153573,
+            "ci_low": -0.011300625389110483,
+            "ci_high": -0.0054781939311966624,
+            "paired_d": -0.4961907975585378,
+            "t_statistic": -5.700798242421378,
+            "p_value": 7.533725473538767e-08,
+            "bh_q_value": 2.6182663851794366e-06,
+            "prevalence": 0.9192307692307692
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -1.9604936079545459,
+            "ci_low": -2.291840712496651,
+            "ci_high": -1.6291465034124404,
+            "paired_d": -1.0187648294493292,
+            "t_statistic": -11.704716769722605,
+            "p_value": 4.2025448147016995e-22,
+            "bh_q_value": 1.2049536492712712e-18,
+            "prevalence": 0.9093567251461988
+          },
+          "test": {
+            "effect": -1.5326260653409094,
+            "ci_low": -1.8631744105015817,
+            "ci_high": -1.202077720180237,
+            "paired_d": -0.7983492337526048,
+            "t_statistic": -9.172334374214941,
+            "p_value": 8.521789569859714e-16,
+            "bh_q_value": 8.480344407613353e-14,
+            "prevalence": 0.9192307692307692
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.003114719583530619,
+            "ci_low": -0.006160150533737732,
+            "ci_high": -6.92886333235063e-05,
+            "paired_d": -0.17610102716240802,
+            "t_statistic": -2.0232467653082957,
+            "p_value": 0.045082372086938584,
+            "bh_q_value": 0.5575918519059493,
+            "prevalence": 0.9093567251461988
+          },
+          "test": {
+            "effect": 0.0010129369870580805,
+            "ci_low": -0.0018854173106667323,
+            "ci_high": 0.003911291284782893,
+            "paired_d": 0.06017590761365345,
+            "t_statistic": 0.6913685421978338,
+            "p_value": 0.49055737256809495,
+            "bh_q_value": 0.8101175547904861,
+            "prevalence": 0.9192307692307692
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 14635,
+      "direction": "long",
+      "discovery_rank": 10,
+      "discovery_score": 0.8712524505523049,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 3.002626006366026e-19,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.0465806663122188,
+            "ci_low": -0.056738446253425195,
+            "ci_high": -0.0364228863710124,
+            "paired_d": -0.7895844546277478,
+            "t_statistic": -9.071634728683323,
+            "p_value": 1.5042549726919453e-15,
+            "bh_q_value": 2.4930635015620495e-13,
+            "prevalence": 0.6598440545808967
+          },
+          "test": {
+            "effect": -0.0540363141240004,
+            "ci_low": -0.06380222381665779,
+            "ci_high": -0.04427040443134301,
+            "paired_d": -0.9527187368544334,
+            "t_statistic": -10.945904936781742,
+            "p_value": 3.3362511181844733e-20,
+            "bh_q_value": 7.192255042149265e-18,
+            "prevalence": 0.65
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.010871428586960054,
+            "ci_low": -0.013188865051085175,
+            "ci_high": -0.008553992122834933,
+            "paired_d": -0.807737924172696,
+            "t_statistic": -9.280202214789272,
+            "p_value": 4.630038488458988e-16,
+            "bh_q_value": 1.079288321472326e-13,
+            "prevalence": 0.6598440545808967
+          },
+          "test": {
+            "effect": -0.012889857621624774,
+            "ci_low": -0.015225290126632339,
+            "ci_high": -0.010554425116617208,
+            "paired_d": -0.9503257400378294,
+            "t_statistic": -10.918411496529847,
+            "p_value": 3.9090557512156846e-20,
+            "bh_q_value": 1.1923451755197459e-17,
+            "prevalence": 0.65
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.320512251420455,
+            "ci_low": -2.772485315188759,
+            "ci_high": -1.8685391876521509,
+            "paired_d": -0.8840218623282312,
+            "t_statistic": -10.156637938107483,
+            "p_value": 3.125661485249761e-18,
+            "bh_q_value": 1.8289584919404317e-15,
+            "prevalence": 0.6598440545808967
+          },
+          "test": {
+            "effect": -2.7776643386994953,
+            "ci_low": -3.2127925197961162,
+            "ci_high": -2.3425361576028743,
+            "paired_d": -1.0991431168340715,
+            "t_statistic": -12.628192984328782,
+            "p_value": 2.079963168179127e-24,
+            "bh_q_value": 1.2964500860441726e-21,
+            "prevalence": 0.65
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.001618549077197759,
+            "ci_low": -0.0033247716024716635,
+            "ci_high": 8.767344807614533e-05,
+            "paired_d": -0.1633359918491143,
+            "t_statistic": -1.8765876752233237,
+            "p_value": 0.06279926201969332,
+            "bh_q_value": 0.5983059166649121,
+            "prevalence": 0.6598440545808967
+          },
+          "test": {
+            "effect": 0.0005473127268781566,
+            "ci_low": -0.000849799362316211,
+            "ci_high": 0.0019444248160725244,
+            "paired_d": 0.06745217983438355,
+            "t_statistic": 0.7749665454083309,
+            "p_value": 0.4397560278394155,
+            "bh_q_value": 0.781691557979648,
+            "prevalence": 0.65
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 26346,
+      "direction": "long",
+      "discovery_rank": 11,
+      "discovery_score": 0.8647359183543214,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 3.3908464198692756e-16,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.057359363959874066,
+            "ci_low": -0.06994715125877579,
+            "ci_high": -0.04477157666097234,
+            "paired_d": -0.7845969649715818,
+            "t_statistic": -9.01433283512571,
+            "p_value": 2.0773295814525283e-15,
+            "bh_q_value": 3.237021399967766e-13,
+            "prevalence": 0.7115009746588694
+          },
+          "test": {
+            "effect": -0.07047066636115426,
+            "ci_low": -0.08502380051360449,
+            "ci_high": -0.05591753220870403,
+            "paired_d": -0.8337647656043932,
+            "t_statistic": -9.579227856981063,
+            "p_value": 8.477116049673189e-17,
+            "bh_q_value": 1.04765461800099e-14,
+            "prevalence": 0.6394230769230769
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.011415867197987003,
+            "ci_low": -0.013724519795209437,
+            "ci_high": -0.009107214600764569,
+            "paired_d": -0.8514164069891554,
+            "t_statistic": -9.782029776479044,
+            "p_value": 2.6673876230253803e-17,
+            "bh_q_value": 7.697677518089027e-15,
+            "prevalence": 0.7115009746588694
+          },
+          "test": {
+            "effect": -0.013767191723360673,
+            "ci_low": -0.016418206063141736,
+            "ci_high": -0.01111617738357961,
+            "paired_d": -0.8941800504199742,
+            "t_statistic": -10.273346633844149,
+            "p_value": 1.5998303894565838e-18,
+            "bh_q_value": 3.423159472126804e-16,
+            "prevalence": 0.6394230769230769
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.3019822245896466,
+            "ci_low": -2.712925015771069,
+            "ci_high": -1.8910394334082241,
+            "paired_d": -0.9645223422851671,
+            "t_statistic": -11.081518038485475,
+            "p_value": 1.526754089131515e-20,
+            "bh_q_value": 2.3039522759778312e-17,
+            "prevalence": 0.7115009746588694
+          },
+          "test": {
+            "effect": -2.9059787326388884,
+            "ci_low": -3.307495048764232,
+            "ci_high": -2.5044624165135447,
+            "paired_d": -1.2461804284102194,
+            "t_statistic": -14.317523079784207,
+            "p_value": 1.4271801382698337e-28,
+            "bh_q_value": 5.845729846353239e-25,
+            "prevalence": 0.6394230769230769
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.0014565207741477273,
+            "ci_low": -0.0030212338582401633,
+            "ci_high": 0.0001081923099447088,
+            "paired_d": -0.16027790676547918,
+            "t_statistic": -1.841452952540553,
+            "p_value": 0.06781718308122102,
+            "bh_q_value": 0.6097364126843122,
+            "prevalence": 0.7115009746588694
+          },
+          "test": {
+            "effect": 0.0003764990604285038,
+            "ci_low": -0.002730828311693365,
+            "ci_high": 0.003483826432550373,
+            "paired_d": 0.02086260708037943,
+            "t_statistic": 0.23969310668669497,
+            "p_value": 0.8109428184815974,
+            "bh_q_value": 0.9483574467635266,
+            "prevalence": 0.6394230769230769
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": false,
+      "confirmed": false
+    },
+    {
+      "feature_id": 1199,
+      "direction": "long",
+      "discovery_rank": 12,
+      "discovery_score": 0.8434449560488386,
+      "passes_discovery_gate": true,
+      "confirmation_holm_p_value": 1.5168094806435798e-16,
+      "metrics": {
+        "token_mean_activation": {
+          "dev": {
+            "effect": -0.057914107903012664,
+            "ci_low": -0.07019519321274864,
+            "ci_high": -0.04563302259327669,
+            "paired_d": -0.8119687509791887,
+            "t_statistic": -9.328810714062373,
+            "p_value": 3.515629694798583e-16,
+            "bh_q_value": 6.588244092108821e-14,
+            "prevalence": 0.8528265107212476
+          },
+          "test": {
+            "effect": -0.06608281338206998,
+            "ci_low": -0.0794340399354116,
+            "ci_high": -0.05273158682872836,
+            "paired_d": -0.8522343828186825,
+            "t_statistic": -9.791427603271188,
+            "p_value": 2.528015801072633e-17,
+            "bh_q_value": 3.294694047652479e-15,
+            "prevalence": 0.8192307692307692
+          }
+        },
+        "token_activation_frequency": {
+          "dev": {
+            "effect": -0.010256609300297282,
+            "ci_low": -0.012537164130560118,
+            "ci_high": -0.007976054470034445,
+            "paired_d": -0.7743815318795093,
+            "t_statistic": -8.896966444407854,
+            "p_value": 4.0182536081160955e-15,
+            "bh_q_value": 7.481257626747058e-13,
+            "prevalence": 0.8528265107212476
+          },
+          "test": {
+            "effect": -0.011962009085850283,
+            "ci_low": -0.014389466118965267,
+            "ci_high": -0.009534552052735299,
+            "paired_d": -0.8484851957709292,
+            "t_statistic": -9.748352723532372,
+            "p_value": 3.232801838305682e-17,
+            "bh_q_value": 5.866512297968388e-15,
+            "prevalence": 0.8192307692307692
+          }
+        },
+        "maximum_activation": {
+          "dev": {
+            "effect": -2.4401066327335856,
+            "ci_low": -2.9197792658691943,
+            "ci_high": -1.960433999597977,
+            "paired_d": -0.8759020784794381,
+            "t_statistic": -10.063348724116002,
+            "p_value": 5.335838444382156e-18,
+            "bh_q_value": 2.8865879222136824e-15,
+            "prevalence": 0.8528265107212476
+          },
+          "test": {
+            "effect": -3.001420454545454,
+            "ci_low": -3.4860045773180195,
+            "ci_high": -2.516836331772889,
+            "paired_d": -1.0664717360317761,
+            "t_statistic": -12.252827396793412,
+            "p_value": 1.792909052098176e-23,
+            "bh_q_value": 8.567714723626484e-21,
+            "prevalence": 0.8192307692307692
+          }
+        },
+        "first_64_token_mean_activation": {
+          "dev": {
+            "effect": -0.004398538608743687,
+            "ci_low": -0.01642915112999615,
+            "ci_high": 0.007632073912508774,
+            "paired_d": -0.06295241013929968,
+            "t_statistic": -0.7232681275915257,
+            "p_value": 0.4708046099473189,
+            "bh_q_value": 0.7996984464697587,
+            "prevalence": 0.8528265107212476
+          },
+          "test": {
+            "effect": -0.002192834411004577,
+            "ci_low": -0.013672946129839837,
+            "ci_high": 0.009287277307830683,
+            "paired_d": -0.03288905658815027,
+            "t_statistic": -0.377866491912327,
+            "p_value": 0.7061413329736086,
+            "bh_q_value": 0.9075478192218076,
+            "prevalence": 0.8192307692307692
+          }
+        }
+      },
+      "direction_replicated": true,
+      "first_64_direction_replicated": true,
+      "confirmed": true
+    }
+  ]
+}

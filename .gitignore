@@ -1,0 +1,27 @@
+# Python caches and environments
+  __pycache__/
+  *.py[cod]
+  .pytest_cache/
+  .ruff_cache/
+  .venv/
+  venv/
+  *.egg-info/
+
+  # Credentials
+  .env
+  .env.*
+  !.env.example
+
+  # Experiment outputs and model weights
+  /results
+  /checkpoints
+  /logs
+  *.log
+  *.safetensors
+  *.pt
+  *.pth
+  *.ckpt
+
+  # Temporary files
+  .ipynb_checkpoints/
+  .DS_Store

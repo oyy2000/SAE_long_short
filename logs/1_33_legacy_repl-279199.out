@@ -1,0 +1,23 @@
+index, memory.used [MiB], memory.free [MiB], utilization.gpu [%]
+0, 4868 MiB, 27362 MiB, 59 %
+1, 4868 MiB, 27362 MiB, 66 %
+2, 4 MiB, 32225 MiB, 0 %
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1293396, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+GPU-49e7fee9-f3dd-0a50-d079-b6cc40bdaed6, 1293411, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1293396, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+GPU-49e7fee9-f3dd-0a50-d079-b6cc40bdaed6, 1293411, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1293396, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 5278 MiB
+GPU-49e7fee9-f3dd-0a50-d079-b6cc40bdaed6, 1293411, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 5278 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1294725, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+GPU-49e7fee9-f3dd-0a50-d079-b6cc40bdaed6, 1294741, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4454 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1294725, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+GPU-49e7fee9-f3dd-0a50-d079-b6cc40bdaed6, 1294741, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4858 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1295493, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4900 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-64a0c80e-67a6-9de9-c795-21b7bc220682, 1295493, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 5218 MiB

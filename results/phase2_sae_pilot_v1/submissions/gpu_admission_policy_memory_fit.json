@@ -1,0 +1,16 @@
+{
+  "status": "active",
+  "effective_at_utc": "2026-09-04T07:41:00Z",
+  "researcher_decision": "Use memory-fit GPU admission on every approved machine.",
+  "approved_machines": ["c30", "c31", "c32", "c49"],
+  "default_policy": "memory_fit",
+  "selection_rule": "Require sufficient remaining GPU memory across repeated observations; do not require low utilization or near-zero used memory.",
+  "process_safety": "Do not terminate existing processes. Account for their memory through remaining free capacity and preserve grabgpu/gg allocations.",
+  "running_job_transition": {
+    "278972": "C31 job was already admitted with memory_fit.",
+    "278973": "C32 job had already passed the stricter idle admission and was training when the policy changed; its selected GPUs also satisfy memory_fit, so it was not restarted.",
+    "278974": "CPU-only audit; GPU admission does not apply."
+  },
+  "agents_md_sha256": "9254982f372fe18c9143323cc7a588c9c56bedf4b6a59cf580eff2062cb08fc1",
+  "gpu_admission_helper_sha256": "a18d1a822778b4bf45f9eddbecec3a0f36040182891a71375af767553699528c"
+}

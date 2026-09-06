@@ -1,0 +1,219 @@
+{
+  "experiment_name": "phase2_sae_sampling_ablation_v1",
+  "protocol_variant": "full_token_vs_trace_balanced_vs_prefix64_v1",
+  "scope": "Exploratory SAE training-distribution falsification on GSM8K",
+  "formal_claim_allowed": false,
+  "entry_decision": {
+    "decision": "researcher_directed_transition_to_sae",
+    "phase0_status": "paused_without_gate_decision",
+    "phase1_utility_status": "not_run",
+    "consequence": "SAE reconstruction and feature discovery are allowed; student-utility and causal-teachability claims are not available in this pilot."
+  },
+  "source_pool": {
+    "generation_audit_path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/datasets/generation_audit.json",
+    "generation_audit_sha256": "81806fa0930460776e08acbf4ae7cc273063607e529178d0e445ecf351460e45",
+    "raw_shards": [
+      {
+        "path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/generation/raw/shard_00000_of_00003.jsonl",
+        "sha256": "1ab6668a199e52954c1003d60b0690d8766ebf4a3aedc5c629a14cad834001e0",
+        "records": 4704
+      },
+      {
+        "path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/generation/raw/shard_00001_of_00003.jsonl",
+        "sha256": "8c778bc9c4892d8ac7f588de32ccc45bba738e828e7de6ac2c5da92db43acf62",
+        "records": 4704
+      },
+      {
+        "path": "/home/youyang7/projects/small_language_model/results/capacity_length_ranked_sampling_7b_v1/formal/generation/raw/shard_00002_of_00003.jsonl",
+        "sha256": "f1fc3cdc24b474aa81984a462c29b445909483ba53d80e5d3bc65d981ca50b30",
+        "records": 4688
+      }
+    ],
+    "question_count": 881,
+    "rollouts_per_question": 16,
+    "trajectory_count": 14096,
+    "correct_trajectory_count": 13962,
+    "minimum_correct_per_question": 4,
+    "initial_2000_question_target_status": "deferred; this pilot starts from the complete sealed 881-question pool"
+  },
+  "question_split": {
+    "method": "sha256_sorted_problem_id",
+    "seed": 20260904,
+    "train": 617,
+    "dev": 132,
+    "test": 132
+  },
+  "length_labels": {
+    "training_use": "ignored; every raw trajectory is mixed in one SAE corpus",
+    "short": "bottom ceil(20 percent) of correct traces within question",
+    "medium": "single correct trace closest to the within-question median after excluding selected tails",
+    "long": "top ceil(20 percent) of correct traces within question",
+    "other_correct": "correct trace outside the three analysis labels",
+    "incorrect": "verifier-incorrect raw trajectory"
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/mnt/beegfs/youyang7/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "hidden_size": 3584,
+    "num_hidden_layers": 28,
+    "torch_dtype": "bfloat16",
+    "replay_format": "qwen_chat_template_user_prompt_then_raw_assistant_solution"
+  },
+  "activation_extraction": {
+    "stream": "post_block_residual",
+    "layer_indices_zero_based": [
+      17
+    ],
+    "nominal_depth_fractions": [
+      0.65
+    ],
+    "trajectory_shards": 3,
+    "batch_size": 2,
+    "max_sequence_tokens": 2048,
+    "chunk_tokens": 32768,
+    "stored_dtype": "bfloat16",
+    "completion_tokens_only": true,
+    "include_incorrect_trajectories": true
+  },
+  "token_sampling": {
+    "method": "condition_specific_registered_sampling",
+    "seed": 20260904,
+    "tokens_per_layer": {
+      "train": 250000,
+      "dev": 50000,
+      "test": 50000
+    },
+    "normalization": "subtract_train_sample_mean_then_scale_expected_centered_squared_norm_to_hidden_size"
+  },
+  "sae": {
+    "architecture": "TopK",
+    "expansion_factor": 8,
+    "feature_count": 28672,
+    "k_values": [
+      64
+    ],
+    "seed": 17,
+    "training_dtype": "bfloat16_autocast_fp32_parameters",
+    "batch_size": 256,
+    "max_steps": 1500,
+    "learning_rate": 0.0003,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "weight_decay": 0.0,
+    "warmup_steps": 100,
+    "gradient_clip_norm": 1.0,
+    "auxiliary_k": 256,
+    "auxiliary_loss_coefficient": 0.03125,
+    "dead_feature_window_steps": 200,
+    "evaluation_interval_steps": 100,
+    "checkpoint_interval_steps": 500,
+    "decoder_columns_unit_norm": true
+  },
+  "pilot_outputs": {
+    "required_sae_count": 6,
+    "required_metrics": [
+      "mse",
+      "explained_variance",
+      "mean_l0",
+      "dead_feature_fraction",
+      "activation_frequency"
+    ],
+    "later_analysis": [
+      "per_trace_sparse_feature_aggregates",
+      "step_level_pooling",
+      "lexical_falsification",
+      "paraphrase_invariance",
+      "position_control"
+    ]
+  },
+  "claim_boundary": "This single-SAE-seed ablation can diagnose sampling and position artifacts. It cannot establish semantic identity, student utility, or causal effects.",
+  "sampling_ablation": {
+    "experiment_name": "phase2_sae_sampling_ablation_v1",
+    "protocol_variant": "full_token_vs_trace_balanced_vs_prefix64_v1",
+    "scope": "Exploratory SAE training-distribution falsification on GSM8K",
+    "formal_claim_allowed": false,
+    "claim_boundary": "This single-SAE-seed ablation can diagnose sampling and position artifacts. It cannot establish semantic identity, student utility, or causal effects.",
+    "parent_sae": {
+      "protocol_path": "results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+      "completion_marker_path": "results/phase2_sae_pilot_v1/SAE_PILOT_COMPLETE",
+      "corpus_path": "results/phase2_sae_pilot_v1/formal/corpus/mixed_trajectories.jsonl",
+      "activation_root": "results/phase2_sae_pilot_v1/formal/activations",
+      "baseline_sample_root": "results/phase2_sae_pilot_v1/formal/token_samples",
+      "baseline_training_dir": "results/phase2_sae_pilot_v1/formal/sae_training/layer_17_k_064",
+      "baseline_checkpoint_dir": "checkpoints/phase2_sae_pilot_v1/layer_17_k_064",
+      "protocol_sha256": "67ff12df5293fc91d731728be66db15392a544845cc8d9d117de01b62a289786",
+      "protocol_hash": "501ba5f56aafcddceebdda328d448a40206413c06208a77be7ed5c45a50485e2",
+      "completion_marker_sha256": "d9981eb3cdae01145210e61ef70a61c8c410b8c998a528abee0ab03fdae74bc6"
+    },
+    "primary_sae": {
+      "layer_index": 17,
+      "k": 64,
+      "feature_count": 28672,
+      "training_seed": 17
+    },
+    "conditions": [
+      {
+        "name": "full_token_uniform",
+        "role": "frozen_baseline",
+        "sampling_unit": "token",
+        "position_limit": null,
+        "train_new_sae": false
+      },
+      {
+        "name": "full_trace_balanced",
+        "role": "length_control",
+        "sampling_unit": "trace_then_position",
+        "position_limit": null,
+        "train_new_sae": true
+      },
+      {
+        "name": "prefix64_trace_balanced",
+        "role": "early_state_falsification",
+        "sampling_unit": "trace_then_position",
+        "position_limit": 64,
+        "train_new_sae": true
+      }
+    ],
+    "token_budget": {
+      "train": 250000,
+      "dev": 50000,
+      "test": 50000,
+      "equal_across_conditions": true,
+      "sample_without_replacement_within_trace": true,
+      "trace_quota_rule": "maximally_equal integer quotas with deterministic hash-ranked remainder"
+    },
+    "evaluation": {
+      "discovery_split": "dev",
+      "confirmation_split": "test",
+      "eligible_labels": [
+        "short",
+        "long"
+      ],
+      "pairing_unit": "problem_id",
+      "primary_metric": "token_mean_activation",
+      "early_metric": "first_64_token_mean_activation",
+      "candidate_features_per_direction": 12,
+      "minimum_trace_prevalence": 0.05,
+      "maximum_dev_bh_q_value": 0.05,
+      "minimum_dev_absolute_paired_d": 0.2,
+      "confirmation_holm_alpha": 0.05,
+      "minimum_test_absolute_paired_d": 0.15,
+      "relative_position_bins": 5,
+      "common_eval_encode_batch_size": 512
+    },
+    "feature_matching": {
+      "candidate_set_only": true,
+      "method": "mutual_nearest_neighbor_decoder_cosine_plus_shared_trace_activation_correlation",
+      "minimum_decoder_cosine": 0.5,
+      "minimum_test_trace_activation_correlation": 0.5,
+      "require_same_short_long_direction": true
+    },
+    "outputs": {
+      "result_root": "results/phase2_sae_sampling_ablation_v1/exploratory",
+      "checkpoint_root": "checkpoints/phase2_sae_sampling_ablation_v1",
+      "figure_root": "figures/phase2_sae_sampling_ablation_v1"
+    }
+  }
+}

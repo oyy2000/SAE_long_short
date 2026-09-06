@@ -1,0 +1,5 @@
+status=passed
+config_hash=501ba5f56aafcddceebdda328d448a40206413c06208a77be7ed5c45a50485e2
+audit_sha256=7472e7fad43209537ad53dd5f88afb1993bce934fe5ca88165c9e00641421bd6
+validated_sae_count=6
+formal_claim_allowed=false

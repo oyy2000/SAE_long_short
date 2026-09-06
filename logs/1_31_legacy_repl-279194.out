@@ -1,0 +1,60 @@
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-0ff7ad2e-42de-2b31-acd3-2981e765e4e6, 2434114, /home/dhettik/Python38/bin/python3, 48108 MiB
+GPU-3106ac01-69b7-7e45-1a10-4776873ce0d2, 2434114, /home/dhettik/Python38/bin/python3, 48112 MiB
+GPU-bf19bb32-e5eb-a634-be37-bf29cd48319a, 2434114, /home/dhettik/Python38/bin/python3, 48112 MiB
+GPU-2ed57fc7-3f30-3e02-d267-928e2b32bcda, 2434114, /home/dhettik/Python38/bin/python3, 48034 MiB
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 86 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 88 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 88 %
+1, 48132 MiB, 409 MiB, 79 %
+2, 48132 MiB, 409 MiB, 77 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 87 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 76 %
+3, 48054 MiB, 487 MiB, 77 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 88 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 79 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 87 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 87 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 86 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 88 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 78 %
+3, 48054 MiB, 487 MiB, 77 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 88 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 76 %
+3, 48054 MiB, 487 MiB, 78 %
+Waiting for memory capacity without interference: eligible=0/1.
+0, 48128 MiB, 413 MiB, 88 %
+1, 48132 MiB, 409 MiB, 78 %
+2, 48132 MiB, 409 MiB, 76 %
+3, 48054 MiB, 487 MiB, 79 %

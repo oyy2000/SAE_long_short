@@ -1,0 +1,241 @@
+{
+  "status": "complete",
+  "experiment_name": "phase3_sae_intervention_distillation_pilot_v1",
+  "config_hash": "c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "c7605ccf8c1d700c76eb252ddd48abac396d972481f35912389ea3893898e5bf",
+  "expected_question_count": 617,
+  "condition_count": 4,
+  "candidates_per_question": 2,
+  "expected_record_count": 4936,
+  "observed_record_count": 4936,
+  "duplicate_cell_count": 0,
+  "missing_cell_count": 0,
+  "condition_metrics": [
+    {
+      "condition": "no_steering",
+      "generated_trace_count": 1234,
+      "unconditional_correct_count": 1219,
+      "unconditional_accuracy": 0.9878444084278768,
+      "question_coverage_count": 615,
+      "question_coverage": 0.9967585089141004,
+      "total_generated_tokens": 308298,
+      "mean_output_tokens": 249.8363047001621,
+      "mean_correct_output_tokens": 249.29450369155046,
+      "correct_usable_traces_per_million_tokens": 3953.9666167149967,
+      "changed_from_no_steering_fraction": 0.0,
+      "mean_paired_output_token_delta_vs_no_steering": 0.0,
+      "mean_modified_continuation_fraction": 0.0,
+      "mean_delta_to_hidden_norm_fraction": 0.0,
+      "max_delta_to_hidden_norm_fraction": 0.0
+    },
+    {
+      "condition": "short_feature_enhance",
+      "generated_trace_count": 1234,
+      "unconditional_correct_count": 1219,
+      "unconditional_accuracy": 0.9878444084278768,
+      "question_coverage_count": 615,
+      "question_coverage": 0.9967585089141004,
+      "total_generated_tokens": 308360,
+      "mean_output_tokens": 249.88654781199352,
+      "mean_correct_output_tokens": 249.33798195242002,
+      "correct_usable_traces_per_million_tokens": 3953.17161758983,
+      "changed_from_no_steering_fraction": 0.3727714748784441,
+      "mean_paired_output_token_delta_vs_no_steering": 0.050243111831442464,
+      "mean_modified_continuation_fraction": 1.0,
+      "mean_delta_to_hidden_norm_fraction": 0.012977101096322852,
+      "max_delta_to_hidden_norm_fraction": 0.018944192677736282
+    },
+    {
+      "condition": "long_feature_suppress",
+      "generated_trace_count": 1234,
+      "unconditional_correct_count": 1216,
+      "unconditional_accuracy": 0.9854132901134521,
+      "question_coverage_count": 613,
+      "question_coverage": 0.993517017828201,
+      "total_generated_tokens": 309528,
+      "mean_output_tokens": 250.8330632090762,
+      "mean_correct_output_tokens": 249.90296052631578,
+      "correct_usable_traces_per_million_tokens": 3928.562197927167,
+      "changed_from_no_steering_fraction": 0.41085899513776336,
+      "mean_paired_output_token_delta_vs_no_steering": 0.9967585089141004,
+      "mean_modified_continuation_fraction": 0.5446190161260837,
+      "mean_delta_to_hidden_norm_fraction": 0.008267118071467405,
+      "max_delta_to_hidden_norm_fraction": 0.06388268619775772
+    },
+    {
+      "condition": "random_feature_enhance",
+      "generated_trace_count": 1234,
+      "unconditional_correct_count": 1220,
+      "unconditional_accuracy": 0.9886547811993517,
+      "question_coverage_count": 615,
+      "question_coverage": 0.9967585089141004,
+      "total_generated_tokens": 308993,
+      "mean_output_tokens": 250.3995137763371,
+      "mean_correct_output_tokens": 249.78852459016395,
+      "correct_usable_traces_per_million_tokens": 3948.309508629645,
+      "changed_from_no_steering_fraction": 0.3857374392220421,
+      "mean_paired_output_token_delta_vs_no_steering": 0.5632090761750406,
+      "mean_modified_continuation_fraction": 1.0,
+      "mean_delta_to_hidden_norm_fraction": 0.01298138377335072,
+      "max_delta_to_hidden_norm_fraction": 0.018944261595606804
+    }
+  ],
+  "common_support_question_count": 613,
+  "common_support_fraction": 0.993517017828201,
+  "input_shards": [
+    {
+      "shard_index": 0,
+      "problem_count": 52,
+      "pair_count": 104,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_00_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "8a612f088374528be465fefe736ce6650b79030cf95d187ac43585949f8bd9f2",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_00_of_12/generation_manifest.json",
+      "manifest_sha256": "ab99c84703cd270bf01fbf8ca3ef91743e9c3922334a0e186bf509f570691d9a",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_00_of_12/generations.jsonl",
+      "records_sha256": "d673cf644ad10afacc20e14d9622cccf867e54610749dd5f16ebfe3736c297c9"
+    },
+    {
+      "shard_index": 1,
+      "problem_count": 52,
+      "pair_count": 104,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_01_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "1c543e1b6c2465616b032f6871d1a76c53b3eed0b2b57547dd4e05c3ae5ffbef",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_01_of_12/generation_manifest.json",
+      "manifest_sha256": "d354b8604c6c20ece35d1a1f940b7b047ae7d6e4d006fa856dcaeddf54595009",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_01_of_12/generations.jsonl",
+      "records_sha256": "dac67cd8f63f59482abef89b7db8bbdd6d15e029aad9d20f45c102349908885c"
+    },
+    {
+      "shard_index": 2,
+      "problem_count": 52,
+      "pair_count": 104,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_02_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "51dec44e126838f691a0347d7c543eea19bdd7081bc28ab2036e3a18a72b8084",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_02_of_12/generation_manifest.json",
+      "manifest_sha256": "671feef53468d77c6e9667dcdc0b20c2c009e4b2367f4d101a24d4de319855fd",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_02_of_12/generations.jsonl",
+      "records_sha256": "fc60c7949aba9f3cd6a46b88abe880728861daecbf70f450ad7e8b021705f46d"
+    },
+    {
+      "shard_index": 3,
+      "problem_count": 52,
+      "pair_count": 104,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_03_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "4bcce98d4faee09d2ca212136e8897c45f34f72750de9ed8083aa459f6f80ede",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_03_of_12/generation_manifest.json",
+      "manifest_sha256": "b99acadb303ab80942daf0604d7f1aa3a7d88695d11937f2907405623a278bca",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_03_of_12/generations.jsonl",
+      "records_sha256": "3f1eda311ce8d7f60349d4865b4237b398e1815dd93267db4a922784e9098534"
+    },
+    {
+      "shard_index": 4,
+      "problem_count": 52,
+      "pair_count": 104,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_04_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "791e1e3bbe1544edb200d225f63095a4f81b7bf21062bb64715f281f00375463",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_04_of_12/generation_manifest.json",
+      "manifest_sha256": "4cd6ff08c25c475f564dd02649ec9ecc833f1c695b2f49460a12b1e9443e3b52",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_04_of_12/generations.jsonl",
+      "records_sha256": "5b2c66e5159318d989881a60e77e92312adf3d82408c6334cc286871b544e8ee"
+    },
+    {
+      "shard_index": 5,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_05_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "3c4169126460a4ae3f5a3250c18f1408dfeeb067787ffb3a20c17e1b92bb67b9",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_05_of_12/generation_manifest.json",
+      "manifest_sha256": "608504a790e0cd15f9a3d974b4ab2c26c08b3335483cb04f6163c4d99442d19c",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_05_of_12/generations.jsonl",
+      "records_sha256": "ca9cbbe8487ebd8aed5cf7c2f64108547f221813bdefbadb36b8a133c8b6744b"
+    },
+    {
+      "shard_index": 6,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_06_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "746c361caf8ab7669d6a9a21d8c7b0ff7836001a8ee0c8c262fc04676a27054b",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_06_of_12/generation_manifest.json",
+      "manifest_sha256": "64f444da4a15261c75713d72c7c325dd1a305f7c3896cd0736c75078e947b07f",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_06_of_12/generations.jsonl",
+      "records_sha256": "7e72c91815cc456dd7f11ca8e0518d8203da1478b87ae084da21e7021159c44a"
+    },
+    {
+      "shard_index": 7,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_07_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "d46c00c3b2c3cc04d1736ef44a15ce6981258adc4b8f66295547ae0e407dbbb4",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_07_of_12/generation_manifest.json",
+      "manifest_sha256": "44e60ad1a96a238192e64059cf95449cb9e5a1b95b21125d656f593cc439d7f8",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_07_of_12/generations.jsonl",
+      "records_sha256": "705db41d34b38a565b8afaa6806cf0401df599434ba4726c89e5c2b5634ffd96"
+    },
+    {
+      "shard_index": 8,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_08_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "0ae55b1ebe0ad4cb56e4206c52d6ca16317a06c6995c9d4adb5051f04727b11b",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_08_of_12/generation_manifest.json",
+      "manifest_sha256": "c0735a5abc364c3740430997315336f91afb30f44cbde657a6628d259e6b9b1e",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_08_of_12/generations.jsonl",
+      "records_sha256": "8937304a42a2a2a576f4951a9c6209a9df00e284aa77033bee641a083b3c410e"
+    },
+    {
+      "shard_index": 9,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_09_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "41296aabb99ac63e6f481bff2c71dcc157a242c69e2d8f3a46c47a50e66f745b",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_09_of_12/generation_manifest.json",
+      "manifest_sha256": "2f91bcd66c035e0a75b331ca986b026087e76b2a4c9cc94cefb8a407b282f703",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_09_of_12/generations.jsonl",
+      "records_sha256": "22b1a128833d5a915f84fb0fe10afb440483484a4bdcf4649b3d65c96e95a674"
+    },
+    {
+      "shard_index": 10,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_10_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "ba032add6ce6ed7edbdf94bfea30de0ec100889ddb9b99444b6551a5173293c3",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_10_of_12/generation_manifest.json",
+      "manifest_sha256": "44266c981387c2e0316b677c4a5524b2495b5096d40eaf3515eded787329b4c8",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_10_of_12/generations.jsonl",
+      "records_sha256": "62eba9bd97c05c9806ab2e53624fe097224bd0e9187b43eb8c59a09c8aa5ffb6"
+    },
+    {
+      "shard_index": 11,
+      "problem_count": 51,
+      "pair_count": 102,
+      "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_11_of_12/GENERATION_SHARD_COMPLETE",
+      "marker_sha256": "86be3c68efade48a8a249869b6fd95e8e3e5077718d1279032ee90ffa85658c9",
+      "manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_11_of_12/generation_manifest.json",
+      "manifest_sha256": "fc83f3e127c976d48b1fdd27aa8d72a9bc324fd75854a05529979be118c22f3d",
+      "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_11_of_12/generations.jsonl",
+      "records_sha256": "0ec434fade40a3d9b8f278c6788ebe30da622bd9d2ec7bfada389933fb49d650"
+    }
+  ],
+  "artifacts": {
+    "merged_generations.jsonl": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation/merged_generations.jsonl",
+      "sha256": "bb6c4c61b80cee089554403b931542aec87d1981917b30abd11627e99658d5f9"
+    },
+    "common_support_selected_traces.jsonl": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation/common_support_selected_traces.jsonl",
+      "sha256": "c9bd27c09ed6e70efc90efdab919712fbc29b80fadcd5bfe2a38083918d00f74"
+    },
+    "generation_condition_metrics.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation/generation_condition_metrics.csv",
+      "sha256": "4c38005a3e90bd8ad7b93da39484c1d1ce5227608d25bbba9a4cfec6516f96c4"
+    },
+    "common_support_problem_ids.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation/common_support_problem_ids.json",
+      "sha256": "0c5e86cb487569e1edcee0739182875ee3bb412a8a726af89c6c64b322f3c444"
+    }
+  },
+  "source_code_sha256": "e21b2ac38dbafc8dbf5a9b76e949f14c232b28068f0c6bd2ae4109a3a9308f11",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This experiment tests length-associated SAE features, not student-utility features. It may establish an exploratory intervention-to-data-to-student association, but not a semantic reasoning mechanism or utility-specific causal effect."
+}

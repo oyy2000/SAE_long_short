@@ -1,0 +1,10 @@
+{
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "adapter_path": "/mnt/beegfs/youyang7/projects/SAE_long_short/trace_length_observation_gate0_v1/checkpoints/trace_length_observation_gate0_v1/formal/equal_examples__sequence_mean__answer_only__short__seed_17",
+  "split": "test",
+  "start_index": 50,
+  "n": 1269,
+  "correct": 853,
+  "accuracy": 0.6721828211189913,
+  "output_jsonl": "/home/youyang7/projects/SAE_long_short/results/trace_length_observation_gate0_v1/formal/evaluation/predictions/equal_examples__sequence_mean__answer_only__short__seed_17.jsonl"
+}

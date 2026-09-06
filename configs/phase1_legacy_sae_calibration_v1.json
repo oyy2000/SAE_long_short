@@ -1,0 +1,30 @@
+{
+  "parent_config": "configs/phase1_legacy_trace_sae_distillation_v1.json",
+  "output_subdirectory": "intervention_calibration_v1",
+  "reference_sae_seed": 17,
+  "maximum_features_per_direction": 5,
+  "dictionary_feature_count": 28672,
+  "minimum_stable_features_per_direction": 1,
+  "question_shards": 4,
+  "batch_size": 2,
+  "base_seed": 2026090507,
+  "minimum_free_mib": 22000,
+  "teacher_config": "configs/phase3_sae_intervention_distillation_pilot_v1.json",
+  "worker_nodes": [
+    {"node": "c31", "partition": "a6000"},
+    {"node": "c32", "partition": "a5000ada"},
+    {"node": "c49", "partition": "a5000ada"}
+  ],
+  "falsification": {
+    "natural_dev_examples": 16,
+    "top_injected_tokens_per_feature": 3,
+    "scrub_pattern": "\\b(?:wait|so|let|therefore|let me check)\\b",
+    "arithmetic_paraphrase_pairs": [
+      ["There are 3 red pens and 2 blue pens. Adding 3 and 2 gives 5 pens. Answer: 5", "Three pens are red, and two are blue. The total is five because 3 + 2 = 5. Answer: 5"],
+      ["A box held 10 apples. Four were removed, so 10 - 4 = 6 remain. Answer: 6", "Taking four apples away from ten leaves six: 10 - 4 = 6. Answer: 6"],
+      ["Each bag contains 3 balls. Four bags contain 4 times 3, or 12 balls. Answer: 12", "With three balls per bag and four bags, the number of balls is 3 + 3 + 3 + 3 = 12. Answer: 12"]
+    ],
+    "interpretation": "Diagnostic lexical counterexamples, not a semantic-mechanism certification. No automatic main dataset or SFT launch from calibration alone."
+  },
+  "claim_boundary": "Cross-seed stable length-associated features, not teaching-utility features. Calibration selects interventions only using SAE-dev questions, never student test accuracy."
+}

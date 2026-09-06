@@ -1,0 +1,5 @@
+Waiting for memory capacity without interference: eligible=3/3.
+0, 4 MiB, 32225 MiB, 0 %
+1, 4 MiB, 32225 MiB, 0 %
+2, 4 MiB, 32225 MiB, 0 %
+Selected stable memory-fit GPUs by descending free memory on c49: 0 1 2

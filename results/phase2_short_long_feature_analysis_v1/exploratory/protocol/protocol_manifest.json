@@ -1,0 +1,13 @@
+{
+  "status": "frozen",
+  "experiment_name": "phase2_short_long_feature_analysis_v1",
+  "config_hash": "59ea29a5d2179cf33bb7c45d2a0cf627f2f93b77d3ab0664e4df038e0fa89342",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_short_long_feature_analysis_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "edebe5e825da81ad77d3495574c775c3b69b124fb0dbd7b52e0d59c6032c96b6",
+  "source_config_path": "/home/youyang7/projects/SAE_long_short/configs/phase2_short_long_feature_analysis_v1.json",
+  "source_config_sha256": "ec10366b7862490ac33bc674ea36980353b5e32f2c7ce2255d0ae8d7915794e7",
+  "parent_marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/SAE_PILOT_COMPLETE",
+  "parent_marker_sha256": "d9981eb3cdae01145210e61ef70a61c8c410b8c998a528abee0ab03fdae74bc6",
+  "source_code_sha256": "80e8c62f51a039cf6db1f08495d4f8411cd1995e5682f785b94252ddd41bc6d4",
+  "formal_claim_allowed": false
+}

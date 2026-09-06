@@ -1,0 +1,208 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  7.93it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  8.15it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  8.08it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  8.19it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  8.14it/s]
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 2, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 4, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 6, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 8, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 10, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 12, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 14, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 16, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 18, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 20, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 22, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 24, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 26, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 28, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 30, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 32, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 34, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 36, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 38, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 40, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 42, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 44, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 46, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 48, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 50, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 0, "processed_pairs": 51, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 53, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 55, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 57, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 59, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 61, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 63, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 65, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 67, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 69, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 71, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 73, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 75, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 77, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 79, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 81, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 83, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 85, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 87, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 89, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 91, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 93, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 95, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 97, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 99, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 101, "total_pairs": 102}
+{"event": "generation_progress", "stage": "main", "shard_index": 9, "candidate_index": 1, "processed_pairs": 102, "total_pairs": 102}
+{
+  "status": "complete",
+  "experiment_name": "phase3_sae_intervention_distillation_pilot_v1",
+  "stage": "main",
+  "config_hash": "c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "c7605ccf8c1d700c76eb252ddd48abac396d972481f35912389ea3893898e5bf",
+  "shard_index": 9,
+  "shard_count": 12,
+  "problem_ids": [
+    "hf-001070",
+    "hf-001032",
+    "hf-001228",
+    "hf-001216",
+    "hf-001382",
+    "hf-001209",
+    "hf-001976",
+    "hf-000889",
+    "hf-001155",
+    "hf-001232",
+    "hf-000600",
+    "hf-000960",
+    "hf-001697",
+    "hf-001962",
+    "hf-000309",
+    "hf-001862",
+    "hf-000636",
+    "hf-000811",
+    "hf-001773",
+    "hf-000715",
+    "hf-000251",
+    "hf-000910",
+    "hf-001668",
+    "hf-000956",
+    "hf-000485",
+    "hf-001190",
+    "hf-001098",
+    "hf-000656",
+    "hf-001142",
+    "hf-001043",
+    "hf-001401",
+    "hf-000663",
+    "hf-001420",
+    "hf-001410",
+    "hf-000934",
+    "hf-001364",
+    "hf-000231",
+    "hf-000758",
+    "hf-000828",
+    "hf-000475",
+    "hf-000673",
+    "hf-001272",
+    "hf-000818",
+    "hf-000363",
+    "hf-000357",
+    "hf-001479",
+    "hf-001967",
+    "hf-001158",
+    "hf-000003",
+    "hf-000932",
+    "hf-000724"
+  ],
+  "problem_ids_sha256": "d03ea699d7158c61c5705ec93320b5188b0c148efcb5a2ba7bf10f22dd5f6d4a",
+  "problem_count": 51,
+  "candidate_count_per_problem": 2,
+  "pair_count": 102,
+  "conditions": [
+    {
+      "name": "no_steering",
+      "mode": "none",
+      "strength": 0.0
+    },
+    {
+      "name": "short_feature_enhance",
+      "mode": "short_enhance",
+      "strength": 1.0
+    },
+    {
+      "name": "long_feature_suppress",
+      "mode": "long_suppress",
+      "strength": 0.25
+    },
+    {
+      "name": "random_feature_enhance",
+      "mode": "random_enhance",
+      "strength": 1.0
+    }
+  ],
+  "condition_counts": {
+    "no_steering": {
+      "records": 102,
+      "correct": 98,
+      "tokens": 25136
+    },
+    "short_feature_enhance": {
+      "records": 102,
+      "correct": 98,
+      "tokens": 25220
+    },
+    "long_feature_suppress": {
+      "records": 102,
+      "correct": 98,
+      "tokens": 25257
+    },
+    "random_feature_enhance": {
+      "records": 102,
+      "correct": 100,
+      "tokens": 25205
+    }
+  },
+  "common_prefix_audit": "passed",
+  "strength_evidence": {
+    "selection_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration/selected_strengths.json",
+    "selection_sha256": "79dcc52d00bf038641adad25ecfc800f575e6afd7e2c56e2d7dc3a3bd9d58093",
+    "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/calibration/CALIBRATION_COMPLETE",
+    "marker_sha256": "3a6073479c4c016a417a25dc113488b69bacf1039d763420170a52f642038a3f"
+  },
+  "records_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/main_generation_shards/shard_09_of_12/generations.jsonl",
+  "records_sha256": "22b1a128833d5a915f84fb0fe10afb440483484a4bdcf4649b3d65c96e95a674",
+  "elapsed_seconds": 1664.436636686325,
+  "runtime": {
+    "hostname": "c49",
+    "platform": "Linux-5.19.9-1.el8.x86_64-x86_64-with-glibc2.28",
+    "cuda_visible_devices": "2",
+    "packages": {
+      "python": "3.10.19",
+      "torch": "2.10.0",
+      "transformers": "4.48.3",
+      "safetensors": "0.7.0"
+    },
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      }
+    ]
+  },
+  "source_code_sha256": "db112669ac047d5b9df55d7718adba2dbeb9becc792f16d090e23d4d5853136f",
+  "library_code_sha256": "86415ead2d77cd27190c5a7f3424375962330baa6fba64488a69b2bc7f7f1397",
+  "formal_claim_allowed": false
+}

@@ -1,0 +1,16 @@
+{
+  "status": "frozen",
+  "experiment_name": "phase3_sae_intervention_distillation_pilot_v1",
+  "config_hash": "c3bda5ba8bc07389e24cd9df5ac162e6c6c5162f0b7d3b6ea50e6dac2c367151",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase3_sae_intervention_distillation_pilot_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "c7605ccf8c1d700c76eb252ddd48abac396d972481f35912389ea3893898e5bf",
+  "overlay_path": "/home/youyang7/projects/SAE_long_short/configs/phase3_sae_intervention_distillation_pilot_v1.json",
+  "overlay_sha256": "6dcd68d6b4b9c79dc4a4b42bb1660077aaf4e9ab0fcc128beee6b4ed5dc5bf87",
+  "short_feature_count": 4,
+  "long_feature_count": 10,
+  "random_feature_count": 4,
+  "calibration_question_count": 24,
+  "main_question_count": 617,
+  "source_code_sha256": "86aa5879b9ad68ebfe5b799b371c818cc6c4ca2940fedc32f7e8a3249d332be3",
+  "formal_claim_allowed": false
+}

@@ -1,0 +1,61 @@
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 523936, /mnt/beegfs/sguo27/conda_envs/rpec_lion_py312/bin/python, 15754 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 836352, python3, 15366 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 836346, python3, 15430 MiB
+GPU-b5a3c338-83a5-d392-e299-41d0348c3090, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-b5a3c338-83a5-d392-e299-41d0348c3090, 836347, python3, 15370 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 836350, python3, 15394 MiB
+Waiting for memory capacity without interference: eligible=3/1.
+0, 32426 MiB, 16114 MiB, 100 %
+1, 16731 MiB, 31809 MiB, 97 %
+2, 16671 MiB, 31869 MiB, 95 %
+3, 16695 MiB, 31845 MiB, 100 %
+Selected stable memory-fit GPUs by descending free memory on c31: 2 3 1
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-6b160c07-f026-687a-116a-86df85d84fd7gpu_uuidgpu_uuid, 3641256, pid, pid, /home/youyang7/bin/gg, process_name, process_name, 1286 MiB, used_gpu_memory [MiB], used_gpu_memory [MiB]
+
+
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 523936, /mnt/beegfs/sguo27/conda_envs/rpec_lion_py312/bin/python, 15754 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 3641256, /home/youyang7/bin/ggGPU-6b160c07-f026-687a-116a-86df85d84fd7, 1286 MiBGPU-6b160c07-f026-687a-116a-86df85d84fd7, 836352, python3, 3641256, 15366 MiB
+, /home/youyang7/bin/gg
+, 1286 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 523936, /mnt/beegfs/sguo27/conda_envs/rpec_lion_py312/bin/python, 15754 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7GPU-6b160c07-f026-687a-116a-86df85d84fd7, 523936GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 836352, /mnt/beegfs/sguo27/conda_envs/rpec_lion_py312/bin/python, 3641256, python3, 15754 MiB, /home/youyang7/bin/gg, 15366 MiB
+, 1286 MiBGPU-6b160c07-f026-687a-116a-86df85d84fd7
+, 836352
+, python3, 15366 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 836346, python3, 15430 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 3641256GPU-b5a3c338-83a5-d392-e299-41d0348c3090, 836346, /home/youyang7/bin/gg, 3641256, python3, 1286 MiB, /home/youyang7/bin/gg, 15430 MiB
+, 1286 MiB
+
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 836346, python3, 15430 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 3641256, /home/youyang7/bin/ggGPU-b5a3c338-83a5-d392-e299-41d0348c3090, 1286 MiB, 3641256GPU-b5a3c338-83a5-d392-e299-41d0348c3090
+, /home/youyang7/bin/gg, 1286 MiB, 3641256
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 836350, /home/youyang7/bin/gg, python3GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 3641256, /home/youyang7/bin/gg, 1286 MiB
+, 15394 MiB
+, 1286 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8cGPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 3641256, /home/youyang7/bin/gg, 836350, 1286 MiB, python3
+, 15394 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 836350, python3, 15394 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 523936, /mnt/beegfs/sguo27/conda_envs/rpec_lion_py312/bin/python, 15754 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 836352, python3, 15366 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 843253, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4710 MiB
+GPU-b5a3c338-83a5-d392-e299-41d0348c3090, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 843240, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 34390 MiB
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 523936, /mnt/beegfs/sguo27/conda_envs/rpec_lion_py312/bin/python, 15754 MiB
+GPU-6b160c07-f026-687a-116a-86df85d84fd7, 836352, python3, 15366 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-f4a6adb2-b071-29bf-be74-532e8e230d94, 843253, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4710 MiB
+GPU-b5a3c338-83a5-d392-e299-41d0348c3090, 3641256, /home/youyang7/bin/gg, 1286 MiB
+GPU-b5a3c338-83a5-d392-e299-41d0348c3090, 845085, /mnt/beegfs/youyang7/.conda/envs/sft/bin/python, 4400 MiB
+GPU-c03a67a9-f7bf-be4e-813d-06414c11db8c, 3641256, /home/youyang7/bin/gg, 1286 MiB

@@ -1,0 +1,192 @@
+Waiting for memory capacity without interference: eligible=3/1.
+0, 4 MiB, 32225 MiB, 0 %
+1, 4 MiB, 32225 MiB, 0 %
+2, 4 MiB, 32225 MiB, 0 %
+Selected stable memory-fit GPUs on c49: 0 1 2
+{"event": "condition_scoring_start", "condition": "prefix64_trace_balanced", "dev_traces": 1026, "test_traces": 1040, "chunks": 108}
+prefix64_trace_balanced/dev chunks=25/108 tokens=67804
+prefix64_trace_balanced/dev chunks=50/108 tokens=122167
+prefix64_trace_balanced/dev chunks=75/108 tokens=187181
+prefix64_trace_balanced/dev chunks=100/108 tokens=249919
+prefix64_trace_balanced/test chunks=25/108 tokens=56719
+prefix64_trace_balanced/test chunks=50/108 tokens=116207
+prefix64_trace_balanced/test chunks=75/108 tokens=175057
+prefix64_trace_balanced/test chunks=100/108 tokens=241168
+{
+  "status": "complete",
+  "experiment_name": "phase2_sae_sampling_ablation_v1",
+  "condition": "prefix64_trace_balanced",
+  "condition_definition": {
+    "name": "prefix64_trace_balanced",
+    "role": "early_state_falsification",
+    "sampling_unit": "trace_then_position",
+    "position_limit": 64,
+    "train_new_sae": true
+  },
+  "config_hash": "2e2b8298b66b09f2fbff86c2e24e338b7efff6d6dd326614e7cfeb30555dc4b9",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/frozen_protocol.json",
+  "config_sha256": "8eaec56bc2e09dfb96d44d0e49408f59571aec70846dd570ea992027fb39ddd4",
+  "candidate_count": 24,
+  "heldout_confirmed_count": 20,
+  "short_confirmed_count": 9,
+  "long_confirmed_count": 11,
+  "dev_trace_count": 1026,
+  "test_trace_count": 1040,
+  "dev_question_count": 132,
+  "test_question_count": 132,
+  "common_set_reconstruction": {
+    "dev": {
+      "full": {
+        "token_count": 267509,
+        "mse": 0.32589658323523835,
+        "explained_variance": 0.6760758415335824
+      },
+      "first_64": {
+        "token_count": 65664,
+        "mse": 0.20247229844675485,
+        "explained_variance": 0.7972865739132257
+      },
+      "sequence_normalized_mse": 0.3194043605876294,
+      "sequence_normalized_mse_short": 0.30864949083902904,
+      "sequence_normalized_mse_long": 0.3301592303362298
+    },
+    "test": {
+      "full": {
+        "token_count": 259753,
+        "mse": 0.32253798006404244,
+        "explained_variance": 0.6795848760973409
+      },
+      "first_64": {
+        "token_count": 66560,
+        "mse": 0.20578200360321042,
+        "explained_variance": 0.7942938111581023
+      },
+      "sequence_normalized_mse": 0.31436369425251337,
+      "sequence_normalized_mse_short": 0.30518116730327516,
+      "sequence_normalized_mse_long": 0.3235462212017516
+    }
+  },
+  "training_sample_contribution": {
+    "condition": "prefix64_trace_balanced",
+    "train_trace_count": 9872,
+    "sampled_token_count": 250000,
+    "sampled_count_min": 25,
+    "sampled_count_max": 26,
+    "sampled_count_mean": 25.32414910858995,
+    "length_sample_count_pearson_r": 0.005256283938511927,
+    "length_sample_count_spearman_r": 0.005782581727556697,
+    "mean_sampled_count_by_label": {
+      "incorrect": 25.38095238095238,
+      "long": 25.339521452145213,
+      "medium": 25.32090761750405,
+      "other_correct": 25.316678232708767,
+      "short": 25.32095709570957
+    }
+  },
+  "elapsed_seconds": 26.98442316055298,
+  "input_evidence": {
+    "protocol_marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/PROTOCOL_FROZEN",
+    "protocol_marker_sha256": "8ca29525cf185f5f1d0d608963e45583925feb8036b8f6e6bd5955c7b589eac1",
+    "protocol_manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/protocol/protocol_manifest.json",
+    "protocol_manifest_sha256": "47cd61a62c5f1ea6579033085fb9fc0deb0cbb74af538946aa7c0de494662584",
+    "sample_manifest_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/token_samples/prefix64_trace_balanced/sample_manifest.json",
+    "sample_manifest_sha256": "159b07716c37fbe00aec723941d08acaac07952e68fa50d64ac1ca4e63d91c80",
+    "training_marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/sae_training/prefix64_trace_balanced/SAE_TRAINING_COMPLETE",
+    "training_marker_sha256": "5f0bed9ad2d84e0f1db07a114cbdc1c3ac23df503f80fae2138fe9a26a369071",
+    "training_metrics_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/sae_training/prefix64_trace_balanced/training_metrics.json",
+    "training_metrics_sha256": "945151f5c1e2e9d1947218b882393360368e71e9e87285e7fd894ec459fd9e1d",
+    "checkpoint_path": "/home/youyang7/projects/SAE_long_short/checkpoints/phase2_sae_sampling_ablation_v1/prefix64_trace_balanced/sae_model.safetensors",
+    "checkpoint_sha256": "2458c33a7ead1325427fc76509556f5c30f0b0dc2660923b42613db1ce1b9ca2",
+    "activation_chunk_count": 108,
+    "activation_manifests": [
+      {
+        "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_00_of_03/activation_manifest.json",
+        "sha256": "fe3f3f029716b87b1ac12ca6180bb9d6fad34594322758e216eca7fde1dd223d",
+        "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_00_of_03/ACTIVATIONS_COMPLETE",
+        "marker_sha256": "9cc0bc4eab6d35f69488ca5c68dee8ababb51e6d8e4ed556e45d9ecbd9bceecb"
+      },
+      {
+        "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_01_of_03/activation_manifest.json",
+        "sha256": "0fa693411fb61083a94a111daffdffbf4c6e3e8fdca1f2da241490105c2250d5",
+        "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_01_of_03/ACTIVATIONS_COMPLETE",
+        "marker_sha256": "ab3e7a6f0628230a00d808ffa92577781d72e3d17305b3bf8622f043e1cf2db7"
+      },
+      {
+        "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_02_of_03/activation_manifest.json",
+        "sha256": "05572eaf94434f7609bbcc569d854f18a80912a589802cda48ab82119d4f364a",
+        "marker_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/activations/shard_02_of_03/ACTIVATIONS_COMPLETE",
+        "marker_sha256": "03ff65bcdc896e0bddf96fe6f7fb65d2c40bd40616d6128f56d63d2dba339b10"
+      }
+    ]
+  },
+  "artifacts": {
+    "feature_statistics.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/feature_statistics.csv",
+      "sha256": "1f746a628181817dc42d8b53793b87db6daafa283ed0b379346aff40f7b49eef"
+    },
+    "discovered_features.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/discovered_features.json",
+      "sha256": "3ac732df208b3378b2c57999d8f0a4cb05f45f915a4f949f56e99329d89b14a0"
+    },
+    "selected_trace_metrics.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/selected_trace_metrics.csv",
+      "sha256": "0ffc4cbc98dc0d401d86a4ec460327efd146ca53ac5de46db598f4f8f808c403"
+    },
+    "common_set_reconstruction.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/common_set_reconstruction.json",
+      "sha256": "b64edd3a03ec934a01f7abc786ceb8129e6e69f847417ff018ce16478c7d7d47"
+    },
+    "test_token_associations.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/test_token_associations.csv",
+      "sha256": "a3eaa7854aafd3932174bca57d59da9ce9c43bc0c1f208be32787be1e7e493e7"
+    },
+    "test_relative_position_profiles.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/test_relative_position_profiles.csv",
+      "sha256": "cd85de375fb4af916a2dc1d209bb1f99dc7d330bb44e1f72f0e699789fc35b23"
+    },
+    "training_sample_contributions.csv": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/training_sample_contributions.csv",
+      "sha256": "6cca6f66fc73e5a4eb8f05d594a2c7fbc91761c1235b39cedbbd9d5416148e09"
+    },
+    "training_sample_contribution_summary.json": {
+      "path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_sampling_ablation_v1/exploratory/condition_scores/prefix64_trace_balanced/training_sample_contribution_summary.json",
+      "sha256": "e640cda9bcda735409339071b1cd00dca504b47d9b6949832b30f19000537227"
+    }
+  },
+  "runtime": {
+    "hostname": "c49",
+    "platform": "Linux-5.19.9-1.el8.x86_64-x86_64-with-glibc2.28",
+    "cuda_visible_devices": "0",
+    "packages": {
+      "python": "3.10.19",
+      "torch": "2.10.0",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "safetensors": "0.7.0"
+    },
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA RTX 5000 Ada Generation",
+        "memory_total_mib": "32760",
+        "driver_version": "580.82.07"
+      }
+    ]
+  },
+  "source_code_sha256": "1bd99db78e1c71b585084187254f52587ddcfbacac312379164f1655d94f744a",
+  "library_code_sha256": "7b847dc5fd5a1e350a0ef45fe0b643b75bb56963b9839a647d99110bcb59b160",
+  "formal_claim_allowed": false,
+  "claim_boundary": "This single-SAE-seed ablation can diagnose sampling and position artifacts. It cannot establish semantic identity, student utility, or causal effects."
+}

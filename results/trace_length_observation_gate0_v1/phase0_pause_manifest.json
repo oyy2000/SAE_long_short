@@ -1,0 +1,32 @@
+{
+  "status": "paused",
+  "paused_at_utc": "2026-09-04T06:58:26Z",
+  "reason": "Researcher redirected the active program to SAE training.",
+  "cancelled_jobs": [
+    {
+      "job_id": "278963",
+      "name": "24_5_phase0_eval",
+      "prior_state": "RUNNING",
+      "final_state": "CANCELLED",
+      "elapsed": "01:08:20"
+    },
+    {
+      "job_id": "278965",
+      "name": "1_0_gate0_to_phase1",
+      "prior_state": "PENDING",
+      "final_state": "CANCELLED",
+      "elapsed": "00:00:00"
+    }
+  ],
+  "preserved_evidence": {
+    "validated_training_runs": 108,
+    "expected_training_runs": 108,
+    "completed_model_evaluations": 15,
+    "expected_model_evaluations": 109,
+    "completed_prediction_rows": 19035,
+    "expected_prediction_rows": 138321
+  },
+  "gate0_status": "not_evaluated",
+  "scientific_use": "Partial evaluation is retained for provenance and cannot be used as a completed Gate-0 result.",
+  "recoverability": "Training artifacts and completed evaluation files remain in place; a future resume must use a new attempt manifest and evaluate only missing models."
+}

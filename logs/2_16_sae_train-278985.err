@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/youyang7/projects/SAE_long_short/scripts/2_4_train_topk_sae.py", line 310, in <module>
+    main()
+  File "/home/youyang7/projects/SAE_long_short/scripts/2_4_train_topk_sae.py", line 206, in main
+    _save_checkpoint(
+  File "/home/youyang7/projects/SAE_long_short/scripts/2_4_train_topk_sae.py", line 291, in _save_checkpoint
+    save_file(
+  File "/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/safetensors/torch.py", line 307, in save_file
+    serialize_file(_flatten(tensors), filename, metadata=metadata)
+safetensors_rust.SafetensorError: Error while serializing: I/O error: Disk quota exceeded (os error 122)

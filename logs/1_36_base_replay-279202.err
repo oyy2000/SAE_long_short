@@ -1,0 +1,51 @@
+2026-09-05 06:52:39,643 INFO loaded_eval_examples=1269 split=test start_index=0
+2026-09-05 06:52:46,601 INFO We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:650: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+2026-09-05 06:53:00,351 INFO evaluated=32
+2026-09-05 06:53:07,815 INFO evaluated=64
+2026-09-05 06:53:18,207 INFO evaluated=96
+2026-09-05 06:53:27,378 INFO evaluated=128
+2026-09-05 06:53:36,058 INFO evaluated=160
+2026-09-05 06:53:43,762 INFO evaluated=192
+2026-09-05 06:53:50,016 INFO evaluated=224
+2026-09-05 06:53:56,817 INFO evaluated=256
+2026-09-05 06:54:05,320 INFO evaluated=288
+2026-09-05 06:54:14,612 INFO evaluated=320
+2026-09-05 06:54:22,804 INFO evaluated=352
+2026-09-05 06:54:31,549 INFO evaluated=384
+2026-09-05 06:54:42,074 INFO evaluated=416
+2026-09-05 06:54:51,805 INFO evaluated=448
+2026-09-05 06:55:01,278 INFO evaluated=480
+2026-09-05 06:55:08,460 INFO evaluated=512
+2026-09-05 06:55:18,288 INFO evaluated=544
+2026-09-05 06:55:28,265 INFO evaluated=576
+2026-09-05 06:55:36,442 INFO evaluated=608
+2026-09-05 06:55:41,630 INFO evaluated=640
+2026-09-05 06:55:50,169 INFO evaluated=672
+2026-09-05 06:55:56,686 INFO evaluated=704
+2026-09-05 06:56:06,789 INFO evaluated=736
+2026-09-05 06:56:13,787 INFO evaluated=768
+2026-09-05 06:56:23,481 INFO evaluated=800
+2026-09-05 06:56:33,371 INFO evaluated=832
+2026-09-05 06:56:40,083 INFO evaluated=864
+2026-09-05 06:56:49,635 INFO evaluated=896
+2026-09-05 06:56:59,158 INFO evaluated=928
+2026-09-05 06:57:09,225 INFO evaluated=960
+2026-09-05 06:57:19,749 INFO evaluated=992
+2026-09-05 06:57:25,568 INFO evaluated=1024
+2026-09-05 06:57:36,834 INFO evaluated=1056
+2026-09-05 06:57:46,885 INFO evaluated=1088
+2026-09-05 06:57:56,839 INFO evaluated=1120
+2026-09-05 06:58:07,614 INFO evaluated=1152
+2026-09-05 06:58:17,318 INFO evaluated=1184
+2026-09-05 06:58:24,648 INFO evaluated=1216
+2026-09-05 06:58:31,364 INFO evaluated=1248
+2026-09-05 06:58:39,750 INFO evaluated=1269
+2026-09-05 06:58:39,764 INFO accuracy=0.6714 correct=852 n=1269
+2026-09-05 06:58:39,764 INFO wrote_predictions=/var/tmp/youyang7-legacy-base-check-p2fok9y6/predictions.jsonl
+2026-09-05 06:58:39,764 INFO wrote_summary=/var/tmp/youyang7-legacy-base-check-p2fok9y6/summary.json

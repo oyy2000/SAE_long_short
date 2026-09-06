@@ -1,0 +1,6 @@
+Waiting for memory capacity without interference: eligible=4/4.
+0, 17171 MiB, 31369 MiB, 100 %
+1, 17127 MiB, 31413 MiB, 100 %
+2, 1296 MiB, 47245 MiB, 42 %
+3, 1296 MiB, 47245 MiB, 49 %
+Selected stable memory-fit GPUs by descending free memory on c31: 2 3 1 0

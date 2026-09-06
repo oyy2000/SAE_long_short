@@ -1,0 +1,26 @@
+Waiting for memory capacity without interference: eligible=3/1.
+0, 4 MiB, 32225 MiB, 0 %
+1, 4 MiB, 32225 MiB, 0 %
+2, 4 MiB, 32225 MiB, 0 %
+Selected stable memory-fit GPUs on c49: 0 1 2
+launched layer=10 k=32 gpu=0 pid=343899
+launched layer=23 k=32 gpu=1 pid=343900
+completed layer=10 k=32 gpu=0
+completed layer=23 k=32 gpu=1
+{
+  "status": "complete",
+  "matrix_shard_index": 0,
+  "matrix_shard_count": 4,
+  "runs": [
+    {
+      "layer_index": 10,
+      "k": 32,
+      "gpu_id": "0"
+    },
+    {
+      "layer_index": 23,
+      "k": 32,
+      "gpu_id": "1"
+    }
+  ]
+}

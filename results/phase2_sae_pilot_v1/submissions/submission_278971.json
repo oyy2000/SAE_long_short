@@ -1,0 +1,31 @@
+{
+  "status": "submitted",
+  "experiment_name": "phase2_sae_pilot_v1",
+  "submitted_at_utc": "2026-09-04T07:11:56.681794+00:00",
+  "config_path": "/home/youyang7/projects/SAE_long_short/results/phase2_sae_pilot_v1/formal/protocol/frozen_protocol.json",
+  "config_sha256": "c60cd884ce0206ff3ec430d4d0aecb452adee477527e269513b78062f9e5ed34",
+  "jobs": [
+    {
+      "stage": "corpus",
+      "job_id": "278967"
+    },
+    {
+      "stage": "activation_extraction",
+      "job_id": "278968"
+    },
+    {
+      "stage": "token_sampling",
+      "job_id": "278969"
+    },
+    {
+      "stage": "sae_training",
+      "job_id": "278970"
+    },
+    {
+      "stage": "audit",
+      "job_id": "278971"
+    }
+  ],
+  "terminal_job_id": "278971",
+  "formal_claim_allowed": false
+}

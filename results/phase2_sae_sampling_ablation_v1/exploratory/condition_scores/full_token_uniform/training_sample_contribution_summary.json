@@ -1,0 +1,17 @@
+{
+  "condition": "full_token_uniform",
+  "train_trace_count": 9872,
+  "sampled_token_count": 250000,
+  "sampled_count_min": 5,
+  "sampled_count_max": 76,
+  "sampled_count_mean": 25.32414910858995,
+  "length_sample_count_pearson_r": 0.7898731791083182,
+  "length_sample_count_spearman_r": 0.7682929046882481,
+  "mean_sampled_count_by_label": {
+    "incorrect": 33.5,
+    "long": 29.70338283828383,
+    "medium": 24.47001620745543,
+    "other_correct": 25.118436271108028,
+    "short": 21.245874587458747
+  }
+}

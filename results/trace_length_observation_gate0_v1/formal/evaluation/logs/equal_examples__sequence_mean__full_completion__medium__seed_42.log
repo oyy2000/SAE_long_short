@@ -1,0 +1,52 @@
+2026-09-04 02:42:53,850 INFO PyTorch version 2.10.0 available.
+2026-09-04 02:42:55,637 INFO loaded_eval_examples=1269 split=test start_index=50
+2026-09-04 02:43:03,936 INFO We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/mnt/beegfs/youyang7/.conda/envs/sft/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:650: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+2026-09-04 02:43:29,249 INFO evaluated=32
+2026-09-04 02:43:50,829 INFO evaluated=64
+2026-09-04 02:44:11,059 INFO evaluated=96
+2026-09-04 02:44:31,104 INFO evaluated=128
+2026-09-04 02:44:51,342 INFO evaluated=160
+2026-09-04 02:45:11,849 INFO evaluated=192
+2026-09-04 02:45:29,875 INFO evaluated=224
+2026-09-04 02:45:49,955 INFO evaluated=256
+2026-09-04 02:46:09,995 INFO evaluated=288
+2026-09-04 02:46:30,289 INFO evaluated=320
+2026-09-04 02:46:50,158 INFO evaluated=352
+2026-09-04 02:47:10,677 INFO evaluated=384
+2026-09-04 02:47:31,017 INFO evaluated=416
+2026-09-04 02:47:47,783 INFO evaluated=448
+2026-09-04 02:48:07,333 INFO evaluated=480
+2026-09-04 02:48:26,748 INFO evaluated=512
+2026-09-04 02:48:46,029 INFO evaluated=544
+2026-09-04 02:49:06,079 INFO evaluated=576
+2026-09-04 02:49:26,747 INFO evaluated=608
+2026-09-04 02:49:47,168 INFO evaluated=640
+2026-09-04 02:50:05,411 INFO evaluated=672
+2026-09-04 02:50:22,892 INFO evaluated=704
+2026-09-04 02:50:42,439 INFO evaluated=736
+2026-09-04 02:51:02,501 INFO evaluated=768
+2026-09-04 02:51:21,666 INFO evaluated=800
+2026-09-04 02:51:41,570 INFO evaluated=832
+2026-09-04 02:52:02,605 INFO evaluated=864
+2026-09-04 02:52:22,817 INFO evaluated=896
+2026-09-04 02:52:42,139 INFO evaluated=928
+2026-09-04 02:53:01,626 INFO evaluated=960
+2026-09-04 02:53:21,371 INFO evaluated=992
+2026-09-04 02:53:42,700 INFO evaluated=1024
+2026-09-04 02:54:03,263 INFO evaluated=1056
+2026-09-04 02:54:23,182 INFO evaluated=1088
+2026-09-04 02:54:43,435 INFO evaluated=1120
+2026-09-04 02:55:03,750 INFO evaluated=1152
+2026-09-04 02:55:21,546 INFO evaluated=1184
+2026-09-04 02:55:40,428 INFO evaluated=1216
+2026-09-04 02:55:56,988 INFO evaluated=1248
+2026-09-04 02:56:14,743 INFO evaluated=1269
+2026-09-04 02:56:15,072 INFO accuracy=0.6998 correct=888 n=1269
+2026-09-04 02:56:15,072 INFO wrote_predictions=/home/youyang7/projects/SAE_long_short/results/trace_length_observation_gate0_v1/formal/evaluation/predictions/equal_examples__sequence_mean__full_completion__medium__seed_42.jsonl
+2026-09-04 02:56:15,072 INFO wrote_summary=/home/youyang7/projects/SAE_long_short/results/trace_length_observation_gate0_v1/formal/evaluation/summaries/equal_examples__sequence_mean__full_completion__medium__seed_42.json
