@@ -1,0 +1,39 @@
+{
+  "experiment_name": "phase1_full_sequence_screen_c31_v2",
+  "protocol_change": "User-approved removal of first-64-token direction from feature eligibility only; retain early metrics as diagnostics.",
+  "parent_root": "/home/youyang7/projects/SAE_long_short/results/phase1_legacy_trace_sae_distillation_v1",
+  "runtime_activation": "/mnt/local/youyang7/SAE_long_short_c31/activate_runtime.sh",
+  "experiment_activation": "/home/youyang7/projects/SAE_long_short/scripts/slurm/_activate_legacy_sae_c31_v2.sh",
+  "python": "/mnt/local/youyang7/SAE_long_short_c31/envs/sft/bin/python",
+  "output_root": "/mnt/local/youyang7/SAE_long_short_c31/runs/phase1_full_sequence_screen_c31_v2",
+  "node": "c31",
+  "conditions": ["full_trace_balanced", "prefix64_trace_balanced"],
+  "seeds": [17, 42, 73],
+  "selection": {
+    "primary_metric": "token_mean_activation",
+    "require_first64_direction": false,
+    "confirmation_holm_alpha": 0.05,
+    "minimum_test_absolute_paired_d": 0.15,
+    "minimum_decoder_cosine": 0.5,
+    "minimum_activation_correlation": 0.5,
+    "require_mutual_matching": true,
+    "require_same_direction": true,
+    "require_all_three_seeds": true
+  },
+  "teacher": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/mnt/local/youyang7/SAE_long_short_c31/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "execution": {
+    "admission_policy": "memory_fit",
+    "minimum_free_mib": 22000,
+    "one_process_per_gpu": true,
+    "preserve_keepalive_processes": true,
+    "source_data_policy": "Reuse hash-verified parent SAE, scores, and 881-question corpus; no automatic replacement or regeneration.",
+    "student_trainer": "legacy TRL 0.9.6; do not substitute controlled SFT",
+    "next_stage": "Lexical probes and paired cache-cloned calibration, then audited 881-question generation and legacy student SFT.",
+    "storage_policy": "C31-local recovery branch; publish hash-verified copies to durable storage when available."
+  },
+  "formal_claim_allowed": false
+}

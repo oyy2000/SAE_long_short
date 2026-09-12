@@ -1,0 +1,37 @@
+{
+  "experiment_name": "phase6_sae_length_runtime_preflight_v1",
+  "formal_claim_allowed": false,
+  "primary_feature_id": 24086,
+  "runtime_script": "/mnt/local/youyang7/SAE_long_short_c31/activate_runtime.sh",
+  "python_executable": "/mnt/local/youyang7/SAE_long_short_c31/envs/sft/bin/python",
+  "expected_node": "c31",
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "hidden_size": 3584,
+    "layer_index": 17,
+    "k": 64
+  },
+  "required_assets": {
+    "sae_checkpoint": {
+      "path": "checkpoints/phase2_sae_sampling_ablation_v1/full_trace_balanced/sae_model.safetensors",
+      "sha256": "f26ccf37289e025ab53199b6a5d09c59e1145d1028c5d66159f316b475cb356c"
+    },
+    "selected_features": {
+      "path": "results/phase5_sae_clean_feature_causal_v1/exploratory/feature_gate/selected_features.json"
+    },
+    "feature_manifest": {
+      "path": "results/phase5_sae_clean_feature_causal_v1/exploratory/feature_gate/feature_gate_manifest.json"
+    },
+    "feature_marker": {
+      "path": "results/phase5_sae_clean_feature_causal_v1/exploratory/feature_gate/FEATURE_GATE_COMPLETE"
+    },
+    "parent_corpus": {
+      "path": "results/phase2_sae_pilot_v1/formal/corpus/mixed_trajectories.jsonl"
+    },
+    "local_teacher_config": {
+      "path": "/mnt/local/youyang7/SAE_long_short_c31/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/config.json"
+    }
+  },
+  "test_pattern": "test_sae_paired_intervention.py"
+}

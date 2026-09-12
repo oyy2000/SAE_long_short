@@ -1,5 +1,7 @@
 # SAE 如何训练，feature 如何对应到 token：项目图文教程
 
+[English version](sae_training_and_feature_to_token_en.md) · [教程目录](README.md)
+
 本文结合 `SAE_long_short` 的实际代码、训练记录和 `figures/phase2_short_long_feature_analysis_v1` 中的七张图，解释从文本到 SAE feature、再到 token 可视化的全过程。适合知道语言模型逐 token 生成文本、但尚未训练过 SAE 的读者。
 
 **先记住一条主线：SAE 学习把隐藏状态分解成少量 feature 的组合；图上的文字来自原始 token 的位置记录。SAE 的 decoder 输出隐藏向量，语言模型的输出层才负责给词表中的 token 打分。**

@@ -1,0 +1,18 @@
+{
+  "experiment_name": "phase6_local_matched_joint_control_v1",
+  "parent_config": "configs/phase6_local_length_controlled_strength_v1.json",
+  "selected_condition": "full_trace_balanced__joint16__rho0.3__start0",
+  "reason": "Joint16 changes 16 short plus 16 long directions. Add a 16-positive/16-negative random contrast with the same separate group normalization and total residual norm; random16 in the original grid is norm-matched only.",
+  "selection_is_fixed": true,
+  "shards": 3,
+  "random_seed": 61242,
+  "conditions": [
+    "no_steering_replay",
+    "selected_target_replay",
+    "matched_joint_random"
+  ],
+  "question_cohorts": "same fixed 64 dev and 64 test questions",
+  "paired_replay": "regenerate all three conditions within each original question batch on C31; independent caches and same per-question uniforms",
+  "student_gate": "both dev and test replay must pass the original length/accuracy criteria and beat the structurally matched control; original test gate must also pass",
+  "formal_claim_allowed": false
+}

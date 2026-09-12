@@ -1,5 +1,7 @@
 # Student-Specific Trace Utility and Credit Allocation
 
+Current task status, verified results, blockers, and acceptance criteria are maintained in [PROJECT_STATUS.md](PROJECT_STATUS.md) (updated 2026-09-11 with the September 10 E1 short SFT check and completed E2 SAE intervention/student experiment). E2 shortened teacher outputs with an accuracy cost and did not establish student accuracy gains. The execution narrative below is the earlier Phase-0/Phase-2 snapshot; use the management document for current results and the separate pending B3/B4 work.
+
 This standalone repository implements the gated GSM8K experiment program for testing whether short teacher traces help a Qwen2.5-1.5B student for content-related reasons rather than token-budget or loss-normalization artifacts.
 
 ## Evidence boundary

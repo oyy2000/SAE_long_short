@@ -1,0 +1,11 @@
+# Isolated overlay only; do not replace packages in the recovered base environment.
+trl==0.9.6
+numpy==1.26.4
+tyro==0.8.14
+rich==13.9.4
+docstring-parser==0.16
+shtab==1.7.1
+typeguard==4.4.4
+markdown-it-py==3.0.0
+mdurl==0.1.2
+pygments==2.19.2

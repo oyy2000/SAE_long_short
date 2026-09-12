@@ -1,5 +1,7 @@
 # Prioritized Next Steps
 
+Current priorities and completion criteria are maintained in [PROJECT_STATUS.md](PROJECT_STATUS.md), updated 2026-09-11 with the completed September 10 E1/E2 experiments and follow-up reproducibility work. The initial checklist below is retained as a historical snapshot and is not the current queue; the SAE pilot and sampling ablations it lists have since completed.
+
 ## Active
 
 - Freeze and execute `configs/phase2_sae_pilot_v1.json` on the sealed 881-by-16 raw trajectory pool.

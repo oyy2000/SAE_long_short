@@ -1,0 +1,9 @@
+% Method-focused draft. Positive steering and downstream gains remain unverified.
+\begin{abstract}
+Chain-of-thought distillation trains smaller models on teacher-generated reasoning, but long traces may contain redundant supervision.
+Length-based selection filters completed traces without directly controlling how teachers generate them.
+In this paper, we propose \textbf{SAE-guided reasoning distillation}, a feature-level intervention framework for producing concise teaching traces.
+Given short and long correct solutions from the same teacher for the same problems, our method learns a shared sparse autoencoder, identifies distinguishing latent features, and strengthens short-associated or suppresses long-associated directions during generation.
+The resulting complete, answer-verified solutions are used for student fine-tuning.
+Our preliminary GSM8K experiments favor shorter correct supervision, motivating controlled tests of whether feature steering improves student accuracy while reducing generation and supervision costs.
+\end{abstract}

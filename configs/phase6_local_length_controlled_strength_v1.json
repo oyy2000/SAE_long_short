@@ -1,0 +1,176 @@
+{
+  "experiment_name": "phase6_local_length_controlled_strength_v1",
+  "formal_claim_allowed": false,
+  "scope": "Exploratory local recovered rank-corpus SAE sampling ablation and measured stronger teacher interventions, with conditional student SFT",
+  "result_root": "results/phase6_local_length_controlled_strength_v1/exploratory",
+  "checkpoint_root": "checkpoints/phase6_local_length_controlled_strength_v1",
+  "figure_root": "figures/phase6_local_length_controlled_strength_v1",
+  "runtime_root": "/mnt/local/youyang7/SAE_long_short_c31/runs/phase6_local_length_controlled_strength_v1",
+  "recovery_globs": [
+    "/var/tmp/youyang7-legacy-repl-*/datasets/**/json-train.arrow",
+    "/var/tmp/youyang7-ranked-multiseed/**/json-train.arrow"
+  ],
+  "rank_sha256": {
+    "short": "0d5e2b790a07d7d9ea78dea466ee1a0e3a03d3d7b2a6ec084273aa01be481012",
+    "medium": "abd23f6f8ef9d238b6dd2f9d05247f19815daff75a8faa9a59b7c868667df798",
+    "long": "3f893526e3e1bf572f8f804ec2c386139d19afa7b85325c09bbc10f78f51b804"
+  },
+  "question_split": {
+    "method": "sha256_sorted_problem_id",
+    "seed": 20260904,
+    "train": 617,
+    "dev": 132,
+    "test": 132
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/var/tmp/youyang7/hf_snapshots/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "hidden_size": 3584,
+    "num_hidden_layers": 28,
+    "torch_dtype": "bfloat16",
+    "replay_format": "qwen_chat_template_user_prompt_then_raw_assistant_solution"
+  },
+  "activation_extraction": {
+    "stream": "post_block_residual",
+    "layer_indices_zero_based": [
+      17
+    ],
+    "nominal_depth_fractions": [
+      0.4,
+      0.65,
+      0.85
+    ],
+    "trajectory_shards": 4,
+    "batch_size": 4,
+    "max_sequence_tokens": 2048,
+    "chunk_tokens": 32768,
+    "stored_dtype": "bfloat16",
+    "completion_tokens_only": true,
+    "include_incorrect_trajectories": true
+  },
+  "sae": {
+    "architecture": "TopK",
+    "expansion_factor": 8,
+    "feature_count": 28672,
+    "k_values": [
+      64
+    ],
+    "seed": 17,
+    "training_dtype": "bfloat16_autocast_fp32_parameters",
+    "batch_size": 256,
+    "max_steps": 1500,
+    "learning_rate": 0.0003,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "weight_decay": 0.0,
+    "warmup_steps": 100,
+    "gradient_clip_norm": 1.0,
+    "auxiliary_k": 256,
+    "auxiliary_loss_coefficient": 0.03125,
+    "dead_feature_window_steps": 200,
+    "evaluation_interval_steps": 250,
+    "checkpoint_interval_steps": 2000,
+    "decoder_columns_unit_norm": true
+  },
+  "sampling": {
+    "conditions": [
+      "full_token_uniform",
+      "full_trace_balanced",
+      "prefix64_trace_balanced"
+    ],
+    "seed": 20260910,
+    "train_draws": 250000,
+    "eval_draws": 20000,
+    "with_replacement": true,
+    "normalization": "shared train token-uniform sample; no dev/test normalization fitting"
+  },
+  "clean_tokens": {
+    "count": 64,
+    "early_count": 32,
+    "maximum_native_position": 128,
+    "exclude_last_tokens": 32,
+    "exclude_words": [
+      "answer",
+      "final",
+      "text",
+      "frac",
+      "boxed",
+      "begin",
+      "end",
+      "times",
+      "cdot"
+    ],
+    "require_alphanumeric": true
+  },
+  "feature_selection": {
+    "selection_split": "dev",
+    "report_only_split": "test",
+    "primary_metric": "fixed_64_clean_token_mean_activation",
+    "counts": [
+      4,
+      16
+    ],
+    "minimum_prevalence": 0.05,
+    "discovery_bh_q": 0.05,
+    "minimum_abs_paired_d": 0.15,
+    "exploratory_ranked_features_allowed": true,
+    "note": "Dev-ranked candidate intervention is reported separately from statistical confirmation; never relabel a failed historical gate."
+  },
+  "generation": {
+    "dev_questions": 64,
+    "test_questions": 64,
+    "candidates_per_question": 1,
+    "batch_size": 4,
+    "shards": 4,
+    "max_new_tokens": 512,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "seed": 61017,
+    "relative_norm_strengths": [
+      0.013,
+      0.05,
+      0.15,
+      0.3
+    ],
+    "start_positions": [
+      0,
+      64
+    ],
+    "random_seed": 61042,
+    "intervention_timing": "last prompt hidden state affects first generated token; start64 begins on the 64th generated token hidden state"
+  },
+  "selection_gate": {
+    "minimum_relative_length_reduction": 0.05,
+    "maximum_accuracy_drop": 0.05,
+    "require_paired_length_ci_below_zero": true,
+    "require_better_than_same_norm_random": true,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 61117,
+    "student_requires_test_gate": true
+  },
+  "student_followup": {
+    "seed": 17,
+    "question_count": 881,
+    "candidates_per_question": 4,
+    "conditions": [
+      "no_steering",
+      "selected_target",
+      "matched_random",
+      "historical_short"
+    ],
+    "selection": "shortest_unique_correct",
+    "support": "all_condition_correct_question_intersection",
+    "budget_regimes": [
+      "equal_examples",
+      "equal_target_tokens"
+    ],
+    "trainer": "legacy TRL 0.9.6 and verified E1 recipe",
+    "eval_fixture": "results/phase1_local_short_gain_check_v1/imported/locked_evaluation_questions.jsonl",
+    "logical_eval_split": "test[50:1319]",
+    "note": "Independent exploratory four-candidate single-seed protocol; does not replace historical B4 16-candidate protocol."
+  },
+  "claim_boundary": "Three recovered selected correct traces per question, not the original sixteen-candidate raw pool. One SAE seed. Previously observed GSM8K cohorts; no untouched formal claims. Original frozen branches unchanged.",
+  "storage_note": "Current user preference: new durable data/checkpoints in home project, temporary activations and samples on C31 local storage because BeeGFS is unmounted."
+}
