@@ -1,0 +1,12 @@
+{
+  "parent_config": "results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1/execution_v7/protocol/frozen_config.json",
+  "reference_config": "results/ncsu_sae_intervention_v1/exploratory/student_followup/protocol/frozen_protocol.json",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_recipe_alignment_v1",
+  "checkpoint_root": "checkpoints/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_recipe_alignment_v1",
+  "methods": ["B1", "B7__0.1", "B7__0.3"],
+  "expected_questions": 1024,
+  "gpu_memory_safety_margin_mib": 8192,
+  "l40s_runtime_multiplier": 5,
+  "scope": "Keep current 1024 questions, traces, prompt, grading and explicit completion labels; align historical 1.5B optimizer, LoRA, seeds and 512-token evaluation. First-stage equal-example three-condition sensitivity; no test-based selection or strength expansion.",
+  "formal_claim_allowed": false
+}

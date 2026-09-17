@@ -1,0 +1,93 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "entrypoint": "13_29_generate_math_candidates.py",
+  "job_name_prefix": "p13_math_pool",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_dev_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_dev_launch_v1",
+  "math_asc_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1",
+  "development_questions": 64,
+  "smoke_questions": 8,
+  "student_pool_questions": 6723,
+  "smoke_subset_seed": 2026091316,
+  "allowed_generation_cohorts": [
+    "smoke",
+    "development"
+  ],
+  "shards": 2,
+  "candidates_per_question": 4,
+  "candidate_seed_stride": 100003,
+  "selection_seed": 2026091317,
+  "norm_rounding_tolerance": 0.005,
+  "generation": {
+    "seed": 2026091315,
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "methods": {
+    "B1": {
+      "kind": "unmodified",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}."
+    },
+    "B2": {
+      "kind": "unmodified",
+      "question_template": "{question}\nPlease reason step by step as concisely as possible, and put your final answer within \\boxed{{}}."
+    }
+  },
+  "decode_policy": {
+    "sampler": "paired per-question inverse-CDF top-k then nucleus",
+    "eos": "tokenizer.eos_token_id only, as in the existing ASC checks",
+    "stop_on_answer_marker": false,
+    "preserve_full_candidates": true,
+    "top_k_explicitly_matches_qwen_model_default": true,
+    "adaptation": "Shared decoder for unified teacher methods; does not claim identical RNG outputs to upstream Transformers multinomial sampling."
+  },
+  "selection_policy": "Earliest-index exact stripped-text dedup among correct non-capped candidates; shortest by sampled token count then candidate index. B0 samples uniformly from the same unique B1 pool, with a fixed per-question seed.",
+  "claim_boundary": "64-question development method check and reusable candidate pipeline, not student training evidence. Student-pool inputs are frozen but generation is disabled until a later executable protocol binds all methods and stage gates.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "24G",
+        "time": "00:30:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "04:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_definition_validation_launch_v5",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_definition_validation_v5",
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "expected_questions": 405,
+  "expected_source_parser_limitations": [
+    "math_train-04253",
+    "math_train-06922",
+    "math_train-07225",
+    "math_train-07321"
+  ],
+  "scope": "Validate 405 unique, source-bound definitions, adding the 101 remaining textual-reference cases. All definitions remain unapplied; actual output impact and complete cohort review are required before training.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "node": "c026n04",
+    "cpus": 2,
+    "memory": "4G",
+    "time": "00:15:00"
+  },
+  "review_roots": [
+    "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/multibox_review_v1",
+    "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/radix_context_review_v1",
+    "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/percentage_context_review_v1",
+    "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/priority_definitions_v2",
+    "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/text_context_review_part01_v1",
+    "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/text_context_review_part02_v1"
+  ],
+  "source_parser_limitation_reasons": {
+    "math_train-04253": "Original explanation lists both foci, while the response instruction explicitly requires only one.",
+    "math_train-06922": "Three required angles distributed across separate explanatory paragraphs.",
+    "math_train-07225": "Two required values distributed across distinct explanatory cases.",
+    "math_train-07321": "First required angle and remaining two angles separated by explanatory prose."
+  }
+}

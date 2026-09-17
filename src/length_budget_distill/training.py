@@ -10,13 +10,13 @@ import inspect
 import logging
 import os
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Callable, Dict
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-def run_trl_sft(config: Dict[str, Any]) -> Any:
+def run_trl_sft(config: Dict[str, Any], *, before_train: Callable[[Any], None] | None = None) -> Any:
     try:
         from datasets import load_dataset
         from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -47,6 +47,12 @@ def run_trl_sft(config: Dict[str, Any]) -> Any:
     dataset = load_dataset("json", data_files=data_files, keep_in_memory=True)
     text_format = data_config.get("text_format", "prompt_completion")
     dataset = _select_sft_columns(dataset, text_format)
+    if text_format == "pretokenized_completion":
+        from .completion_supervision import validate_encoded_record
+        maximum = int(config.get("training", {}).get("max_length", 2048))
+        for split in dataset.values():
+            for row in split:
+                validate_encoded_record(row, max_length=maximum)
 
     resume_adapter_path = student_config.get("resume_adapter_path") or config.get("training", {}).get(
         "resume_adapter_path"
@@ -98,7 +104,11 @@ def run_trl_sft(config: Dict[str, Any]) -> Any:
         student_config,
         include_model_init_kwargs=not bool(resume_adapter_path),
     )
-    data_collator = _make_completion_only_collator(SFTConfig, training, tokenizer)
+    if text_format == "pretokenized_completion":
+        from .completion_supervision import make_completion_collator
+        data_collator = make_completion_collator(tokenizer)
+    else:
+        data_collator = _make_completion_only_collator(SFTConfig, training, tokenizer)
 
     trainer_kwargs = {
         "model": model,
@@ -112,6 +122,8 @@ def run_trl_sft(config: Dict[str, Any]) -> Any:
     trainer_kwargs.update(_tokenizer_trainer_kwargs(SFTTrainer, tokenizer))
 
     trainer = SFTTrainer(**trainer_kwargs)
+    if before_train is not None:
+        before_train(trainer)
     trainer.train()
     trainer.save_model(training["output_dir"])
     return trainer
@@ -169,8 +181,10 @@ def _select_sft_columns(dataset: Any, text_format: str) -> Any:
         keep_columns = {"prompt", "completion"}
     elif text_format == "messages":
         keep_columns = {"messages"}
+    elif text_format == "pretokenized_completion":
+        keep_columns = {"input_ids", "attention_mask", "labels"}
     else:
-        raise ValueError("data.text_format must be either 'prompt_completion' or 'messages'.")
+        raise ValueError("Unsupported data.text_format: " + str(text_format))
 
     def select_columns(example: Dict[str, Any]) -> Dict[str, Any]:
         missing = keep_columns - set(example)
@@ -192,6 +206,11 @@ def _select_sft_columns(dataset: Any, text_format: str) -> Any:
 def _validate_loss_format(data_config: Dict[str, Any], training_config: Dict[str, Any], tokenizer: Any) -> None:
     text_format = data_config.get("text_format", "prompt_completion")
     assistant_only_loss = bool(training_config.get("assistant_only_loss", False))
+    if text_format == "pretokenized_completion":
+        if assistant_only_loss or training_config.get("packing", False):
+            raise ValueError("Explicit completion labels require assistant_only_loss=False and packing=False.")
+        if training_config.get("completion_only_loss") is not None:
+            raise ValueError("Explicit completion labels require completion_only_loss=null; labels already define the loss.")
     chat_template = getattr(tokenizer, "chat_template", None) or ""
     if text_format == "messages" and assistant_only_loss and "{% generation %}" not in chat_template:
         raise ValueError(

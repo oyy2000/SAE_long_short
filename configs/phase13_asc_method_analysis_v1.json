@@ -1,0 +1,13 @@
+{
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/asc_method_analysis_v1",
+  "parents": {
+    "qwen": "results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+    "r1": "results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2"
+  },
+  "labels": {"qwen": "Qwen2.5-7B-Instruct", "r1": "R1-Distill-Qwen-7B"},
+  "expected_questions": 64,
+  "grading_timeout_seconds": 5,
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260913,
+  "claim_boundary": "这是两个模型在已观察 GSM8K 开发集上的方法检查。未复现论文完整测试分数，未完成统一教师的数据蒸馏主表，不支持据此宣布 SAE 优于 ASC。"
+}

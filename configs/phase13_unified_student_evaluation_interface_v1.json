@@ -1,0 +1,217 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/smoke/unified_student_evaluation_interface_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_student_evaluation_interface_launch_v1",
+  "sft_interface_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/smoke/unified_sft_interface_v1",
+  "evidence_class": "synthetic_evaluation_interface",
+  "students": {
+    "qwen1_5b_student": {
+      "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+    },
+    "qwen3b_student": {
+      "model_name": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    }
+  },
+  "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "choice_instruction": "For this multiple-choice question, put only the selected option letter inside \\boxed{} as the final answer.",
+  "tokenskip_ratios": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "smoke_ratios": [
+    null,
+    0.5,
+    1.0
+  ],
+  "questions": [
+    {
+      "dataset": "gsm8k",
+      "question": "Synthetic arithmetic: what is 12 + 15?",
+      "answer": "27",
+      "problem_id": "synthetic-evaluation-00",
+      "question_role": "synthetic_interface_only",
+      "answer_spec": {
+        "kind": "symbolic",
+        "multiple": false,
+        "gold_components": [
+          "27"
+        ],
+        "base": null,
+        "absolute_tolerance": 0.0,
+        "relative_tolerance": 0.0,
+        "integer_reference_exact": false,
+        "strip_assignment": false,
+        "ordered_multiple": false,
+        "rounded_answer_requested": false,
+        "timeout_seconds": 5,
+        "max_expression_characters": 4000
+      }
+    },
+    {
+      "dataset": "gsm8k_hard",
+      "question": "Synthetic exact arithmetic: what is 100000000000000003 + 0?",
+      "answer": "100000000000000003",
+      "problem_id": "synthetic-evaluation-01",
+      "question_role": "synthetic_interface_only",
+      "answer_spec": {
+        "kind": "symbolic",
+        "multiple": false,
+        "gold_components": [
+          "100000000000000003"
+        ],
+        "base": null,
+        "absolute_tolerance": 1e-12,
+        "relative_tolerance": 0.0001,
+        "integer_reference_exact": true,
+        "strip_assignment": false,
+        "ordered_multiple": false,
+        "rounded_answer_requested": false,
+        "timeout_seconds": 5,
+        "max_expression_characters": 4000
+      }
+    },
+    {
+      "dataset": "math500",
+      "question": "Synthetic algebra: solve (x + 3)(2x - 3) = 0 and give all real roots.",
+      "answer": "3/2",
+      "reviewed_answer": {
+        "mode": "all",
+        "kind": "symbolic",
+        "answers": [
+          "-3",
+          "3/2"
+        ]
+      },
+      "problem_id": "synthetic-evaluation-02",
+      "question_role": "synthetic_interface_only",
+      "answer_spec": {
+        "kind": "symbolic",
+        "multiple": false,
+        "gold_components": [
+          "3/2"
+        ],
+        "base": null,
+        "absolute_tolerance": 0.0,
+        "relative_tolerance": 0.0,
+        "integer_reference_exact": false,
+        "strip_assignment": false,
+        "ordered_multiple": false,
+        "rounded_answer_requested": false,
+        "timeout_seconds": 5,
+        "max_expression_characters": 4000
+      }
+    },
+    {
+      "dataset": "aqua_rat",
+      "question": "Synthetic multiple choice: which value equals 2 + 2?\n(A) 3\n(B) 4\n(C) 5\n(D) 6\n(E) 7",
+      "answer": "B",
+      "problem_id": "synthetic-evaluation-03",
+      "question_role": "synthetic_interface_only",
+      "answer_spec": {
+        "kind": "choice",
+        "multiple": false,
+        "gold_components": [
+          "B"
+        ],
+        "base": null,
+        "absolute_tolerance": 0.0,
+        "relative_tolerance": 0.0,
+        "integer_reference_exact": false,
+        "strip_assignment": false,
+        "ordered_multiple": false,
+        "rounded_answer_requested": false,
+        "timeout_seconds": 5,
+        "max_expression_characters": 4000
+      }
+    },
+    {
+      "dataset": "olympiadbench",
+      "question": "Synthetic exact fraction: what is one half of one half?",
+      "answer": "1/4",
+      "answer_type": "Numerical",
+      "is_multiple_answer": false,
+      "problem_id": "synthetic-evaluation-04",
+      "question_role": "synthetic_interface_only",
+      "answer_spec": {
+        "kind": "symbolic",
+        "multiple": false,
+        "gold_components": [
+          "1/4"
+        ],
+        "base": null,
+        "absolute_tolerance": 1e-08,
+        "relative_tolerance": 0.0,
+        "integer_reference_exact": false,
+        "strip_assignment": true,
+        "ordered_multiple": false,
+        "rounded_answer_requested": false,
+        "timeout_seconds": 5,
+        "max_expression_characters": 4000
+      }
+    }
+  ],
+  "grading": {
+    "version": "phase13_typed_math_grading_v2",
+    "status": "under_validation_not_frozen_for_main_evaluation",
+    "timeout_seconds": 5,
+    "max_expression_characters": 4000,
+    "olympiad_absolute_tolerance": 1e-08,
+    "gsmhard_relative_tolerance": 0.0001,
+    "gsmhard_absolute_tolerance": 1e-12,
+    "gsmhard_integer_references": "Exact; do not apply a relative tolerance to large integer answers.",
+    "final_answer_format": "One final balanced boxed expression; separate multiple complete answers by semicolons; preserve order inside each tuple.",
+    "olympiad_reference": {
+      "repository": "OpenBMB/OlympiadBench",
+      "commit": "ba5b26a7e2849940b598a9159c1190daa2b9175f",
+      "source_file": "eval/auto_scoring_judge.py",
+      "adaptation": "Use typed tuple/interval/radix/choice comparison and Math-Verify rather than untyped generic parsing. Retain absolute numerical tolerance and one-to-one multi-answer matching. Do not inherit implicit factor-100 percentage acceptance or aggregate every intermediate boxed expression."
+    },
+    "revision_reason": "Repair currency escaping, complete-group tuple detection, signed radix and clock answers, ordered point lists, and interval unions with finite sets; preserve first audit and its 73 failures."
+  },
+  "grading_methods": {
+    "gsm8k": "typed_math_v2",
+    "gsm8k_hard": "typed_math_v2",
+    "math500": "reviewed_math_v1",
+    "aqua_rat": "typed_math_v2",
+    "olympiadbench": "typed_math_v2"
+  },
+  "repetition_penalty": 1.0,
+  "torch_dtype": "bfloat16",
+  "attention_implementation": "sdpa",
+  "batch_size": 5,
+  "max_new_tokens": 256,
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 16000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "8G",
+        "time": "00:15:00",
+        "nodelist": "c026n04"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "00:30:00",
+        "gres": "gpu:l40s:1"
+      }
+    }
+  },
+  "claim_boundary": "Synthetic evaluation-engine smoke only: two base students and their previously completed synthetic LoRA adapters, common greedy controls, three prompt variants and five dataset-grading paths. No real benchmark or formal SFT result."
+}

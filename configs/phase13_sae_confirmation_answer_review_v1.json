@@ -1,0 +1,135 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_answer_review_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_confirmation_answer_review_launch_v1",
+  "sources": [
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_00/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 525,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_01/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_01/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 525,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_02/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_02/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 525,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_03/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/dose/shard_03/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 525,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_00/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_01/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_01/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_02/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_02/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_03/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/generation/ablation/shard_03/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/smoke/dose/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1/smoke/dose/shard_00/COMPLETE.json"
+      ],
+      "expected_rows": 88,
+      "expected_unique_questions": 8,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    }
+  ],
+  "expected_total_records": 3724,
+  "timeout_seconds": 5,
+  "claim_boundary": "Fresh masked final-answer extraction review for reserved-question SAE confirmation and its separate smoke. Preserve original outputs and scores; assistant review is not independent human reasoning annotation."
+}

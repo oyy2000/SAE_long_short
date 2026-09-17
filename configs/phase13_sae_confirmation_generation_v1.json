@@ -1,0 +1,128 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_confirmation_generation_launch_v1",
+  "input_root": "results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1",
+  "readback_root": "results/phase13_baseline_expansion_v1/exploratory/sae_readback_v1",
+  "dev_questions": 300,
+  "smoke_questions": 8,
+  "ablation_questions": 64,
+  "ablation_subset_seed": 2026091309,
+  "shards": 4,
+  "doses": [
+    0.3
+  ],
+  "ablation_rho": 0.3,
+  "window_tokens": 64,
+  "dose_directions": [
+    "sae_short_8",
+    "dense_reference_minus_generated",
+    "answer_format",
+    "random_sae_1",
+    "random_sae_2",
+    "random_sae_3"
+  ],
+  "smoke_conditions": [
+    "unmodified",
+    "sae_short_8__rho0.3",
+    "dense_reference_minus_generated__rho0.3",
+    "answer_format__rho0.3",
+    "random_sae_1__rho0.3",
+    "sae_top_1",
+    "sae_leave_out_0",
+    "early_window",
+    "delayed_window",
+    "before_marker_window",
+    "after_marker_window"
+  ],
+  "answer_heading_pattern": "(?im)^[ \\t]*(?:#{1,6}[ \\t]*)?(?:\\*\\*)?(?P<marker>(?:final[ \\t]+)?(?:answer|result))(?:\\*\\*)?[ \\t]*:",
+  "norm_rounding_tolerance": 0.005,
+  "grading_timeout_seconds": 5,
+  "generation": {
+    "seed": 2026091308,
+    "max_new_tokens": 1024,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "batch_size": 8,
+    "candidates_per_question_condition": 1
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 4,
+        "memory": "24G",
+        "time": "00:30:00",
+        "nodelist": "c201n02"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "claim_boundary": "Reserved-question intervention confirmation at the original reference rho=0.3, with all six directions and fixed feature/window controls. Prior unmodified outputs were observed; no independent human semantic validation, SAE-seed variability, or student-performance result is claimed. Fresh output-specific answer review and complete analysis are required.",
+  "entrypoint": "13_25_run_sae_generation_controls.py",
+  "job_name_prefix": "p13_sae_confirm",
+  "evaluation_split": "confirmation",
+  "evaluation_questions": 300,
+  "development_generation_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1",
+  "development_analysis_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_analysis_v1",
+  "confirmation_plan": {
+    "reference_rho": 0.3,
+    "questions": 300,
+    "primary_metrics": [
+      "is_correct",
+      "generated_tokens",
+      "reasoning_body"
+    ],
+    "references": [
+      "unmodified",
+      "dense_reference_minus_generated__rho0.3",
+      "answer_format__rho0.3",
+      "random_sae_1__rho0.3",
+      "random_sae_2__rho0.3",
+      "random_sae_3__rho0.3"
+    ],
+    "multiplicity": "Holm across all 18 two-sided tests; no subgroup/metric removal",
+    "alpha": 0.05,
+    "randomization_samples": 20000,
+    "randomization_seed": 2026091321,
+    "bootstrap_samples": 5000,
+    "bootstrap_seed": 2026091314,
+    "accuracy_test": "exact two-sided McNemar",
+    "length_test": "paired-label sign randomization under within-question label-exchangeability; plus-one correction for Monte Carlo; exact enumeration when <=16 nonzero pairs",
+    "secondary": "All 64-question feature-count/window comparisons and answer-region marker/suffix statistics are descriptive; marginal bootstrap intervals are not simultaneous tests.",
+    "selection": "Original mechanism input rho_reference=0.3; no dose optimization on confirmation. All six original directions retained.",
+    "prior_exposure": "These reserved train questions already have an unmodified baseline generated and uniformly graded. They have not contributed to direction fitting, development dose selection, or intervention-effect analysis. Independence is limited to that held-out intervention scope.",
+    "seed_scope": "One historical SAE and one paired per-question generation seed; additional SAE seeds remain a separate stage."
+  }
+}

@@ -1,0 +1,93 @@
+\section{SAE Analysis}
+\label{sec:sae_analysis}
+
+This section separates diagnostics already available from the completed study from proposed analyses of the intervention mechanism.
+The existing evidence establishes length associations and shorter generated outputs; it does not establish that the selected features encode redundant reasoning.
+The analyses below are intended to test that interpretation and to identify which aspects of the intervention merit downstream evaluation.
+
+\subsection{Existing Evidence: Answer-Marker Associations}
+\label{sec:answer_marker_evidence}
+
+The held-out token-context report for the primary SAE shows that the highest-activation examples of all eight selected short-associated features occur at \texttt{Answer} tokens.
+For example, feature F7339 has high-activation contexts such as a completed calculation followed by \texttt{Answer:}; analogous contexts occur in both short and long traces.
+These examples indicate an answer-format association, but do not measure how much of the feature's total activation is explained by the marker.
+They motivate distinguishing a feature that tracks useful concise reasoning from one that tracks answer formatting or the transition into an answer segment.
+
+A simple aggregation effect can also produce a short--long association.
+If a marker appears once per trace and contributes approximately constant activation $A_j$, a feature's whole-trace mean can behave as
+\begin{equation}
+  \bar z_j(\tau)=\frac{1}{L_\tau}\sum_{t=1}^{L_\tau} z_{t,j}
+  \approx \frac{A_j}{L_\tau}.
+\label{eq:length_denominator}
+\end{equation}
+Thus, token-normalized activation can correlate with shortness even when activation at the marker is unchanged.
+This is a possible explanation, not a fitted result.
+The existing first-64-token direction check does not by itself resolve it, because some traces may already contain an answer marker within that window.
+
+\subsection{Separating Length, Position, and Lexical Cues}
+\label{sec:sae_falsification}
+
+We propose decomposing feature activation into reasoning-body, answer-marker, and answer-suffix regions, reporting both region-specific means and contributions to total activation.
+The analysis would compare short and long traces within the same problem and, where supported, at matched token identities and absolute positions.
+A before/after comparison excluding answer regions would test whether the observed association survives removal of its most evident correlate.
+Regressing whole-trace means against inverse length provides a complementary diagnostic of Equation~\ref{eq:length_denominator}; it does not replace the within-problem analysis.
+
+A controlled text battery would preserve mathematical steps while changing wording or answer headings, preserve formatting while changing calculation correctness, and inject associated tokens into non-reasoning text~\citep{ma2026reasoning}.
+Step and answer checks are needed to verify the intended manipulations.
+Because deletion and rewriting shift token positions and subsequent states, analysis would align corresponding spans and include position-matched controls rather than compare only whole-trace averages.
+Passing these tests would strengthen a semantic interpretation; failing them could still leave a useful formatting-control direction.
+
+Early-prefix prediction would use only information available after 32 or 64 generated tokens to predict remaining length or subsequent entry into the answer segment.
+Evaluation would group by problem and report the fraction of traces ending before each landmark.
+Relative positions computed using eventual trace length and retrospective end-of-trace masks would be restricted to offline diagnostics, avoiding future information in an online predictor.
+
+\subsection{Target Engagement and Direction Specificity}
+\label{sec:sae_engagement}
+
+The selected intervention adds a constant composite decoder direction scaled to the current hidden-state norm.
+To determine what it actually changes, we propose encoding the same states before and after the implemented perturbation:
+\begin{equation}
+  z_t=\operatorname{Enc}(h_t),\qquad
+  z'_t=\operatorname{Enc}(h_t+\delta_t).
+\label{eq:feature_readback}
+\end{equation}
+Readback must reproduce the deployed layer, normalization, feature aggregation, and numerical precision.
+Comparing independently generated texts would confound the perturbation with changed token histories.
+
+Measurements would include the signed change in selected features, the magnitude of changes in unselected features, turnover of the TopK active set, and actual perturbation-to-state norm.
+The true next-token distribution after the remaining model layers would provide KL divergence and probabilities of answer markers and end-of-sequence tokens.
+These quantities are especially relevant at $\rho=0.30$: matching hidden-state perturbation norms does not ensure comparable distribution shifts or feature specificity.
+A fixed decoder-direction injection and activation-gated feature suppression would remain separately named interventions.
+
+\subsection{Feature Redundancy, Timing, and Stability}
+\label{sec:sae_structure}
+
+\paragraph{Composition of the eight-feature direction.}
+We propose inspecting pairwise decoder cosine similarity, activation correlations, and the singular-value spectrum of the selected directions.
+Shared answer-marker contexts make it important to determine whether eight features provide several independent effects or largely overlapping directions.
+Single-feature, top-1/2/4/8, and leave-one-out interventions would hold the total perturbation norm fixed.
+Directions would be ranked on development data before downstream evaluation.
+Larger sets would require additional features passing the same discovery rule, rather than relaxing selection thresholds to fill a requested set size.
+
+\paragraph{When shortening occurs.}
+Matched continuations from a shared natural prefix would compare enhancement, zero intervention, sign reversal, and multiple random controls with independent caches.
+Early-only, delayed, and answer-marker-triggered windows would localize the effect using only information available during generation.
+Outputs would be decomposed into answer-preceding steps, repeated explanations, and answer-following text.
+A reduction concentrated after the answer would support a different interpretation from preserved calculations with fewer repeated derivations.
+Response correctness and usable-answer coverage would accompany every length comparison.
+
+\paragraph{Dictionary quality and reproducibility.}
+The six existing SAEs support a first comparison across layers and sparsities without training a new grid.
+Their reconstruction and activation-coverage metrics are reported in Appendix~\ref{app:sae_quality}.
+Additional seeds for the primary setting would test whether the feature structure and intervention effects recur under dictionary retraining.
+Matching would use decoder geometry and activation profiles on independent questions, allowing feature splitting; feature IDs and the number of significant candidates are not measures of semantic stability.
+
+\subsection{Connecting Feature Changes to Student Learning}
+\label{sec:sae_student_link}
+
+The decisive endpoint remains student performance after training on the generated data.
+We propose comparing SAE, dense or ASC, and prompt-based traces at similar length distributions under the training controls in Section~\ref{sec:baseline_design}.
+Method-blinded annotation would distinguish calculations, explanations, verification, repeated content, and answer formatting on paired problems.
+Student negative log-likelihood over these segments could provide a low-cost diagnostic of learnability, but lower likelihood loss would not establish a subsequent generalization gain.
+The multi-answer extension in Appendix~\ref{app:scope} would additionally separate multiple distinct texts from repeated exposure to the same text, subject to its unequal-token limitation.
+These analyses would connect a measured change in teacher behavior to the content and learning effects of the resulting supervision, without presupposing an accuracy benefit.

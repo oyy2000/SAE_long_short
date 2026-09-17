@@ -1,0 +1,35 @@
+% Local manuscript preview; use the official venue template before submission.
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\title{SAE-Guided Trace Shortening for Reasoning Distillation}
+\author{Anonymous Authors}
+\date{}
+
+\begin{document}
+\maketitle
+\input{sae_reasoning_distillation_abstract}
+\input{sae_reasoning_distillation_introduction}
+\input{sae_reasoning_distillation_related_work}
+\input{sae_reasoning_distillation_experiments}
+\input{sae_reasoning_distillation_sae_analysis}
+\clearpage
+\begingroup
+\small
+\setlength{\bibsep}{5pt}
+\bibliographystyle{plainnat}
+\bibliography{sae_reasoning_distillation_references}
+\endgroup
+\clearpage
+\appendix
+\input{sae_reasoning_distillation_appendix}
+\end{document}

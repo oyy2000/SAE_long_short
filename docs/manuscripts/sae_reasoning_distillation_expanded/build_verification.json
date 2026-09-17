@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "compiler": "Tectonic 0.17.0",
+  "pdf_pages": 13,
+  "main_pages": 8,
+  "reference_pages": 1,
+  "appendix_pages": 4,
+  "checks": {
+    "citations_labels_and_environments": "passed",
+    "undefined_references": false,
+    "missing_characters": false,
+    "overfull_or_underfull_boxes": false,
+    "original_archive_unchanged": true,
+    "abstract_and_bibliography_unchanged": true,
+    "original_experiments_and_appendix_preserved": true,
+    "visual_review_pages": [
+      1,
+      5,
+      6,
+      11,
+      12
+    ]
+  },
+  "compiler_note": "XeTeX ignores inputenc with UTF-8 engines; benign compatibility notice.",
+  "files_sha256": {
+    "README_原精简版说明.md": "a3cb0f0794f9987bf04c1b603511512103e91e2d6ea7d09b7948468ad6fd1223",
+    "README_扩写说明.md": "97880c0dae7174fe7fd9c3cd9275a10cde2d9984adf85de33af24e2427a8c728",
+    "evidence_sources.json": "0a03e56df06eb82054a8e9a473e9898b36ceecb877eb55c7da45bec7e2754792",
+    "sae_reasoning_distillation_abstract.tex": "14ee3a226979a7284fcd0ace4d20b5a4f4bb2258623af723997b4be413cecae5",
+    "sae_reasoning_distillation_appendix.tex": "c9c2329782a6905c726501c5e5022b8e54db854fb8a188f0a7d1822762851d1b",
+    "sae_reasoning_distillation_experiments.tex": "9f77cf062944a2496991388e5cb4dca4788655d456a5d4630a6edfb6e96dc140",
+    "sae_reasoning_distillation_introduction.tex": "f55a33f7eb4196418acabffdbb97b256931a0a9d7581a0ac92fc63bf4a2c53eb",
+    "sae_reasoning_distillation_main.pdf": "2793a376a41a74fb99a9a948271d192b16ca14256ec4f1170fc9e34c327a7bbc",
+    "sae_reasoning_distillation_main.tex": "832e999bec3c7ceae35ad065253cce9610f4e6a58e2bbf0022180efab9d58c7e",
+    "sae_reasoning_distillation_references.bib": "4ce7d8f805f330e980541847e0cae47c863f42cd66a7a24e4d2c6e4148bcaae1",
+    "sae_reasoning_distillation_related_work.tex": "406bd514ace63c8355dcdd80bccbcb66aa13b3a0f8669602d249c4d8f32800b5",
+    "sae_reasoning_distillation_sae_analysis.tex": "197eb9ac8c1f90045c4d6617fbdbcfe041e59642141eb1bb353c390712cde68d",
+    "source_archive.json": "f6d8172ea528958df99f24c2941d177794d8ff99a95da40548c1d63ea2317283"
+  }
+}

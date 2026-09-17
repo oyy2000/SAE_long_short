@@ -1,0 +1,26 @@
+{
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/dap_paired_sources_v1",
+  "math_review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_review_v1",
+  "grading_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_typed_math_grading_v2.json",
+  "cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub",
+  "tokenizer_snapshot": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "download_workers": 2,
+  "target_questions": 64,
+  "selection_seed": 2026091308,
+  "maximum_candidate_checks": 512,
+  "minimum_long_tokens": 1000,
+  "maximum_long_tokens": 16384,
+  "datasets": {
+    "smallthoughts": {
+      "repo_id": "SmallDoge/SmallThoughts",
+      "revision": "8fdc9afef80403b7c50ebb4356dd7878d3218d37",
+      "metadata_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/dap_source_data_audit_v1/smallthoughts_metadata.json"
+    },
+    "openthoughts": {
+      "repo_id": "open-thoughts/OpenThoughts-114k",
+      "revision": "bd093c3994fd54d2390985b66988ddf282a55eb6",
+      "metadata_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/dap_source_data_audit_v1/openthoughts_metadata.json"
+    }
+  },
+  "claim_boundary": "Released-data correspondence and a reserved long-trace development cohort only. Full teacher DAP rewriting and student comparisons remain required; source answer agreement is not proof of complete reasoning validity. Public 100K data correspondence is not recovery of the paper original 25K IDs."
+}

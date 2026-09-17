@@ -1,0 +1,35 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/student_evaluation_inputs_reviewed_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/student_evaluation_inputs_reviewed_launch_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_cohort_v2",
+  "sft_interface_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/smoke/unified_sft_interface_v1",
+  "expected_counts": {
+    "gsm8k": 1269,
+    "gsm8k_hard": 1269,
+    "math500": 500,
+    "aqua_rat": 254,
+    "olympiadbench": 674
+  },
+  "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "choice_instruction": "For this multiple-choice question, put only the selected option letter inside \\boxed{} as the final answer.",
+  "tokenskip_ratios": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "proposed_output_caps": [
+    1024,
+    2048,
+    4096
+  ],
+  "prompt_revision_parent": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/student_evaluation_inputs_v1",
+  "expected_changed_prompt_ids": [
+    "math500-00296"
+  ],
+  "expected_changed_prompt_records": 14,
+  "scope": "Revalidate every native student/ratio evaluation prompt after source-preserving reviewed definitions. One visible A-E MATH-500 question now receives the common choice-letter instruction. No evaluation generation or scoring; preserve all other prompt hashes and the locked cohorts."
+}

@@ -1,0 +1,96 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1",
+  "launch_root": "results/phase13_baseline_expansion_v1/preparation/sae_generation_controls_launch_v1",
+  "input_root": "results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1",
+  "readback_root": "results/phase13_baseline_expansion_v1/exploratory/sae_readback_v1",
+  "dev_questions": 300,
+  "smoke_questions": 8,
+  "ablation_questions": 64,
+  "ablation_subset_seed": 2026091309,
+  "shards": 4,
+  "doses": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "ablation_rho": 0.3,
+  "window_tokens": 64,
+  "dose_directions": [
+    "sae_short_8",
+    "dense_reference_minus_generated",
+    "answer_format",
+    "random_sae_1",
+    "random_sae_2",
+    "random_sae_3"
+  ],
+  "smoke_conditions": [
+    "unmodified",
+    "sae_short_8__rho0.3",
+    "dense_reference_minus_generated__rho0.3",
+    "answer_format__rho0.3",
+    "random_sae_1__rho0.3",
+    "sae_top_1",
+    "sae_leave_out_0",
+    "early_window",
+    "delayed_window",
+    "before_marker_window",
+    "after_marker_window"
+  ],
+  "answer_heading_pattern": "(?im)^[ \\t]*(?:#{1,6}[ \\t]*)?(?:\\*\\*)?(?P<marker>(?:final[ \\t]+)?(?:answer|result))(?:\\*\\*)?[ \\t]*:",
+  "norm_rounding_tolerance": 0.005,
+  "grading_timeout_seconds": 5,
+  "generation": {
+    "seed": 2026091308,
+    "max_new_tokens": 1024,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "batch_size": 8,
+    "candidates_per_question_condition": 1
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "16G",
+        "time": "00:30:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "claim_boundary": "Previously observed mechanism development cohort, fixed-grid full-generation diagnosis with matched per-question random uniforms. Not independent confirmation, a four-candidate student data pool, or B0-B7 student SFT.",
+  "entrypoint": "13_25_run_sae_generation_controls.py"
+}

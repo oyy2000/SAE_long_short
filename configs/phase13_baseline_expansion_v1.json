@@ -1,0 +1,315 @@
+{
+  "experiment_name": "phase13_baseline_expansion_v1",
+  "status": "staged_plan_not_frozen_for_training",
+  "authorization": {
+    "scope": "User requested real ASC/DAP/TokenSkip baselines, phased 7.5K-to-25K scaling, multiple students/teachers and five evaluation datasets on 2026-09-13.",
+    "preserve_historical_protocols": true,
+    "gpu_resource_scope": "user_approved_existing_ncsu_accounts_and_partitions_20260913"
+  },
+  "models": {
+    "primary_teacher": "Qwen/Qwen2.5-7B-Instruct",
+    "reasoning_teacher": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "primary_students": [
+      "Qwen/Qwen2.5-1.5B-Instruct",
+      "Qwen/Qwen2.5-3B-Instruct"
+    ],
+    "cross_family_student": "meta-llama/Llama-3.2-3B-Instruct",
+    "require_revision_hashes_before_launch": true
+  },
+  "student_seeds": [
+    17,
+    42,
+    73
+  ],
+  "sae_seeds": [
+    17,
+    42,
+    73,
+    101
+  ],
+  "sae_seed_interpretation": "Primary seed17 plus three additional SAE seeds42/73/101 as requested. Reuse seed17 only with identical corpus/config/source; otherwise fit all four. These are separate from the three SFT seeds.",
+  "data": {
+    "pilot": "historical 878/881 GSM8K questions; exploratory only",
+    "mechanism_new_questions_target": 1000,
+    "first_scale": {
+      "source": "MATH train",
+      "source_questions": 7500,
+      "actual_training_count": "after development holdout, decontamination and correct-support audit"
+    },
+    "main_scale": {
+      "source": "version-pinned OpenThoughts mathematics subset",
+      "target_unique_eligible_questions": 25000,
+      "exact_dataset_revision": null
+    },
+    "duplicate_policy": "exact normalized and near-duplicate audit; source problem identities retained; no repeated examples counted as unique problems",
+    "decontaminate_against_all_eval_sets": true
+  },
+  "evaluation": {
+    "datasets": [
+      "GSM8K",
+      "MATH-500",
+      "GSM8K-Hard",
+      "AQuA-RAT",
+      "OlympiadBench-English-math-text-only"
+    ],
+    "gsm8k_locked_split": "test[50:1319]",
+    "gsm8k_smoke_split": "test[:50]",
+    "require_dataset_revisions_and_cohort_hashes": true,
+    "gsm8k_hard_role": "derived robustness set; retain parent-question grouping, not an independent replication",
+    "math500_role": "held-out MATH subset; do not label independent OOD from MATH training",
+    "final_decode_policy": "greedy; per-teacher/evaluation-cap calibration on disjoint development data before freeze",
+    "grading": "dataset-specific numerical/symbolic/multiple-choice grading, with timeout and regression fixtures"
+  },
+  "baselines": {
+    "B0": {
+      "name": "Unmodified Random-Correct",
+      "selection": "deterministic uniform correct candidate from B1 raw pool"
+    },
+    "B1": {
+      "name": "Unmodified Shortest-Correct",
+      "selection": "shortest unique answer-correct non-capped candidate"
+    },
+    "B2": {
+      "name": "Concise Prompt",
+      "selection": "shortest-correct; answer format matched"
+    },
+    "B3": {
+      "name": "Dense Mean-Difference",
+      "selection": "shortest-correct; independent discovery data"
+    },
+    "B4": {
+      "name": "ASC-CES",
+      "selection": "shortest-correct",
+      "required_components": [
+        "published contrastive energy objective",
+        "length normalization",
+        "differentiable KL trust region"
+      ],
+      "upstream_code_status": "published_repo_head_is_legacy_activation_difference; formal_CES_adapter_required"
+    },
+    "B5": {
+      "name": "DAP rewritten supervision",
+      "source": "same B1 raw candidate pool",
+      "required_components": [
+        "difficulty-aware prompt",
+        "full source trace input",
+        "record rewrite model and all calls",
+        "post-rewrite validation"
+      ],
+      "upstream_code_status": "training_eval_released; exact_DAP_prompt_to_recover_from_paper"
+    },
+    "B6": {
+      "name": "TokenSkip-style distillation",
+      "required_components": [
+        "LLMLingua-2 importance compression",
+        "ratio-conditioned SFT",
+        "ratio-conditioned inference",
+        "preserved answer handling"
+      ],
+      "keep_ratios": [
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "records_per_problem": 1,
+      "ratio_assignment": "hash-balanced assignment fixed before SFT; no sixfold data expansion",
+      "primary_eval_ratio": "chosen on development set before freeze; report all ratio results"
+    },
+    "B7": {
+      "name": "SAE generated supervision",
+      "selection": "shortest-correct; selected direction fixed before evaluation"
+    }
+  },
+  "key_baselines": [
+    "B1",
+    "B4",
+    "B5",
+    "B7"
+  ],
+  "matrix": {
+    "primary": {
+      "teachers": [
+        "primary_teacher"
+      ],
+      "conditions": [
+        "B0",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7"
+      ],
+      "students": [
+        "primary_students"
+      ],
+      "budget": "equal_examples",
+      "expected_sft_runs": 48
+    },
+    "cross_family": {
+      "teachers": [
+        "primary_teacher"
+      ],
+      "conditions": [
+        "B1",
+        "B4",
+        "B5",
+        "B7"
+      ],
+      "students": [
+        "cross_family_student"
+      ],
+      "budget": "equal_examples",
+      "expected_sft_runs": 12
+    },
+    "cross_teacher": {
+      "teachers": [
+        "reasoning_teacher"
+      ],
+      "conditions": [
+        "B1",
+        "B4",
+        "B5",
+        "B7"
+      ],
+      "students": [
+        "Qwen/Qwen2.5-1.5B-Instruct"
+      ],
+      "budget": "equal_examples",
+      "expected_sft_runs": 12
+    },
+    "token_budget": {
+      "teachers": [
+        "primary_teacher"
+      ],
+      "conditions": [
+        "B1",
+        "B4",
+        "B5",
+        "B7"
+      ],
+      "students": [
+        "Qwen/Qwen2.5-1.5B-Instruct"
+      ],
+      "budget": "equal_target_tokens",
+      "expected_sft_runs": 12
+    }
+  },
+  "total_reference_sft_runs_per_complete_scale": 84,
+  "execution_stages": [
+    {
+      "id": "S0",
+      "task": "source-version audit and runnable inventory",
+      "dependency": []
+    },
+    {
+      "id": "S1a",
+      "task": "offline Answer-region and denominator diagnostic on saved events",
+      "dependency": [
+        "S0"
+      ]
+    },
+    {
+      "id": "S1b",
+      "task": "new-question format falsification and same-state target engagement",
+      "dependency": [
+        "S1a"
+      ]
+    },
+    {
+      "id": "S2",
+      "task": "ASC-CES/DAP/TokenSkip adapter implementation and small real-model fidelity checks",
+      "dependency": [
+        "S0"
+      ]
+    },
+    {
+      "id": "S3",
+      "task": "version-pinned cohorts, decontamination, grading and cap calibration",
+      "dependency": [
+        "S0"
+      ]
+    },
+    {
+      "id": "S4a",
+      "task": "7.5K-source key comparisons, one Qwen student, 3 seeds; 12 SFT runs",
+      "dependency": [
+        "S1b",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "S4b",
+      "task": "remaining four baselines on same audited first-scale cohort; 12 more SFT runs",
+      "dependency": [
+        "S4a"
+      ]
+    },
+    {
+      "id": "S5",
+      "task": "25K eligibility and compute-cost review, then main 48-run matrix",
+      "dependency": [
+        "S4b"
+      ]
+    },
+    {
+      "id": "S6",
+      "task": "three 12-run generalization/token-budget matrices",
+      "dependency": [
+        "S5"
+      ]
+    }
+  ],
+  "cost": {
+    "count_all_candidate_and_rewrite_tokens": true,
+    "include_sae_and_baseline_fitting": true,
+    "record_hardware_latency_and_memory": true,
+    "report_dictionary_reuse_marginal_cost": true
+  },
+  "launch_requirements": [
+    "approved physical GPUs with memory-fit gate",
+    "frozen stage config and source/input hashes",
+    "complete upstream manifests",
+    "matched method data support plus coverage report",
+    "numeric and symbolic grading tests",
+    "node-local caches/temp/intermediate checkpoints",
+    "per-example outputs and complete-marker audit"
+  ],
+  "formal_claim_allowed": false,
+  "outputs": {
+    "result_root": "results/phase13_baseline_expansion_v1",
+    "checkpoint_root": "checkpoints/phase13_baseline_expansion_v1"
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "gpu_account": "jekml_gpu",
+    "cpu_account": "jekml_cpu",
+    "preferred_gpu_routes": [
+      {
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1"
+      },
+      {
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1"
+      },
+      {
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1"
+      }
+    ]
+  },
+  "sae_additional_seeds": [
+    42,
+    73,
+    101
+  ]
+}

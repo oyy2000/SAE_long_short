@@ -1,0 +1,91 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "entrypoint": "13_31_compress_math_candidates.py",
+  "job_name_prefix": "p13_text_dev_reviewed",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_reviewed_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_reviewed_launch_v1",
+  "candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_dev_reviewed_v1",
+  "source_cohort": "development",
+  "expected_questions": 64,
+  "smoke_questions": 4,
+  "smoke_seed": 2026091319,
+  "shards": 2,
+  "maximum_source_candidates": 4,
+  "candidate_seed_stride": 100003,
+  "ratio_assignment_seed": 2026091320,
+  "dap_generation": {
+    "seed": 2026091318,
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "tokenskip": {
+    "model_name": "microsoft/llmlingua-2-xlm-roberta-large-meetingbank",
+    "revision": "ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--microsoft--llmlingua-2-xlm-roberta-large-meetingbank/snapshots/ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "package_version": "0.2.2",
+    "family": "qwen",
+    "ratios": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "ratio_assignment_seed": 42,
+    "selection": "one assigned ratio per source question for training; all ratios only for compression validation"
+  },
+  "compression_mode": "all_ratios",
+  "dap_prompt_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_dap_prompt_math_v2.json",
+  "claim_boundary": "Unified Qwen-7B development-source adaptation, not original full DeepSeek-R1 DAP rewriting or completed student SFT. DAP rewrites every eligible unique raw B1 candidate and revalidates; TokenSkip retains ratio-conditioned prompt/completion and source-answer handling. Assigned examples remain development-only in this stage. Fresh development rerun from the same immutable raw generation under reviewed_math_v1; the full DAP rewrite and all six TokenSkip ratios are executed and revalidated. This is not additional independent development evidence.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "12G",
+        "time": "00:30:00",
+        "nodelist": "c026n04"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "04:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    },
+    "auxiliary_cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/phase13_baselines"
+  },
+  "grading_method": "reviewed_math_v1"
+}

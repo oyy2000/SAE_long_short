@@ -1,0 +1,21 @@
+{
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_objective_diagnostic_v1",
+  "parents": {
+    "qwen": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+    "r1": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2"
+  },
+  "questions": 16,
+  "cohort_seed": 2026091307,
+  "scales": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "max_sequence_length": 12288,
+  "runtime": {
+    "minimum_free_mib": 24000
+  },
+  "claim_boundary": "Post-hoc objective and domain-shift diagnostic on previously observed development questions. No new steering fit, successful compression claim, or student-distillation evidence."
+}

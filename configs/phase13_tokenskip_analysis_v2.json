@@ -1,0 +1,10 @@
+{
+  "parent_root": "results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_analysis_v2",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260913,
+  "claim_boundary": "\u8fd9\u662f\u4f5c\u8005\u516c\u5f00 GSM8K \u6570\u636e\u4e0a\u7684\u5355 seed \u539f\u8bbe\u7f6e\u65b9\u6cd5\u590d\u73b0\u3002\u5b83\u4e0d\u66ff\u4ee3\u540c\u4e00 teacher\u3001\u540c\u4e00\u95ee\u9898\u96c6\u5408\u4e0a\u7684 B0\u2013B7 \u5b66\u751f\u84b8\u998f\u5bf9\u7167\uff0c\u4e5f\u4e0d\u5b8c\u6210 MATH \u6765\u6e90\u6c60\u6216 25K \u6269\u5c55\u3002",
+  "grader_version": "gsm8k_explicit_answer_quantity_v3",
+  "grading_timeout_seconds": 5,
+  "regrading_reason": "Repair missed inline Answer markers and contextual numbers after the primary answer quantity; preserve all original grades and generation settings."
+}

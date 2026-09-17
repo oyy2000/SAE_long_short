@@ -1,0 +1,206 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "entrypoint": "13_29_generate_math_candidates.py",
+  "job_name_prefix": "p13_steered_dev_reviewed",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steered_math_candidates_dev_reviewed_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steered_math_candidates_dev_reviewed_launch_v1",
+  "math_asc_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1",
+  "development_questions": 64,
+  "smoke_questions": 8,
+  "student_pool_questions": 6723,
+  "smoke_subset_seed": 2026091316,
+  "allowed_generation_cohorts": [
+    "smoke",
+    "development"
+  ],
+  "shards": 8,
+  "candidates_per_question": 4,
+  "candidate_seed_stride": 100003,
+  "selection_seed": 2026091317,
+  "norm_rounding_tolerance": 0.005,
+  "generation": {
+    "seed": 2026091315,
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "methods": {
+    "B3__rho0.05": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "dense_reference_minus_generated",
+      "layer_index": 17,
+      "strength": 0.05
+    },
+    "B3__rho0.1": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "dense_reference_minus_generated",
+      "layer_index": 17,
+      "strength": 0.1
+    },
+    "B3__rho0.2": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "dense_reference_minus_generated",
+      "layer_index": 17,
+      "strength": 0.2
+    },
+    "B3__rho0.3": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "dense_reference_minus_generated",
+      "layer_index": 17,
+      "strength": 0.3
+    },
+    "B7__rho0.05": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "sae_short_8",
+      "layer_index": 17,
+      "strength": 0.05
+    },
+    "B7__rho0.1": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "sae_short_8",
+      "layer_index": 17,
+      "strength": 0.1
+    },
+    "B7__rho0.2": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "sae_short_8",
+      "layer_index": 17,
+      "strength": 0.2
+    },
+    "B7__rho0.3": {
+      "kind": "relative_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_reviewed_v1/directions/directions.safetensors",
+      "vector_key": "sae_short_8",
+      "layer_index": 17,
+      "strength": 0.3
+    },
+    "B4__scale0.1": {
+      "kind": "absolute_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/vector.safetensors",
+      "vector_key": "vector",
+      "layer_index": 16,
+      "strength": 0.1
+    },
+    "B4__scale0.25": {
+      "kind": "absolute_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/vector.safetensors",
+      "vector_key": "vector",
+      "layer_index": 16,
+      "strength": 0.25
+    },
+    "B4__scale0.5": {
+      "kind": "absolute_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/vector.safetensors",
+      "vector_key": "vector",
+      "layer_index": 16,
+      "strength": 0.5
+    },
+    "B4__scale1.0": {
+      "kind": "absolute_vector",
+      "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+      "vector_marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/COMPLETE.json",
+      "vector_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1/asc/vector.safetensors",
+      "vector_key": "vector",
+      "layer_index": 16,
+      "strength": 1.0
+    }
+  },
+  "decode_policy": {
+    "sampler": "paired per-question inverse-CDF top-k then nucleus",
+    "eos": "tokenizer.eos_token_id only, as in the existing ASC checks",
+    "stop_on_answer_marker": false,
+    "preserve_full_candidates": true,
+    "top_k_explicitly_matches_qwen_model_default": true,
+    "adaptation": "Shared decoder for unified teacher methods; does not claim identical RNG outputs to upstream Transformers multinomial sampling."
+  },
+  "selection_policy": "Earliest-index exact stripped-text dedup among correct non-capped candidates; shortest by sampled token count then candidate index. B0 samples uniformly from the same unique B1 pool, with a fixed per-question seed.",
+  "claim_boundary": "Four actual candidates per question and each of 12 B3/B4/B7 dose settings on 64 MATH development questions. Same shared sampler/prompt/cap as frozen B1; dense and SAE use block 17, ASC retains its fitted block 16. Historical SAE format-associated features transfer without semantic relabeling. No student-pool generation or student training in this sweep. Revised calibration and reviewed answer definitions; all 12 settings repeated on H200 with four concurrent lanes and complete candidate/selection audits. Historical failed or superseded sweeps remain immutable.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "12G",
+        "time": "00:30:00",
+        "nodelist": "c026n04"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "04:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "reference_candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_dev_reviewed_v1",
+  "operating_point_selection": {
+    "recorded_before_this_sweep": true,
+    "reference_method": "B1",
+    "maximum_candidate_accuracy_drop": 0.05,
+    "maximum_correct_support_drop": 0.05,
+    "maximum_cap_hit_rate": 0.01,
+    "objective": "Minimize paired mean selected-correct supervision tokens on the method/B1 common support among admissible points. Report full-pool coverage, all candidates, and all failed points.",
+    "tie_break": "lower strength",
+    "if_no_admissible_point": "Report infeasible under these development filters; do not silently replace a failed method with identity steering.",
+    "interpretation": "Exploratory engineering filters on 64 observed development questions; not a noninferiority test or independent confirmation."
+  }
+}

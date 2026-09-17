@@ -1,0 +1,41 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "parent_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/ncsu_phase12_reproduction_v1/exploratory",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_stability_v1",
+  "checkpoint_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/checkpoints/phase13_baseline_expansion_v1/sae_seed_stability_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_seed_stability_launch_v1",
+  "seeds": [
+    17,
+    42,
+    73,
+    101
+  ],
+  "layer_index": 17,
+  "k": 64,
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 16000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 4,
+        "memory": "24G",
+        "time": "00:30:00",
+        "nodelist": "c201n02"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "00:30:00"
+      }
+    }
+  },
+  "claim_boundary": "Historical seed17 reused only after source/input/model/runtime verification; train three additional seeds with unchanged legacy training code and immutable token samples. Reconstruction quality alone does not establish feature or generation stability. Dictionary feature IDs are seed-specific; cross-seed alignment and fresh generation are later stages."
+}

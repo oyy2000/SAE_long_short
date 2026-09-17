@@ -1,0 +1,9 @@
+{
+  "scope": "Existing metadata checked for manuscript expansion; no new model experiment executed.",
+  "files": {
+    "results/ncsu_phase12_reproduction_v1/exploratory/sae/audit/sae_metrics.csv": "313a93498737278a16275d0423fbbadd7a31b569de0c735a64cba6ffd7af21ed",
+    "results/ncsu_phase12_reproduction_v1/exploratory/sae_features/analysis/token_contexts.md": "c8a64f919cc455eb9cf139b9e9133d9f3ca26a08000991f62ffa764f6c771c4e",
+    "docs/ncsu_sae_intervention_status_20260912.md": "d3bfbd3ffbd7b830d6eaa34d52289fb64a0ca725c26a4859aac6f54446f6db10",
+    "docs/latex/baseline_and_sae_analysis_proposal_20260913_zh.md": "3b9fcdd998247dbf437942424d447264b258017798cd5a846e607d9407630de0"
+  }
+}

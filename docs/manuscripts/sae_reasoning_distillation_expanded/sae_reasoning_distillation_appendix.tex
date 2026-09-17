@@ -1,0 +1,171 @@
+\section{Experimental Details and Scope}
+\label{app:details}
+
+\subsection{Sampling and Feature Discovery}
+\label{app:sampling}
+
+Teacher sampling uses temperature 0.7, top-$p$ 0.95, and a 512-token generation cap.
+The initial pool contains 16 candidates for each of 881 problems (14,096 traces).
+Shared TopK SAEs are fit on pooled residual activations from raw candidates regardless of correctness; only answer-correct traces enter short--long feature comparisons.
+Question-level splits contain 617 training, 132 development, and 132 test problems.
+The SAE grid covers layers 10, 17, and 23; TopK sparsities 32 and 64; expansion factor 8; and 1,500 training steps, using seed 17.
+Registered screening of the primary layer-17, TopK-64 dictionary yields eight features per length group.
+
+Natural-length comparisons require at least four distinct, answer-correct, non-capped candidates per problem.
+Short and long representatives come from the bottom and top 20\% length bands; medium representatives are near the median.
+All conditions retain the same 881 problems.
+Medium supervision achieves 66.33\% seed-mean accuracy, between short (66.67\%) and long (64.20\%).
+Holm correction covers three registered natural-length comparisons.
+Final-answer correctness does not certify intermediate steps.
+
+\subsection{Intervention Screening}
+\label{app:screening}
+
+We screen short-feature enhancement and joint short-enhancement/long-direction subtraction at $\rho\in\{0.05,0.15,0.30\}$.
+Each has a control matched in decoder-column count and actual perturbation norm, excluding target features from random sets.
+Including unmodified generation gives 13 conditions.
+The joint variant uses a fixed composite direction, not activation-gated suppression.
+Interventions act at the layer-17 post-block residual position predicting each next token, beginning with the first generated token.
+Conditions share prompts and per-question random uniforms but maintain independent attention caches.
+
+Selection uses 64 development problems.
+The shortest eligible condition must shorten mean length by at least 5\%, lose no more than five accuracy points, have a paired 95\% bootstrap length-difference interval below zero, and be shorter on average than its matched random control.
+A subsequent 64-problem check gives 246.44 versus 209.23 mean tokens, with unmodified and selected generation both correct on 64/64 problems.
+Both cohorts were previously used in SAE analysis; the accuracy threshold is not a non-inferiority test.
+The full teacher pool contains 10,572 outputs; its bootstrap intervals resample problems while retaining all four candidates together.
+
+\clearpage
+\subsection{Student Training and Budget Accounting}
+\label{app:training}
+
+All conditions start from the same pretrained student.
+LoRA uses rank 4, scaling factor 16, dropout 0.05, and all linear modules.
+Completion-only SFT runs for one epoch over each constructed dataset, with batch size 4, gradient accumulation 1, learning rate $2\times10^{-5}$, warmup ratio 0.03, BF16, maximum sequence length of 2,048 tokens without packing.
+Student seeds are 17, 42, and 73; these vary SFT, not SAE discovery.
+Evaluation uses \texttt{test[50:1319]}; the first 50 test problems are reserved for smoke checks.
+Final evaluation accuracy is not used to select interventions.
+
+After deduplication and shortest-correct selection, unmodified, SAE, and random generation cover 881, 880, and 879 problems, respectively.
+Intersecting these with natural-short support leaves 878 problems.
+Equal-example datasets contain 878 records and require 220 optimizer steps.
+Repeating complete solutions brings target-token totals to 215,643--215,722 (Table~\ref{tab:training_budgets}).
+Random-control data, weights, and predictions are identical across budgets for each seed, not independent replications.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Supervision & Equal-example target tokens & Equal-token steps \\
+\midrule
+Unmodified & 188,540 & 252 \\
+SAE short enhancement & 165,530 & 286 \\
+Matched random & 215,643 & 220 \\
+Natural short & 188,420 & 251 \\
+\bottomrule
+\end{tabular}
+\caption{Training-budget accounting. Every equal-example condition uses 220 steps; equal-token conditions have approximately matched token totals but different step counts.}
+\label{tab:training_budgets}
+\end{table}
+
+\subsection{Uncompleted Extension and Interpretation}
+\label{app:scope}
+
+A separately registered extension compares one, two, and four distinct correct responses per problem under SAE and unmodified generation on the same 878 problems.
+Repeating the shortest response two or four times controls record count, question exposure, and optimizer steps, but not target-token counts.
+Distinct text need not represent distinct mathematical solutions.
+No complete audited results are available, so no conclusions are drawn from partial runs.
+
+Lexical and answer-format explanations remain possible: random directions control feature count and perturbation magnitude, not semantics or activation prevalence.
+End-to-end savings would also need to include SAE fitting, candidate generation, selection, and intervention overhead.
+The present evidence does not establish that long traces are generally redundant.
+
+\section{SAE Diagnostics and Proposed Analysis Protocol}
+\label{app:sae_protocol}
+
+\subsection{Existing Dictionary-Quality Measurements}
+\label{app:sae_quality}
+
+Table~\ref{tab:sae_quality} reproduces the completed SAE audit's held-out reconstruction and activation-coverage measurements.
+The primary layer-17, TopK-64 SAE has explained variance 0.776 and approximately 0.18\% of features inactive on the measured test support.
+The much higher inactive fractions at TopK 32 motivate inspecting training-set activity and learning curves before interpreting differences in the number of discovered features.
+Test inactivity is not equivalent to a feature never activating during training.
+These measurements neither establish semantic purity nor demonstrate that reconstruction quality predicts steering utility.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{rrrr}
+\toprule
+Layer & TopK & Test explained variance & Test-inactive features (\%) \\
+\midrule
+10 & 32 & 0.812 & 53.52 \\
+10 & 64 & 0.837 & 1.38 \\
+17 & 32 & 0.747 & 36.18 \\
+17 & 64 & 0.776 & 0.18 \\
+23 & 32 & 0.759 & 18.16 \\
+23 & 64 & 0.789 & 0.10 \\
+\bottomrule
+\end{tabular}
+\caption{Existing measurements from the six completed SAEs, all trained with seed 17. Inactivity is measured on the audit's test support, not asserted over the full training distribution.}
+\label{tab:sae_quality}
+\end{table}
+
+\subsection{Region-Specific Activation and Counterexamples (Proposed)}
+\label{app:region_protocol}
+
+The reported eight short-associated features are F7339, F10807, F17885, F27038, F22686, F11240, F24148, and F26001 in the primary dictionary.
+All have reported high-activation examples at \texttt{Answer}; their IDs are dictionary-specific.
+For each feature, a region-specific analysis would report activation mass in the answer marker and suffix, body-token means, marker occurrence counts, and activation per marker occurrence.
+Paired effect estimates before and after excluding these regions would be displayed with uncertainty and support counts.
+Global sums would be diagnostic only, because they also depend on trace length.
+Discovery-set nuisance adjustments would be frozen before application to separate questions.
+
+Meaning-preserving rewrites would be checked for the same numerical dependencies and answer, while format-preserving incorrect variants would change a controlled calculation.
+Non-reasoning examples with injected marker tokens would test whether arithmetic content is necessary for activation.
+Results would include both successful and failed counterexamples rather than only the most interpretable feature examples.
+Deleting a word changes subsequent positions and states; aligned-span comparisons and matched control edits would therefore accompany lexical scrubbing.
+
+For early-prefix prediction, models using lexical counts and absolute position would serve as controls for the SAE representation.
+Dense residual features and PCA features would be additional representation baselines under the same question-grouped splits and development tuning budget.
+Only traces still generating at a fixed landmark contribute to remaining-length prediction, with early-termination coverage reported separately.
+Prediction quality measures readable information; it does not establish that the predicted feature causes the outcome.
+
+\subsection{Readback and Geometric Controls (Proposed)}
+\label{app:readback_protocol}
+
+Let $\mathcal{F}$ denote the selected feature set and $\Delta z=z'-z$ the same-state readback difference.
+We would report signed changes in the selected features, $\|\Delta z_{\mathcal F}\|_2$, and $\|\Delta z_{\overline{\mathcal F}}\|_2$ separately.
+An off-target-to-target ratio would be accompanied by its component magnitudes and the fraction of states with a near-zero target change, avoiding interpretation driven by an unstable denominator.
+Because aggregate off-target norms depend on how many coordinates are included, per-coordinate distributions and matched-random controls would also be reported.
+The KL convention would be fixed as $D_{\mathrm{KL}}(p_0\|p_\delta)$ using the actual next-token distributions after all remaining layers.
+
+Decoder cosine similarities, activation correlations, and singular values would characterize redundancy within the selected set.
+A discovered answer-format subspace could further decompose the composite direction $v$ into its projection and residual:
+\begin{equation}
+  v_{\mathrm{format}}=P_{\mathrm{format}}v,
+  \qquad v_{\mathrm{residual}}=(I-P_{\mathrm{format}})v.
+\end{equation}
+The subspace would be estimated on discovery data and tested on different questions.
+Interventions would disclose both component norms and any normalization multiplier; a negligible residual would not be amplified into a nominally equal-norm control.
+Persistence of an effect in the residual would test geometric separability from this estimated format subspace, not certify a pure reasoning mechanism.
+
+\subsection{Continuation, Robustness, and Student Checks (Proposed)}
+\label{app:continuation_protocol}
+
+Continuation tests would clone caches from the same naturally sampled 32- or 64-token prefix and record prefixes that end too early or already contain an answer marker.
+Shared random uniforms reduce sampling variation but do not force identical paths after conditions diverge.
+Windowed or single-position interventions would evaluate when an effect arises; rules triggered by future trace length would not be used for online steering.
+Sign reversal need not produce a symmetric response, so dose curves, correctness, and coverage would be reported together.
+
+Additional SAE seeds 42 and 73 at the primary setting would reuse a fixed corpus and activation-sampling budget.
+Feature matching would combine decoder geometry with activation profiles on separate questions and allow one-to-many correspondences.
+A question- or trace-balanced token-sampling sensitivity check would test whether longer traces influence dictionary fitting primarily through their greater token count.
+Reconstruction error would also be stratified by length, correctness, and position.
+None of these proposed retrainings is included in the current three-seed student result.
+
+Method-blinded paired annotation would count preserved mathematical dependencies, repeated calculations, explanations, verification, and answer formatting.
+Student likelihood comparisons would separate body, calculation, and answer tokens and report segment lengths.
+The final test would remain SFT on matched-support datasets and paired evaluation, rather than treating likelihood or text similarity as teaching-utility labels.
+Suggested visual summaries are region-by-feature activation matrices, cleaned versus original paired effects, target/off-target dose curves, and student accuracy--length plots with uncertainty.
+These figures require the corresponding completed measurements; no synthetic results are supplied for them in this draft.

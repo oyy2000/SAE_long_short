@@ -1,0 +1,9 @@
+{
+  "execution_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1/execution_v7/protocol/frozen_config.json",
+  "output_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1/final_review_v1",
+  "runtime": {
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ]
+  }
+}

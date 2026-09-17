@@ -25,7 +25,7 @@ Queued jobs, partial adapters, smoke checks, and Taylor agreement are not comple
 - `results/`: lightweight evidence, metrics, predictions, reports, and markers.
 - `figures/`: publication figures produced by analysis scripts.
 - `checkpoints/`: stable links to large BeeGFS adapter roots.
-- `docs/`: estimands, gate rules, and implementation boundaries.
+- `docs/`: [documentation index](docs/README.md), with experiment stages, environment notes, manuscripts, and tutorials.
 
 GPU admission on C30, C31, C32, and C49 is uniformly memory-fit: repeated physical checks require enough remaining memory for the registered workload plus margin, without requiring low utilization or near-zero existing allocation. Existing processes and `grabgpu` keepalives are preserved.
 
@@ -67,4 +67,4 @@ The retained but currently unsubmitted Phase-1 branch can be launched separately
 python scripts/1_0_submit_phase1_utility_core.py --submit-policy-continuation
 ```
 
-See the protocol documents in `docs/` for estimands and gate criteria.
+See the [experiment documentation](docs/experiments/README.md) for estimands and gate criteria.

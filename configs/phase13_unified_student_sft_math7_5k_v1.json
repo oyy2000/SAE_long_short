@@ -1,0 +1,128 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "students": {
+    "qwen1_5b_student": {
+      "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+    },
+    "qwen3b_student": {
+      "model_name": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    }
+  },
+  "lora": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training": {
+    "num_train_epochs": 3,
+    "max_length": 8192,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 5e-05,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "completion_only_loss": null,
+    "assistant_only_loss": false,
+    "packing": false,
+    "dataset_kwargs": {},
+    "logging_steps": 1,
+    "report_to": "none",
+    "disable_tqdm": true
+  },
+  "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1",
+    "minimum_free_mib": 40000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "03:00:00",
+        "nodelist": "c201n02"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "04:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_student_sft_math7_5k_v1",
+  "checkpoint_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/checkpoints/phase13_baseline_expansion_v1/formal/unified_student_sft_math7_5k_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_student_sft_math7_5k_launch_v1",
+  "raw_candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1",
+  "steered_candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_steered_v1",
+  "text_compression_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_text_compression_student_v1",
+  "sft_interface_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/smoke/unified_sft_interface_v1",
+  "expected_source_questions": 6723,
+  "tokenskip_ratios": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "student_seeds": [
+    17,
+    42,
+    73
+  ],
+  "primary_stage": {
+    "students": [
+      "qwen1_5b_student"
+    ],
+    "methods": [
+      "B1",
+      "B4",
+      "B5",
+      "B7"
+    ],
+    "sft_runs": 12
+  },
+  "regime": "equal_examples",
+  "claim_boundary": "First S4a core study on all-eight common correct support from a 7500-source MATH pool. Actual question count is resolved from complete raw, steered and rewritten/compressed data without repeating questions. Three student seeds; completion-only native chat labels, exact observed exposure and cost accounting. Training completion is distinct from complete five-benchmark student evaluation. S4b remaining four conditions, the 25K matrix and later scale/family/teacher/budget analyses remain required separately."
+}

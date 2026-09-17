@@ -1,0 +1,91 @@
+{
+  "project_id": "phase13_sae_feature_separation_v1",
+  "created_date": "2026-09-16",
+  "status": "planning_not_frozen",
+  "executable": false,
+  "launch_ready": false,
+  "objective": "Identify interpretable body-specific long-versus-short SAE features with independent question confirmation and cross-SAE-seed stability.",
+  "protocol_document": "docs/experiments/phase13/phase13_sae_feature_separation_project_zh.md",
+  "evidence_review": "docs/experiments/phase13/phase13_sae_feature_evidence_review_20260916_zh.md",
+  "result_root": "results/phase13_sae_feature_separation_v1",
+  "figure_root": "figures/phase13_sae_feature_separation_v1",
+  "teacher": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": null,
+    "tokenizer_sha256": null
+  },
+  "data_plan": {
+    "initial_dataset": "GSM8K train",
+    "development_pair_target": 128,
+    "pairing": "same_question_teacher_prompt_shortest_and_longest_unique_correct_natural_candidates",
+    "length_measure": "reasoning_body_tokens",
+    "tie_break": "candidate_id",
+    "candidate_budget_per_question": null,
+    "decoding_config": null,
+    "cohort_manifest": null,
+    "independent_confirmation_questions": null,
+    "exclude_capped_pairs": true,
+    "split_unit": "question_and_near_duplicate_group",
+    "reuse_observed_cohorts_as_independent_confirmation": false,
+    "report_full_pool_coverage": true
+  },
+  "sae_plan": {
+    "layer_index": 17,
+    "k": 64,
+    "feature_count": 28672,
+    "steps": 1500,
+    "seeds": [17, 42, 73, 101],
+    "reuse_requires_hash_and_input_validation": true,
+    "retraining_conditional_on_body_rescoring": true
+  },
+  "ablation_order": [
+    "F1_whole_body_marker_suffix",
+    "F2_body_mean_fixed_support_event_frequency",
+    "F3_natural_pairs_format_counterfactuals",
+    "F4_existing_dictionary_vs_body_balanced_training",
+    "F5_seed_functional_matching",
+    "F6_bidirectional_causal_controls"
+  ],
+  "provisional_feature_gate": {
+    "status": "design_defaults_require_freeze_before_confirmation",
+    "statistical_unit": "question",
+    "fixed_body_support_tokens": 64,
+    "discovery_bh_q_max": 0.05,
+    "absolute_paired_d_min": 0.5,
+    "discovery_question_coverage_min": 0.1,
+    "max_candidates_per_direction": 8,
+    "confirmation_holm_p_max": 0.05,
+    "confirmation_ci_level": 0.95,
+    "confirmation_ci_excludes_zero": true,
+    "consistent_seeds_min": 3,
+    "consistent_seeds_total": 4,
+    "feature_identity": "checkpoint_hash_layer_seed_feature_id",
+    "semantic_counterexamples_required": true,
+    "zero_candidates_is_valid_outcome": true
+  },
+  "stages": [
+    {"id": "P0", "status": "documentation_complete", "deliverable": "project_charter_and_evidence_review"},
+    {"id": "P1", "status": "not_started", "deliverable": "input_inventory_question_roles_pair_support"},
+    {"id": "P2", "status": "not_started", "requires": ["P1"], "deliverable": "exploratory_body_rescoring_feature_cards"},
+    {"id": "P3", "status": "not_started", "requires": ["P2"], "deliverable": "sampling_seed_analysis_confirmation_protocol"},
+    {"id": "P4", "status": "not_started", "requires": ["P3"], "deliverable": "independent_question_confirmation"},
+    {"id": "P5", "status": "not_started", "requires": ["P4"], "deliverable": "specific_readback_behavioral_intervention"},
+    {"id": "P6", "status": "not_started", "requires": ["P5"], "deliverable": "separately_registered_student_comparison"}
+  ],
+  "freeze_requirements": [
+    "input_checkpoint_model_tokenizer_hashes",
+    "question_exposure_decontamination_split_manifest",
+    "candidate_budget_decoding_answer_grading",
+    "token_span_alignment_body_region_definition",
+    "sae_sampling_normalization_training_exposure",
+    "sample_size_multiple_testing_family",
+    "semantic_annotation_matching_rules",
+    "ncsu_runtime_scratch_capacity_source_snapshot"
+  ],
+  "claim_boundaries": [
+    "Historical features require new evidence before semantic relabeling.",
+    "Locally unavailable historical artifacts remain documentary evidence only.",
+    "Body association, causal behavior and student utility are separate endpoints.",
+    "This planning file does not represent a new experiment or successful feature discovery."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_inventory_launch_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_inventory_v1",
+  "dataset": {
+    "repo_id": "open-thoughts/OpenThoughts-114k",
+    "revision": "bd093c3994fd54d2390985b66988ddf282a55eb6",
+    "metadata_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/dap_source_data_audit_v1/openthoughts_metadata.json",
+    "file_prefix": "metadata/"
+  },
+  "staged_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_metadata_staging_v1",
+  "expected_files": 12,
+  "expected_rows": 113957,
+  "batch_size": 512,
+  "target_unique_questions": 25000,
+  "near_duplicate": {
+    "ngram": 5,
+    "threshold": 0.8
+  },
+  "references": [
+    {
+      "name": "evaluation_gsm8k",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/sources/gsm8k.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/COMPLETE.json",
+      "expected_rows": 1319,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "evaluation_gsm8k_hard",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/sources/gsm8k_hard.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/COMPLETE.json",
+      "expected_rows": 1319,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "evaluation_math500",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/sources/math500.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/COMPLETE.json",
+      "expected_rows": 500,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "evaluation_aqua_rat",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/sources/aqua_rat.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/COMPLETE.json",
+      "expected_rows": 254,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "evaluation_olympiadbench",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/sources/olympiadbench.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1/COMPLETE.json",
+      "expected_rows": 674,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "math_calibration",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/cohorts/calibration.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/COMPLETE.json",
+      "expected_rows": 400,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "math_development",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/cohorts/development.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/COMPLETE.json",
+      "expected_rows": 300,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "math_dap_development_reserved",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/cohorts/dap_development_reserved.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/COMPLETE.json",
+      "expected_rows": 64,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "math_student_pool",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/cohorts/student_pool.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1/COMPLETE.json",
+      "expected_rows": 6723,
+      "exclusion_scope": "informational"
+    },
+    {
+      "name": "sae_new_questions",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/inputs/questions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/protocol/FROZEN.json",
+      "expected_rows": 1000,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "sae_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/inputs/smoke_questions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/protocol/FROZEN.json",
+      "expected_rows": 8,
+      "exclusion_scope": "holdout"
+    },
+    {
+      "name": "sae_historical",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/ncsu_phase12_reproduction_v1/exploratory/inputs/questions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/protocol/FROZEN.json",
+      "expected_rows": 881,
+      "exclusion_scope": "holdout"
+    }
+  ],
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "cpus": 4,
+    "memory": "24G",
+    "time": "02:00:00",
+    "nodelist": "c026n04"
+  },
+  "scope": "Structural source inventory only; zero reference answers validated and no new training cohort selected. Original independent ground_truth_solution only, never generated teacher answers."
+}

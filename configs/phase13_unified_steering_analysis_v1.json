@@ -1,0 +1,11 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "steered_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steered_math_candidates_dev_v1",
+  "text_compression_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steering_analysis_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steering_analysis_launch_v1",
+  "code_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steering_analysis_launch_v1/code",
+  "bootstrap_samples": 5000,
+  "bootstrap_seed": 2026091321,
+  "claim_boundary": "Exploratory MATH development operating-point selection using the pre-recorded filters, equal-question paired token differences, and all original candidate outcomes. No training/decoding-seed uncertainty estimate, independent confirmation, noninferiority claim, student-pool generation, or student SFT is completed by this analysis."
+}

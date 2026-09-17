@@ -1,0 +1,79 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_answer_review_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_seed_answer_review_launch_v1",
+  "sources": [
+    {
+      "name": "sae_seed_supplement",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_00/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 128,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_seed_supplement",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_01/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_01/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 128,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_seed_supplement",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_02/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_02/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 128,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_seed_supplement",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_03/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/generation/seed_stability/shard_03/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 128,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_seed_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/smoke/seed_stability/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1/smoke/seed_stability/shard_00/COMPLETE.json"
+      ],
+      "expected_rows": 64,
+      "expected_unique_questions": 8,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    }
+  ],
+  "expected_total_records": 576,
+  "timeout_seconds": 5,
+  "claim_boundary": "Fresh final-answer review of exploratory top-3 SAE seed generation and separate smoke. Preserve original per-text grades; assistant final-answer review is not independent human reasoning annotation."
+}

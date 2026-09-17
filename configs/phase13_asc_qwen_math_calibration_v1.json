@@ -1,0 +1,138 @@
+{
+  "experiment_name": "phase13_asc_qwen_math_calibration_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1",
+  "evidence_level": "MATH_training_role_calibration_and_development_only",
+  "formal_claim_allowed": false,
+  "seed": 17,
+  "source_audit": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/source_audit_v1/COMPLETE.json",
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "asc": {
+    "pairs": 100,
+    "pair_split": "train",
+    "concise_source": "Verified unmodified official MATH reference solution; all gold-repaired references excluded and logged.",
+    "verbose_source": "Fresh Qwen2.5-7B-Instruct samples from the frozen calibration role only.",
+    "layer_index": 16,
+    "layer_index_convention": "zero-based transformer block output",
+    "initialization": "zero",
+    "learning_rate": 0.01,
+    "batch_size": 2,
+    "weight_decay": 0,
+    "steps": 3000,
+    "epsilon": 0.02,
+    "kl_coefficient": 20.0,
+    "general_samples": 2000,
+    "general_batch_size": 2,
+    "general_max_length": 512,
+    "max_sequence_length": 8192,
+    "log_every": 25,
+    "smoke_steps": 8,
+    "include_response_eos": true,
+    "general_text_source": "Salesforce/wikitext",
+    "general_text_subset": "wikitext-2-raw-v1",
+    "general_text_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "general_parquet": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--Salesforce--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+    "general_holdout_samples": 64
+  },
+  "validation": {
+    "count": 64,
+    "split": "MATH development",
+    "source_candidates": 4,
+    "source_selection": "64 hash-selected MATH development questions, without outcome filtering",
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "repetition_penalty": 1.0,
+    "asc_scales": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "subset_seed": 2026091313,
+    "retain_token_ids": true
+  },
+  "dap": {
+    "prompt_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_dap_prompt_math_v2.json",
+    "max_new_tokens": 2048,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "repetition_penalty": 1.0,
+    "num_rewrites_per_source": 1
+  },
+  "tokenskip": {
+    "model_name": "microsoft/llmlingua-2-xlm-roberta-large-meetingbank",
+    "revision": "ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--microsoft--llmlingua-2-xlm-roberta-large-meetingbank/snapshots/ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "package_version": "0.2.2",
+    "family": "qwen",
+    "ratios": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "ratio_assignment_seed": 42,
+    "selection": "one assigned ratio per source question for training; all ratios only for compression validation"
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 65000,
+    "gpu_account": "jekml_gpu",
+    "gpu_partition": "gpu",
+    "gpu_qos": "gpu",
+    "gpu_type": "h100",
+    "cpus": 4,
+    "memory": "64G",
+    "gpu_time": "04:00:00",
+    "auxiliary_cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/phase13_baselines"
+  },
+  "adaptations": [
+    "Task-specific calibration for the unified main Qwen-7B teacher; does not claim an original ASC published-model reproduction.",
+    "Use 100 unique verified long-reference pairs from the frozen 400-question MATH calibration role; never use student or development questions for vector fitting.",
+    "Preserve CES mean response energy, full-vocabulary WikiText forward-KL, 3000 steps, and all registered optimizer/layer settings.",
+    "Reuse identical pinned WikiText training and held-out rows from the native-GSM check; mathematics rows and target teacher are new.",
+    "4K generation budget is twice the 2K proposal from the fixed 32-question unmodified-teacher diagnostic; retained cap hits and full dev scale curve must still be audited.",
+    "Native CoT boxed prompt is the same across fresh calibration, teacher forcing and development generation.",
+    "The 64 development questions are selected without correctness filtering; this stage cannot train a student or populate DAP/TokenSkip with official reference traces.",
+    "Use the frozen typed mathematics grader, preserving tuple order, interval endpoints and numerical bases."
+  ],
+  "calibration_generation": {
+    "pool_size": 400,
+    "max_candidates_per_question": 4,
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "repetition_penalty": 1.0,
+    "selection": "first correct noncapped target-model candidate longer than reference; stable pool order; stop at 100 unique pairs",
+    "retain_token_ids": true
+  },
+  "grading": {
+    "method": "typed_math_v2"
+  },
+  "prompt_policy": {
+    "rendering": "native_chat",
+    "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+    "concise_answer_format": "boxed",
+    "rationale": "Published Section 5.1 uses standard CoT prompts for target-model verbose traces. Prior project prompts suppress native R1 verbosity; this is a separately frozen development fidelity check, not a recovered exact author prompt."
+  },
+  "math_cohorts": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1",
+  "generic_parent": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1",
+  "cap_diagnostic_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/math_cap_calibration_v1",
+  "allowed_stages": [
+    "test",
+    "prepare",
+    "asc-calibrate",
+    "asc-smoke",
+    "asc-train",
+    "asc-smoke-eval",
+    "asc-eval"
+  ]
+}

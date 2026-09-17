@@ -38,12 +38,16 @@ class MeasuredSAEController(SAEInterventionController):
         self.activation_after = 0.0
         self.measured_values = 0
 
-    def feature_values(self, hidden, feature_ids=None):
+    def sparse_codes(self, hidden):
+        """Return the actual TopK indices and post-ReLU values in runtime dtype."""
         torch = self.torch
         centered = (hidden - self.activation_mean) * self.scale - self.decoder_bias
         pre = torch.nn.functional.linear(centered, self.encoder_weight, self.encoder_bias)
         values, indices = torch.topk(pre, self.k, dim=-1, sorted=False)
-        values = values.relu()
+        return indices, values.relu()
+
+    def feature_values(self, hidden, feature_ids=None):
+        indices, values = self.sparse_codes(hidden)
         ids = self.measured_ids if feature_ids is None else feature_ids
         # Preserve actual TopK membership, not merely positive encoder logits.
         return ((indices.unsqueeze(-1) == ids) * values.unsqueeze(-1)).sum(dim=-2)

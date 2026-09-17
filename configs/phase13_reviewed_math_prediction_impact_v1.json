@@ -1,0 +1,163 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_prediction_impact_launch_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_prediction_impact_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_cohort_v2",
+  "source_roles": [
+    "calibration",
+    "development"
+  ],
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "groups": [
+    {
+      "name": "asc_calibration_attempts",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_calibration/attempts.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_calibration/COMPLETE.json",
+      "response_field": "solution",
+      "expected_records": 184,
+      "expected_questions": 118,
+      "key_fields": [
+        "problem_id",
+        "candidate_index"
+      ],
+      "question_role": "calibration",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "asc_fit_concise",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_calibration/pairs.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_calibration/COMPLETE.json",
+      "response_field": "concise",
+      "expected_records": 100,
+      "expected_questions": 100,
+      "key_fields": [
+        "problem_id"
+      ],
+      "question_role": "calibration",
+      "expected_stored_correct": true
+    },
+    {
+      "name": "asc_fit_verbose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_calibration/pairs.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_calibration/COMPLETE.json",
+      "response_field": "verbose",
+      "expected_records": 100,
+      "expected_questions": 100,
+      "key_fields": [
+        "problem_id"
+      ],
+      "question_role": "calibration",
+      "expected_stored_correct": true
+    },
+    {
+      "name": "dense_fit_concise",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_v1/inputs/pairs.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_v1/protocol/FROZEN.json",
+      "response_field": "concise",
+      "expected_records": 100,
+      "expected_questions": 100,
+      "key_fields": [
+        "problem_id"
+      ],
+      "question_role": "calibration",
+      "expected_stored_correct": true
+    },
+    {
+      "name": "dense_fit_verbose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_v1/inputs/pairs.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_steering_directions_v1/protocol/FROZEN.json",
+      "response_field": "verbose",
+      "expected_records": 100,
+      "expected_questions": 100,
+      "key_fields": [
+        "problem_id"
+      ],
+      "question_role": "calibration",
+      "expected_stored_correct": true
+    },
+    {
+      "name": "asc_native_development",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_generation/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1/asc_generation/COMPLETE.json",
+      "response_field": "solution",
+      "expected_records": 320,
+      "expected_questions": 64,
+      "key_fields": [
+        "problem_id",
+        "scale"
+      ],
+      "question_role": "development",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "raw_development",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_dev_v1/selection/development/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_dev_v1/selection/development/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 512,
+      "expected_questions": 64,
+      "key_fields": [
+        "problem_id",
+        "condition",
+        "candidate_index"
+      ],
+      "question_role": "development",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "steered_development",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steered_math_candidates_dev_v1/selection/development/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steered_math_candidates_dev_v1/selection/development/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 3072,
+      "expected_questions": 64,
+      "key_fields": [
+        "problem_id",
+        "condition",
+        "candidate_index"
+      ],
+      "question_role": "development",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "dap_development",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_v1/merged/development/dap_all_rewrites.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_v1/merged/development/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 194,
+      "expected_questions": 56,
+      "key_fields": [
+        "problem_id",
+        "candidate_index"
+      ],
+      "question_role": "development",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "tokenskip_development",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_v1/merged/development/tokenskip_all_compressions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_dev_v1/merged/development/COMPLETE.json",
+      "response_field": "completion",
+      "expected_records": 336,
+      "expected_questions": 56,
+      "key_fields": [
+        "problem_id",
+        "ratio"
+      ],
+      "question_role": "development",
+      "correct_field": "final_answer_grade.is_correct"
+    }
+  ],
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "node": "c026n04",
+    "cpus": 2,
+    "memory": "4G",
+    "time": "00:15:00"
+  },
+  "scope": "Complete stored calibration and development artifacts, including both fitted direction inputs and all raw/steered/text development outputs. Diagnostic regrading only; changed cases, source selection and operating-point consequences require follow-up. No test prediction evaluation, no student-pool clearance, no historical mutations."
+}

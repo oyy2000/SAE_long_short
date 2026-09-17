@@ -1,0 +1,145 @@
+{
+  "experiment_name": "phase13_tokenskip_author_sft_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1",
+  "checkpoint_root": "checkpoints/phase13_tokenskip_author_sft_v1",
+  "launch_root": "results/phase13_baseline_expansion_v1/preparation/tokenskip_sft_launches_v1",
+  "formal_claim_allowed": false,
+  "role": "Original-setting SFT reproduction from released TokenSkip Qwen3B GSM8K data; separate from unified-teacher main matrix.",
+  "author_training_data": "results/phase13_baseline_expansion_v1/preparation/tokenskip_training_source_v1/author_training_data.json",
+  "author_source_metadata": "results/phase13_baseline_expansion_v1/preparation/tokenskip_training_source_v1/source.json",
+  "expected_author_records": 6638,
+  "gsm8k": {
+    "repo_id": "openai/gsm8k",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "train_arrow": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-train.arrow",
+    "test_arrow": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-test.arrow"
+  },
+  "student": {
+    "model_name": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "torch_dtype": "bfloat16",
+    "use_lora": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.0,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "up_proj",
+        "down_proj",
+        "gate_proj"
+      ]
+    }
+  },
+  "author_adapter": {
+    "model_name": "hemingkx/TokenSkip-Qwen2.5-3B-Instruct-GSM8K",
+    "revision": "e5d68b17146eff33722874f59d181aadc7428c91",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--hemingkx--TokenSkip-Qwen2.5-3B-Instruct-GSM8K/snapshots/e5d68b17146eff33722874f59d181aadc7428c91"
+  },
+  "ratios": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "seed": 42,
+  "split_seed": 42,
+  "validation_fraction": 0.1,
+  "grading_timeout_seconds": 5,
+  "training": {
+    "num_train_epochs": 3,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 5e-05,
+    "warmup_ratio": 0.1,
+    "lr_scheduler_type": "cosine",
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "logging_steps": 10,
+    "save_strategy": "steps",
+    "save_steps": 300,
+    "save_total_limit": 2,
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "max_length": 2048,
+    "completion_only_loss": true,
+    "assistant_only_loss": false,
+    "packing": false,
+    "report_to": "none"
+  },
+  "evaluation": {
+    "split": "test[50:1319]",
+    "batch_size": 32,
+    "max_new_tokens": 512,
+    "cap_policies": [
+      "fixed",
+      "scaled"
+    ],
+    "system_prompt": "You are a helpful assistant.",
+    "decode": "greedy",
+    "dtype": "bfloat16"
+  },
+  "smoke": {
+    "training_records": 32,
+    "training_steps": 4,
+    "evaluation_questions": 2
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 24000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "12G",
+        "time": "00:30:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "12:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "adaptations": [
+    "Author training data is preserved verbatim; LLMLingua2 reconstruction already checked separately, and unified-teacher data remains a later comparison.",
+    "Use pinned project TRL 0.9.6 / Transformers 4.48.3 rather than LLaMA-Factory; match LoRA rank, alpha, dropout, target modules, learning rate, effective batch and 3-epoch configuration.",
+    "Use native Qwen default system for SFT formatting and the explicit published evaluation system; ratio text itself is identical in both paths.",
+    "Use the locked 1269-question evaluation, not the full 1319-question paper aggregate.",
+    "Report both fixed 512-token caps and integer-floor 512*ratio caps; ratio1 is one shared condition.",
+    "Use BF16 SDPA for all three comparison models; upstream Transformers fallback used FP16 and vLLM was optional.",
+    "The published adapter accompanying trainer_state records global_step600/max_steps2238; do not assert it represents a full three-epoch checkpoint.",
+    "No test-based ratio/checkpoint selection; report all ratios. Periodic validation-loss evaluation is omitted; final fixed-step model is used."
+  ]
+}

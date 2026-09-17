@@ -1,0 +1,32 @@
+{
+  "parent_root": "results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/preparation/math_data_review_v1",
+  "near_match_policy": "Exclude all 12 flagged training questions, including related questions with different requested quantities; preserve the evaluation sets.",
+  "expected_near_match_exclusions": 12,
+  "expected_duplicate_exclusions": 1,
+  "expected_gold_repairs": 17,
+  "gsmhard_parent_overrides": {
+    "gsm8k_hard-00120": "gsm8k-00170",
+    "gsm8k_hard-01052": "gsm8k-00359",
+    "gsm8k_hard-01079": "gsm8k-00993"
+  },
+  "gold_repairs": {
+    "math_train-00888": {"answer": "2", "kind": "symbolic", "reason": "The reference uses unbraced \\boxed 2; the larger root is 2."},
+    "math_train-01011": {"answer": "9", "kind": "symbolic", "reason": "The reference uses unbraced \\boxed 9; x^2+y^2=1-2(-4)=9."},
+    "math_train-01556": {"answer": "8.24", "kind": "symbolic", "reason": "Remove approx and mph from the reference; the question explicitly requests rounding to hundredths."},
+    "math_train-01652": {"answer": "-\\frac{5}{3}", "kind": "symbolic", "reason": "Remove sentence punctuation inside the final box."},
+    "math_train-01907": {"answer": "\\frac{1}{29322216}", "kind": "symbolic", "reason": "Normalize TeX thousands separators; denominator equals 27*binomial(44,5)."},
+    "math_train-02873": {"answer": "30", "kind": "symbolic", "reason": "Remove the degree suffix and sentence punctuation; the requested unit is degrees."},
+    "math_train-03964": {"answer": "a+b+c", "kind": "symbolic", "reason": "No semantic correction; the old extraction regex missed this alphabetic expression."},
+    "math_train-04688": {"answer": "E", "kind": "choice", "reason": "Normalize the explicit reference choice (E), removing text wrapper and punctuation."},
+    "math_train-05341": {"answer": "0", "kind": "symbolic", "reason": "Source box is empty. The reference proves every integer strictly between n!+1 and n!+n is composite, so the count is 0 (option A)."},
+    "math_train-05343": {"answer": "0", "kind": "symbolic", "reason": "Source box is empty. Every n in 2..59 shares a prime factor with P, so every P+n is composite and N=0 (option A)."},
+    "math_train-05417": {"answer": "\\frac{2469}{20000}", "kind": "symbolic", "reason": "Normalize TeX thousands separators; equals 0.12345."},
+    "math_train-05455": {"answer": "43_5", "kind": "radix", "base": 5, "reason": "Remove sentence punctuation and retain base 5. A generic parser incorrectly reads this as decimal 43; require a radix-aware grader."},
+    "math_train-06477": {"answer": "7", "kind": "symbolic", "reason": "Remove hours and sentence punctuation; 7!/(12*60)=7 hours."},
+    "math_train-06786": {"answer": "\\begin{pmatrix}1&-1\\\\1&1\\end{pmatrix}", "kind": "symbolic", "reason": "The reference uses \\phantom - to hide a minus sign before positive 1. Columns are (1,1) and (-1,1)."},
+    "math_train-06811": {"answer": "2007+\\frac{\\pi}{2}", "kind": "symbolic", "reason": "Expand unbraced TeX fraction arguments without changing its value."},
+    "math_train-06939": {"answer": "\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}", "kind": "symbolic", "reason": "Remove sentence punctuation after the matrix inside the final box."},
+    "math_train-06943": {"answer": "\\sin^2(t)", "kind": "symbolic", "reason": "Make the function argument explicit for extraction; preserves the reference sin squared of t."}
+  }
+}

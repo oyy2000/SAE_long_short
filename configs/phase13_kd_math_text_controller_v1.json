@@ -1,0 +1,10 @@
+{
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/kd_math_text_controller_v1",
+  "text_prepare_job": 856485,
+  "text_result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_text_compression_student_reviewed_kd_v1",
+  "raw_reviewed_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_reviewed_v1",
+  "shards": 32,
+  "dap_lanes": 2,
+  "tokenskip_lanes": 2,
+  "claim_boundary": "Bounded H200 DAP and L40S TokenSkip smoke, 32 disjoint shards each and full merge. Wait for reviewed raw and frozen text preparation. No SFT/KD training release."
+}

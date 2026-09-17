@@ -1,0 +1,33 @@
+\section{Related Work}
+\label{sec:related_work}
+
+\paragraph{Reasoning supervision and trace selection.}
+Chain-of-thought reasoning exposes intermediate steps that can serve as supervision for smaller models~\citep{wei2022chain,hsieh2023distilling}.
+However, stronger teachers and longer traces do not consistently improve small-student performance; mixing reasoning of different complexity can be more effective~\citep{li2025small}.
+This motivates comparisons among random-correct, shortest-correct, and mixed-length supervision from a common candidate pool.
+Our within-problem design fixes teacher identity, problem content, and final-answer correctness, while separately accounting for supervision volume.
+It investigates the usefulness of generated sequences through SFT, without teacher-logit matching.
+
+\paragraph{Compression before distillation.}
+LiteCoT uses difficulty-aware prompting to rewrite teacher solutions into concise traces~\citep{wu2025concise}.
+Compress-Distill studies post-hoc compression at multiple student scales and reports lower training and inference costs alongside an accuracy trade-off~\citep{griot2026compress}.
+These methods establish textual compression as a direct comparator for constructing student supervision.
+Our framework modifies activations while the teacher generates a solution, but this implementation difference alone does not establish better teaching data.
+Comparisons must account for reference-trace generation, rewriting calls, usable-answer coverage, and student training budgets.
+An ordinary shortening prompt is also distinct from a full difficulty-aware rewriting pipeline and should be evaluated under its own name.
+
+\paragraph{Activation-based reasoning control.}
+ASC learns a steering vector from verbose--concise pairs to shorten chain-of-thought generation~\citep{azizi2026activation}.
+Its published formulation uses a length-normalized contrastive energy objective and a KL trust-region constraint, making it distinct from a simple difference-of-means baseline.
+Other work extracts SAE features to steer reasoning and also studies an SAE-free alternative~\citep{li2025feature}, or identifies strategy-associated features through keyword screening followed by intervention-based ranking~\citep{fang2026controllable}.
+Our focus is how naturally occurring length contrasts inform the generation of student training data.
+Dense directions, concise prompting, and norm-matched random feature sets test whether an SAE dictionary provides incremental value for this objective.
+Because our selected features have high activation near answer markers, an answer-format direction is an additional mechanistic control specific to the present evidence.
+
+\paragraph{Sparse features, interpretation, and transfer.}
+SAEs provide sparse decompositions of model activations, with TopK architectures controlling the number of active features~\citep{cunningham2023sparse,gao2024scaling}.
+Such decompositions do not guarantee that individual features correspond to reasoning operations.
+\citet{ma2026reasoning} demonstrate that contrastively identified candidates can respond to lexical injections and non-reasoning counterexamples, motivating tests of semantic invariance and alternative explanations.
+We therefore separate observed length associations, intervention-induced changes to model states, changes to generated content, and effects on student learning.
+Steering vector distillation already demonstrates behavioral transfer through outputs from steered teachers~\citep{blank2026subliminal}; the teacher-intervention-to-student-training pipeline itself is not our novelty claim.
+Our proposed baseline and SAE analyses instead test what the selected directions control and whether that control provides useful supervision beyond simpler ways of shortening responses.

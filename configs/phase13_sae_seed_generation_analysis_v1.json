@@ -1,0 +1,10 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "generation_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_v1",
+  "review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_answer_review_v1/finalized",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_generation_analysis_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_seed_generation_analysis_launch_v1",
+  "bootstrap_samples": 5000,
+  "bootstrap_seed": 2026091323,
+  "claim_boundary": "Post-count exploratory top-3 adaptation on 64 previously observed questions with four dictionaries, one generation stream and common H200 routing. Descriptive question-paired intervals conditional on fixed dictionaries. Original eight-feature infeasibility remains; no independent confirmation, noninferiority, student effect or end-to-end cost claim."
+}

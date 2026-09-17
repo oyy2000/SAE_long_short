@@ -1,0 +1,20 @@
+{
+  "node": "gpu18",
+  "user": "youyang7",
+  "failed_jobs": [
+    {
+      "seed": 42,
+      "job_id": 823088
+    },
+    {
+      "seed": 73,
+      "job_id": 823089
+    },
+    {
+      "seed": 101,
+      "job_id": 823090
+    }
+  ],
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_failed_scratch_archive_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_failed_scratch_archive_launch_v1"
+}

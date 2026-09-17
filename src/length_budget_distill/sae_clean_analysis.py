@@ -92,7 +92,7 @@ def analyze_clean_features(path,project):
     selection={'status':'complete','gate_passed':bool(selected),'candidate_count':len(candidates),'passed_count':len(passed),'candidates':candidates,'selected':selected,'config_hash':canonical_sha256(config),'formal_claim_allowed':False}
     selection_path=output/'selected_features.json';write_json_exclusive(selection_path,selection)
     figures=plot_clean_feature_gate(config,statistics,candidates,project)
-    old= config['old_selected_features']['short_feature_ids']
+    old=config.get('old_selected_features',{}).get('short_feature_ids',[])
     report=output/'feature_gate_report_zh.md'
     lines=['# 固定推理 token 的 SAE 特征重筛选','',f'发现集：{config["cohort_audit"]["dev"]}；确认集：{config["cohort_audit"]["test"]}。',f'每条轨迹固定 {width} 个 token，全部 {feature_count} 个特征完成重评分。',f'发现集预筛通过 {int(eligible.sum())} 个；注册候选 {len(candidates)} 个；最终通过 {len(passed)} 个。','', '| 原短特征 | 确认集清理后 d | 确认集校正后 d | 清理后 p |','|---|---:|---:|---:|']
     for fid in old:lines.append(f'| {fid} | {t["clean"]["paired_d"][fid]:.4f} | {t["adjusted"]["paired_d"][fid]:.4f} | {t["clean"]["p_value"][fid]:.4g} |')
@@ -114,13 +114,19 @@ def plot_clean_feature_gate(config,statistics,candidates,project):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     out=project/config['outputs']['figure_root'];out.mkdir(parents=True,exist_ok=False)
-    old_path=Path(config['old_selected_features']['selection_source_path'])
-    old={r['feature_id']:r for r in read_json(old_path)['candidates']}
-    ids=config['old_selected_features']['short_feature_ids']
-    x=np.arange(len(ids));figure,axes=plt.subplots(1,2,figsize=(12,4.7))
-    for offset,label,color,array in [(-.25,'Original full-trace','#4472C4',[old[f]['metrics']['token_mean_activation']['test']['paired_d'] for f in ids]),(0,'Fixed clean 64 tokens','#70AD47',[statistics['test']['clean']['paired_d'][f] for f in ids]),(.25,'Clean + nuisance adjustment','#ED7D31',[statistics['test']['adjusted']['paired_d'][f] for f in ids])]:
-        axes[0].bar(x+offset,array,width=.24,label=label,color=color)
-    axes[0].set_xticks(x,[str(f) for f in ids]);axes[0].set_ylabel('Confirmation paired d (short minus long)');axes[0].set_xlabel('Previously selected short feature');axes[0].legend(fontsize=8);axes[0].axhline(0,color='gray',linewidth=.8)
+    ids=config.get('old_selected_features',{}).get('short_feature_ids',[])
+    figure,axes=plt.subplots(1,2,figsize=(12,4.7))
+    if ids:
+        old_path=Path(config['old_selected_features']['selection_source_path'])
+        old={r['feature_id']:r for r in read_json(old_path)['candidates']}
+        x=np.arange(len(ids))
+        for offset,label,color,array in [(-.25,'Original full-trace','#4472C4',[old[f]['metrics']['token_mean_activation']['test']['paired_d'] for f in ids]),(0,'Fixed clean 64 tokens','#70AD47',[statistics['test']['clean']['paired_d'][f] for f in ids]),(.25,'Clean + nuisance adjustment','#ED7D31',[statistics['test']['adjusted']['paired_d'][f] for f in ids])]:
+            axes[0].bar(x+offset,array,width=.24,label=label,color=color)
+        axes[0].set_xticks(x,[str(f) for f in ids]);axes[0].set_xlabel('Previously selected short feature');axes[0].legend(fontsize=8)
+    else:
+        axes[0].hist(statistics['test']['clean']['paired_d'],bins=80,color='#70AD47')
+        axes[0].set_xlabel('Clean paired d across new SAE features')
+    axes[0].set_ylabel('Confirmation paired d (short minus long)' if ids else 'Feature count');axes[0].axhline(0,color='gray',linewidth=.8)
     if candidates:
         for passed,color,label in [(False,'#999999','Rejected'),(True,'#4472C4','Passed')]:
             r=[r for r in candidates if r['passed']]

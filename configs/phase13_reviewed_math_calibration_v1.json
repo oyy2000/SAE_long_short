@@ -1,0 +1,38 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "experiment_name": "phase13_asc_qwen_math_reviewed_v1",
+  "parent_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_cohort_v2",
+  "impact_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_prediction_impact_v1",
+  "impact_review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_gate_v1/prediction_impact_review_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_calibration_launch_v1",
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "expected_parent_attempts": 184,
+  "expected_added_trace_ids": [
+    "target-math_train-07414-0"
+  ],
+  "expected_removed_trace_ids": [
+    "target-math_train-06821-0"
+  ],
+  "reason": "Source-bound reviewed targets make the first saved candidate for math_train-07414 eligible. Rebuild the complete reference pool and exact first-eligible prefix, retaining all parent traces and original generation settings. Refit ASC-CES and dense before revising development operating points and student generation.",
+  "fit_runtime_overlay": {
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "gpu_account": "jekml_gpu",
+    "gpu_partition": "gpu_partners",
+    "gpu_qos": "short_gpu",
+    "gpu_type": "h200",
+    "gpu_time": "02:00:00"
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "node": "c026n04",
+    "cpus": 2,
+    "memory": "8G",
+    "time": "00:30:00"
+  }
+}

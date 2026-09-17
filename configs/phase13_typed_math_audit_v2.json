@@ -1,0 +1,14 @@
+{
+  "result_root": "results/phase13_baseline_expansion_v1/preparation/typed_math_audit_v2",
+  "preflight_root": "results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1",
+  "review_root": "results/phase13_baseline_expansion_v1/preparation/math_data_review_v1",
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "expected_counts": {
+    "math_train": 7487,
+    "math500": 500,
+    "gsm8k": 1269,
+    "gsm8k_hard": 1269,
+    "aqua_rat": 254,
+    "olympiadbench": 674
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/kd_math_source_preparation_v2",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_raw_student_impact_kd_v2",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_cohort_v2",
+  "source_roles": [
+    "development",
+    "student_pool"
+  ],
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "groups": [
+    {
+      "name": "raw_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1/selection/smoke/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1/selection/smoke/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 64,
+      "expected_questions": 8,
+      "key_fields": [
+        "problem_id",
+        "condition",
+        "candidate_index"
+      ],
+      "question_role": "development",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "raw_student_pool",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/raw_math_candidate_archive_kd_v1/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/raw_math_candidate_archive_kd_v1/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 53784,
+      "expected_questions": 6723,
+      "key_fields": [
+        "problem_id",
+        "condition",
+        "candidate_index"
+      ],
+      "question_role": "student_pool",
+      "correct_field": "is_correct"
+    }
+  ],
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ],
+    "storage_policy": {
+      "small_cache_bytes": 16777216,
+      "encoded_copies": 4,
+      "adapter_copies": 3,
+      "serialized_bytes_per_token": 48,
+      "safety_factor": 2.0,
+      "rationale": "Administrator-designated scratch only; no model copies or periodic checkpoints. Encoded-data copies and three fp32 adapter copies cover training and final publication staging. Check filesystem capacity and user/group quota; never fall back to system or project scratch.",
+      "scratch_root": "/share/jekml/youyang7/tmp",
+      "scratch_quota": {
+        "filesystem": "gpfsHPCcommon2",
+        "fileset": "Share01",
+        "group": "jekml",
+        "command": "/usr/lpp/mmfs/bin/mmlsquota",
+        "attribute_command": "/usr/lpp/mmfs/bin/mmlsattr"
+      },
+      "minimum_available_inodes": 256
+    },
+    "route": {
+      "account": "jekml_cpu",
+      "partition": "compute_partners",
+      "qos": "short",
+      "cpus": 4,
+      "memory": "64G",
+      "time": "02:00:00"
+    }
+  },
+  "scope": "Archive all 32 immutable raw shards with token/text, identity, grid, batch-cost and hash audits. Preserve historical scores without certifying reproducibility. Diagnose stored/v2/reviewed score differences before selection migration or KD training.",
+  "parent_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1",
+  "historical_jobs": [
+    822575,
+    824506
+  ],
+  "archive_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/raw_math_candidate_archive_kd_v1"
+}

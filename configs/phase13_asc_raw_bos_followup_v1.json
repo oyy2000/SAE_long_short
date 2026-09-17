@@ -1,0 +1,22 @@
+{
+  "parents": {
+    "qwen": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+    "r1": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2"
+  },
+  "runtime": {
+    "minimum_free_mib": 24000
+  },
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_raw_bos_followup_v1",
+  "objective_diagnostic_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_objective_diagnostic_v1",
+  "expected_questions": 64,
+  "new_scales": [],
+  "prompt_questions": 16,
+  "prompt_seed": 2026091307,
+  "prompt_probes": {
+    "legacy_raw_question_with_bos": {
+      "rendering": "raw_single_user",
+      "suffix": ""
+    }
+  },
+  "claim_boundary": "Corrected raw-question diagnostic retaining the R1 tokenizer default BOS token (151646). Earlier raw-no-BOS outputs remain a separate confounded probe; no new steering fit or student training."
+}

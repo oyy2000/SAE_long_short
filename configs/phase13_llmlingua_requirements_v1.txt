@@ -1,0 +1,8 @@
+# Install with --no-deps --target into the isolated Phase 13 overlay.
+# torch/transformers/accelerate/numpy/requests/regex/tqdm use the existing SFT pins.
+llmlingua==0.2.2
+nltk==3.9.1
+tiktoken==0.8.0
+sentencepiece==0.2.0
+joblib==1.4.2
+click==8.1.8

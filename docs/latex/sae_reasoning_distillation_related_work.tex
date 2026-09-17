@@ -1,0 +1,36 @@
+\section{Related Work}
+\label{sec:related_work}
+
+\paragraph{Reasoning distillation and student learnability.}
+Chain-of-thought prompting demonstrates the value of intermediate reasoning for language-model problem solving~\citep{wei2022chain}, while rationale-based distillation uses teacher explanations to supervise smaller models~\citep{hsieh2023distilling}.
+The quality of this supervision depends on its compatibility with the student.
+\citet{li2025small} identify a small-model learnability gap: stronger teachers and longer reasoning chains do not consistently yield better small students, motivating mixtures of reasoning with different complexity.
+Our work examines this issue through within-problem comparisons of short and long correct outputs from a fixed teacher.
+Holding teacher identity and problem content fixed reduces two sources of variation, although final-answer correctness alone does not certify every intermediate step.
+Our distillation stage uses sequence-level supervision through SFT; it does not require teacher logits or a logit-matching objective.
+
+\paragraph{Concise reasoning and trace compression.}
+LiteCoT uses difficulty-aware prompting to rewrite long teacher solutions into concise traces for downstream distillation~\citep{wu2025concise}.
+Compress-Distill also studies compression before training, finding substantial cost reductions but lower accuracy than raw traces in its main comparisons~\citep{griot2026compress}.
+These results establish trace compression as a relevant approach while showing that its benefits depend on the evaluation setting and the accuracy--efficiency trade-off.
+Our framework changes teacher activations during generation to construct candidate supervision.
+The distinction concerns where and how the data distribution is modified; it does not imply that internal intervention necessarily preserves more useful reasoning than textual compression.
+Direct comparisons under matched data and training conditions are needed to establish such an advantage.
+
+\paragraph{Activation steering for reasoning control.}
+ASC is particularly close to our generation objective: it learns a direction from verbose--concise trace pairs to shorten reasoning outputs~\citep{azizi2026activation}.
+Its published formulation uses a length-normalized contrastive energy objective with a KL trust-region constraint.
+Our approach instead selects components from a shared SAE dictionary using length-associated feature activity, and evaluates the resulting outputs as training data for a separate student.
+SAE-based reasoning control also has direct precedents.
+\citet{li2025feature} extract SAE features from chain-of-thought activations and intervene during generation, with an additional SAE-free variant.
+\citet{fang2026controllable} identify features through keyword-logit screening followed by intervention-based ranking to control reasoning strategies.
+These studies motivate feature-level control, while our focus is the relation between teacher length-associated features and downstream distillation outcomes.
+
+\paragraph{Sparse features, interpretation, and behavioral transfer.}
+SAEs learn sparse decompositions of language-model activations~\citep{cunningham2023sparse}, and TopK architectures provide a practical way to control sparsity~\citep{gao2024scaling}.
+Interpretation of the resulting features nevertheless requires additional evidence.
+\citet{ma2026reasoning} show that contrastively selected reasoning-associated features can respond to lexical cues and non-reasoning counterexamples, motivating falsification before assigning high-level semantics.
+We accordingly distinguish length association, causal changes to generated text, and effects on student learning.
+Moreover, \citet{blank2026subliminal} demonstrate steering vector distillation, in which training on a steered teacher's outputs transfers aspects of its induced behavior.
+Thus, the teacher-intervention-to-student-training pipeline itself is not our novelty claim.
+Our specific investigation connects naturally sampled, within-problem length contrasts to SAE intervention and controlled student evaluation, with the aim of determining whether feature-guided supervision offers value beyond output shortening.

@@ -1,0 +1,102 @@
+{
+  "experiment_name": "phase13_baseline_method_check_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+  "evidence_level": "method_validation_on_previously_observed_GSM8K_development_questions",
+  "formal_claim_allowed": false,
+  "seed": 17,
+  "corpus": "results/ncsu_phase12_reproduction_v1/exploratory/sae/corpus/mixed_trajectories.jsonl",
+  "source_audit": "results/phase13_baseline_expansion_v1/preparation/source_audit_v1/COMPLETE.json",
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "asc": {
+    "pairs": 100,
+    "pair_split": "train",
+    "concise_source": "GSM8K official reference; remove calculator annotations and replace #### with Answer:",
+    "verbose_source": "first correct noncapped candidate longer than reference; index below 4",
+    "layer_index": 16,
+    "layer_index_convention": "zero-based transformer block output",
+    "initialization": "zero",
+    "learning_rate": 0.01,
+    "batch_size": 2,
+    "weight_decay": 0,
+    "steps": 3000,
+    "epsilon": 0.02,
+    "kl_coefficient": 20.0,
+    "general_samples": 2000,
+    "general_batch_size": 2,
+    "general_max_length": 512,
+    "max_sequence_length": 2048,
+    "log_every": 25,
+    "smoke_steps": 8,
+    "include_response_eos": true,
+    "general_text_source": "Salesforce/wikitext",
+    "general_text_subset": "wikitext-2-raw-v1",
+    "general_text_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "general_parquet": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--Salesforce--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+    "general_holdout_samples": 64
+  },
+  "validation": {
+    "count": 64,
+    "split": "dev",
+    "source_candidates": 4,
+    "source_selection": "shortest correct noncapped among first four historical candidates",
+    "max_new_tokens": 2048,
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "repetition_penalty": 1.1,
+    "asc_scales": [
+      0.0,
+      0.5,
+      1.0
+    ]
+  },
+  "dap": {
+    "prompt_config": "configs/phase13_dap_prompt_v1.json",
+    "max_new_tokens": 2048,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "repetition_penalty": 1.0,
+    "num_rewrites_per_source": 1
+  },
+  "tokenskip": {
+    "model_name": "microsoft/llmlingua-2-xlm-roberta-large-meetingbank",
+    "revision": "ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--microsoft--llmlingua-2-xlm-roberta-large-meetingbank/snapshots/ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "package_version": "0.2.2",
+    "family": "qwen",
+    "ratios": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "ratio_assignment_seed": 42,
+    "selection": "one assigned ratio per source question for training; all ratios only for compression validation"
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "minimum_free_mib": 42000,
+    "gpu_account": "jekml_gpu",
+    "gpu_partition": "gpu",
+    "gpu_qos": "gpu",
+    "gpu_type": "h100",
+    "cpus": 4,
+    "memory": "64G",
+    "gpu_time": "12:00:00",
+    "auxiliary_cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/phase13_baselines"
+  },
+  "adaptations": [
+    "ASC target is the unified instruct teacher, not a reported R1 model; separate original-model checks remain required.",
+    "WikiText variant, selection, 512-token window, zero initialization, EOS convention, general minibatch, and zero-based layer indexing are explicit choices absent from the paper.",
+    "Previously observed dev cohort is used only to validate implementations, never as new test evidence or student training.",
+    "DAP uses the published framework with a documented integration wrapper and the unified teacher.",
+    "TokenSkip uses full Qwen source as upstream does, appends verified source answer, and preserves ratio conditioning. Gold correctness after appending is not evidence of reasoning validity.",
+    "64-question method checks do not complete the 7.5K or 25K distillation protocol."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_pipeline_launch_v1",
+  "text_config_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_student_launch_v1/prepare_20260913T210334869095Z/frozen_config.json",
+  "sft_config_source": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_unified_student_sft_math7_5k_v1.json",
+  "text_preparation_submission": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_student_launch_v1/822579_submission.json",
+  "upstream_jobs": {
+    "raw_merge": 822575,
+    "steered_merge": 822780,
+    "text_prepare": 822579
+  },
+  "shards": 32,
+  "dap_lanes": 4,
+  "tokenskip_lanes": 1,
+  "claim_boundary": "Bounded continuation of already-authorized main-pool source generation through DAP/TokenSkip compression and all-eight student-data preparation. Runtime workers validate complete frozen source artifacts. No student training, test evaluation or 25K expansion is submitted by this launcher."
+}

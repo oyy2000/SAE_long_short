@@ -1,0 +1,13 @@
+{
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/dap_long_trace_analysis_v1",
+  "rewrite_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/dap_long_trace_method_check_v2/main",
+  "paired_source_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/dap_paired_sources_v2",
+  "expected_questions": 64,
+  "source_long_token_filter": [
+    1000,
+    16384
+  ],
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260913,
+  "claim_boundary": "仅为固定 64 道保留 MATH 开发题上的 DAP 长轨迹改写适配检查；没有完成学生 SFT，不能据此声称 7.5K/25K 主蒸馏实验或原论文完整复现。"
+}

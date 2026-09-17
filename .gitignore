@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
 .venv/
 venv/
 *.egg-info/
@@ -16,12 +20,27 @@ venv/
 /results
 /checkpoints
 /logs
+/data/runtime/
+/tmp
+/data/*.tar.zst
 *.log
 *.safetensors
 *.pt
 *.pth
 *.ckpt
 
-# Temporary files
+# LaTeX build files
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+
+# Local editor and temporary files
 .ipynb_checkpoints/
+.idea/
+.vscode/
+*.swp
+*~
 .DS_Store

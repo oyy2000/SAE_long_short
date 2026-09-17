@@ -1,0 +1,11 @@
+{
+  "parent_execution_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_recipe_alignment_v1/protocol/frozen_config.json",
+  "execution_config_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_recipe_alignment_v1/execution_v2/protocol/frozen_config.json",
+  "overrides": {
+    "repetition_penalty": 1.1
+  },
+  "reference_generation_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json",
+  "reason": "Historical 1.5B evaluator inherited repetition_penalty 1.1; preserve training and align evaluation explicitly.",
+  "training_settings_changed": false,
+  "formal_claim_allowed": false
+}

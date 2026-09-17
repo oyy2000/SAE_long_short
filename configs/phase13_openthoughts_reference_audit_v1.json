@@ -1,0 +1,62 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_reference_audit_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_reference_audit_launch_v1",
+  "inventory_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_inventory_v1",
+  "inventory_verification_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/openthoughts_inventory_launch_v1/verification_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1",
+  "grading_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_typed_math_grading_v2.json",
+  "expected_candidates": 64946,
+  "expected_math_questions": 89120,
+  "expected_math_anchors": 6723,
+  "shards": 4,
+  "near_duplicate": {
+    "ngram": 5,
+    "threshold": 0.8,
+    "scope": "All 89,120 math source questions, including non-candidates, to propagate holdout connectivity through excluded bridges."
+  },
+  "quality_sample_seed": 2026091325,
+  "quality_sample_size": 32,
+  "expected_versions": {
+    "math-verify": "0.9.0",
+    "latex2sympy2_extended": "1.11.0",
+    "antlr4-python3-runtime": "4.13.2",
+    "sympy": "1.14.0"
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "nodelist": "c026n04",
+    "routes": {
+      "test": {
+        "cpus": 1,
+        "memory": "2G",
+        "time": "00:10:00"
+      },
+      "prepare": {
+        "cpus": 2,
+        "memory": "8G",
+        "time": "00:20:00"
+      },
+      "audit": {
+        "cpus": 1,
+        "memory": "6G",
+        "time": "02:00:00"
+      },
+      "near": {
+        "cpus": 2,
+        "memory": "16G",
+        "time": "02:00:00"
+      },
+      "merge": {
+        "cpus": 2,
+        "memory": "12G",
+        "time": "00:20:00"
+      }
+    }
+  },
+  "scope": "Source reference parsing, exact cross-source MATH agreement and internal near components only. No teacher-generated gold, no new 25K cohort, and no claim that parser self-comparison proves answer correctness."
+}

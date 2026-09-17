@@ -115,12 +115,18 @@ class NormMatchedController(MeasuredSAEController):
         return (changed, *output[1:]) if isinstance(output, tuple) else changed
 
 
-def sample_from_uniform(logits, uniforms, temperature, top_p):
+def sample_from_uniform(logits, uniforms, temperature, top_p, top_k=0):
     """Inverse-CDF nucleus sampling driven by item-specific fixed uniforms."""
     import torch
     if temperature == 0:
         return logits.argmax(-1)
     sorted_logits, order = torch.sort(logits.float()/temperature, descending=True, dim=-1)
+    if not isinstance(top_k, int) or top_k < 0:
+        raise ValueError('top_k must be a nonnegative integer')
+    if 0 < top_k < sorted_logits.shape[-1]:
+        # Preserve ties at the kth threshold, matching the usual top-k filter.
+        threshold = sorted_logits[:, top_k-1:top_k]
+        sorted_logits = sorted_logits.masked_fill(sorted_logits < threshold, -float('inf'))
     probs = sorted_logits.softmax(-1)
     cumulative = probs.cumsum(-1)
     remove = cumulative - probs >= top_p
@@ -130,15 +136,46 @@ def sample_from_uniform(logits, uniforms, temperature, top_p):
     return order.gather(1, slot.clamp_max(order.shape[1]-1)).squeeze(1)
 
 
-def generate_condition(model, tokenizer, controller, spec, rows, settings):
+class NoInterventionController:
+    """Only the live-row lifecycle needed by the shared cached decoder."""
+    def __init__(self, device):
+        self.device = device
+        self._handle = None
+
+    def begin(self, spec, batch_size):
+        import torch
+        self.live = torch.ones(batch_size, dtype=torch.bool, device=self.device)
+        self.batch_size = batch_size
+
+    def end(self):
+        return [{'modified_positions':0} for _ in range(self.batch_size)]
+
+
+def generation_stream_seed(seed, problem_id):
+    return int.from_bytes(hashlib.sha256(f'{seed}:{problem_id}'.encode()).digest()[:4], 'little')
+
+
+def generate_condition_raw(model, tokenizer, controller, spec, rows, settings):
+    """Decode actual tokens without imposing a task-specific answer parser.
+
+    Historical defaults are preserved; new native-chat runs explicitly disable
+    additional special tokens and register top-k rather than inheriting it.
+    """
     import torch
-    rendered = [tokenizer.apply_chat_template([{'role':'user','content':r['prompt']}],
+    if not rows or settings['max_new_tokens'] <= 0:
+        raise ValueError('Decoding requires nonempty rows and a positive token budget')
+    if controller is None: controller = NoInterventionController(model.device)
+    rendered = [tokenizer.apply_chat_template(r['messages'] if 'messages' in r else [{'role':'user','content':r['prompt']}],
                  tokenize=False, add_generation_prompt=True) for r in rows]
-    encoded = tokenizer(rendered, padding=True, return_tensors='pt')
+    extra = {'add_special_tokens':settings['add_special_tokens']} if 'add_special_tokens' in settings else {}
+    encoded = tokenizer(rendered, padding=True, return_tensors='pt', **extra)
     ids = encoded['input_ids'].to(model.device)
     mask = encoded['attention_mask'].to(model.device)
+    prompt_lengths = mask.sum(-1).tolist()
+    if max(prompt_lengths)+settings['max_new_tokens'] > model.config.max_position_embeddings:
+        raise ValueError('Prompt plus full response budget exceeds model context')
     eos = tokenizer.eos_token_id
-    seeds = [int.from_bytes(hashlib.sha256(f"{settings['seed']}:{r['problem_id']}".encode()).digest()[:4], 'little') for r in rows]
+    seeds = [generation_stream_seed(settings['seed'],r['problem_id']) for r in rows]
     uniforms = torch.tensor(np.stack([np.random.default_rng(s).random(settings['max_new_tokens']) for s in seeds]),
                             dtype=torch.float32, device=model.device)
     cache = None
@@ -156,9 +193,13 @@ def generate_condition(model, tokenizer, controller, spec, rows, settings):
                                      past_key_values=cache, use_cache=True)
                 cache = output.past_key_values
                 logits = model.lm_head(output.last_hidden_state[:, -1, :])
-                token = sample_from_uniform(logits, uniforms[:, step], settings['temperature'], settings['top_p'])
+                token = sample_from_uniform(logits, uniforms[:, step], settings['temperature'], settings['top_p'], settings.get('top_k',0))
                 token = torch.where(controller.live, token, torch.full_like(token, eos))
                 generated.append(token)
+                # Optional observation-only callback for online marker windows.
+                # Historical controllers have no callback and retain their behavior.
+                if hasattr(controller, 'observe_tokens'):
+                    controller.observe_tokens(token, step)
                 controller.live &= token != eos
                 if not controller.live.any():
                     break
@@ -170,22 +211,29 @@ def generate_condition(model, tokenizer, controller, spec, rows, settings):
             controller.end()
     token_rows = torch.stack(generated, dim=1).cpu().tolist()
     output_rows = []
-    for row, tokens, diag, seed in zip(rows, token_rows, diagnostics, seeds):
+    for row, tokens, diag, seed, prompt_length in zip(rows, token_rows, diagnostics, seeds, prompt_lengths):
         ended = eos in tokens
         if ended:
             tokens = tokens[:tokens.index(eos)+1]
         text = tokenizer.decode(tokens, skip_special_tokens=True)
-        prediction = extract_final_answer(text)
-        gold = extract_final_answer(row['gold_answer'])
-        if gold is None:
-            raise ValueError('Missing source gold answer')
-        output_rows.append({'problem_id': row['problem_id'], 'question_split': row['question_split'],
+        output_rows.append({'problem_id': row['problem_id'], 'question_split': row.get('question_split',row.get('question_role')),
                             'condition': spec['name'], 'spec': spec, 'response': text, 'token_ids': tokens,
                             'output_token_count': len(tokens), 'hit_max_new_tokens': not ended,
-                            'predicted_answer': prediction, 'gold_answer': gold,
-                            'is_correct': verify_answer(prediction, gold), 'seed': seed,
+                            'generated_tokens':len(tokens)-int(ended), 'prompt_tokens':prompt_length, 'seed': seed,
                             'diagnostics': diag})
     return output_rows
+
+
+def generate_condition(model, tokenizer, controller, spec, rows, settings):
+    """Preserve the historical numeric-grading wrapper over the shared decoder."""
+    generated = generate_condition_raw(model, tokenizer, controller, spec, rows, settings)
+    for row, result in zip(rows, generated):
+        prediction = extract_final_answer(result['response'])
+        gold = extract_final_answer(row['gold_answer'])
+        if gold is None: raise ValueError('Missing source gold answer')
+        result.update(predicted_answer=prediction, gold_answer=gold, is_correct=verify_answer(prediction,gold))
+        result.pop('generated_tokens'); result.pop('prompt_tokens')
+    return generated
 
 
 def registered_specs():

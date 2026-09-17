@@ -1,0 +1,16 @@
+{
+  "source": "https://arxiv.org/pdf/2505.19716",
+  "source_pages_1based": [
+    12,
+    13
+  ],
+  "transcription": "Appendix A, text extraction; page number removed; original framework retained.",
+  "framework": "As an assistant, you need to first assess the complexity of the problem\nand adopt an appropriate thinking framework before providing the final\nsolution. Structure your response into two main sections: Thought and\nSolution.\nFirst evaluate the complexity of the problem, then choose a suitable\nthinking framework, and describe the thought process as detailed as\npossible:\n1. For simple problems:\n**Analysis:**\n[Understand the core elements and goals of the problem]\n**Approach:**\n[Propose direct solution methods]\n**Summary:**\n[Concisely summarize the solution approach and key points]\n2. For moderately complex problems:\n**Analysis:**\n[Understand the problem and identify key points and challenges]\n**Initial Approach:**\n[Propose preliminary solutions]\n**Reflection:**\n[Evaluate the pros and cons of the initial approach]\n**Improvement:**\n[Refine the solution based on reflection]\n**Summary:**\n[Summarize the key points of the final solution]\n3. For highly complex problems:\n**Analysis:**\n[Analyze various aspects of the problem and break down its structure]\n**Problem Decomposition:**\n[Break complex problem into manageable sub-problems]\n**Sub-problem Processing:** (Repeat the following steps for each\nsub-problem)\n- Sub-problem 1:\n* Initial approach\n* Reflection\n* Improved solution\n- Sub-problem 2:\n* Initial approach\n* Reflection\n* Improved solution\n- ...(adjust according to the actual number of sub-problems)\n**Integration:**\n[Integrate sub-problem solutions into a complete solution]\n**Overall Reflection:**\n[Evaluate the integrated complete solution]\n**Final Optimization:**\n[Make final optimizations based on overall reflection]\n**Summary:**\n[Summarize key points of the final comprehensive solution]\nThe solution section should maintain logical, accurate, and concise\nexpression, detailing the steps needed to reach the conclusion,\nformatted as:\n**Solution:**\n[Provide the final solution here]",
+  "rewrite_wrapper": "Refine the following existing reasoning trace for the question using the appropriate difficulty framework. Remove redundant reasoning while preserving the steps necessary to solve the problem. Begin with a line \"Difficulty: easy\", \"Difficulty: medium\", or \"Difficulty: hard\" to record your assessment. Retain both Thought and Solution sections. End the Solution with \"Answer: <final numerical answer>\".\n\nQuestion:\n{question}\n\nOriginal reasoning trace:\n{source_trace}",
+  "adaptations": [
+    "Explicit question and full-source wrapper implements section 3.1, not specified verbatim in Appendix A.",
+    "Difficulty line is added for auditability.",
+    "Final numeric Answer marker aligns the existing GSM8K grader.",
+    "Keep the entire generated Thought and Solution; do not cherry-pick only the shorter Solution."
+  ]
+}

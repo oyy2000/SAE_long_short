@@ -1,0 +1,34 @@
+{
+  "parents": {
+    "qwen": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+    "r1": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2"
+  },
+  "runtime": {
+    "minimum_free_mib": 24000
+  },
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_generation_followup_v1",
+  "objective_diagnostic_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_objective_diagnostic_v1",
+  "expected_questions": 64,
+  "new_scales": [
+    0.1,
+    0.25,
+    0.4
+  ],
+  "prompt_questions": 16,
+  "prompt_seed": 2026091307,
+  "prompt_probes": {
+    "native_question": {
+      "rendering": "native_chat",
+      "suffix": ""
+    },
+    "native_boxed_instruction": {
+      "rendering": "native_chat",
+      "suffix": "\nPlease reason step by step, and put your final answer within \\boxed{}."
+    },
+    "legacy_raw_question": {
+      "rendering": "raw_single_user",
+      "suffix": ""
+    }
+  },
+  "claim_boundary": "Post-hoc development tuning of existing CES vectors; raw-question input is a separate legacy-repository prompt diagnostic, not the formal CES recipe. Accuracy remains provisional until uniform prose-answer review. No student distillation is performed."
+}

@@ -1,0 +1,25 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Chain-of-thought distillation uses teacher reasoning as supervision for smaller language models~\citep{wei2022chain,hsieh2023distilling}.
+Yet longer traces need not be more useful: additional explanations may increase supervision volume without improving student learning~\citep{li2025small}.
+The challenge is to produce concise teaching traces while retaining the information students need.
+
+Existing approaches modify either completed traces or the generation process.
+LiteCoT rewrites teacher solutions through difficulty-aware prompting~\citep{wu2025concise}, while Compress-Distill illustrates that compression can reduce costs without improving accuracy~\citep{griot2026compress}.
+ASC instead steers teacher activations using verbose--concise pairs~\citep{azizi2026activation}, and steering vector distillation shows that induced teacher behaviors can transfer through output-based training~\citep{blank2026subliminal}.
+These precedents motivate a specific question: \emph{can features associated with naturally short solutions guide teachers toward concise, useful student supervision?}
+
+We investigate this question through \textbf{SAE-guided reasoning distillation}.
+We fit a shared sparse autoencoder (SAE) to pooled teacher activations and compare feature activity between short and long answer-correct solutions to the same problems~\citep{cunningham2023sparse,gao2024scaling}.
+This comparison holds teacher identity, problem content, and final-answer correctness fixed.
+Selected decoder directions then guide generation, and complete, answer-verified outputs supervise student fine-tuning.
+Our evaluated intervention enhances short-associated directions; these associations do not identify specific reasoning operations or certify redundant content.
+
+On GSM8K~\citep{cobbe2021training}, we compare SAE-guided supervision with unmodified generation, matched random interventions, and naturally short traces under equal-example and approximately equal-target-token budgets.
+The study connects within-problem feature discovery, generation-time intervention, and controlled student evaluation, separating verbosity control from supervision quality.
+
+The selected intervention shortens teacher outputs and transfers shorter-output behavior to students, while its accuracy effects remain inconclusive.
+This makes two further distinctions central to the study: whether SAE control offers value beyond ordinary prompting or dense steering, and whether its length association reflects reasoning content or answer-format cues.
+We therefore specify additional baseline comparisons and a falsification-oriented SAE analysis, clearly separating their proposed designs from completed results.
+The expanded evaluation links observable feature associations, measured changes under intervention, and the usefulness of the resulting supervision.

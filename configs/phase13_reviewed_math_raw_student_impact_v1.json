@@ -1,0 +1,55 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_raw_student_impact_launch_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_raw_student_impact_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_cohort_v2",
+  "source_roles": [
+    "development",
+    "student_pool"
+  ],
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "groups": [
+    {
+      "name": "raw_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1/selection/smoke/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1/selection/smoke/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 64,
+      "expected_questions": 8,
+      "key_fields": [
+        "problem_id",
+        "condition",
+        "candidate_index"
+      ],
+      "question_role": "development",
+      "correct_field": "is_correct"
+    },
+    {
+      "name": "raw_student_pool",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1/selection/student_pool/predictions.jsonl",
+      "marker": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1/selection/student_pool/COMPLETE.json",
+      "response_field": "response",
+      "expected_records": 53784,
+      "expected_questions": 6723,
+      "key_fields": [
+        "problem_id",
+        "condition",
+        "candidate_index"
+      ],
+      "question_role": "student_pool",
+      "correct_field": "is_correct"
+    }
+  ],
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "node": "c026n04",
+    "cpus": 2,
+    "memory": "12G",
+    "time": "00:45:00"
+  },
+  "scope": "Audit all original B1/B2 raw student-source predictions and smoke under reviewed_math_v1 after complete raw merge. Preserve source texts, scores and costs. Emit every changed final-answer case for review; this does not migrate selection or release compression/SFT."
+}

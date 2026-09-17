@@ -1,0 +1,248 @@
+{
+  "scope": "Assistant review of the complete question and reference text of the 32 prospectively selected source-quality samples. This is not independent human proof annotation or an applied training/gold revision.",
+  "sample_root": "results/phase13_baseline_expansion_v1/preparation/openthoughts_reference_audit_v1/merged",
+  "reviewed_samples": [
+    {
+      "index": 0,
+      "classification": "correct_final_with_invalid_derivation",
+      "canonical": "1492",
+      "kind": "symbolic",
+      "assessment": "1492 satisfies distinct digits, digit sum 16 and tens+1=5*units. With leading digit 1, units=2 and tens=9 force hundreds=4. The supplied simplification x+4z=15 is wrong (x+6z=16 is correct); its 1792 and digit-sum check are also wrong. Do not use the reference body as verified reasoning."
+    },
+    {
+      "index": 1,
+      "classification": "correct_final_with_misstated_premise",
+      "canonical": "1/6",
+      "kind": "symbolic",
+      "assessment": "For square side 2a, the given tangent fixes height sqrt(2)*a. The displayed midpoint vectors have dot a^2/2 and squared norms 3a^2, giving 1/6. The reference mistakenly calls the pyramid a prism and the tangent a cosine; retain these body defects."
+    },
+    {
+      "index": 2,
+      "classification": "supported_non_numeric_answer",
+      "canonical": "No",
+      "kind": "text",
+      "assessment": "Total 166 is conserved and not divisible by four. A negative answer follows regardless of the allowed exchange sizes. Needs an explicit text/boolean target rather than an automatic symbolic reference."
+    },
+    {
+      "index": 3,
+      "classification": "supported_final_and_derivation",
+      "canonical": "(n-1)/2",
+      "kind": "symbolic",
+      "assessment": "a_1=0 and n/(n+1)*((n-1)/2+1)=n/2 verify the formula. The b_n=n(a_n+1) telescoping derivation is consistent."
+    },
+    {
+      "index": 4,
+      "classification": "underspecified_question",
+      "canonical": null,
+      "kind": null,
+      "assessment": "24310=binom(17,9) counts positive class-count vectors. The question asks for a team selected from distinct students but supplies no class sizes, so actual team counts are undetermined. The count-vector interpretation must not silently replace the original question; quarantine for a later eligible-pool decision."
+    },
+    {
+      "index": 5,
+      "classification": "supported_final_and_derivation",
+      "canonical": "-7",
+      "kind": "symbolic",
+      "assessment": "The two constraints give b=5,c=-7; both supplied points satisfy the resulting parabola."
+    },
+    {
+      "index": 6,
+      "classification": "supported_percentage_target",
+      "canonical": "80",
+      "kind": "percentage",
+      "assessment": "Scholarship and job fractions are 5% and 15%; parental share is 80%, so doubling it increases total income by 80%. Preserve percentage semantics; 80 without the sign can express the requested percentage, not an arbitrary 100-fold tolerance."
+    },
+    {
+      "index": 7,
+      "classification": "correct_exact_answer_with_approximate_annotation",
+      "canonical": "43/88",
+      "kind": "symbolic",
+      "assessment": "Uniform last-two probability is (15*14+18*17)/(33*32)=43/88. The box also contains rounded 0.489; preserve the exact fraction as the target and the approximate annotation as source text, not an untyped whole-box gold."
+    },
+    {
+      "index": 8,
+      "classification": "correct_final_with_incomplete_exhaustion",
+      "canonical": [
+        "0",
+        "1",
+        "2"
+      ],
+      "kind": "all",
+      "assessment": "The complete set is 0,1,2. Cauchy's inequality gives n^4 <= 2*n^3, so n<=2 for n>0; the three supplied witnesses work. The source incorrectly assumes ordered integers are nonnegative and tests n=3 without excluding all larger n."
+    },
+    {
+      "index": 9,
+      "classification": "supported_final_and_derivation",
+      "canonical": "7",
+      "kind": "symbolic",
+      "assessment": "Exact integer disk-membership enumeration confirms the seven listed points. Inclusive first boundary and strict second boundary must be preserved."
+    },
+    {
+      "index": 10,
+      "classification": "conditional_on_ratio_wording",
+      "canonical": "15",
+      "kind": "symbolic",
+      "assessment": "Vanya=15, dad=45, Seryozha=5 follows if 'three times younger/older' means the usual age ratios dad=3*Vanya and Vanya=3*Seryozha. The translated comparative wording is ambiguous; retain this question-level caveat."
+    },
+    {
+      "index": 11,
+      "classification": "inconsistent_operation_count",
+      "canonical": "325",
+      "kind": "symbolic",
+      "assessment": "The pairwise-product invariant gives (26^2-26)/2=325 after 25 merges. Starting with 26 entries permits only 25 operations. The stated 26-minute process is consistent only if it stops once no pair remains; the source incorrectly claims 26 operations. Do not silently replace the question with a 25-operation problem."
+    },
+    {
+      "index": 12,
+      "classification": "supported_final_and_derivation",
+      "canonical": "60",
+      "kind": "symbolic",
+      "assessment": "60 mod 17=9 and 60 mod 11=5. Since 17 and 11 are coprime, this is the unique remainder modulo 187."
+    },
+    {
+      "index": 13,
+      "classification": "supported_choice_target",
+      "canonical": "A",
+      "kind": "choice",
+      "assessment": "Area 25*9=225 requires square side 15, option A. Preserve labels despite their nonalphabetic order in the question."
+    },
+    {
+      "index": 14,
+      "classification": "correct_final_with_invalid_derivation",
+      "canonical": "D",
+      "kind": "choice",
+      "assessment": "a+b+c=6 and ab+bc+ca=45/4 give diagonal squared 27/2. Feasibility (b-c)^2>=0 gives 1<=a<=3. The minimum edge 1 is attained at (1,5/2,5/2), giving cos(max angle)=sqrt(6)/9, option D. The source's equality manipulation, (1,1,4) example and sqrt(2)/6 intermediate result are wrong."
+    },
+    {
+      "index": 15,
+      "classification": "supported_choice_target",
+      "canonical": "A",
+      "kind": "choice",
+      "assessment": "The original slope is 1/3; the required perpendicular line has slope -3 and intercept 4, option A."
+    },
+    {
+      "index": 16,
+      "classification": "correct_final_with_invalid_derivation",
+      "canonical": [
+        "53125",
+        "91125",
+        "95625"
+      ],
+      "kind": "all",
+      "assessment": "Bounded exhaustive enumeration of all 9^5 positive-nonzero-digit strings checks the full suffix divisibility condition. The source falsely claims no four-digit divisor exists for several leading digits and incorrectly infers a>=2. These assertions do not prove completeness."
+    },
+    {
+      "index": 17,
+      "classification": "supported_final_and_derivation",
+      "canonical": "10201",
+      "kind": "symbolic",
+      "assessment": "The a+b+c=200 construction provides one valid exponent a for each of 101^2 (b,c) pairs and forms an antichain. Any larger subset repeats a (b,c) pair, forcing divisibility. Lower and upper bounds agree."
+    },
+    {
+      "index": 18,
+      "classification": "correct_final_with_incomplete_exhaustion",
+      "canonical": [
+        "1",
+        "1"
+      ],
+      "kind": "ordered",
+      "assessment": "The source tests x=1 for y=2 and then incorrectly excludes all x. An independent elementary argument reduces the odd-power equation modulo x+1: -1=1 mod x+1, so positive x must be 1. For odd exponent k>1, 3^k>2^k+1; k=1 gives y=1. The answer is the ordered pair (x,y)=(1,1)."
+    },
+    {
+      "index": 19,
+      "classification": "correct_final_with_invalid_derivation",
+      "canonical": "sqrt(15)/4",
+      "kind": "symbolic",
+      "assessment": "Set u=sqrt(x1),v=sqrt(x2)>0. Collinearity through (1/4,0) reduces to (u+v)(uv-1/4)=0, hence x1*x2=1/16 and r^2=15/16. Both x roots are distinct and positive. The source's intermediate product equation is false and its statement that AC and BD have equal slopes is wrong."
+    },
+    {
+      "index": 20,
+      "classification": "supported_typed_multiple_quantities",
+      "canonical": [
+        "150",
+        "450"
+      ],
+      "kind": "ordered_quantities",
+      "assessment": "150 g of the 30% solution and 450 g of the 10% solution total 600 g and contain 90 g solute. Preserve association with concentrations and gram units; the whole verbal box is not a single numeric gold."
+    },
+    {
+      "index": 21,
+      "classification": "supported_choice_target",
+      "canonical": "D",
+      "kind": "choice",
+      "assessment": "21/10+311/100=521/100=5.21, option D. The source contains both numeric answer and label; type explicitly as choice."
+    },
+    {
+      "index": 22,
+      "classification": "supported_final_and_derivation",
+      "canonical": "84",
+      "kind": "symbolic",
+      "assessment": "18^2+21^2=765, then 765+14^2=31^2; perimeter 18+21+14+31=84."
+    },
+    {
+      "index": 23,
+      "classification": "supported_ordered_coordinates",
+      "canonical": [
+        "4/3",
+        "-7/3",
+        "14/3"
+      ],
+      "kind": "ordered",
+      "assessment": "At t=-7/15 and s=2/3 both parametric lines give (4/3,-7/3,14/3). Coordinate order must be retained."
+    },
+    {
+      "index": 24,
+      "classification": "ambiguous_distinct_products",
+      "canonical": "(n-1)*n*(n+1)*(3*n+2)/24",
+      "kind": "symbolic",
+      "assessment": "The formula correctly sums products over distinct unordered pairs i<j, as in the enumerated pairs. The phrase 'distinct products' can instead require deduplicating equal product values: for n=6 the pair sum is 175 but the distinct-value sum is 157. Retain this wording caveat; do not silently choose a different counting problem."
+    },
+    {
+      "index": 25,
+      "classification": "supported_choice_target",
+      "canonical": "C",
+      "kind": "choice",
+      "assessment": "600000+8000+600+7=608607, option C."
+    },
+    {
+      "index": 26,
+      "classification": "supported_final_with_domain_caveat",
+      "canonical": "(n+1)^2/(4*n)",
+      "kind": "symbolic",
+      "assessment": "For nonzero total, normalize sum a_i=1. Write X=sum i*a_i, Y=sum n*a_i/i: XY/n <= (X+Y)^2/(4n) <= (n+1)^2/(4n), since (i-1)(i-n)<=0. Endpoint weights one-half attain equality. The source omits the product in its displayed AM-GM step, but the stated method works. The all-zero sequence must be excluded because the original ratio is undefined."
+    },
+    {
+      "index": 27,
+      "classification": "supported_final_with_omitted_identity",
+      "canonical": "14",
+      "kind": "symbolic",
+      "assessment": "Let s=sin(10 degrees). The difference of (1+4s)^2 and 1+16*sin(20 degrees)^2 equals 8s*(1-6s+8s^3)=8s*(1-2*sin(30 degrees))=0. Positivity then gives (a,b,c)=(1,4,10) and 14; uniqueness is given in the question. The reference's 'by inspection' identity omits these steps."
+    },
+    {
+      "index": 28,
+      "classification": "correct_final_with_invalid_derivation",
+      "canonical": "10",
+      "kind": "symbolic",
+      "assessment": "For x>1, P_n(x)/x^n=1-sum_{j=1}^n x^(-j) is strictly increasing. At a=1999/1000, sign P_n(a) is sign(1-a^n/1000); exact rational checks give positive for n=9 and negative for n=10, and a^n increases in n. This proves minimum 10. The source's numerical products and near-zero equality are inaccurate and do not establish minimality."
+    },
+    {
+      "index": 29,
+      "classification": "correct_final_with_incomplete_exhaustion",
+      "canonical": "m+n-2",
+      "kind": "symbolic",
+      "assessment": "The proposed bottom-row/right-column selection excluding their corner has no right triangle, including tilted ones: with two points on one arm, the vertex on the other has two vectors with positive dot product. For the upper bound, any selection free of axis-aligned right triangles has a row-column incidence graph where no edge joins two vertices of degree >1. Components are stars or isolated vertices, with at least two components for m,n>1; hence at most m+n-2 edges. The source's claim that three collinear points force a right triangle is invalid."
+    },
+    {
+      "index": 30,
+      "classification": "supported_final_and_derivation",
+      "canonical": "200",
+      "kind": "symbolic",
+      "assessment": "Subtracting consecutive four-term identities gives (a_(n+4)-a_n)*(a_(n+1)*a_(n+2)*a_(n+3)-1)=0. The stated nonunit triple condition forces period four; (1,1,2,4) also satisfies every condition. Twenty-five periods sum to 200."
+    },
+    {
+      "index": 31,
+      "classification": "correct_final_with_invalid_derivation",
+      "canonical": "25",
+      "kind": "symbolic",
+      "assessment": "Exact integer enumeration for all initial piles 1..25 shows only 25 allows all three specified operations: shares 8,5,3 and remainders 16,10,6. This proves minimality. The source's backward derivation misidentifies stages/remaining piles and its final forward check reverses mouse labels; final value is still correct."
+    }
+  ]
+}

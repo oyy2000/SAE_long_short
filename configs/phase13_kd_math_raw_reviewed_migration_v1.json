@@ -1,0 +1,28 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "parent_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_reviewed_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_raw_student_kd_launch_v1",
+  "math_asc_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_cohort_v2",
+  "cohorts": [
+    "smoke",
+    "student_pool"
+  ],
+  "expected_records": {
+    "smoke": 64,
+    "student_pool": 53784
+  },
+  "expected_correctness_changes": {
+    "smoke": 0,
+    "student_pool": 216
+  },
+  "scope": "Regrade complete immutable B1/B2 raw smoke and 6723-question student pool under reviewed_math_v1. Preserve original tokens and all prior labels; bind 216 reviewed changes and generation shards. No student training release until complete common support.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ]
+  }
+}

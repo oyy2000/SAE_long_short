@@ -1,0 +1,38 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "seed_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_stability_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_features_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_seed_features_launch_v2",
+  "additional_seeds": [
+    42,
+    73,
+    101
+  ],
+  "feature_count": 8,
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1",
+    "minimum_free_mib": 16000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 4,
+        "memory": "24G",
+        "time": "00:30:00",
+        "nodelist": "c201n02"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "00:30:00"
+      }
+    }
+  },
+  "claim_boundary": "Original question-paired short/long discovery and held-out confirmation rules repeated on exactly the historical corpus for each new dictionary. Feature IDs are seed-specific. Report insufficient confirmed features without fallback; dictionary/feature reproducibility is separate from fresh generation stability and student SFT."
+}

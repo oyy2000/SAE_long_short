@@ -1,0 +1,16 @@
+{
+  "parents": {
+    "r1_native": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1"
+  },
+  "labels": {
+    "r1_native": "R1-Distill-Qwen-7B: native CoT"
+  },
+  "expected_questions": 64,
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_native_cot_analysis_v2",
+  "grader_version": "gsm8k_explicit_quantity_with_masked_prose_review_v4",
+  "grading_timeout_seconds": 5,
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 2026091301,
+  "claim_boundary": "Uniform final-answer review of 64 previously observed native-CoT GSM8K development questions. No independent confirmation, original-paper benchmark replication, or unified student distillation claim.",
+  "uniform_review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/uniform_answer_review_v3/finalized"
+}

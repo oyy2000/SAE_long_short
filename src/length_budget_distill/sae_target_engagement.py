@@ -23,25 +23,42 @@ def freeze_engagement(config_path,project,version=1):
         with np.load(m['data_path']) as data:
             keep=np.array([rows[int(i)]['question_split']=='dev' for i in data['row_indices']])
             values=data['values'][keep];indices=data['indices'][keep]
-            if version==2:
+            match_readback=config['engagement'].get('match_on_readback_positions', version==2)
+            if match_readback:
                 values=values[:,config['scoring']['readback_positions']];indices=indices[:,config['scoring']['readback_positions']]
             counts+=np.bincount(indices.ravel(),weights=(values>0).ravel(),minlength=size)
             mass+=np.bincount(indices.ravel(),weights=values.ravel(),minlength=size)
             ntokens+=values.shape[0]*values.shape[1]
         evidence.append({'path':m['data_path'],'sha256':m['data_sha256']})
     frequency=counts/ntokens;amplitude=mass/np.maximum(counts,1)
+    minimum=config['engagement']['minimum_engaged_state_fraction']
+    if config['engagement'].get('require_primary_dev_coverage',False) and frequency[primary]<minimum:
+        raise ValueError(f'Primary feature dev readback coverage {frequency[primary]:.6f} < {minimum:.6f}')
     excluded={r['feature_id'] for r in selection['candidates']}
-    excluded.update(config['old_selected_features']['short_feature_ids']);excluded.update(config['old_selected_features']['long_feature_ids'])
+    excluded.update(config.get('old_selected_features',{}).get('short_feature_ids',[]))
+    excluded.update(config.get('old_selected_features',{}).get('long_feature_ids',[]))
     distance=np.abs(np.log(np.maximum(frequency,1e-12)/max(frequency[primary],1e-12)))+np.abs(np.log(np.maximum(amplitude,1e-12)/max(amplitude[primary],1e-12)))
-    pool=[int(i) for i in np.argsort(distance) if int(i) not in excluded and frequency[i]>0 and (version==1 or frequency[i]>=config['engagement']['minimum_engaged_state_fraction'])][:32]
+    require_dev_coverage=config['engagement'].get('require_dev_control_coverage', version==2)
+    max_fold=float(config['engagement'].get('maximum_control_fold_difference',2.0))
+    strict_match=config['engagement'].get('enforce_control_fold_at_freeze',False)
+    if strict_match and (frequency[primary]<=0 or amplitude[primary]<=0):
+        raise ValueError('Primary feature has no positive dev matching statistics')
+    def within_fold(i):
+        return all(1/max_fold <= numerator/denominator <= max_fold
+                   for numerator,denominator in ((frequency[i],frequency[primary]),
+                                                 (amplitude[i],amplitude[primary])))
+    pool=[int(i) for i in np.argsort(distance) if int(i) not in excluded and frequency[i]>0
+          and (not require_dev_coverage or frequency[i]>=minimum)
+          and (not strict_match or within_fold(i))][:32]
+    if len(pool)<len(config['engagement']['control_seeds']):raise ValueError('Insufficient dev-matched random controls')
     controls=[]
     for seed in config['engagement']['control_seeds']:
         available=[i for i in pool if i not in controls]
         controls.append(int(np.random.default_rng(seed).choice(available)))
     features=[primary,*controls]
-    protocol={'status':'frozen','config_hash':canonical_sha256(config),'feature_gate_manifest_sha256':file_sha256(mp),'primary_feature_id':primary,'feature_ids':features,'matching_method':'Seeded choice without replacement from 32 closest dev frequency/conditional-amplitude features; all discovery candidates and old target sets excluded','matching':{str(fid):{'frequency':float(frequency[fid]),'conditional_amplitude':float(amplitude[fid]),'log_distance':float(distance[fid])} for fid in features},'maximum_control_fold_difference':2.0,'batch_size':128,'inputs':evidence,'source_sha256':file_sha256(Path(__file__)),'formal_claim_allowed':False}
+    protocol={'status':'frozen','config_hash':canonical_sha256(config),'feature_gate_manifest_sha256':file_sha256(mp),'primary_feature_id':primary,'feature_ids':features,'matching_method':'Seeded choice without replacement from 32 closest dev frequency/conditional-amplitude features; all discovery candidates and old target sets excluded','matching':{str(fid):{'frequency':float(frequency[fid]),'conditional_amplitude':float(amplitude[fid]),'log_distance':float(distance[fid])} for fid in features},'maximum_control_fold_difference':max_fold,'batch_size':128,'inputs':evidence,'source_sha256':file_sha256(Path(__file__)),'formal_claim_allowed':False}
     protocol['version']=version
-    protocol['matching_support']='all_clean_64_tokens' if version==1 else 'dev_readback_positions_only_with_minimum_dev_coverage'
+    protocol['matching_support']='dev_readback_positions_only_with_minimum_dev_coverage' if match_readback and require_dev_coverage else ('dev_readback_positions' if match_readback else 'all_clean_64_tokens')
     if version==2:
         old=root/'engagement_protocol/protocol.json'
         protocol['amendment_parent_sha256']=file_sha256(old)

@@ -1,0 +1,156 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Setup and Natural-Length Comparison}
+\label{sec:experimental_setup}
+\label{sec:natural_length}
+
+We use Qwen2.5-7B-Instruct as the teacher and Qwen2.5-1.5B-Instruct as the student, with 881 fixed GSM8K training problems~\citep{cobbe2021training}.
+Students undergo completion-only LoRA SFT over three seeds and are evaluated by final-answer accuracy and generated tokens on 1,269 fixed test problems, using greedy decoding with a 512-token cap.
+The primary layer-17, TopK-64 SAE identifies eight short-associated and eight long-associated features.
+Appendix~\ref{app:details} provides sampling, SAE, and training details.
+
+In the initial equal-example comparison, natural-short supervision achieves 66.67\% accuracy versus 64.20\% for natural-long supervision, below the independently evaluated base student (67.45\%).
+The 2.47-point difference is not significant after Holm correction ($p=0.0852$).
+Unequal supervision-token volumes also prevent attributing this ordering to redundant content.
+
+\subsection{Teacher Intervention}
+\label{sec:teacher_intervention}
+
+Development screening selects enhancement of eight short-associated directions at relative perturbation magnitude $\rho=0.30$, using random controls matched in feature count and perturbation norm.
+We fix the intervention before final student evaluation and generate four candidates per training problem under each condition.
+Table~\ref{tab:teacher_generation} includes all outputs, including incorrect and capped responses.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Generation condition & Correct (\%) & Mean tokens & Cap hits \\
+\midrule
+Unmodified & 98.69 & 250.27 & 12 \\
+SAE short enhancement & 98.89 & 217.07 & 1 \\
+Matched random & 97.70 & 293.02 & 38 \\
+\bottomrule
+\end{tabular}
+\caption{Teacher generation on 881 problems, with 3,524 outputs per condition. Cap hits count responses reaching 512 tokens.}
+\label{tab:teacher_generation}
+\end{table}
+
+SAE enhancement shortens outputs by 13.27\% relative to unmodified generation.
+Question-level bootstrap intervals give a mean length difference of $-33.20$ tokens (95\% CI: $[-35.24,-31.22]$) and a correctness difference of $+0.20$ percentage points ($[-0.43,+0.79]$).
+These are post-hoc descriptive results; reused feature-analysis cohorts and the absence of a non-inferiority test preclude a claim of established accuracy preservation.
+
+\subsection{Downstream Distillation}
+\label{sec:student_results}
+
+For each generation condition, we deduplicate candidates and select each problem's shortest answer-correct, non-capped solution.
+Intersecting support with the initial natural-short dataset leaves 878 shared problems.
+Natural-short supervision uses a different pipeline---quantile-band selection from 16 candidates rather than shortest-correct selection from four---so this comparison does not isolate steering.
+Four data conditions, two budgets, and three seeds yield 24 adapters.
+Token matching repeats complete solutions; it does not equalize optimizer steps or per-question weights.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Supervision & Equal examples & Equal target tokens \\
+\midrule
+Unmodified & 69.92 & 70.42 \\
+SAE short enhancement & 70.84 & 70.34 \\
+Matched random & 68.87 & 68.87 \\
+Natural short & 66.93 & 66.96 \\
+\bottomrule
+\end{tabular}
+\caption{Mean student accuracy (\%) over three SFT seeds. Target-token budgets are approximately matched. The base student scores 66.51\% in this follow-up run.}
+\label{tab:student_accuracy}
+% Retain the legacy anchor so external references do not become undefined.
+\label{fig:student_accuracy}
+\end{table}
+
+Table~\ref{tab:student_accuracy} summarizes student accuracy.
+The SAE-minus-unmodified accuracy difference is $+0.92$ points under equal examples (95\% CI: $[-1.34,+3.23]$; Holm-adjusted $p=0.8432$) and $-0.08$ under equal tokens ($[-2.18,+1.97]$; $p=0.9654$).
+Intervals use 10,000 crossed bootstrap replicates over seeds and paired evaluation problems; Holm correction covers six SAE-versus-control comparisons.
+Comparisons with unmodified and random generation remain inconclusive.
+SAE exceeds natural-short supervision under both budgets (adjusted $p=0.0060$ and $0.0110$), but the different sampling and selection pipelines confound attribution.
+
+Student output length falls from 277.14 to 245.98 tokens under equal examples (11.24\%) and from 276.55 to 245.31 under equal tokens (11.30\%).
+The follow-up base averages 239.64 tokens, so shortening is relative to unmodified distillation, not the pretrained student.
+Its 66.51\% accuracy also differs from the initial run's 67.45\%; the cause remains unresolved.
+
+\paragraph{Scope.}
+\label{sec:experiment_scope}
+The results support transfer of shorter-output behavior, not verified accuracy gains or end-to-end compute savings.
+Evidence is limited to one teacher--student pair, GSM8K, one SAE seed, and reused analysis cohorts.
+Concise prompting, dense short--long steering, ASC, textual compression, and length-matched controls remain untested~\citep{azizi2026activation,wu2025concise}; the value of SAE decomposition beyond simpler alternatives remains open.
+
+\subsection{Baseline Comparison Design (Proposed)}
+\label{sec:baseline_design}
+
+The completed comparisons establish how the selected intervention behaves relative to its original controls.
+They leave open whether similar supervision can be obtained with simpler generation or selection methods.
+Table~\ref{tab:baseline_design} specifies additional comparisons; no unreported performance values are assigned to them.
+The existing unmodified-generation student already uses shortest-correct selection from four candidates and must not be relabeled as random-correct.
+Likewise, the historical natural-short condition cannot substitute for a comparison using the same candidate pool and selection rule.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.15\linewidth}@{}}
+\toprule
+Comparison & Question addressed & Evidence status \\
+\midrule
+Base student & Does the training pipeline improve on the initial student? & Reported \\
+Unmodified + shortest-correct & Does steering add value with selection held fixed? & Reported \\
+Matched random SAE & Is the chosen direction more useful than a matched perturbation? & One selected set reported \\
+Natural short & How does the historical length-band pipeline compare? & Reported; selection differs \\
+Random-correct, same pool & What does shortest-correct selection add to ordinary correct sampling? & Proposed \\
+Concise prompt & Can explicit brevity instructions achieve comparable results? & Proposed \\
+Dense short--long direction & Does an SAE decomposition add value over a direct activation contrast? & Proposed \\
+Answer-format direction & Can answer formatting or an answer-transition correlate explain shortening? & Proposed \\
+ASC & How does the method compare with learned activation compression? & Proposed \\
+Text compression / DAP & How does internal control compare with rewriting teaching traces? & Proposed \\
+\bottomrule
+\end{tabularx}
+\caption{Baseline coverage and planned additions. Reported rows refer only to the completed exploratory study; proposed rows have no completed results in this manuscript. Additional independent random feature sets are also proposed.}
+\label{tab:baseline_design}
+\end{table}
+
+\paragraph{Selection, prompting, and internal controls.}
+Random-correct and shortest-correct supervision would use the same unmodified pool, with random selection fixed before training.
+A concise prompt would request a complete solution with brief explanations while keeping the required final-answer format fixed.
+A dense baseline would average within-problem short--long activation differences with equal problem weighting at the same intervention layer.
+An answer-format baseline would instead use paired texts with the same mathematical steps and different answer headings, controlling aligned positions when estimating the direction.
+The latter is a targeted alternative explanation suggested by the feature-context evidence in Section~\ref{sec:answer_marker_evidence}, not an established mechanism.
+Additional random SAE sets would be drawn independently before evaluation, matching feature count and perturbation norm and reporting all sampled controls.
+
+\paragraph{Published compression methods.}
+ASC would be implemented according to a specified published version, retaining its CES objective and KL constraint~\citep{azizi2026activation}.
+A plain difference-of-means direction would remain a separate baseline.
+Text compression would rewrite the same teacher solutions before student SFT; a full difficulty-aware pipeline would be distinguished from a generic shortening prompt~\citep{wu2025concise}.
+Any additional reference model, rewriting call, or data requirement would be disclosed and included in cost accounting.
+These methods would be evaluated with the same student rather than compared through their papers' original benchmark scores.
+
+\paragraph{Two complementary fairness questions.}
+A fixed-candidate comparison would equalize the number of sampling opportunities, verification rules, and shortest-correct selection across generation methods.
+We would report coverage and failures before constructing a common-support student comparison, since intersections can hide problems on which a method fails.
+A separate fixed-generation-token comparison would assess usable-correct-trace yield under a common acquisition budget.
+These budgets answer different questions and would not be presented as simultaneously equal.
+Student experiments would retain separate equal-example and approximately equal-target-token analyses, documenting repeat counts and optimizer steps.
+
+\paragraph{Length matching and calibration.}
+Steering strengths and prompt variants would be calibrated on development problems to obtain comparable length ranges, with all tested settings disclosed.
+Accuracy--length curves would accompany comparisons at a chosen compression level; equal hidden-state norms alone do not imply equal behavioral effects.
+Within-problem length matching could provide a complementary conditional comparison, with its tolerance, residual imbalance, and retained support reported.
+Because length is itself affected by the method, post-hoc matching would not alone establish a causal content effect.
+Selection would use separate GSM8K training problems, and final student evaluation would retain the fixed cohort.
+Repeated use of that cohort would remain explicit rather than being described as a newly untouched confirmation set.
+
+\paragraph{Endpoints and interpretation.}
+Primary downstream comparisons would report paired student accuracy with uncertainty, alongside student output length and actual training tokens.
+Teacher endpoints would include all-output correctness, cap hits, coverage, and usable correct traces per generated million tokens.
+End-to-end cost would include activation collection, SAE or direction fitting, candidate generation, verification, rewriting, and online intervention overhead.
+Both total cost and marginal cost with a reusable dictionary would be reported.
+An inconclusive accuracy difference would not establish non-inferiority, even if the method yields shorter outputs.

@@ -1,0 +1,26 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_analysis_v1",
+  "seed_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_stability_v1",
+  "features_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_seed_features_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_seed_analysis_launch_v1",
+  "region_config_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_answer_marker_diagnostic_v1.json",
+  "seeds": [
+    17,
+    42,
+    73,
+    101
+  ],
+  "original_feature_count": 8,
+  "supplement_feature_count": 3,
+  "descriptive_matching": {
+    "minimum_decoder_cosine": 0.5,
+    "minimum_activation_correlation": 0.5,
+    "scope": "Historical repository thresholds, applied descriptively to all original candidates; no feature replacement."
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1"
+  },
+  "claim_boundary": "Three new seed trainings and identical-corpus original-rule discovery. Matching and lexical diagnostics are descriptive. Top-3 supplementary directions chosen after observing 8/3/5/7 confirmed counts, not successful replication of original eight-feature construction. No fresh generation or student evidence."
+}

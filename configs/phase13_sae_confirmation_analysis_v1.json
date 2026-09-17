@@ -1,0 +1,49 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "generation_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_controls_v1",
+  "review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_answer_review_v1/finalized",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/confirmation/sae_generation_analysis_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_confirmation_analysis_launch_v1",
+  "bootstrap_samples": 5000,
+  "bootstrap_seed": 2026091314,
+  "paired_metrics": [
+    "is_correct",
+    "generated_tokens",
+    "reasoning_body",
+    "answer_suffix"
+  ],
+  "claim_boundary": "300 道保留题的固定参考剂量确认；旧未干预输出已观察，独立性限于新干预效果。18 项预登记对比统一 Holm 校正，次要消融仅作描述；一个 SAE/生成 seed，不代表跨 seed 稳定性、推理语义确认或统一学生蒸馏已完成。",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1"
+  },
+  "confirmation_plan": {
+    "reference_rho": 0.3,
+    "questions": 300,
+    "primary_metrics": [
+      "is_correct",
+      "generated_tokens",
+      "reasoning_body"
+    ],
+    "references": [
+      "unmodified",
+      "dense_reference_minus_generated__rho0.3",
+      "answer_format__rho0.3",
+      "random_sae_1__rho0.3",
+      "random_sae_2__rho0.3",
+      "random_sae_3__rho0.3"
+    ],
+    "multiplicity": "Holm across all 18 two-sided tests; no subgroup/metric removal",
+    "alpha": 0.05,
+    "randomization_samples": 20000,
+    "randomization_seed": 2026091321,
+    "bootstrap_samples": 5000,
+    "bootstrap_seed": 2026091314,
+    "accuracy_test": "exact two-sided McNemar",
+    "length_test": "paired-label sign randomization under within-question label-exchangeability; plus-one correction for Monte Carlo; exact enumeration when <=16 nonzero pairs",
+    "secondary": "All 64-question feature-count/window comparisons and answer-region marker/suffix statistics are descriptive; marginal bootstrap intervals are not simultaneous tests.",
+    "selection": "Original mechanism input rho_reference=0.3; no dose optimization on confirmation. All six original directions retained.",
+    "prior_exposure": "These reserved train questions already have an unmodified baseline generated and uniformly graded. They have not contributed to direction fitting, development dose selection, or intervention-effect analysis. Independence is limited to that held-out intervention scope.",
+    "seed_scope": "One historical SAE and one paired per-question generation seed; additional SAE seeds remain a separate stage."
+  }
+}

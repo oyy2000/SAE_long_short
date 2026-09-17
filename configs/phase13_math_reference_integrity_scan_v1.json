@@ -1,0 +1,45 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_scan_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_reference_integrity_launch_v1",
+  "inputs": [
+    {
+      "path": "cohorts/calibration.jsonl",
+      "expected_rows": 400,
+      "role": "calibration"
+    },
+    {
+      "path": "cohorts/development.jsonl",
+      "expected_rows": 300,
+      "role": "development"
+    },
+    {
+      "path": "cohorts/dap_development_reserved.jsonl",
+      "expected_rows": 64,
+      "role": "dap_development_reserved"
+    },
+    {
+      "path": "cohorts/student_pool.jsonl",
+      "expected_rows": 6723,
+      "role": "student_pool"
+    },
+    {
+      "path": "evaluation/math500.jsonl",
+      "expected_rows": 500,
+      "role": "locked_evaluation"
+    }
+  ],
+  "scope": "Reference completeness and contextual-format screening after exact cross-source mismatches. No automatic concatenation of intermediate boxes, no corrections applied, no training release.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "account": "jekml_cpu",
+    "partition": "compute",
+    "qos": "normal",
+    "node": "c026n04",
+    "cpus": 2,
+    "memory": "4G",
+    "time": "00:15:00"
+  }
+}

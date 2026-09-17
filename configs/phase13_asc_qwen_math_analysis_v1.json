@@ -1,0 +1,16 @@
+{
+  "parents": {
+    "qwen_math": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_calibration_v1"
+  },
+  "labels": {
+    "qwen_math": "Qwen2.5-7B-Instruct: native CoT"
+  },
+  "dataset_label": "MATH",
+  "expected_questions": 64,
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_analysis_v1",
+  "grader_version": "typed_math_v2",
+  "grading_timeout_seconds": 5,
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 2026091322,
+  "claim_boundary": "Native ASC-CES fidelity analysis on 64 observed MATH development questions, one candidate at each of five scales. Typed source-context grading and exact saved-token audit. This is distinct from the four-candidate shared sampler, independent confirmation, all-method student data and actual student SFT; post-hoc intervals do not prove noninferiority or estimate training/decoding-seed variation."
+}

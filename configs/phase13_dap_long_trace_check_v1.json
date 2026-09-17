@@ -1,0 +1,24 @@
+{
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/dap_long_trace_method_check_v1",
+  "paired_source_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/dap_paired_sources_v2",
+  "expected_questions": 64,
+  "smoke_questions": 2,
+  "seed": 2026091309,
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "generation": {
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "repetition_penalty": 1.0
+  },
+  "runtime": {
+    "minimum_free_mib": 42000
+  },
+  "prompt_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_dap_prompt_math_v1.json",
+  "grading_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_typed_math_grading_v2.json",
+  "claim_boundary": "Development-only adaptation: Qwen2.5-7B rewrites released DeepSeek-R1 long traces using DAP; the paper used the full DeepSeek-R1 rewriter. All 64 MATH IDs are reserved from later student SFT. Original released short traces are reported separately; full teacher generation cost is unavailable. No student distillation is completed by this check."
+}

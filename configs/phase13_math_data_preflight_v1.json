@@ -1,0 +1,54 @@
+{
+  "result_root": "results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1",
+  "sources": {
+    "math_train": {
+      "repo_id": "DigitalLearningGmbH/MATH-lighteval",
+      "revision": "0530c78699ea5e8eb5530600900e1f328b48acad",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--DigitalLearningGmbH--MATH-lighteval/snapshots/0530c78699ea5e8eb5530600900e1f328b48acad/data/train-00000-of-00001.parquet",
+      "expected_count": 7500
+    },
+    "math500": {
+      "repo_id": "HuggingFaceH4/MATH-500",
+      "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--HuggingFaceH4--MATH-500/snapshots/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl",
+      "expected_count": 500
+    },
+    "gsm8k": {
+      "repo_id": "openai/gsm8k",
+      "revision": "740312add88f781978c0658806c59bc2815b9866",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-test.arrow",
+      "expected_count": 1319
+    },
+    "gsm8k_hard": {
+      "repo_id": "reasoning-machines/gsm-hard",
+      "revision": "960448f73503112d4226baeb8eb41d3fb5ae2506",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--reasoning-machines--gsm-hard/snapshots/960448f73503112d4226baeb8eb41d3fb5ae2506/gsmhardv2.jsonl",
+      "expected_count": 1319
+    },
+    "aqua_rat": {
+      "repo_id": "deepmind/aqua_rat",
+      "revision": "33301c6a050c96af81f63cad5562cb5363e88971",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--deepmind--aqua_rat/snapshots/33301c6a050c96af81f63cad5562cb5363e88971/raw/test-00000-of-00001.parquet",
+      "expected_count": 254
+    },
+    "olympiadbench": {
+      "repo_id": "Hothan/OlympiadBench",
+      "revision": "91184b52131e7fc9455fef848035173aea8cc01a",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--Hothan--OlympiadBench/snapshots/91184b52131e7fc9455fef848035173aea8cc01a/OlympiadBench/OE_TO_maths_en_COMP/OE_TO_maths_en_COMP.parquet",
+      "expected_count": 674
+    }
+  },
+  "near_duplicate": {
+    "ngram": 5,
+    "threshold": 0.8,
+    "policy": "flag for review; never automatically label numeric variants equivalent"
+  },
+  "grader_timeout_seconds": 5,
+  "grading_versions": {
+    "math-verify": "0.9.0",
+    "latex2sympy2_extended": "1.11.0",
+    "antlr4-python3-runtime": "4.13.2",
+    "sympy": "1.14.0"
+  },
+  "formal_training_ready": false
+}

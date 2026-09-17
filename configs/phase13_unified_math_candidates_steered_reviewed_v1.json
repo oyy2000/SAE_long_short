@@ -1,0 +1,82 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "entrypoint": "13_29_generate_math_candidates.py",
+  "job_name_prefix": "p13_steered_student_reviewed",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_steered_reviewed_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_math_candidates_steered_reviewed_launch_v1",
+  "math_asc_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_qwen_math_reviewed_v1",
+  "development_questions": 64,
+  "smoke_questions": 8,
+  "student_pool_questions": 6723,
+  "smoke_subset_seed": 2026091316,
+  "allowed_generation_cohorts": [
+    "smoke",
+    "student_pool"
+  ],
+  "shards": 32,
+  "candidates_per_question": 4,
+  "candidate_seed_stride": 100003,
+  "selection_seed": 2026091317,
+  "norm_rounding_tolerance": 0.005,
+  "generation": {
+    "seed": 2026091315,
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "methods": {},
+  "decode_policy": {
+    "sampler": "paired per-question inverse-CDF top-k then nucleus",
+    "eos": "tokenizer.eos_token_id only, as in the existing ASC checks",
+    "stop_on_answer_marker": false,
+    "preserve_full_candidates": true,
+    "top_k_explicitly_matches_qwen_model_default": true,
+    "adaptation": "Shared decoder for unified teacher methods; does not claim identical RNG outputs to upstream Transformers multinomial sampling."
+  },
+  "selection_policy": "Earliest-index exact stripped-text dedup among correct non-capped candidates; shortest by sampled token count then candidate index. B0 samples uniformly from the same unique B1 pool, with a fixed per-question seed.",
+  "claim_boundary": "B3/B4/B7 direct teacher generation for the disjoint 6723-question MATH student pool. Resolve all actual directions/layers/doses only from the completed registered development selection; reject infeasible or modified choices. Match raw B0/B1/B2 H100 routing, problem order, candidate random streams, 32 shards and batch size. Full eight-method common support and student SFT remain separate stages. Revised calibration and reviewed grading. The raw context root binds completed H100 smoke and the full unchanged student-question metadata; it does not claim completed raw student generation. Final SFT must consume the separate fully regraded raw selection.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "12G",
+        "time": "00:30:00",
+        "nodelist": "c026n04"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "08:00:00"
+      }
+    }
+  },
+  "student_generation_stage": "selected_B3_B4_B7",
+  "execution_plan": {
+    "shards": 32,
+    "maximum_active_steered_generation_shards": 4,
+    "unique_questions": 6723,
+    "expected_candidate_records": 80676,
+    "methods_resolved_at_prepare": true,
+    "needs_complete_development_analysis": true,
+    "selected_doses_must_not_be_tuned_on_student_pool": true
+  },
+  "registered_gpu_route": "h100",
+  "raw_student_candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/reviewed_math_raw_student_context_v1",
+  "steered_development_candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steered_math_candidates_dev_reviewed_v1",
+  "development_selection_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steering_analysis_reviewed_v1",
+  "development_selection_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_steering_analysis_reviewed_launch_v1/frozen_config.json"
+}

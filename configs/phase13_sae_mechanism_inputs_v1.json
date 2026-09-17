@@ -1,0 +1,100 @@
+{
+  "experiment_name": "phase13_sae_mechanism_inputs_v1",
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1",
+  "launch_root": "results/phase13_baseline_expansion_v1/preparation/sae_mechanism_launches_v1",
+  "parent_intervention_root": "results/ncsu_sae_intervention_v1/exploratory",
+  "history_question_sources": [
+    "results/ncsu_phase12_reproduction_v1/exploratory/inputs/questions.jsonl",
+    "results/ncsu_sae_intervention_v1/exploratory/inputs/questions.jsonl",
+    "results/ncsu_multi_answer_v1/exploratory/inputs/questions.jsonl"
+  ],
+  "gsm8k": {
+    "repo_id": "openai/gsm8k",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "train_arrow": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-train.arrow",
+    "test_arrow": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-test.arrow"
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "split_counts": {
+    "discovery": 400,
+    "dev": 300,
+    "confirmation": 300
+  },
+  "smoke_questions": 8,
+  "split_seed": 2026091302,
+  "decontamination": {
+    "shingle_size": 5,
+    "jaccard_threshold": 0.8,
+    "near_match_policy": "Conservatively exclude all flagged history/test similarities; report all rows."
+  },
+  "sae": {
+    "layer_index": 17,
+    "top_k": 64,
+    "dtype": "bfloat16",
+    "rho_reference": 0.3,
+    "random_seeds": [
+      2026091303,
+      2026091304,
+      2026091305
+    ]
+  },
+  "generation": {
+    "shards": 4,
+    "seed": 2026091306,
+    "max_new_tokens": 1024,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "repetition_penalty": 1.0,
+    "candidates_per_question": 1
+  },
+  "grading_timeout_seconds": 5,
+  "grader_version": "gsm8k_explicit_answer_quantity_v3",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 24000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "16G",
+        "time": "00:30:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "claim_boundary": "Only prepare the S1b inputs and unmodified baseline. No semantic confirmation, complete causal mechanism study, or unified four-candidate student data is claimed."
+}

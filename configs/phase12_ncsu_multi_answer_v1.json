@@ -1,0 +1,41 @@
+{
+  "experiment_name": "ncsu_multi_answer_v1",
+  "result_root": "results/ncsu_multi_answer_v1/exploratory",
+  "checkpoint_root": "checkpoints/ncsu_multi_answer_v1",
+  "parent_config": "results/ncsu_sae_intervention_v1/exploratory/student_followup/protocol/frozen_protocol.json",
+  "conditions": ["no_steering", "selected_target"],
+  "question_count": 878,
+  "variants": [
+    {"name": "k1_unique", "k": 1, "mode": "unique"},
+    {"name": "k2_unique", "k": 2, "mode": "unique"},
+    {"name": "k4_unique", "k": 4, "mode": "unique"},
+    {"name": "k2_repeat", "k": 2, "mode": "repeat"},
+    {"name": "k4_repeat", "k": 4, "mode": "repeat"}
+  ],
+  "supplement": {
+    "initial_candidates": 4,
+    "round_size": 4,
+    "max_candidates_per_question_condition": 32,
+    "required_unique_correct": 4,
+    "shards": 4,
+    "batch_size": 8,
+    "seed_offset": 10000,
+    "deduplication": "response.strip(); retain earliest candidate index",
+    "selection": "output_token_count ascending; candidate_index ascending",
+    "stop_rule": "after each paired four-candidate round, stop a question once both arms have four unique correct uncapped texts",
+    "exhaustion_rule": "record failure and do not train; never drop questions or replace unique texts with repetitions"
+  },
+  "student_seeds": [17, 42, 73],
+  "budget": "equal_records_and_optimizer_steps_within_k; no equal-token analysis",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 2026091304,
+  "runtime": {
+    "gpu_partition": "gpu_partners",
+    "gpu_qos": "short_gpu",
+    "gpu_type": "h200",
+    "gpu_time": "02:00:00",
+    "cpu_time": "02:00:00"
+  },
+  "formal_claim_allowed": false,
+  "claim_boundary": "Exploratory GSM8K on the fixed previously observed 878-question cohort and one SAE seed. Distinct answers mean distinct stripped texts, not distinct mathematical solution methods. Repeat controls match examples, question exposure and optimizer steps, not supervision tokens. Refit k=1 from the same supplemented pool; historical adapters are not the current baseline. No OOD or equal-token claims."
+}

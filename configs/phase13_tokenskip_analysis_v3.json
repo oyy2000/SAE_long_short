@@ -1,0 +1,11 @@
+{
+  "parent_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_analysis_v3",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260913,
+  "claim_boundary": "这是作者公开 GSM8K 数据上的单 seed 原设置方法复现。它不替代同一 teacher、同一问题集合上的 B0–B7 学生蒸馏对照，也不完成 MATH 来源池或 25K 扩展。",
+  "grader_version": "gsm8k_explicit_quantity_with_masked_prose_review_v4",
+  "grading_timeout_seconds": 5,
+  "regrading_reason": "Reuse the sealed uniform final-answer audit, including masked prose adjudication; no regenerated predictions or retuned inference.",
+  "uniform_review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/uniform_answer_review_v2/finalized"
+}

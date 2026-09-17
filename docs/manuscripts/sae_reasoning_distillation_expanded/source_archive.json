@@ -1,0 +1,6 @@
+{
+  "source_archive": "sae_reasoning_distillation_concise.zip",
+  "source_sha256": "011c12107c08c25286645d97c28db3152f9b4144a47be3ec9cb3030bb8e0739f",
+  "revision_scope": "Expand baseline comparison and SAE analysis; retain completed exploratory results; new experiments are proposed, not executed.",
+  "original_readme": "README_原精简版说明.md"
+}

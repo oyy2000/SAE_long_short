@@ -1,0 +1,299 @@
+{
+  "experiment_name": "phase13_gsm8k_qwen3b_sae_pilot_v1",
+  "evidence_level": "exploratory_gsm8k_student_utility",
+  "formal_claim_allowed": false,
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1",
+  "checkpoint_root": "checkpoints/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1",
+  "mechanism_root": "results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1",
+  "history_question_sources": [
+    "results/ncsu_phase12_reproduction_v1/exploratory/inputs/questions.jsonl",
+    "results/ncsu_sae_intervention_v1/exploratory/inputs/questions.jsonl",
+    "results/ncsu_multi_answer_v1/exploratory/inputs/questions.jsonl"
+  ],
+  "generic_text_root": "results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+  "sft_interface_root": "results/phase13_baseline_expansion_v1/smoke/unified_sft_interface_v1",
+  "gsm8k": {
+    "repo_id": "openai/gsm8k",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "train_arrow": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-train.arrow",
+    "test_arrow": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866/gsm8k-test.arrow"
+  },
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "students": {
+    "qwen3b_student": {
+      "model_name": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    }
+  },
+  "lora": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training": {
+    "num_train_epochs": 3,
+    "max_length": 8192,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 5e-05,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "completion_only_loss": null,
+    "assistant_only_loss": false,
+    "packing": false,
+    "dataset_kwargs": {},
+    "logging_steps": 1,
+    "report_to": "none",
+    "disable_tqdm": true
+  },
+  "student_seeds": [
+    17,
+    42,
+    73
+  ],
+  "seed": 20260914,
+  "source_pool_questions": 2048,
+  "maximum_source_questions": 3072,
+  "target_train_questions": 1024,
+  "minimum_train_questions": 768,
+  "development_questions": 300,
+  "shards": 32,
+  "evaluation_shards": 4,
+  "smoke_questions": 8,
+  "candidate_seed_stride": 100003,
+  "selection_seed": 2026091401,
+  "candidates_per_question": 4,
+  "norm_rounding_tolerance": 0.005,
+  "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "concise_question_template": "{question}\nGive a concise solution with only necessary reasoning steps, and put your final answer within \\boxed{{}}.",
+  "generation": {
+    "seed": 2026091402,
+    "max_new_tokens": 1024,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "grading_method": "gsm8k_explicit_answer_quantity_v3",
+  "grading": {
+    "timeout_seconds": 5
+  },
+  "grading_methods": {
+    "gsm8k": "gsm8k_explicit_answer_quantity_v3"
+  },
+  "decontamination": {
+    "shingle_size": 5,
+    "jaccard_threshold": 0.8,
+    "near_match_policy": "Conservatively exclude all flagged history/test similarities; report all rows."
+  },
+  "asc": {
+    "pairs": 100,
+    "pair_split": "train",
+    "concise_source": "GSM8K official reference; remove calculator annotations and replace #### with Answer:",
+    "verbose_source": "first correct noncapped candidate longer than reference; index below 4",
+    "layer_index": 16,
+    "layer_index_convention": "zero-based transformer block output",
+    "initialization": "zero",
+    "learning_rate": 0.01,
+    "batch_size": 2,
+    "weight_decay": 0,
+    "steps": 3000,
+    "epsilon": 0.02,
+    "kl_coefficient": 20.0,
+    "general_samples": 2000,
+    "general_batch_size": 2,
+    "general_max_length": 512,
+    "max_sequence_length": 2048,
+    "log_every": 25,
+    "smoke_steps": 8,
+    "include_response_eos": true,
+    "general_text_source": "Salesforce/wikitext",
+    "general_text_subset": "wikitext-2-raw-v1",
+    "general_text_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "general_parquet": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/datasets--Salesforce--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+    "general_holdout_samples": 64
+  },
+  "calibration_generation": {
+    "max_candidates_per_question": 4,
+    "max_new_tokens": 1024,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "add_special_tokens": false,
+    "retain_token_ids": true,
+    "preserve_sampled_text": true
+  },
+  "strengths": {
+    "B3": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "B4": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "B7": [
+      0.1,
+      0.2,
+      0.3
+    ]
+  },
+  "tokenskip": {
+    "model_name": "microsoft/llmlingua-2-xlm-roberta-large-meetingbank",
+    "revision": "ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--microsoft--llmlingua-2-xlm-roberta-large-meetingbank/snapshots/ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "package_version": "0.2.2",
+    "family": "qwen",
+    "ratios": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "selection": "one assigned ratio per source question for training; all ratios only for compression validation"
+  },
+  "tokenskip_ratios": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "ratio_assignment_seed": 2026091403,
+  "dap_prompt_config": "configs/phase13_dap_prompt_math_v2.json",
+  "caps": [
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "proposal_maximum_cap_hit_rate": 0.01,
+  "proposal_maximum_accuracy_drop": 0.01,
+  "repetition_penalty": 1.0,
+  "batch_size": 8,
+  "gate_minimum_accuracy_gain": 0.01,
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 2026091404,
+  "monitoring": {
+    "interval_seconds": 3600,
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "read_only": true
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "minimum_free_mib": 40000,
+    "auxiliary_cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/phase13_baselines",
+    "maximum_gpu_lanes": 4,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute_partners",
+        "qos": "short",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "02:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "02:00:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "04:00:00"
+      },
+      "monitor_cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute_partners",
+        "qos": "short",
+        "cpus": 1,
+        "memory": "2G",
+        "time": "02:00:00"
+      }
+    },
+    "generation_route": "h200",
+    "training_route": "h200",
+    "evaluation_route": "h200",
+    "asc_route": "h200",
+    "storage_policy": {
+      "small_cache_bytes": 16777216,
+      "encoded_copies": 4,
+      "adapter_copies": 3,
+      "serialized_bytes_per_token": 48,
+      "safety_factor": 2.0,
+      "rationale": "Administrator-designated scratch only; no model copies or periodic checkpoints. Encoded-data copies and three fp32 adapter copies cover training and final publication staging. Check filesystem capacity and user/group quota; never fall back to system or project scratch.",
+      "scratch_root": "/share/jekml/youyang7/tmp",
+      "scratch_quota": {
+        "filesystem": "gpfsHPCcommon2",
+        "fileset": "Share01",
+        "group": "jekml",
+        "command": "/usr/lpp/mmfs/bin/mmlsquota",
+        "attribute_command": "/usr/lpp/mmfs/bin/mmlsattr"
+      },
+      "minimum_available_inodes": 256
+    },
+    "worker_routes": [
+      "h200",
+      "h200",
+      "h200",
+      "h200"
+    ],
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ]
+  },
+  "claim_boundary": "Exploratory GSM8K-only pilot; 14 seed-17 conditions, conditional 8 additional student runs. Fixed historical SAE and eight features; no semantic-purity, SAE-seed stability, cross-dataset, or complete-baseline multiseed claim.",
+  "recovery": {
+    "maximum_retries": 3,
+    "maximum_controller_cycles": 144,
+    "bootstrap_launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/gsm8k_qwen3b_pilot_launch_v2",
+    "scope": "Only GPU stages in this frozen execution; preserve partial artifacts, reuse validated completed training; CPU/protocol/hash faults require diagnosis; never retry CANCELLED jobs",
+    "controller_poll_seconds": 60
+  }
+}

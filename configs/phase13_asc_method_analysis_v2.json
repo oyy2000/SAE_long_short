@@ -1,0 +1,18 @@
+{
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/asc_method_analysis_v2",
+  "parents": {
+    "qwen": "results/phase13_baseline_expansion_v1/exploratory/method_check_v1",
+    "r1": "results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2"
+  },
+  "labels": {
+    "qwen": "Qwen2.5-7B-Instruct",
+    "r1": "R1-Distill-Qwen-7B"
+  },
+  "expected_questions": 64,
+  "grading_timeout_seconds": 5,
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260913,
+  "claim_boundary": "\u8fd9\u662f\u4e24\u4e2a\u6a21\u578b\u5728\u5df2\u89c2\u5bdf GSM8K \u5f00\u53d1\u96c6\u4e0a\u7684\u65b9\u6cd5\u68c0\u67e5\u3002\u672a\u590d\u73b0\u8bba\u6587\u5b8c\u6574\u6d4b\u8bd5\u5206\u6570\uff0c\u672a\u5b8c\u6210\u7edf\u4e00\u6559\u5e08\u7684\u6570\u636e\u84b8\u998f\u4e3b\u8868\uff0c\u4e0d\u652f\u6301\u636e\u6b64\u5ba3\u5e03 SAE \u4f18\u4e8e ASC\u3002",
+  "grader_version": "gsm8k_explicit_answer_quantity_v3",
+  "regrading_reason": "Repair missed inline Answer markers and contextual numbers after the primary answer quantity; preserve all original grades and generation settings."
+}

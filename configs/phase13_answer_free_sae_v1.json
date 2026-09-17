@@ -1,0 +1,96 @@
+{
+  "experiment_id": "phase13_answer_free_sae_v1",
+  "source_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/ncsu_phase12_reproduction_v1/exploratory",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_sae_feature_separation_v1/exploratory/answer_free_sae_v1",
+  "checkpoint_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/checkpoints/phase13_sae_feature_separation_v1/exploratory/answer_free_sae_v1",
+  "layer_index": 17,
+  "k": 64,
+  "sae_seed": 17,
+  "sae_steps": 1500,
+  "clean_tokens": {
+    "answer_heading_pattern": "(?im)^[ \\t]*(?P<marker>(?:final[ \\t]+)?answer)[ \\t]*:",
+    "exclude_last_body_tokens": 32,
+    "maximum_native_position": 128,
+    "minimum_eligible_positions": 64,
+    "exclude_words": [
+      "answer",
+      "final",
+      "text",
+      "frac",
+      "boxed",
+      "begin",
+      "end",
+      "times",
+      "cdot"
+    ]
+  },
+  "sample_seed": 2026091604,
+  "sample_tokens": {
+    "train": 250000,
+    "dev": 50000,
+    "test": 50000
+  },
+  "minimum_traces_per_split": {
+    "train": 1000,
+    "dev": 200,
+    "test": 200
+  },
+  "storage_requirements_bytes": {
+    "prepare": 268435456,
+    "sample": 8589934592,
+    "train": 8589934592
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "minimum_free_mib": 60000,
+    "storage_policy": {
+      "small_cache_bytes": 16777216,
+      "encoded_copies": 4,
+      "adapter_copies": 3,
+      "serialized_bytes_per_token": 48,
+      "safety_factor": 2.0,
+      "rationale": "Administrator-designated scratch only; no model copies or periodic checkpoints. Encoded-data copies and three fp32 adapter copies cover training and final publication staging. Check filesystem capacity and user/group quota; never fall back to system or project scratch.",
+      "scratch_root": "/share/jekml/youyang7/tmp",
+      "scratch_quota": {
+        "filesystem": "gpfsHPCcommon2",
+        "fileset": "Share01",
+        "group": "jekml",
+        "command": "/usr/lpp/mmfs/bin/mmlsquota",
+        "attribute_command": "/usr/lpp/mmfs/bin/mmlsattr"
+      },
+      "minimum_available_inodes": 256
+    },
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ],
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute_partners",
+        "qos": "short",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "02:00:00"
+      },
+      "gpu": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "96G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "protocol_scope": "Exploratory answer-free SAE retraining from hash-audited causal prefix activations. Existing Phase 5 candidate IDs are not reused. No independent confirmation claimed.",
+  "formal_claim_allowed": false,
+  "feature_screen_required_before_intervention": true,
+  "random_control_gate": {
+    "minimum_engaged_state_fraction": 0.05,
+    "maximum_delta_fraction": 0.05,
+    "minimum_target_change_fraction": 0.25,
+    "maximum_nontarget_change_ratio": 2.0
+  }
+}

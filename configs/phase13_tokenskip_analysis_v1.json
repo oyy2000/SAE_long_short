@@ -1,0 +1,7 @@
+{
+  "parent_root": "results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_analysis_v1",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260913,
+  "claim_boundary": "这是作者公开 GSM8K 数据上的单 seed 原设置方法复现。它不替代同一 teacher、同一问题集合上的 B0–B7 学生蒸馏对照，也不完成 MATH 来源池或 25K 扩展。"
+}

@@ -1,0 +1,18 @@
+{
+  "experiment_name": "phase13_answer_marker_diagnostic_v1",
+  "source_root": "results/ncsu_phase12_reproduction_v1/exploratory/sae_features",
+  "layer_index": 17,
+  "k": 64,
+  "split": "test",
+  "answer_token_text": "Answer",
+  "answer_heading_pattern": "(?im)^[ \\t]*(?P<marker>(?:final[ \\t]+)?answer)[ \\t]*:",
+  "event_mass_atol": 3e-05,
+  "event_mass_rtol": 2e-05,
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/answer_marker_diagnostic_v1",
+  "figure_colors": {
+    "short": "#2166AC",
+    "long": "#B2182B"
+  },
+  "formal_claim_allowed": false,
+  "claim_boundary": "Post-hoc analysis of previously selected features and observed questions; not a semantic/causal validation or independent confirmation."
+}

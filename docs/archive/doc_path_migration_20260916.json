@@ -1,0 +1,484 @@
+{
+  "date": "2026-09-16",
+  "scope": "Documentation organization and relative-link updates only; no experiment results or protocols in configs/results were changed.",
+  "original_markdown_archive": "docs/archive/docs_before_reorganization_20260916.zip",
+  "original_markdown_archive_sha256": "2f4a78182cec47108dac64126d122868f2c5c25ea43d7baeb7b70336d08437c4",
+  "historical_path_note": "Original Markdown is stored with repository-relative paths in the archive. Historical evidence manifests retain their original paths and hashes; resolve relocated files through this mapping or use archived originals when validating historical document hashes.",
+  "previously_broken_links_fixed": [
+    {
+      "file": "docs/phase13_gsm8k_qwen3b_sae_pilot_v1_zh.md",
+      "target": "results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1/execution_v5/protocol/frozen_config.json"
+    }
+  ],
+  "files": [
+    {
+      "old_path": "AGENTS.md",
+      "new_path": "AGENTS.md",
+      "sha256_before": "3670e2b6c650f5abca78d9bab66bfaf0eba2f905dc742eb91389f2ada3693a17",
+      "sha256_after": "156155c14fb745b2dac4970207ef22b8a0b1555f001856a616b92b2888bc292e",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "PROJECT_STATUS.md",
+      "new_path": "PROJECT_STATUS.md",
+      "sha256_before": "2df44189f22e5de3064b3fb3da1dc3d59f1ba3c0e21bf82d16d0a5c63c2c92fc",
+      "sha256_after": "a3b8048cc9c876b2788955a3b4697e1924d446e928cbeee41fb6f7d2eda5b2f8",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "TODO.md",
+      "new_path": "TODO.md",
+      "sha256_before": "13f9ddfca8b4fde1fcdcd34cc0a774ec1f8b489c23ac330107d1e9e6e3bca19f",
+      "sha256_after": "479c6cf166a139e65abc19f09d4f2ecde9379512106f0ef8e4d911a20cedb740",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/latex/README.md",
+      "new_path": "docs/latex/README.md",
+      "sha256_before": "0bbbc640e28d2ea96e948d3f8f743783c367b39621584162780ba85b2a1aa701",
+      "sha256_after": "f53d28c0d9f5073fbc4a5bdebb46bc737ad8008ad4c7e17f55587cb78e207f3b",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/latex/baseline_and_sae_analysis_proposal_20260913_zh.md",
+      "new_path": "docs/latex/baseline_and_sae_analysis_proposal_20260913_zh.md",
+      "sha256_before": "3b9fcdd998247dbf437942424d447264b258017798cd5a846e607d9407630de0",
+      "sha256_after": "c9fe60c84e7df66ab2a4350946dd6125b48cbc93d8590ca695d1208945a8959d",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/legacy_cluster_compute_rules_20260913.md",
+      "new_path": "docs/environment/legacy_cluster_compute_rules_20260913.md",
+      "sha256_before": "48b68df69413ed155103816a511a6c394e2723ed4d5d753d381aee255f36d0bd",
+      "sha256_after": "48b68df69413ed155103816a511a6c394e2723ed4d5d753d381aee255f36d0bd",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_multi_answer_status_20260913.md",
+      "new_path": "docs/experiments/phase12/ncsu_multi_answer_status_20260913.md",
+      "sha256_before": "d13d3c65af4a9f98757c4313d9f1af9385cf6f7e57af9e6b3976c0a78383509c",
+      "sha256_after": "16285fae6e0db64c934ed7a18da1738893440db27d02a68756b26b557269bc5f",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_multi_answer_v1.md",
+      "new_path": "docs/experiments/phase12/ncsu_multi_answer_v1.md",
+      "sha256_before": "a375c0e391a896c54b926c31efd111059a2f7660e247fac6dceae6833b8b67c9",
+      "sha256_after": "0bbdeca3ae47b83647e2d4774340bc6a68e8fbc87fdf35d6b1691b7c6e4daccb",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_phase12_reproduction.md",
+      "new_path": "docs/experiments/phase12/ncsu_phase12_reproduction.md",
+      "sha256_before": "c47cabfd7f966cd9c06040653d38bd5b192bac89191e1eca8ca2334f772c6dfd",
+      "sha256_after": "12e124ef320b8c0e17b829306b10624261dc12c3f4dc5988ecedc05452ca57c2",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_phase12_status_20260912.md",
+      "new_path": "docs/experiments/phase12/ncsu_phase12_status_20260912.md",
+      "sha256_before": "e4bf2761a2d3e373a7036705599ca2356a8dd1dd5d4268ff599cb028c1da4e3f",
+      "sha256_after": "8cf2739657264d9e733c006455780d670fd8a7ebde1257e76c3317131e2af8cf",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_sae_intervention_status_20260912.md",
+      "new_path": "docs/experiments/phase12/ncsu_sae_intervention_status_20260912.md",
+      "sha256_before": "d3bfbd3ffbd7b830d6eaa34d52289fb64a0ca725c26a4859aac6f54446f6db10",
+      "sha256_after": "9d8c4bc01d3ad73f08a276b323118465edada1926fd405c3f2e8e1c3f6d5bae8",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_sae_intervention_v1.md",
+      "new_path": "docs/experiments/phase12/ncsu_sae_intervention_v1.md",
+      "sha256_before": "f50868f69b117ab65d6d43537a862650b9a0dfcec3cffb0e8ba7a4e56d8f01ce",
+      "sha256_after": "deefb6b41a586fc981a4d3e5110c9809f27cf91a7b940e627fc24b77256ad818",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/ncsu_sft_environment.md",
+      "new_path": "docs/environment/ncsu_sft_environment.md",
+      "sha256_before": "635b90a6d952ca54fd224a29ded24cd684a8a5213a0f2cedd50d3f4223318cc4",
+      "sha256_after": "dc06b3197470527578bb19461ce4a05e32de09a5a939e93f0a8ca163a78265df",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_baseline_expansion_experiment_plan_zh.md",
+      "new_path": "docs/experiments/phase13/phase13_baseline_expansion_experiment_plan_zh.md",
+      "sha256_before": "5ed0dbaf5451875e11a6110914b89e857bf1d90fad2ee5f5bf1401e2aa2f8d9b",
+      "sha256_after": "c99b1d48c1d3c4fd34eb15fc8ccb637e3c31b6e2c86874a6e4c7adef54ffe68d",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_baseline_reproduction.md",
+      "new_path": "docs/experiments/phase13/phase13_baseline_reproduction.md",
+      "sha256_before": "7102764db078d7bcb4a199d8781825525176e618c3bbf3f96f63d09456b1f792",
+      "sha256_after": "f67a25baefe5ad84537f9b676213c5fa242baea959fe75be71b31ea21fc265fe",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_generation_controls_and_math_cohorts_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_generation_controls_and_math_cohorts_v1.md",
+      "sha256_before": "b9653f88ca4e1f53855cf54eeca6cb83fb7371d1e46bd3ac33212b60af2efc05",
+      "sha256_after": "b9653f88ca4e1f53855cf54eeca6cb83fb7371d1e46bd3ac33212b60af2efc05",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_gsm8k_qwen3b_recipe_alignment_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_gsm8k_qwen3b_recipe_alignment_v1.md",
+      "sha256_before": "f4d9346d527c7b4592077e6f19422068ffb1b0cc26700549b97992913b0ac834",
+      "sha256_after": "111d63fe631ecc05b12d71697918e3a386fd3af8748ddf9523b1bbae88f0d2ad",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_gsm8k_qwen3b_sae_pilot_v1_zh.md",
+      "new_path": "docs/experiments/phase13/phase13_gsm8k_qwen3b_sae_pilot_v1_zh.md",
+      "sha256_before": "fe6d239355ea9da9323a580d33756b8e5daabad9664621fc54dcceaf7868a11b",
+      "sha256_after": "9839dafe1387e98f26f09309ad5ca4da5b4c78ccb49c4db6fb628b381a857e1a",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_math_reference_integrity_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_math_reference_integrity_v1.md",
+      "sha256_before": "2ff4bbf5e62f14f3a33d805bf9929554484be90b127670ded97ad31c1500f4ab",
+      "sha256_after": "2a591f94a00c81aecc7e3d7684135b5ddb7b1280af85b8122025083ad749701c",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_math_steering_dev_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_math_steering_dev_v1.md",
+      "sha256_before": "9ca42f9376c0b5bec2f011e4a820af657acebf9340cec0a2a33dc108a46af8f3",
+      "sha256_after": "31650ac126aef0eef1fbc1a7d0b4e487966ebcf63e7d05086a0532dadcd2faa8",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_openthoughts_inventory_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_openthoughts_inventory_v1.md",
+      "sha256_before": "643f6efa09380cfaaffa2d222a301dd823107e2efc8f8b1ba3212aa88cc79dd6",
+      "sha256_after": "c5ffa1ea68163c532895ce842e0cf255fdc25bb9c757e8182675a934bbbd1357",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_openthoughts_reference_audit_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_openthoughts_reference_audit_v1.md",
+      "sha256_before": "920678649bf9857b79dd30c9b88b248e9ad023004f47ff560c3ea934ba1f2101",
+      "sha256_after": "2b83e2302e50b6a4d315b424c2aba151a1c3b9a6dfdfd3b1e32a2e92691478d7",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_raw_student_generation_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_raw_student_generation_v1.md",
+      "sha256_before": "5334978c52b1a61e4fda7cb5f6bcded451b746f2b5283f17b5e58f9309a1be0a",
+      "sha256_after": "5334978c52b1a61e4fda7cb5f6bcded451b746f2b5283f17b5e58f9309a1be0a",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_reviewed_baseline_continuation_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_reviewed_baseline_continuation_v1.md",
+      "sha256_before": "018ef837166aaeec89cc0122a422aa648dbbb7902503fad00bdf2ed4b3f0a3a9",
+      "sha256_after": "9ed0e549124f59745027d9e54f3d28558f5ebbe706a249bc6b8fb1f650e456ae",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_sae_confirmation_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_sae_confirmation_v1.md",
+      "sha256_before": "5980cffcc68a7ef2a99ed081d1d7f7a573df0f5445d062f48540ea75aaa654f9",
+      "sha256_after": "8d9d16f686d78e89ef2598fd7d1b63d98ff829112bc212eb413340c324861669",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_sae_readback_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_sae_readback_v1.md",
+      "sha256_before": "99e72b17d3887afe7656ae9efa880c9d47173ba9536d65606c50594de6e257b2",
+      "sha256_after": "b5c7b2136702d792fed15aece4a992cb7180b4eb2a54cc059b268cdd10b04c5d",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_sae_seed_stability_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_sae_seed_stability_v1.md",
+      "sha256_before": "103881d26061ea919ea862288541d5b31649c4462b16ea9e9fc69c53a2ae9a19",
+      "sha256_after": "acd529a2c130f2a730012b1da0f8bd790da846a00d2f85b5a1394e8a515ca28a",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_steered_student_generation_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_steered_student_generation_v1.md",
+      "sha256_before": "d55eabce9045d6b6d5c2990870d2168241de08014d04a12cd48e650a244a3e7a",
+      "sha256_after": "d55eabce9045d6b6d5c2990870d2168241de08014d04a12cd48e650a244a3e7a",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_student_evaluation_inputs_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_student_evaluation_inputs_v1.md",
+      "sha256_before": "662bc377e3eb31656113a0734f8cc18e406d82ba0b78ddd14085ef5ea7cd7d6b",
+      "sha256_after": "09fc9ba2d05697bf3e44306e8ac9fcc8c5ecec15484bec57f313da98f368e775",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_student_evaluation_interface_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_student_evaluation_interface_v1.md",
+      "sha256_before": "fd6c759db14385538166ea763c7c0c8156c17e4b3e9e17f90dd4ecf14fd536c9",
+      "sha256_after": "b4959f71e94e2a76656523b0ffa67e040edf10d1b788da3a3800ceb7a23c15cf",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_token_kd_small_v1_zh.md",
+      "new_path": "docs/experiments/phase13/phase13_token_kd_small_v1_zh.md",
+      "sha256_before": "ab3545f1be1c7b8c61d438e6e5a3fb91ea6058645132529fc37a5702eb4a8f6d",
+      "sha256_after": "ab3545f1be1c7b8c61d438e6e5a3fb91ea6058645132529fc37a5702eb4a8f6d",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_unified_math_candidates_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_unified_math_candidates_v1.md",
+      "sha256_before": "69a5b70dc1a2b4b43d0011d91fcc4b52342b74b5a9fa5ea5004fce556c8ad669",
+      "sha256_after": "69a5b70dc1a2b4b43d0011d91fcc4b52342b74b5a9fa5ea5004fce556c8ad669",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_unified_pipeline_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_unified_pipeline_v1.md",
+      "sha256_before": "b11b8f35911b37b1b815e34124567b741b81b364795921d4eaa58c0f045c8415",
+      "sha256_after": "b11b8f35911b37b1b815e34124567b741b81b364795921d4eaa58c0f045c8415",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_unified_sft_interface_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_unified_sft_interface_v1.md",
+      "sha256_before": "70b543c739e69c3cf9c28002a466972e2e2ac291e7417512caa58ba3f3a1e425",
+      "sha256_after": "70b543c739e69c3cf9c28002a466972e2e2ac291e7417512caa58ba3f3a1e425",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_unified_student_distillation_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_unified_student_distillation_v1.md",
+      "sha256_before": "b7a01f4c657e0326f31b4071e80c68b3aa6e72907ba7368a58cc6dc2c8cccc00",
+      "sha256_after": "b7a01f4c657e0326f31b4071e80c68b3aa6e72907ba7368a58cc6dc2c8cccc00",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase13_unified_text_compression_dev_v1.md",
+      "new_path": "docs/experiments/phase13/phase13_unified_text_compression_dev_v1.md",
+      "sha256_before": "3b513dd49832d77a412f4655d373baa865ff87f95b2990b142476a9d5d658669",
+      "sha256_after": "073e02a32a70b9f7ff538ac908f89a508ef31fc73c97ebdb9a65f119c0daa0a3",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase1_5_credit_allocation_protocol.md",
+      "new_path": "docs/experiments/phase1/phase1_5_credit_allocation_protocol.md",
+      "sha256_before": "fdadbacb1735a405ab15f331cdfcd2053a6e8bd17094b16cf9d6f1b93694b311",
+      "sha256_after": "fdadbacb1735a405ab15f331cdfcd2053a6e8bd17094b16cf9d6f1b93694b311",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase1_full_sequence_screen_c31_v2.md",
+      "new_path": "docs/experiments/phase1/phase1_full_sequence_screen_c31_v2.md",
+      "sha256_before": "9736075b29953cc2b36c9eb3aa1863a5ecb6439a062a6ce7f62a467b8e7a924c",
+      "sha256_after": "9736075b29953cc2b36c9eb3aa1863a5ecb6439a062a6ce7f62a467b8e7a924c",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase1_legacy_trace_sae_distillation.md",
+      "new_path": "docs/experiments/phase1/phase1_legacy_trace_sae_distillation.md",
+      "sha256_before": "95718f1b7c817ef663327aab1fe44cdb0cf6b145c9a4a0d79556bee7a94e13f7",
+      "sha256_after": "95718f1b7c817ef663327aab1fe44cdb0cf6b145c9a4a0d79556bee7a94e13f7",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase1_teaching_utility_protocol.md",
+      "new_path": "docs/experiments/phase1/phase1_teaching_utility_protocol.md",
+      "sha256_before": "824f88662847e004cbf73d98029eb5335c9913371f540f809dd954d265f7547a",
+      "sha256_after": "824f88662847e004cbf73d98029eb5335c9913371f540f809dd954d265f7547a",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase2_sae_pilot_protocol.md",
+      "new_path": "docs/experiments/phase2/phase2_sae_pilot_protocol.md",
+      "sha256_before": "084394fae683771729f58d6ddbdcdf2f7bc86c1637aff5d129b31c4a704a68e3",
+      "sha256_after": "084394fae683771729f58d6ddbdcdf2f7bc86c1637aff5d129b31c4a704a68e3",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase2_to_phase5_deferred_design.md",
+      "new_path": "docs/experiments/phase2/phase2_to_phase5_deferred_design.md",
+      "sha256_before": "927890d151d41e99119a85f6bbcbea5b5fde739158ab8c505c9d3607b7ac0c4b",
+      "sha256_after": "3ca88c7e563267d8f3e1894368229cc223696a51330f59886632e07588ef0b86",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase3_sae_intervention_strength_sweep_v2.md",
+      "new_path": "docs/experiments/phase3/phase3_sae_intervention_strength_sweep_v2.md",
+      "sha256_before": "3539878dde3f97e8416d10d3d13635ac994dd5988da497c9d643e6759fce06b4",
+      "sha256_after": "3539878dde3f97e8416d10d3d13635ac994dd5988da497c9d643e6759fce06b4",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase5_sae_clean_feature_causal_plan_zh.md",
+      "new_path": "docs/experiments/phase5/phase5_sae_clean_feature_causal_plan_zh.md",
+      "sha256_before": "32056056dd78bf02b260812d4cb87009a46a5430f930a2c78a59cfdf3beb6274",
+      "sha256_after": "32056056dd78bf02b260812d4cb87009a46a5430f930a2c78a59cfdf3beb6274",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase6_local_length_controlled_strength_report_zh.md",
+      "new_path": "docs/experiments/phase6/phase6_local_length_controlled_strength_report_zh.md",
+      "sha256_before": "23f8deeae0f157ce182d251d61baf9c7d1d8eb3fc1aff24e7a470a3d34ccb429",
+      "sha256_after": "5fb2468a8532fcc343c1bad39e43c574c8695fa65b63ecbffeb867a31a2e2e5c",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase6_local_length_controlled_strength_report_zh_v2.md",
+      "new_path": "docs/experiments/phase6/phase6_local_length_controlled_strength_report_zh_v2.md",
+      "sha256_before": "cfb63820abe4beda388cdcc5d7197744e116421bc38bebb7fb781be75bf51720",
+      "sha256_after": "8d2499bc3cef99bc78417f5cb345ad7f386ebb1091549d610e828b3073d64c79",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/phase6_sae_length_runtime_validation_zh.md",
+      "new_path": "docs/experiments/phase6/phase6_sae_length_runtime_validation_zh.md",
+      "sha256_before": "582d878c9b730740ebddfa61c45419f072f496eb0382bf9e2a9359a69cfcf4d2",
+      "sha256_after": "59c706118192898b65690343fae46ab27ecd008e329b3857d96a00c4d43258d0",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_concise.zip",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_concise.zip",
+      "sha256_before": "011c12107c08c25286645d97c28db3152f9b4144a47be3ec9cb3030bb8e0739f",
+      "sha256_after": "011c12107c08c25286645d97c28db3152f9b4144a47be3ec9cb3030bb8e0739f",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/README_原精简版说明.md",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/README_原精简版说明.md",
+      "sha256_before": "a3cb0f0794f9987bf04c1b603511512103e91e2d6ea7d09b7948468ad6fd1223",
+      "sha256_after": "a3cb0f0794f9987bf04c1b603511512103e91e2d6ea7d09b7948468ad6fd1223",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/README_扩写说明.md",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/README_扩写说明.md",
+      "sha256_before": "97880c0dae7174fe7fd9c3cd9275a10cde2d9984adf85de33af24e2427a8c728",
+      "sha256_after": "97880c0dae7174fe7fd9c3cd9275a10cde2d9984adf85de33af24e2427a8c728",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/build_verification.json",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/build_verification.json",
+      "sha256_before": "f0ef2ea48ec8c9f7b737f775ba3c26612b21178ca7c2ffce68947442a79727e3",
+      "sha256_after": "f0ef2ea48ec8c9f7b737f775ba3c26612b21178ca7c2ffce68947442a79727e3",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/evidence_sources.json",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/evidence_sources.json",
+      "sha256_before": "0a03e56df06eb82054a8e9a473e9898b36ceecb877eb55c7da45bec7e2754792",
+      "sha256_after": "0a03e56df06eb82054a8e9a473e9898b36ceecb877eb55c7da45bec7e2754792",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_abstract.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_abstract.tex",
+      "sha256_before": "14ee3a226979a7284fcd0ace4d20b5a4f4bb2258623af723997b4be413cecae5",
+      "sha256_after": "14ee3a226979a7284fcd0ace4d20b5a4f4bb2258623af723997b4be413cecae5",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_appendix.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_appendix.tex",
+      "sha256_before": "c9c2329782a6905c726501c5e5022b8e54db854fb8a188f0a7d1822762851d1b",
+      "sha256_after": "c9c2329782a6905c726501c5e5022b8e54db854fb8a188f0a7d1822762851d1b",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_experiments.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_experiments.tex",
+      "sha256_before": "9f77cf062944a2496991388e5cb4dca4788655d456a5d4630a6edfb6e96dc140",
+      "sha256_after": "9f77cf062944a2496991388e5cb4dca4788655d456a5d4630a6edfb6e96dc140",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_introduction.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_introduction.tex",
+      "sha256_before": "f55a33f7eb4196418acabffdbb97b256931a0a9d7581a0ac92fc63bf4a2c53eb",
+      "sha256_after": "f55a33f7eb4196418acabffdbb97b256931a0a9d7581a0ac92fc63bf4a2c53eb",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_main.pdf",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_main.pdf",
+      "sha256_before": "2793a376a41a74fb99a9a948271d192b16ca14256ec4f1170fc9e34c327a7bbc",
+      "sha256_after": "2793a376a41a74fb99a9a948271d192b16ca14256ec4f1170fc9e34c327a7bbc",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_main.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_main.tex",
+      "sha256_before": "832e999bec3c7ceae35ad065253cce9610f4e6a58e2bbf0022180efab9d58c7e",
+      "sha256_after": "832e999bec3c7ceae35ad065253cce9610f4e6a58e2bbf0022180efab9d58c7e",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_references.bib",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_references.bib",
+      "sha256_before": "4ce7d8f805f330e980541847e0cae47c863f42cd66a7a24e4d2c6e4148bcaae1",
+      "sha256_after": "4ce7d8f805f330e980541847e0cae47c863f42cd66a7a24e4d2c6e4148bcaae1",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_related_work.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_related_work.tex",
+      "sha256_before": "406bd514ace63c8355dcdd80bccbcb66aa13b3a0f8669602d249c4d8f32800b5",
+      "sha256_after": "406bd514ace63c8355dcdd80bccbcb66aa13b3a0f8669602d249c4d8f32800b5",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/sae_reasoning_distillation_sae_analysis.tex",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/sae_reasoning_distillation_sae_analysis.tex",
+      "sha256_before": "197eb9ac8c1f90045c4d6617fbdbcfe041e59642141eb1bb353c390712cde68d",
+      "sha256_after": "197eb9ac8c1f90045c4d6617fbdbcfe041e59642141eb1bb353c390712cde68d",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded/source_archive.json",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded/source_archive.json",
+      "sha256_before": "f6d8172ea528958df99f24c2941d177794d8ff99a95da40548c1d63ea2317283",
+      "sha256_after": "f6d8172ea528958df99f24c2941d177794d8ff99a95da40548c1d63ea2317283",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_reasoning_distillation_expanded.zip",
+      "new_path": "docs/manuscripts/sae_reasoning_distillation_expanded.zip",
+      "sha256_before": "62e047ca10951c4a053a3515950924cc801fa227ed9fe4be7a82d5ef8855e7d8",
+      "sha256_after": "62e047ca10951c4a053a3515950924cc801fa227ed9fe4be7a82d5ef8855e7d8",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "docs/sae_representation_one_slide_en.md",
+      "new_path": "docs/presentations/sae_representation_one_slide_en.md",
+      "sha256_before": "7326a0c135c48a326f7642a4c9c15e19e30e23cae4aa7db2ab9caf8d8b653486",
+      "sha256_after": "7326a0c135c48a326f7642a4c9c15e19e30e23cae4aa7db2ab9caf8d8b653486",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "docs/trace_length_observation_gate0_protocol.md",
+      "new_path": "docs/experiments/phase0/trace_length_observation_gate0_protocol.md",
+      "sha256_before": "3923c6a909acaf375897fa887d81ef7625b73464877e588b8452a8a67d6868c9",
+      "sha256_after": "3923c6a909acaf375897fa887d81ef7625b73464877e588b8452a8a67d6868c9",
+      "original_in_archive": true
+    },
+    {
+      "old_path": "src/length_budget_distill/sae_local_finalize.py",
+      "new_path": "src/length_budget_distill/sae_local_finalize.py",
+      "sha256_before": "161bb077f922d12c317539f266dec423280c480a7c64c57e2b31b0a7dbb7da39",
+      "sha256_after": "bc56c5ee76daaccc187859cc6324c07fcd3a67f63856968951f11e6f2b02d2ad",
+      "original_in_archive": false
+    },
+    {
+      "old_path": "src/length_budget_distill/sae_local_presentation_review.py",
+      "new_path": "src/length_budget_distill/sae_local_presentation_review.py",
+      "sha256_before": "61ed6f28e2adcc48a3710c99a8a8663cc3a3dac17a3cf6bf7a045a3459e14303",
+      "sha256_after": "ae1947ff6dd750328cc1ac3e5b882918460d9b1b0e2d7c0af168eb26854558bd",
+      "original_in_archive": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+\begin{abstract}
+Longer teacher traces do not necessarily provide better supervision for smaller language models.
+We study \textbf{SAE-guided reasoning distillation}: identify length-associated features in a shared sparse autoencoder using within-problem contrasts between short and long answer-correct traces, steer teacher generation, and distill the resulting outputs.
+In an exploratory GSM8K study with a Qwen2.5-7B-Instruct teacher and Qwen2.5-1.5B-Instruct student, selected short-feature enhancement reduces teacher output length by 13.27\%.
+Students trained on these outputs generate approximately 11\% fewer tokens than students trained on unmodified outputs.
+Accuracy differences remain statistically inconclusive under equal-example and approximately equal-target-token budgets.
+The results support feature-guided length control and its downstream transfer, without establishing improved student accuracy.
+\end{abstract}

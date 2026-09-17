@@ -1,0 +1,27 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1",
+  "preflight_root": "results/phase13_baseline_expansion_v1/preparation/math_data_preflight_v1",
+  "review_root": "results/phase13_baseline_expansion_v1/preparation/math_data_review_v1",
+  "dap_source_root": "results/phase13_baseline_expansion_v1/preparation/dap_paired_sources_v2",
+  "grading_audit_root": "results/phase13_baseline_expansion_v1/preparation/typed_math_audit_v2",
+  "grading_config": "configs/phase13_typed_math_grading_v2.json",
+  "expected_eligible": 7487,
+  "expected_dap_reserved": 64,
+  "holdout_counts": {
+    "calibration": 400,
+    "development": 300
+  },
+  "split_seed": 2026091310,
+  "near_duplicate": {
+    "ngram": 5,
+    "threshold": 0.8
+  },
+  "expected_eval_counts": {
+    "gsm8k": 1269,
+    "gsm8k_hard": 1269,
+    "math500": 500,
+    "aqua_rat": 254,
+    "olympiadbench": 674
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "measurement_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_readback_v1",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_readback_analysis_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_readback_analysis_launch_v1",
+  "directions": [
+    "sae_short_8",
+    "dense_reference_minus_generated",
+    "answer_format",
+    "random_sae_1",
+    "random_sae_2",
+    "random_sae_3"
+  ],
+  "discovery_contrasts": [
+    [
+      "reference",
+      "result_marker"
+    ],
+    [
+      "reference",
+      "no_marker"
+    ],
+    [
+      "answer_note",
+      "neutral_note"
+    ],
+    [
+      "wrong_calculation",
+      "reference"
+    ]
+  ],
+  "bootstrap_samples": 5000,
+  "bootstrap_seed": 2026091307,
+  "claim_boundary": "Exploratory discovery/dev mechanism evidence. No independent confirmation, generation-length effect, student accuracy effect, or full S1b completion."
+}

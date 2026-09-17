@@ -1,0 +1,144 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We investigate three questions: whether naturally shorter correct traces provide better student supervision; whether length-associated SAE features can control teacher generation; and whether the generated traces change student accuracy and reasoning length.
+We report the completed exploratory GSM8K study, separating the initial length comparison from the subsequent intervention experiment.
+The evidence covers one teacher--student pair and one SAE training seed; the three student training seeds quantify variation in SFT, not in SAE discovery.
+
+\subsection{Experimental Setup}
+\label{sec:experimental_setup}
+
+\paragraph{Models and data.}
+We use Qwen2.5-7B-Instruct as the teacher and Qwen2.5-1.5B-Instruct as the student.
+The initial training cohort contains 881 fixed GSM8K training problems~\citep{cobbe2021training}.
+Teacher sampling uses temperature 0.7, top-$p$ 0.95, and a maximum of 512 generated tokens.
+Student evaluation uses the fixed 1,269-problem cohort \texttt{test[50:1319]}, greedy decoding, and the same generation cap; the first 50 test problems are reserved for smoke checks.
+Accuracy measures correctness of the extracted final answer, and output length counts generated tokens.
+We do not use final evaluation accuracy to select the intervention.
+
+\paragraph{Student training.}
+All conditions start from the same pretrained student and use completion-only SFT with LoRA rank 4, scaling factor 16, dropout 0.05, and all linear modules targeted.
+We train for one epoch over each constructed dataset, using batch size 4, gradient accumulation 1, learning rate $2\times10^{-5}$, warmup ratio 0.03, BF16, and a maximum sequence length of 2,048 tokens without packing.
+Student seeds are 17, 42, and 73.
+The intervention study compares equal-example and approximately equal-target-token budgets separately.
+Token matching repeats complete solutions rather than truncating them; consequently, it does not equalize optimizer steps or per-question weights.
+
+\paragraph{SAE construction.}
+The initial teacher pool contains 16 candidates per problem, or 14,096 traces.
+We fit shared TopK SAEs to mixed teacher residual activations, including raw candidates regardless of correctness; correct traces are used for the short--long feature comparison.
+Question-level splits contain 617 training, 132 development, and 132 test problems.
+The exploratory SAE grid covers layers 10, 17, and 23, TopK sparsities 32 and 64, expansion factor 8, and 1,500 training steps, with SAE seed 17.
+The primary layer-17, TopK-64 dictionary yields eight short-associated and eight long-associated features under the registered screening procedure.
+These labels describe associations with trace length, not verified reasoning operations.
+
+\subsection{Natural Trace Length and Student Learning}
+\label{sec:natural_length}
+
+For each problem, we require at least four distinct correct candidates that do not reach the token cap.
+We choose short and long representatives from the bottom and top 20\% length bands, respectively, and a medium representative near the median.
+All three student conditions retain the same 881 problems and use equal-example training.
+Mean accuracy across student seeds is 66.67\% for short, 66.33\% for medium, and 64.20\% for long traces, compared with the independently evaluated base accuracy of 67.45\% in this initial run.
+The short--long difference is 2.47 percentage points, but does not pass Holm correction across the three registered comparisons ($p=0.0852$).
+Thus, this sample provides a directional short--long difference without establishing either a corrected significant advantage or an improvement over the base student.
+Because supervision volume differs, this comparison alone cannot attribute the ordering to redundant content.
+
+\subsection{Feature Intervention and Generation Controls}
+\label{sec:teacher_intervention}
+
+We screen short-feature enhancement and joint short-enhancement/long-direction subtraction at relative perturbation magnitudes $\rho\in\{0.05,0.15,0.30\}$.
+Each target condition has a random control matched in decoder-column count and actual perturbation norm; target features are excluded from the random sets.
+Together with unmodified generation, this gives 13 development conditions.
+The joint intervention uses a fixed composite direction, rather than activation-gated suppression of individual long features.
+Interventions are applied at the layer-17 post-block residual position used to predict each next token, beginning with the first generated token.
+Conditions share per-question random uniforms and prompts but maintain independent attention caches.
+
+We use 64 development problems to select the shortest eligible condition.
+Eligibility requires at least 5\% mean shortening, no more than a five-percentage-point decline in empirical accuracy, a paired 95\% bootstrap length-difference interval below zero, and a shorter mean output than the matched random control.
+The selected short-enhancement condition has $\rho=0.30$ and uses eight short-associated decoder directions.
+On a subsequent 64-problem check, it reduces mean length from 246.44 to 209.23 tokens, with both unmodified and targeted generation answering 64/64 correctly.
+These cohorts were previously observed during SAE analysis, so this check is exploratory; its accuracy threshold is not a non-inferiority test.
+
+After fixing the intervention, we generate four candidates for every original problem under unmodified, targeted, and matched-random generation, producing 10,572 outputs.
+Table~\ref{tab:teacher_generation} reports the entire candidate pool, including incorrect and capped responses.
+Targeted generation reduces mean length by 13.27\% relative to unmodified generation.
+A question-level bootstrap, retaining the four candidates together within each problem, gives a mean length difference of $-33.20$ tokens with a 95\% interval of $[-35.24,-31.22]$.
+The correctness difference is $+0.20$ percentage points with interval $[-0.43,+0.79]$.
+These full-pool statistics are post-hoc descriptive summaries and do not establish either improved correctness or population-level accuracy preservation.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrr}
+\hline
+Generation condition & Correct (\%) & Mean tokens & Cap hits \\
+\hline
+Unmodified & 98.69 & 250.27 & 12 \\
+SAE short enhancement & 98.89 & 217.07 & 1 \\
+Matched random & 97.70 & 293.02 & 38 \\
+\hline
+\end{tabular}
+\caption{Complete teacher candidate pools: 3,524 outputs per condition on the same 881 problems. Cap hits count responses reaching the 512-token limit.}
+\label{tab:teacher_generation}
+\end{table}
+
+\subsection{Distillation from Intervention-Generated Traces}
+\label{sec:student_results}
+
+\paragraph{Comparisons and common support.}
+For each newly generated condition, we deduplicate responses and select the shortest correct, non-capped solution per problem.
+The unmodified, SAE, and random conditions cover 881, 880, and 879 problems, respectively.
+Intersecting their support with the initial natural-short dataset yields 878 problems, on which all four conditions are retrained.
+The natural-short comparator uses the initial 16-candidate quantile-band selection, whereas the three new conditions use shortest-correct selection from four candidates.
+It therefore compares data-construction pipelines with different sampling and selection rules, rather than isolating the effect of intervention.
+
+\paragraph{Budgets and statistical analysis.}
+Four data conditions, two budgets, and three seeds yield 24 adapters, plus a separately evaluated base student.
+Equal-example datasets contain 878 records each and require 220 optimizer steps.
+Their target-token totals are 188,540 for unmodified, 165,530 for SAE, 215,643 for random, and 188,420 for natural short.
+The equal-token construction brings all totals into the range 215,643--215,722, with 252, 286, 220, and 251 optimizer steps, respectively.
+We report seed-mean accuracy and 95\% intervals from 10,000 crossed bootstrap replicates over training seeds and paired evaluation problems.
+Holm correction covers six registered SAE-versus-control accuracy comparisons across the two budgets.
+The random condition has identical data, weights, and predictions across budgets for each seed; these entries are not independent replications.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../../results/ncsu_sae_intervention_v1/exploratory/student_followup/analysis/student_comparison.pdf}
+\caption{Student accuracy in the completed intervention study. Bars show means over three training seeds; dots show individual seeds, not confidence intervals. The dashed line marks the base student evaluated in this run. Natural-short data use a different candidate pool and selection rule from the three intervention-generation conditions.}
+\label{fig:student_accuracy}
+\end{figure}
+
+\paragraph{Accuracy.}
+Figure~\ref{fig:student_accuracy} summarizes the four conditions.
+With equal examples, SAE-generated supervision gives 70.84\% accuracy, compared with 69.92\% for unmodified outputs, 68.87\% for random intervention, and 66.93\% for natural-short supervision.
+With equal target tokens, the corresponding accuracies are 70.34\%, 70.42\%, 68.87\%, and 66.96\%.
+The base student in this run achieves 66.51\%; the earlier run's 67.45\% base is not substituted for this baseline.
+The source of the between-run base difference has not been isolated.
+
+The SAE-minus-unmodified difference is $+0.92$ percentage points with 95\% interval $[-1.34,+3.23]$ under equal examples, and $-0.08$ with interval $[-2.18,+1.97]$ under equal tokens.
+Neither comparison establishes an accuracy improvement; the Holm-adjusted $p$-values are 0.8432 and 0.9654.
+Comparisons against the matched-random condition are also inconclusive after correction.
+SAE outperforms the natural-short comparator under both budgets (adjusted $p=0.0060$ and $0.0110$), but the sampling and selection differences prevent attribution of these gaps solely to SAE steering.
+
+\paragraph{Student output length.}
+Under equal examples, mean student output length decreases from 277.14 tokens with unmodified supervision to 245.98 with SAE supervision, a descriptive reduction of 11.24\%.
+Under equal tokens, it decreases from 276.55 to 245.31 tokens, or 11.30\%.
+The base student averages 239.64 tokens, so the observed shortening is relative to unmodified distillation rather than to the pretrained student.
+The results support transfer of shorter-output behavior in this setting, while leaving the accuracy benefit unresolved.
+Output-token reductions alone do not measure end-to-end savings, which must also account for SAE fitting, candidate generation, selection, and intervention overhead.
+
+\subsection{Additional Comparisons and Scope}
+\label{sec:experiment_scope}
+
+The completed results do not include concise prompting, dense short--long steering, ASC, or difficulty-aware post-hoc compression.
+These are important comparisons for determining whether SAE decomposition provides value beyond simpler length control or existing compression methods~\citep{azizi2026activation,wu2025concise}.
+A length-matched comparison is also needed before attributing any student advantage to supervision content beyond brevity.
+The present study does not establish superiority over these methods.
+
+A separately registered multi-answer extension compares one, two, and four distinct correct responses per problem under SAE and unmodified generation, retaining the same 878 problems.
+Repeating the shortest response two or four times provides controls for record count, question exposure, and optimizer steps.
+Distinct text does not guarantee a distinct mathematical solution, and these controls do not match target-token counts.
+The extension has not produced a complete audited result set at the time of this draft; we report its design without drawing conclusions from partial runs.
+
+Finally, the study uses previously observed feature-analysis cohorts and a single SAE seed, and lexical or answer-format explanations remain possible.
+Matched random directions control feature count and perturbation magnitude, not feature semantics or activation prevalence.
+The current evidence therefore supports an exploratory account of length control and its downstream effects on GSM8K, rather than a general claim that long traces are redundant or that SAE steering improves student accuracy.

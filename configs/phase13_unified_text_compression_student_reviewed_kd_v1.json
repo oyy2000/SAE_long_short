@@ -1,0 +1,109 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "entrypoint": "13_31_compress_math_candidates.py",
+  "job_name_prefix": "p13_student_text_reviewed",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_text_compression_student_reviewed_kd_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/unified_text_compression_student_reviewed_kd_launch_v1",
+  "candidate_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/formal/unified_math_candidates_raw_reviewed_v1",
+  "source_cohort": "student_pool",
+  "expected_questions": 6723,
+  "smoke_questions": 4,
+  "smoke_seed": 2026091319,
+  "shards": 32,
+  "maximum_source_candidates": 4,
+  "candidate_seed_stride": 100003,
+  "ratio_assignment_seed": 2026091320,
+  "dap_generation": {
+    "seed": 2026091318,
+    "max_new_tokens": 4096,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "tokenskip": {
+    "model_name": "microsoft/llmlingua-2-xlm-roberta-large-meetingbank",
+    "revision": "ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--microsoft--llmlingua-2-xlm-roberta-large-meetingbank/snapshots/ebaba9b0e874dadd3003ffcff828e4397e568089",
+    "package_version": "0.2.2",
+    "family": "qwen",
+    "ratios": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "selection": "one assigned ratio per source question for training; all ratios only for compression validation"
+  },
+  "compression_mode": "assigned_only",
+  "dap_prompt_config": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/configs/phase13_dap_prompt_math_v2.json",
+  "claim_boundary": "Unified Qwen-7B teacher-source distillation adaptation on the disjoint MATH student pool. DAP rewrites all unique correct noncapped B1 candidates and selects shortest correct rewritten supervision; TokenSkip constructs one preassigned ratio per source question, with native ratio prompts and a verified source answer. Appended-answer correctness does not establish compressed reasoning validity. Complete B0-B7 support and actual student SFT are separate later stages. Source migration: consume only the completed full reviewed raw student selection, never the smoke-only raw context. This configuration is frozen for execution only by the preparation stage after the full raw impact changes have been reviewed. Historical parent configuration and pending DAG remain preserved. Scratch revision: job-specific /share/jekml/youyang7/tmp for TMP/TEMP/TMPDIR, tokenizer and NLTK caches; no project or system scratch fallback.",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute_partners",
+        "qos": "short",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "02:00:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "08:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    },
+    "auxiliary_cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/phase13_baselines",
+    "storage_policy": {
+      "small_cache_bytes": 16777216,
+      "encoded_copies": 4,
+      "adapter_copies": 3,
+      "serialized_bytes_per_token": 48,
+      "safety_factor": 2.0,
+      "rationale": "Administrator-designated scratch only; no model copies or periodic checkpoints. Encoded-data copies and three fp32 adapter copies cover training and final publication staging. Check filesystem capacity and user/group quota; never fall back to system or project scratch.",
+      "scratch_root": "/share/jekml/youyang7/tmp",
+      "scratch_quota": {
+        "filesystem": "gpfsHPCcommon2",
+        "fileset": "Share01",
+        "group": "jekml",
+        "command": "/usr/lpp/mmfs/bin/mmlsquota",
+        "attribute_command": "/usr/lpp/mmfs/bin/mmlsattr"
+      },
+      "minimum_available_inodes": 256
+    },
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ]
+  },
+  "grading_method": "reviewed_math_v1"
+}

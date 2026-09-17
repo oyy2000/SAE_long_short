@@ -1,0 +1,194 @@
+{
+  "teacher": {
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "students": {
+    "qwen3b_student": {
+      "model_name": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    }
+  },
+  "lora": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training": {
+    "num_train_epochs": 3,
+    "max_length": 8192,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 5e-05,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "completion_only_loss": null,
+    "assistant_only_loss": false,
+    "packing": false,
+    "dataset_kwargs": {},
+    "logging_steps": 1,
+    "report_to": "none",
+    "disable_tqdm": true
+  },
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/legacy_trl_096_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1",
+    "minimum_free_mib": 60000,
+    "auxiliary_cache_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/phase13_baselines",
+    "maximum_gpu_lanes": 4,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute_partners",
+        "qos": "short",
+        "cpus": 4,
+        "memory": "32G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "02:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "96G",
+        "time": "02:00:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "64G",
+        "time": "04:00:00"
+      },
+      "monitor_cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute_partners",
+        "qos": "short",
+        "cpus": 1,
+        "memory": "2G",
+        "time": "02:00:00"
+      }
+    },
+    "generation_route": "h200",
+    "training_route": "h200",
+    "evaluation_route": "h200",
+    "asc_route": "h200",
+    "storage_policy": {
+      "small_cache_bytes": 16777216,
+      "encoded_copies": 4,
+      "adapter_copies": 3,
+      "serialized_bytes_per_token": 48,
+      "safety_factor": 2.0,
+      "rationale": "Administrator-designated scratch only; no model copies or periodic checkpoints. Encoded-data copies and three fp32 adapter copies cover training and final publication staging. Check filesystem capacity and user/group quota; never fall back to system or project scratch.",
+      "scratch_root": "/share/jekml/youyang7/tmp",
+      "scratch_quota": {
+        "filesystem": "gpfsHPCcommon2",
+        "fileset": "Share01",
+        "group": "jekml",
+        "command": "/usr/lpp/mmfs/bin/mmlsquota",
+        "attribute_command": "/usr/lpp/mmfs/bin/mmlsattr"
+      },
+      "minimum_available_inodes": 256
+    },
+    "worker_routes": [
+      "h200",
+      "h200",
+      "h200",
+      "h200"
+    ],
+    "native_preload": [
+      "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/lib/libstdc++.so.6"
+    ],
+    "expected_peak_mib": 51808
+  },
+  "grading": {
+    "timeout_seconds": 5
+  },
+  "grading_methods": {
+    "gsm8k": "gsm8k_explicit_answer_quantity_v3"
+  },
+  "grading_method": "gsm8k_explicit_answer_quantity_v3",
+  "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "repetition_penalty": 1.0,
+  "generation": {
+    "seed": 2026091402,
+    "max_new_tokens": 1024,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "batch_size": 8,
+    "add_special_tokens": false
+  },
+  "candidates_per_question": 4,
+  "maximum_source_questions": 3072,
+  "caps": [
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "experiment_id": "phase13_token_kd_small_v1",
+  "source_pilot_root": "results/phase13_baseline_expansion_v1/exploratory/gsm8k_qwen3b_sae_pilot_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/token_kd_small_v1",
+  "checkpoint_root": "checkpoints/phase13_baseline_expansion_v1/exploratory/token_kd_small_v1",
+  "train_questions": 256,
+  "development_questions": 300,
+  "subset_seed": 2026091601,
+  "pilot_seeds": [
+    17,
+    42
+  ],
+  "kd": {
+    "alpha": 0.5,
+    "temperature": 2.0,
+    "chunk_tokens": 64
+  },
+  "smoke_questions": 8,
+  "smoke_steps": 4,
+  "batch_size": 8,
+  "evaluation_cap": 1024,
+  "maximum_projected_training_seconds": 5400,
+  "memory_safety_margin_mib": 8192,
+  "bootstrap_seed": 2026091602,
+  "bootstrap_samples": 10000,
+  "gate": {
+    "minimum_mean_accuracy_gain": 0.01,
+    "maximum_length_ratio": 1.1,
+    "maximum_cap_hit_rate": 0.01,
+    "require_positive_delta_each_seed": true,
+    "require_paired_ci_lower_above_zero": true
+  },
+  "claim_boundary": "Exploratory GSM8K B1-only KD pilot; previously observed development cohort, no locked-test access, no SAE or cross-dataset claim. Full scale requires completed audited gate.",
+  "method_references": [
+    "https://arxiv.org/abs/1503.02531",
+    "https://aclanthology.org/D16-1139/"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "experiment_name": "phase13_asc_r1_method_check_v2",
+  "parent_root": "results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v1",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2",
+  "reason": "Legacy numeric extraction rejected Markdown final-answer headings, nested boxed unit expressions and TeX-spaced thousands. Regrade all immutable raw attempts with a tested versioned parser before selecting calibration pairs.",
+  "grading": {
+    "method": "gsm8k_math_verify_v2",
+    "timeout_seconds": 5
+  },
+  "runtime_overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_llmlingua_v1:/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1"
+}

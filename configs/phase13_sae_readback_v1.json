@@ -1,0 +1,82 @@
+{
+  "experiment_name": "phase13_sae_readback_v1",
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "results/phase13_baseline_expansion_v1/exploratory/sae_readback_v1",
+  "launch_root": "results/phase13_baseline_expansion_v1/preparation/sae_readback_launch_v1",
+  "input_root": "results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1",
+  "allowed_splits": [
+    "smoke",
+    "discovery",
+    "dev"
+  ],
+  "expected_counts": {
+    "smoke": 8,
+    "discovery": 400,
+    "dev": 300
+  },
+  "shards": 4,
+  "doses": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "encoding_chunk_tokens": 64,
+  "maximum_sequence_tokens": 4096,
+  "answer_heading_pattern": "(?im)^[ \\t]*(?:#{1,6}[ \\t]*)?(?:\\*\\*)?(?P<marker>(?:final[ \\t]+)?(?:answer|result))(?:\\*\\*)?[ \\t]*:",
+  "answer_token_forms": [
+    "Answer",
+    " Answer"
+  ],
+  "required_variants": [
+    "reference",
+    "result_marker",
+    "no_marker",
+    "neutral_note",
+    "answer_note",
+    "unmodified_generated"
+  ],
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 24000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "16G",
+        "time": "00:30:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "claim_boundary": "Discovery features and paired control directions; smoke/dev same-state local readback. Does not measure rollout length/accuracy, finalize direction/dose selection, or open the independent confirmation cohort."
+}

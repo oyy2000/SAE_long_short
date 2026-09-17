@@ -1,0 +1,17 @@
+{
+  "version": "phase13_typed_math_grading_v1",
+  "status": "under_validation_not_frozen_for_main_evaluation",
+  "timeout_seconds": 5,
+  "max_expression_characters": 4000,
+  "olympiad_absolute_tolerance": 1e-8,
+  "gsmhard_relative_tolerance": 1e-4,
+  "gsmhard_absolute_tolerance": 1e-12,
+  "gsmhard_integer_references": "Exact; do not apply a relative tolerance to large integer answers.",
+  "final_answer_format": "One final balanced boxed expression; separate multiple complete answers by semicolons; preserve order inside each tuple.",
+  "olympiad_reference": {
+    "repository": "OpenBMB/OlympiadBench",
+    "commit": "ba5b26a7e2849940b598a9159c1190daa2b9175f",
+    "source_file": "eval/auto_scoring_judge.py",
+    "adaptation": "Use typed tuple/interval/radix/choice comparison and Math-Verify rather than untyped generic parsing. Retain absolute numerical tolerance and one-to-one multi-answer matching. Do not inherit implicit factor-100 percentage acceptance or aggregate every intermediate boxed expression."
+  }
+}

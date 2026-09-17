@@ -1,0 +1,20 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "generation_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1",
+  "review_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/uniform_answer_review_v3/finalized",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_analysis_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/sae_generation_analysis_launch_v1",
+  "bootstrap_samples": 5000,
+  "bootstrap_seed": 2026091314,
+  "paired_metrics": [
+    "is_correct",
+    "generated_tokens",
+    "reasoning_body",
+    "answer_suffix"
+  ],
+  "claim_boundary": "完整开发集的探索性生成控制；不估计 SAE/训练 seed 变异，不属于独立 confirmation 或学生蒸馏主表。不得把局部或教师缩短替代成熟 baseline 的统一学生比较。",
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1"
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/uniform_answer_review_v2",
+  "sources": [
+    {
+      "name": "asc_initial_qwen",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/asc_generation/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/protocol/FROZEN.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/asc_generation/COMPLETE.json"
+      ],
+      "expected_rows": 192,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "questions_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/inputs/sources.jsonl",
+      "cell_field": "scale",
+      "expected_unique_questions": 64
+    },
+    {
+      "name": "asc_followup_qwen",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_generation_followup_v1/qwen/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_generation_followup_v1/qwen/COMPLETE.json"
+      ],
+      "expected_rows": 192,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition.name",
+      "expected_unique_questions": 64
+    },
+    {
+      "name": "asc_initial_r1",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2/asc_generation/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2/protocol/FROZEN.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2/asc_generation/COMPLETE.json"
+      ],
+      "expected_rows": 192,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "questions_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_method_check_v2/inputs/sources.jsonl",
+      "cell_field": "scale",
+      "expected_unique_questions": 64
+    },
+    {
+      "name": "asc_followup_r1",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_generation_followup_v1/r1/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_generation_followup_v1/r1/COMPLETE.json"
+      ],
+      "expected_rows": 240,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition.name",
+      "expected_unique_questions": 64
+    },
+    {
+      "name": "dap_short_source",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/dap/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/dap/COMPLETE.json"
+      ],
+      "expected_rows": 64,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "questions_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/method_check_v1/inputs/sources.jsonl",
+      "expected_unique_questions": 64
+    },
+    {
+      "name": "tokenskip_base/ratio_1.0__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/base/ratio_1.0__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/base/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/base/ratio_1.0__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.5__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.5__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.5__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.5__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.5__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.5__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.6__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.6__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.6__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.6__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.6__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.6__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.7__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.7__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.7__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.7__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.7__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.7__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.8__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.8__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.8__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.8__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.8__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.8__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.9__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.9__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.9__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_0.9__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.9__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_0.9__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_author/ratio_1.0__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_1.0__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/author/ratio_1.0__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.5__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.5__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.5__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.5__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.5__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.5__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.6__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.6__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.6__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.6__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.6__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.6__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.7__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.7__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.7__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.7__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.7__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.7__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.8__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.8__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.8__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.8__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.8__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.8__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.9__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.9__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.9__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_0.9__scaled",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.9__scaled/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_0.9__scaled/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "tokenskip_replica/ratio_1.0__fixed",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_1.0__fixed/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/tokenskip_author_sft_v1/evaluation/replica/ratio_1.0__fixed/COMPLETE.json"
+      ],
+      "expected_rows": 1269,
+      "text_field": "prediction_text",
+      "gold_field": "answer",
+      "tokens_field": "output_tokens",
+      "expected_unique_questions": 1269
+    },
+    {
+      "name": "sae_unmodified_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/baseline/smoke/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/baseline/smoke/COMPLETE.json"
+      ],
+      "expected_rows": 8,
+      "text_field": "solution",
+      "gold_field": "answer",
+      "tokens_field": "generated_tokens",
+      "expected_unique_questions": 8
+    },
+    {
+      "name": "sae_unmodified_merged",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/baseline/merged/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_mechanism_inputs_v1/baseline/merged/COMPLETE.json"
+      ],
+      "expected_rows": 1000,
+      "text_field": "solution",
+      "gold_field": "answer",
+      "tokens_field": "generated_tokens",
+      "expected_unique_questions": 1000
+    },
+    {
+      "name": "asc_raw_bos_r1",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_raw_bos_followup_v1/r1/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_raw_bos_followup_v1/r1/COMPLETE.json"
+      ],
+      "expected_rows": 16,
+      "expected_unique_questions": 16,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition.name"
+    }
+  ],
+  "expected_total_records": 31091,
+  "timeout_seconds": 5,
+  "claim_boundary": "Uniform post-hoc final-answer scoring of exploratory method checks and SAE input generation. Masked assistant adjudication is not independent human validation, nor completion of unified-teacher student SFT.",
+  "group_labels": {
+    "asc_followup_r1/legacy_raw_question": "asc_followup_r1/raw_question_without_bos"
+  }
+}

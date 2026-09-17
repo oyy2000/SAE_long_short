@@ -1,0 +1,163 @@
+{
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/uniform_answer_review_v3",
+  "sources": [
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_00/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 1875,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_01/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_01/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 1875,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_02/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_02/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 1875,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_dose",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_03/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/dose/shard_03/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 1875,
+      "expected_unique_questions": 75,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_00/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_01/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_01/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_02/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_02/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_ablation",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_03/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/generation/ablation/shard_03/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 384,
+      "expected_unique_questions": 16,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "sae_full_smoke",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/smoke/dose/shard_00/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/sae_generation_controls_v1/smoke/dose/shard_00/COMPLETE.json"
+      ],
+      "expected_rows": 88,
+      "expected_unique_questions": 8,
+      "text_field": "response",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "condition"
+    },
+    {
+      "name": "asc_initial_r1_native",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/asc_generation/predictions.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/asc_generation/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 192,
+      "expected_unique_questions": 64,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "scale",
+      "questions_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/inputs/sources.jsonl"
+    },
+    {
+      "name": "asc_calibration_r1_native",
+      "path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/asc_calibration/attempts.jsonl",
+      "markers": [
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/asc_calibration/COMPLETE.json",
+        "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/protocol/FROZEN.json"
+      ],
+      "expected_rows": 103,
+      "expected_unique_questions": 100,
+      "text_field": "solution",
+      "gold_field": "gold_answer",
+      "tokens_field": "generated_tokens",
+      "cell_field": "candidate_index",
+      "questions_file": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/asc_r1_native_cot_v1/inputs/pairs.jsonl"
+    }
+  ],
+  "expected_total_records": 9419,
+  "timeout_seconds": 5,
+  "claim_boundary": "Fresh masked final-answer review of native-CoT ASC and SAE full-generation development controls. Original scores retained. Does not independently validate semantic reasoning or complete unified-student SFT."
+}

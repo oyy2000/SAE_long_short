@@ -1,0 +1,109 @@
+{
+  "project_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short",
+  "result_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/exploratory/math_cap_calibration_v1",
+  "cohort_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cohorts_v1",
+  "launch_root": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/projects/SAE_long_short/results/phase13_baseline_expansion_v1/preparation/math_cap_launch_v1",
+  "development_questions": 32,
+  "subset_seed": 2026091311,
+  "generation_seed": 2026091312,
+  "caps": [
+    1024,
+    2048,
+    4096,
+    8192
+  ],
+  "direct_prefix_checks": 2,
+  "direct_check_cap": 1024,
+  "question_template": "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "models": {
+    "qwen7b_teacher": {
+      "model_name": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+      "generation": {
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.0
+      }
+    },
+    "r1_7b_teacher": {
+      "model_name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+      "generation": {
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "repetition_penalty": 1.1
+      }
+    },
+    "qwen1_5b_student": {
+      "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "generation": {
+        "do_sample": false,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.0
+      }
+    },
+    "qwen3b_student": {
+      "model_name": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "snapshot_path": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "generation": {
+        "do_sample": false,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "repetition_penalty": 1.0
+      }
+    }
+  },
+  "proposal_maximum_cap_hit_rate": 0.05,
+  "proposal_maximum_accuracy_drop": 0.03125,
+  "runtime": {
+    "python": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/bin/python",
+    "overlay": "/rsstu/users/m/myoon2/satc_568382/yang_ouyang/envs/sft/overlays/phase13_math_grading_v1",
+    "minimum_free_mib": 32000,
+    "routes": {
+      "cpu": {
+        "account": "jekml_cpu",
+        "partition": "compute",
+        "qos": "normal",
+        "cpus": 2,
+        "memory": "16G",
+        "time": "00:30:00"
+      },
+      "h100": {
+        "account": "jekml_gpu",
+        "partition": "gpu",
+        "qos": "gpu",
+        "gres": "gpu:h100:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "04:00:00"
+      },
+      "h200": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:h200:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      },
+      "l40s": {
+        "account": "jekml_gpu",
+        "partition": "gpu_partners",
+        "qos": "short_gpu",
+        "gres": "gpu:l40s:1",
+        "cpus": 4,
+        "memory": "48G",
+        "time": "02:00:00"
+      }
+    }
+  },
+  "claim_boundary": "32 fixed MATH development questions; cap proposal only, with saved-token prefix and direct-decode checks. Does not freeze all method/student/benchmark generation settings or prove tail coverage."
+}
